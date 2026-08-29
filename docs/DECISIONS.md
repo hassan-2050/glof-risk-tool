@@ -233,3 +233,75 @@ Stage 5 criterion about reporting population-source divergence cannot be
 satisfied here: with zero population under both products, there is no
 divergence to report. Manufacturing one by widening the window until a village
 appeared would be tuning the geography to fit the criterion.
+
+## D12 — SCL may extend a lake, never define a small one  *(Stage 2, revision)*
+D6 concluded that three calving lakes were unmeasurable by any
+largest-connected-component rule. That was half right. Re-examined against
+independently verified reference areas (Imja 1.3–1.56 km², Tsho Rolpa
+1.53–1.6 km², both confirmed from published sources rather than assumed), the
+cause was sharper than "the water is disconnected":
+
+* Imja's water sits at **NDWI 0.281** against our 0.30 cut — sediment lifts NIR
+  on a glacier-contact lake — so the index rule found fragments while ESA's
+  SCL water class found **the whole lake as one 1,510,100 m² component**.
+* Our glacier veto (NIR/SWIR1 > 2.2) additionally rejected 263,100 m² of
+  genuine lake.
+
+The obvious fix — OR the index rule with SCL — repairs Imja (0.07→1.18×) and
+Tsho Rolpa (0.12→1.01×) and **breaks the two cases that matter most**: Thyanbo
+inflates to 1.82× and Chamoli, where no lake exists, jumps from 300 m² to
+76,000 m², over the no-lake threshold. SCL is 20 m native; it is trustworthy at
+scales it resolves and not below them.
+
+So SCL may only **extend** a lake, and only when its component is ≥0.2 km² and
+is anchored on the **registered coordinate** — not on overlap with our own
+selection, because at Imja our largest index component is a pond 1.4 km from
+the lake, and extending that just grew the pond.
+
+The 0.2 km² threshold is **not tuned**: results are identical anywhere between
+0.10 and 0.50 km², because every lake needing the extension is >1 km² and every
+lake that must not get it is <0.1 km². No lake in the set sits near the
+boundary.
+
+**Result: 2/8 → 4/8 lakes within 25% of published.** Imja 0.07→1.11×, Tsho
+Rolpa 0.12→1.02×, Thyanbo unchanged at 1.00×, Chamoli still 700 m².
+
+Still failing, with reasons:
+* **South Lhonak 0.35×** — ESA's independent classifier finds the same
+  ~0.57 km² at the same location. Two unrelated methods agreeing is evidence
+  the discrepancy is not our delineation, but something about the published
+  outline or the scene.
+* **Pyurepu 0.03×** — the 0.725 km² lake formed and drained inside a week; our
+  annual series sees the pre-2025 ponds, which is the correct answer to a
+  different question.
+* **Gokyo 1.46×, Tilicho 0.74×** — reference areas are "commonly cited" values
+  we could not trace to a primary source, so the denominators are the weaker
+  half of these ratios.
+
+## D13 — Better data made the headline BOTH stronger and weaker  *(Stage 7)*
+Fixing delineation changed the evaluation, and not uniformly in our favour.
+Recording both directions:
+
+**Stronger.** Growth-only recall fell from 0.333 to **0.000**. It had been
+"catching" South Lhonak only because a noisy 6-point series happened to show
+>20% growth; with 12 usable points the 2017–2025 change is **−6.27%**, i.e.
+flat. The earlier true positive was luck from bad data, and better data removed
+it. Proxy-augmented still catches Thame, so the delta is 0.000 → 0.333 and the
+claim is cleaner than before.
+
+**The caveat that must travel with it.** South Lhonak *is* a genuine
+growth-catchable case — 0.11 km² in 1962 to 1.69 km² in 2023. Our pinned data
+starts in 2017 because that is where usable Sentinel-2 L2A coverage starts, and
+across that window the lake is flat. A growth screen with a multi-decadal
+baseline (the 1962 or 1990 inventories) would flag it. So "growth-only recall
+is 0.000" is a statement about **an 8-year Sentinel-2 baseline**, not about
+growth screening in general, and quoting it without that qualifier would
+overstate the result.
+
+**Weaker.** Spearman against the Rounce et al. (2017) expert classes fell from
+0.63 to **0.378**. More accurate areas mean larger volume estimates for the big
+lakes, which lowers their source-to-lake volume ratio and reorders the ranking
+away from expert judgement. Reported as measured. It is a real cost of the
+correction, and the honest reading is that our ranking agrees with expert
+classes less well once the areas are right — which is uncomfortable and is
+exactly why it is written down.

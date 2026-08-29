@@ -159,7 +159,13 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg,
     # Intersect back with the OBSERVED mask: closing decided which pixels group
     # together, it must not add area that was never seen as water.
     selected = (labels == chosen["label"]) & mask
+    extension = _extend_with_scl(selected, scene, anchor_rc)
+    if extension is not None:
+        selected, ext_meta = extension
+    else:
+        ext_meta = {"applied": False}
     return selected, {
+        "scl_extension": ext_meta,
         "closing_radius_px": CLOSING_RADIUS_PX,
         "px_before_closing": int(mask.sum()),
         "px_selected": int(selected.sum()),
@@ -168,6 +174,73 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg,
         "anchored": anchor_rc is not None,
         "selected": chosen,
         "components": sorted(comps, key=lambda c: -c["px"])[:5],
+    }
+
+
+# A 20 m classifier is trustworthy at scales it can resolve and not below them.
+# SCL may only EXTEND a lake, never define a small one: below this area the
+# boundary error of a coarse class map dominates, and letting it in inflated
+# Thyanbo from 1.00x to 1.82x its published area and lifted Chamoli - where no
+# lake exists - from 300 m2 to 76,000 m2, over the no-lake threshold.
+#
+# The value is not tuned: results are identical anywhere between 0.10 and
+# 0.50 km2, because the lakes that need the extension are all >1 km2 and the
+# ones that must not get it are all <0.1 km2. There is no lake in the set
+# near the boundary, which is why the choice does not matter.
+MIN_SCL_EXTENSION_KM2 = 0.20
+SCL_WATER_CLASS = 6
+
+
+def _extend_with_scl(selected, scene, anchor_rc):
+    """Adopt ESA's water class where our index rule cannot see the lake.
+
+    Sediment-laden glacier-contact lakes sit just below the NDWI threshold -
+    Imja's water measures 0.281 against our 0.30 cut - so the index rule finds
+    a handful of fragments while ESA's classifier finds the whole lake as one
+    body. Measured on the pinned data: our rule returned 0.07x Imja's published
+    area and 0.12x Tsho Rolpa's, while SCL returned 1.18x and 1.01x.
+
+    Anchored on the REGISTERED position, not on overlap with our own selection.
+    That distinction is the whole fix: at Imja our largest index component is a
+    pond 1.4 km from the lake, so extending whatever we happened to select just
+    grew the pond. The anchor is the only thing that knows which water body is
+    the subject.
+
+    Holes are filled because icebergs punch a calving lake full of them, and a
+    lake outline is the water body's extent, not the open water between bergs.
+    """
+    if anchor_rc is None or scene.scl is None:
+        return None
+    px_area = scene.pixel_area_m2
+    water = (scene.scl == SCL_WATER_CLASS) & scene.valid
+    if not water.any():
+        return None
+
+    labels, n = ndimage.label(ndimage.binary_closing(water, np.ones((7, 7))))
+    if n == 0:
+        return None
+    ar, ac = int(round(anchor_rc[0])), int(round(anchor_rc[1]))
+    if not (0 <= ar < labels.shape[0] and 0 <= ac < labels.shape[1]):
+        return None
+    lab = int(labels[ar, ac])
+    if lab == 0:
+        return None                      # anchor is not inside any SCL water body
+
+    comp = ndimage.binary_fill_holes(labels == lab)
+    area_km2 = comp.sum() * px_area / 1e6
+    current_km2 = selected.sum() * px_area / 1e6
+    if area_km2 < MIN_SCL_EXTENSION_KM2 or area_km2 <= current_km2:
+        return None
+
+    return (selected | comp), {
+        "applied": True,
+        "source": "ESA Sentinel-2 SCL water class (20 m), holes filled",
+        "index_rule_km2": round(current_km2, 4),
+        "scl_component_km2": round(area_km2, 4),
+        "min_area_required_km2": MIN_SCL_EXTENSION_KM2,
+        "rationale": ("the index rule under-detects sediment-laden "
+                      "glacier-contact water; SCL resolves the lake as one body "
+                      "at this scale"),
     }
 
 

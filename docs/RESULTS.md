@@ -10,12 +10,12 @@ it, using only pre-16-Aug-2024 data.
 
 | | growth-only | proxy-augmented |
 |---|---|---|
-| true positives | 1 | 2 |
+| true positives | 0 | 1 |
 | false positives | 1 | 1 |
-| false negatives | 2 | 1 |
-| recall | 0.3333 | **0.6667** |
-| precision | 0.5 | 0.6667 |
-| F1 | 0.4 | **0.6667** |
+| false negatives | 3 | 2 |
+| recall | 0.0 | **0.3333** |
+| precision | 0.0 | 0.5 |
+| F1 | 0.0 | **0.4** |
 
 Thame appears in the growth-only **false negatives** (yes)
 and the proxy-augmented **true positives** (yes).
@@ -28,7 +28,7 @@ threshold, which matters because that threshold was set after inspecting all
 fourteen values (see DECISIONS D7) and is therefore not a blind holdout result.
 
 Rank correlation against the Rounce et al. (2017) expert classes:
-**0.6299**.
+**0.378**.
 
 ## Delineation validation
 
@@ -37,13 +37,13 @@ Measured against published reference areas, best usable scene per lake:
 | lake | published | measured | ratio |
 |---|---|---|---|
 | thyanbo_tsho | 43,902 m² | 44,100 m² | 1.005x |
-| south_lhonak | 1,690,000 m² | 550,300 m² | 0.326x |
+| south_lhonak | 1,690,000 m² | 584,300 m² | 0.346x |
 | pyurepu_supraglacial | 725,000 m² | 23,500 m² | 0.032x |
-| imja_tsho | 1,280,000 m² | 83,800 m² | 0.065x |
-| tsho_rolpa | 1,540,000 m² | 180,300 m² | 0.117x |
+| imja_tsho | 1,560,000 m² | 1,726,700 m² | 1.107x |
+| tsho_rolpa | 1,540,000 m² | 1,571,800 m² | 1.021x |
 | thulagi | 940,000 m² | 944,700 m² | 1.005x |
-| gokyo_dudh_pokhari | 430,000 m² | 608,000 m² | 1.414x |
-| tilicho | 4,800,000 m² | 3,448,100 m² | 0.718x |
+| gokyo_dudh_pokhari | 430,000 m² | 625,800 m² | 1.455x |
+| tilicho | 4,800,000 m² | 3,576,700 m² | 0.745x |
 
 Three lakes fail badly and the cause is diagnosed rather than tuned away - see
 DECISIONS D6. They are iceberg- and debris-choked calving lakes where any

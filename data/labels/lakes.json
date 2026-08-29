@@ -171,9 +171,9 @@
       "coordinate_source": "ICIMOD/UNDP 2020 PDGL report, lake ID GL086925E27898N",
       "coordinate_confidence": "imagery_verified",
       "window_half_width_km": 3.5,
-      "published_reference_area_m2": 1280000,
-      "published_reference_date": "2014-01-01",
-      "published_reference_source": "Widely reported ~1.28 km2; ICIMOD/UNDP 2020 PDGL Rank I"
+      "published_reference_area_m2": 1560000,
+      "published_reference_date": "2020-01-01",
+      "published_reference_source": "Imja expanded from 0.81 km2 (1997) to 1.56 km2 (2020), ~0.032 km2/yr. The earlier ~1.28 km2 figure used here initially is a mid-2010s value and is stale for a 2023 scene - checked against the published growth series rather than carried over."
     },
     {
       "id": "tsho_rolpa",
