@@ -129,6 +129,19 @@ def _boa_offset(item) -> float:
     return 0.0
 
 
+def _one_per_date(items: list) -> list:
+    """Keep the first item for each acquisition date, preserving order."""
+    seen: set = set()
+    out = []
+    for it in items:
+        d = it.datetime.date()
+        if d in seen:
+            continue
+        seen.add(d)
+        out.append(it)
+    return out
+
+
 def search_scenes(cat, bbox, req: SceneRequest) -> list:
     """Candidate scenes for one request, cheapest-cloud first."""
     search = cat.search(
@@ -145,15 +158,25 @@ def search_scenes(cat, bbox, req: SceneRequest) -> list:
         items = [i for i in items if i.properties["eo:cloud_cover"] >= MIN_CLOUD_QA_HARD]
         items.sort(key=lambda i: -i.properties["eo:cloud_cover"])
         return items
-    if req.role == "event_pre":
+    if req.role in ("event_pre", "event_post"):
         # Deliberately NOT filtered on tile cloud - see N_CANDIDATES_EVENT in
-        # selection.py. Ordered by recency, because the closest view to the
-        # decision date is the one an officer would actually have used.
-        items.sort(key=lambda i: -i.datetime.timestamp())
-        return items
-    if req.role == "event_post":
-        items.sort(key=lambda i: i.datetime.timestamp())
-        return items
+        # selection.py. event_pre is ordered by recency (the closest view to
+        # the decision date is the one an officer would have used) and
+        # event_post by earliness.
+        newest_first = req.role == "event_pre"
+        items.sort(key=lambda i: (-i.datetime.timestamp() if newest_first
+                                  else i.datetime.timestamp(),
+                                  i.properties["eo:cloud_cover"]))
+        # One candidate per ACQUISITION DATE.
+        #
+        # Without this, several slots collapse onto a single day: Sentinel-2
+        # covers a site from adjacent orbits and tiles, so the catalogue
+        # returns multiple items with the same date. South Lhonak's four
+        # event_post candidates were all 2023-10-04 - four slots bought one
+        # day of coverage, and that day was clouded out, leaving the 3 Oct
+        # 2023 outburst unobservable. The point of pinning several candidates
+        # is temporal spread, and only date-deduplication delivers it.
+        return _one_per_date(items)
     items = [i for i in items if i.properties["eo:cloud_cover"] <= req.max_cloud]
     items.sort(key=lambda i: (i.properties["eo:cloud_cover"], i.datetime.timestamp()))
     return items

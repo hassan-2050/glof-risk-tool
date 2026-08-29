@@ -182,3 +182,46 @@ def stage02_delineation(cfg: Config) -> dict:
                           "qa_reasons"])
     usable = sum(1 for r in rows if r["qa_verdict"] != "unusable")
     return {"lakes": len(results), "area_points": len(rows), "usable": usable}
+
+
+@stage(3, "trajectory", "Watcher: multi-date trajectory + burst detection",
+       outputs=("outputs/stage03_trajectory.json", "outputs/stage03_trajectory.csv"))
+def stage03_trajectory(cfg: Config) -> dict:
+    """Robust growth trend per lake, plus post-hoc detection of sudden drops."""
+    from src.common.io import read_json, write_csv
+    from src.watcher.trajectory import analyse
+
+    lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
+    by_id = {r["lake_id"]: r for r in delin["lakes"]}
+
+    results, rows = [], []
+    for lake in lakes_doc["lakes"]:
+        lr = by_id.get(lake["id"])
+        if lr is None or lr.get("status") != "ok":
+            continue
+        a = analyse(lake, lr, cfg)
+        results.append(a)
+        t = a["trend"]
+        rows.append({
+            "lake_id": lake["id"], "class": lake["class"],
+            "label_burst": lake["label_burst"],
+            "n_usable": t.get("n_usable"),
+            "slope_m2_per_year": t.get("theil_sen_slope_m2_per_year"),
+            "relative_growth_pct_per_year": t.get("relative_growth_pct_per_year"),
+            "naive_two_date_change_pct": t.get("naive_two_date_change_pct"),
+            "burst_detected": a["burst_detected"],
+            "n_drops": len(a["drops_detected"]),
+            "n_suppressed_freeze_up": len(a["drops_suppressed"]),
+            "max_drop_pct": max((d["drop_pct"] for d in a["drops_detected"]), default=None),
+        })
+
+    write_json(REPO_ROOT / "outputs" / "stage03_trajectory.json", {"lakes": results})
+    write_csv(REPO_ROOT / "outputs" / "stage03_trajectory.csv", rows,
+              fieldnames=["lake_id", "class", "label_burst", "n_usable",
+                          "slope_m2_per_year", "relative_growth_pct_per_year",
+                          "naive_two_date_change_pct", "burst_detected", "n_drops",
+                          "n_suppressed_freeze_up", "max_drop_pct"])
+    detected = [r["lake_id"] for r in rows if r["burst_detected"]]
+    return {"lakes": len(results), "burst_detected": detected,
+            "suppressed_freeze_up": sum(r["n_suppressed_freeze_up"] for r in rows)}

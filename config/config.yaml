@@ -64,6 +64,22 @@ trajectory:
   # seasonal noise floor of the benign controls.
   sudden_drop_fraction: 0.10     # >=10% consecutive-date area loss => burst flag
   sudden_drop_min_area_km2: 0.01 # ignore drops on lakes too small to measure
+  # THE guard against the dominant false positive. A frozen lake reads smaller
+  # because we measure open water, so freeze-up mimics an outburst exactly.
+  # A reading counts, and a drop is only reported, when at least this fraction
+  # of the reference footprint is open water on the later date.
+  min_open_water_fraction: 0.60
+  # A GLOF drains a lake in hours. Two observations further apart than this
+  # cannot be attributed to one sudden event; 120 days keeps the Thyanbo
+  # 30 Jul -> 28 Oct 2024 pair (90 days, the only usable bracket around the
+  # 16 Aug burst) while excluding the 390- and 732-day gaps that produced
+  # false positives on Thulagi and Imja.
+  max_days_between_observations: 120
+  # Persistence test. A drained lake does not refill; a frozen one thaws.
+  # If a later observation recovers to this fraction of the pre-drop area
+  # within the recovery window, the drop was seasonal.
+  recovery_fraction: 0.85
+  recovery_window_days: 400
 
 # --- Stage 4: dam-failure and mass-movement proxies -------------------------
 # Every threshold carries its source paper. Confidence tiers:
