@@ -125,3 +125,38 @@ trigger was a frozen lateral-moraine collapse, not an avalanche from above, and
 our area for it is under-measured (see D6). One proxy does not cover every
 failure mode, which is the argument for keeping all nine queryable rather than
 collapsing them into a score.
+
+## D8 — MSF routing took five corrections, all forced by measurement  *(Stage 6)*
+The textbook description of Modified Single Flow hides several traps on real
+30 m DSMs. Each of these produced a corridor of one or two cells, and each was
+diagnosed from the data rather than guessed:
+
+1. **Outlet on a filled surface** put the Thyanbo outlet 20 m *above* the water
+   line, because depression filling raises the rim to the basin's spill point.
+   A GLOF escapes by breaching its dam, not by overtopping a 20 m sill.
+2. **Per-step lateral-spread gate.** Testing each step against the local
+   steepest-descent direction rejected legitimate downstream cells, because on
+   a 30 m DSM that direction is noise. The same terrain routes 3.9 km with
+   390 m of drop once the gate is removed; spread is now a distance buffer.
+3. **Reach angle as a per-step gate** silently becomes a *local slope* rule.
+   Thyanbo falls only 7.5° over its first 190 m, so every corridor died at
+   200 m. The rule describes total runout from source to deposit.
+4. **Reach angle as a per-cell mask** disconnects the corridor: cells 20–100 m
+   out have dropped almost nothing and fail, severing the far reaches that pass
+   easily. It defines the *terminus*, so it sets a runout distance.
+5. **Single-cell outlet selection** is unusable when a 10 m optical lake mask
+   meets a 30 m DSM. The "lowest rim cell with a downhill escape" landed in a
+   one-pixel dip whose own spill ran back uphill; descent reached 149 m.
+   Routing now seeds from the **entire rim** with the reach angle measured from
+   the lake surface, which removes the need to know where the dam breaches —
+   something a DSM cannot tell us anyway.
+
+Result: corridors for 12 of 14 lakes, including both cases the Stage 6 criterion
+names — Thame (0.43 km, 38 m drop) and South Lhonak (3.48 km, 334 m drop, and
+correctly flagged as a lower bound because it reaches the window edge).
+
+**Both regimes are reported, and the difference is physical, not a bug.** The
+11° debris-flow corridor is empty for South Lhonak, Imja and Thulagi because
+those valleys are genuinely gentler than 11°, while the ~3° clear-water rule
+runs for kilometres. Reporting only the debris regime would have shown three
+"no hazard" results for lakes with multi-kilometre flood reach.

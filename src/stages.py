@@ -306,3 +306,90 @@ def stage04_proxies(cfg: Config) -> dict:
                           "lake_area_m2", "n_fired", *names, "fired"])
     return {"lakes": len(records),
             "mean_proxies_fired": round(sum(r["n_fired"] for r in records) / max(len(records), 1), 2)}
+
+
+@stage(6, "routing", "Watcher: flow routing / indicative inundation path",
+       outputs=("outputs/stage06_routing.json", "outputs/stage06_routing.csv"))
+def stage06_routing(cfg: Config) -> dict:
+    """MSF corridor per lake, in both flow regimes, with the disclaimer attached.
+
+    Both regimes are run because they answer different questions: the 11 deg
+    debris-flow rule bounds the near-field destructive reach, and the ~3 deg
+    clear-water rule bounds how far the flood itself travels. Several Himalayan
+    valleys here are gentler than 11 deg, so the debris corridor is legitimately
+    empty while the clear-water one runs kilometres - reporting only one would
+    hide half the answer.
+    """
+    from src.common.io import read_json, write_csv
+    from src.watcher.delineate import select_lake_component, water_mask
+    from src.watcher.pipeline import find_anchor, load_dem_on_grid
+    from src.watcher.routing import laharz_cross_check, msf_corridor
+    from src.watcher.scene import load_scene
+
+    lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    manifest = read_json(cfg.path("pinned") / "scenes_manifest.json")
+    delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
+    proxies = read_json(REPO_ROOT / "outputs" / "stage04_proxies.json")
+    by_id = {l["lake_id"]: l for l in manifest["lakes"]}
+    delin_by_id = {r["lake_id"]: r for r in delin["lakes"]}
+    prox_by_id = {r["lake_id"]: r for r in proxies["lakes"]}
+
+    records, rows = [], []
+    for lake in lakes_doc["lakes"]:
+        ml = by_id.get(lake["id"])
+        dr = delin_by_id.get(lake["id"])
+        if ml is None or dr is None or dr.get("status") != "ok":
+            continue
+        scenes = {}
+        for e in ml["scenes"]:
+            if e.get("assets"):
+                sc = load_scene(lake["id"], e)
+                if sc is not None:
+                    scenes[sc.label] = sc
+        if not scenes:
+            continue
+        anchor, _ = find_anchor(scenes, cfg)
+        usable = [s for s in dr["scenes"] if s["qa"]["verdict"] != "unusable"]
+        if not usable:
+            continue
+        chosen = max(usable, key=lambda s: s["area_m2"])
+        scene = scenes.get(chosen["label"])
+        if scene is None:
+            continue
+        dem = load_dem_on_grid(lake["id"], scene)
+        wm, _ = water_mask(scene, cfg)
+        lake_mask, _ = select_lake_component(wm, scene, cfg, anchor_rc=anchor)
+        import numpy as _np
+        res = float(_np.sqrt(scene.pixel_area_m2))
+
+        regimes = {}
+        for cw, name in ((False, "debris_flow"), (True, "clearwater_flood")):
+            r = msf_corridor(dem, lake_mask, res, cfg, clearwater=cw)
+            r.pop("corridor", None)
+            regimes[name] = r
+
+        pr = prox_by_id.get(lake["id"], {})
+        vb = next((p for p in pr.get("proxies", []) if p["proxy"] == "volume_band"), None)
+        vol = (vb["value"] or {}).get("central_m3") if vb and isinstance(vb["value"], dict) else None
+        rec = {"lake_id": lake["id"], "class": lake["class"],
+               "label_burst": lake["label_burst"], "scene_date": chosen["acquired_date"],
+               "regimes": regimes, "laharz_cross_check": laharz_cross_check(vol, cfg)}
+        records.append(rec)
+        for name, r in regimes.items():
+            rows.append({"lake_id": lake["id"], "class": lake["class"],
+                         "regime": name, "cells": r.get("cells", 0),
+                         "corridor_area_km2": round(r.get("area_m2", 0) / 1e6, 4),
+                         "runout_km": round(r.get("max_runout_m", 0) / 1000.0, 3),
+                         "drop_m": r.get("total_drop_m"),
+                         "truncated_at_window_edge": r.get("truncated_at_window_edge"),
+                         "reason_if_empty": r.get("reason")})
+
+    write_json(REPO_ROOT / "outputs" / "stage06_routing.json", {"lakes": records})
+    write_csv(REPO_ROOT / "outputs" / "stage06_routing.csv", rows,
+              fieldnames=["lake_id", "class", "regime", "cells", "corridor_area_km2",
+                          "runout_km", "drop_m", "truncated_at_window_edge",
+                          "reason_if_empty"])
+    with_path = {r["lake_id"] for r in records
+                 if any(g.get("cells", 0) > 0 for g in r["regimes"].values())}
+    return {"lakes": len(records), "with_corridor": len(with_path),
+            "thame_and_lhonak": sorted(with_path & {"thyanbo_tsho", "south_lhonak"})}

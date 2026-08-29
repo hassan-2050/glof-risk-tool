@@ -165,10 +165,20 @@ exposure:
 routing:
   model: "msf"                   # Modified Single Flow, Huggel et al. 2003 NHESS 3:647
   stop_reach_angle_deg: 11       # tan(alpha) ~ 0.19 - debris flow stop rule
-  lateral_spread_deg: 45
+  lateral_spread_deg: 45          # kept for reference; MSF spread applied as a distance
+  lateral_buffer_m: 150           # lateral half-width of the indicative corridor
   clearwater_reach_angle_deg: 3  # friction coeff ~0.05, far longer runout
   dem_resolution_m: 30
   disclaimer_id: "indicative_corridor_30m_dem"
+  # LAHARZ planimetric coefficient, B = c * V^(2/3). Schilling (2014) gives
+  # c ~ 200 for lahars; debris-flow values in the literature span roughly
+  # 20-200 and the choice moves the answer by an order of magnitude, which is
+  # why this is a cross-check and not a measurement.
+  laharz_coefficient: 200.0
+  # Distance over which the reach-angle stop rule is suspended. A lake spills
+  # across a flat sill before the valley steepens, so testing the source-to-cell
+  # slope from the first 10 m step terminated every corridor at the outlet.
+  min_runout_before_stop_test_m: 200.0
 
 # --- Stage 7: baseline vs. proxy-augmented evaluation -----------------------
 evaluation:
