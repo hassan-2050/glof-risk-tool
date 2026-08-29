@@ -816,3 +816,75 @@ def stage05_exposure(cfg: Config) -> dict:
     return {"lakes": len(records), "skipped": len(skipped),
             "with_population_divergence": len(diverging),
             "hydropower_exposed": sum(1 for r in records if r["hydropower_in_corridor"])}
+
+
+@stage(11, "verification", "Reporter: adversarial critic + verification loop",
+       outputs=("outputs/stage11_verification.json",))
+def stage11_verification(cfg: Config) -> dict:
+    """No unsupported claim ships. Unresolved findings block release."""
+    from src.common.io import read_json
+    from src.reporter.critic import run_loop, verify_sentence
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    recon = read_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json")
+    drafts = read_json(REPO_ROOT / "outputs" / "stage10_drafts.json")["drafts"]
+    cap = cfg.require("reporter.verification.max_iterations")
+
+    passages_by_doc: dict[str, dict[str, list[str]]] = {}
+    for eid, ev in retrieval["events"].items():
+        by_doc: dict[str, list[str]] = {}
+        for p in ev["passages"]:
+            by_doc.setdefault(p["doc_id"], []).append(p["text"])
+        passages_by_doc[eid] = by_doc
+
+    results = {}
+    for key, d in drafts.items():
+        eid, lang = key.rsplit("_", 1)
+        results[key] = run_loop(d, recon["events"][eid], passages_by_doc[eid],
+                                lang, cap)
+
+    # --- injection test: a fabricated fact MUST be caught -------------------
+    # Stage 11's pass criterion is not "the real drafts verify" - a pipeline
+    # that verifies everything trivially would also pass that. It is that a
+    # deliberately planted falsehood is CAUGHT, so the check is run here rather
+    # than asserted.
+    eid = "thame_2024"
+    poisoned = {**drafts[f"{eid}_en"]}
+    poisoned["sections"] = {k: list(v) for k, v in poisoned["sections"].items()}
+    fabricated = ("A total of 9,412 people were evacuated from the valley "
+                  "[icimod_thame_study_2025].")
+    poisoned["sections"]["humanitarian_impact"].append(fabricated)
+    inj = run_loop(poisoned, recon["events"][eid], passages_by_doc[eid], "en", cap)
+    caught = fabricated not in inj["sections"]["humanitarian_impact"]
+
+    # And an uncited claim, which fails a different check.
+    poisoned2 = {**drafts[f"{eid}_en"]}
+    poisoned2["sections"] = {k: list(v) for k, v in poisoned2["sections"].items()}
+    uncited = "Three additional villages were destroyed downstream."
+    poisoned2["sections"]["humanitarian_impact"].append(uncited)
+    inj2 = run_loop(poisoned2, recon["events"][eid], passages_by_doc[eid], "en", cap)
+    uncited_flagged = any(f["type"] in ("uncited_figure", "uncited_claim")
+                          for f in inj2["critic_findings"]) or \
+        uncited not in inj2["sections"]["humanitarian_impact"]
+
+    injection = {
+        "fabricated_figure": {"text": fabricated, "caught": bool(caught),
+                              "mechanism": "verifier: 9412 appears in no cited source"},
+        "uncited_claim": {"text": uncited, "flagged": bool(uncited_flagged),
+                          "mechanism": "critic: claim carries no citation",
+                          "note": ("this one carries no FIGURE either, so the "
+                                   "numeric verifier cannot see it - it is exactly "
+                                   "the gap the critic exists to cover")},
+    }
+
+    blocked = [k for k, r in results.items() if r["release_blocked"]]
+    write_json(REPO_ROOT / "outputs" / "stage11_verification.json",
+               {"drafts": results, "injection_test": injection,
+                "iteration_cap": cap, "blocked_drafts": blocked})
+    if not caught:
+        raise RuntimeError("INJECTION TEST FAILED: a fabricated figure survived "
+                           "the critic/verifier loop. Release gating is not working.")
+    return {"drafts_checked": len(results), "blocked": len(blocked),
+            "fabricated_caught": bool(caught),
+            "uncited_flagged": bool(uncited_flagged),
+            "max_iterations_used": max(r["iterations"] for r in results.values())}
