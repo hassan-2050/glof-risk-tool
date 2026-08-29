@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '120,400p' \"/c/Users/ncai/Downloads/compass_artifact_wf-53c705c1-9b02-5a18-9dae-6b1185999b85_text_markdown.md\")"
+    ]
+  }
+}

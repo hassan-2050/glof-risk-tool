@@ -1,0 +1,8 @@
+.venv/
+.git/
+.determinism_check/
+outputs/*
+!outputs/.gitkeep
+__pycache__/
+*.py[cod]
+.pytest_cache/

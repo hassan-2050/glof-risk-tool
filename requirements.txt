@@ -1,0 +1,34 @@
+# GLOF Risk Tool — direct dependencies, exact pins (Stage 0 determinism requirement).
+# Full transitive lock lives in requirements-lock.txt.
+# Resolved and verified on CPython 3.13.9 (win-amd64) and python:3.13-slim (linux/amd64).
+
+# --- core numerics ---
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.0
+
+# --- geospatial ---
+rasterio==1.5.1
+geopandas==1.1.4
+shapely==2.1.2
+pyproj==3.7.2
+rioxarray==0.23.0
+xarray==2026.7.0
+pysheds==0.5            # DEM flow routing (richdem rejected: no win-amd64 wheel, see docs/DECISIONS.md)
+
+# --- data acquisition (Stage 1 ONLY; never imported on the `reproduce` path) ---
+pystac-client==0.9.0
+planetary-computer==1.0.0
+requests==2.34.2
+
+# --- reporter / evaluation ---
+sacrebleu==2.6.0        # chrF++ for Nepali (Stage 15)
+Levenshtein==0.27.4     # human-edit-distance proxy (Stage 14)
+lxml==6.1.2             # CAP XML emit + schema validation (Stage 13)
+jsonschema==4.26.0      # structured-record validation
+
+# --- tooling ---
+PyYAML==6.0.3
+tqdm==4.70.0
+pytest==9.1.1

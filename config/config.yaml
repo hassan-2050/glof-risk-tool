@@ -1,0 +1,164 @@
+# =============================================================================
+# GLOF Risk Tool — single source of truth for seeds, thresholds, and paths.
+#
+# RULE (Stage 3 pass criterion): no scientific threshold may be hardcoded in
+# Python. Every number a reviewer might want to challenge lives in this file,
+# with its source paper next to it.
+# =============================================================================
+
+meta:
+  project: "GLOF Risk Tool for Nepal"
+  config_version: 1
+
+# --- Determinism ------------------------------------------------------------
+# Stage 0 pass criterion: two runs must be byte-identical. Anything that could
+# vary between runs (RNG, wall clock, hash order, thread count) is nailed here.
+determinism:
+  seed: 20240816                 # Thame/Thyanbo Tsho burst date, 16 Aug 2024
+  python_hash_seed: 0
+  # Frozen clock. NOTHING on the reproduce path may call datetime.now(); all
+  # timestamps in outputs come from here so reruns are byte-identical.
+  frozen_utc: "2026-01-01T00:00:00Z"
+  # Single-threaded BLAS: multithreaded reductions are not bit-reproducible.
+  thread_limit: 1
+  float_output_decimals: 6       # rounding applied before any float is serialised
+  # Hard block on socket access during `reproduce`. Proves the offline claim
+  # instead of asserting it.
+  enforce_offline: true
+
+llm:
+  # Reporter stages (8-11). Recorded here so the eval harness is auditable even
+  # though no key is needed on the reproduce path (responses are cached).
+  model: "claude-opus-5"
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 4096
+  seed: 20240816
+  # Reproduce replays committed cached responses; it never calls the API.
+  cache_mode: "replay"           # replay | record
+
+paths:
+  pinned: "data/pinned"
+  labels: "data/labels"
+  outputs: "outputs"
+  cache: "data/pinned/llm_cache"
+
+# --- Stage 2: lake delineation ---------------------------------------------
+delineation:
+  ndwi_threshold: 0.30           # water if NDWI > t  (Sentinel-2 B03/B08)
+  mndwi_threshold: 0.30          # water if MNDWI > t (Sentinel-2 B03/B11)
+  # Huggel et al. 2004a: glacier ice vs. water discrimination.
+  glacier_nir_swir1_ratio: 2.2   # NIR/SWIR1 > 2.2 => glacier ice, not water
+  min_lake_pixels: 4             # sub-10-m mixed-pixel guard at 10 m GSD
+  qa:
+    cloud_prob_max: 40           # % — reject scene pixel above this
+    terrain_shadow_illum_min: 0.10   # hillshade illumination floor
+    snow_index_max: 0.40         # NDSI ceiling for a usable (unfrozen) scene
+    scene_rank_ndwi_quantile: 0.75   # upper-quartile NDWI used for scene ranking
+
+# --- Stage 3: trajectory + post-hoc burst detection -------------------------
+trajectory:
+  min_series_length: 3
+  # Calibrated on South Lhonak's documented 15.38% post-burst drop
+  # (1.69 -> 1.46 km2, Sattar et al. Science 2025). Set below that, above the
+  # seasonal noise floor of the benign controls.
+  sudden_drop_fraction: 0.10     # >=10% consecutive-date area loss => burst flag
+  sudden_drop_min_area_km2: 0.01 # ignore drops on lakes too small to measure
+
+# --- Stage 4: dam-failure and mass-movement proxies -------------------------
+# Every threshold carries its source paper. Confidence tiers:
+#   published  = explicit numeric threshold in a peer-reviewed paper
+#   moderate   = published but weakly sourced / non-English / small-n
+#   derived    = our own choice, must be justified in the changelog
+proxies:
+  volume_area:
+    huggel_2002:
+      coeff: 0.104
+      exp: 1.42
+      source: "Huggel et al. 2002, Can. Geotech. J. 39:316"
+      tier: published
+    cook_quincey_2015:
+      coeff: 0.1217
+      exp: 1.4129
+      source: "Cook & Quincey 2015, Earth Surf. Dynam. 3:559"
+      tier: published
+    r2_area_depth: 0.38            # area-depth correlation is WEAK - surface this
+    r2_area_volume: 0.91           # partly autocorrelated - surface this too
+    error_range_pct: [50, 400]     # reported as a band, never a point estimate
+  steep_lakefront_area:
+    source: "Fujita et al. 2013, NHESS 13:1827; Rounce et al. 2016, HESS 20:3455"
+    buffer_m: 1000               # Fujita et al. 2013, NHESS 13:1827
+    buffer_m_variant: 100        # Rounce et al. 2016 variant
+    depression_angle_deg: 10
+    tier: published
+  source_area_slope:
+    source: "Rounce et al. 2016, HESS 20:3455; Bolch et al. 2011"
+    ice_avalanche_deg: [45, 60]      # Rounce et al. 2016 / Bolch et al. 2011, glacierized
+    rock_landslide_min_deg: 30       # non-glacierized
+    snow_avalanche_deg: [25, 45]     # tagged separately - different process
+    avalanche_reach_angle_deg: 17
+    rockfall_reach_angle_deg: 20
+    tier: published
+  mother_glacier:
+    source: "Rounce et al. 2016, HESS 20:3455"
+    contact_distance_m: 600      # Rounce et al. 2016; freeboard forced to 0 if true
+    tier: published
+  freeboard:
+    source: "Mergili & Schneider 2011"
+    min_safe_m: 25               # Mergili & Schneider 2011
+    tier: published
+  distal_moraine_slope:
+    source: "Lv et al. 1999 (Chinese-language; not independently verified)"
+    max_safe_deg: 20             # Lv et al. 1999 (Chinese-language)
+    tier: moderate
+  impulse_wave:
+    source: "Allen et al. 2019; Rounce et al. 2017, Remote Sensing 9(7):654"
+    reach_angle_min_deg: 14      # Allen et al. 2019 / Rounce et al. 2017
+    source_volume_min_m3: 100000 # 0.1e6 m3
+    tier: published
+  calving_onset:
+    source: "Sakai et al. 2009"
+    fetch_min_m: 80              # Sakai et al. 2009
+    tier: published
+
+# --- Stage 5: exposure ------------------------------------------------------
+exposure:
+  population_products: ["worldpop", "ghs_pop"]
+  divergence_report_pct: 25      # report both products when they differ by more
+  critical_asset_classes: ["hydropower", "school", "health_post", "bridge"]
+
+# --- Stage 6: flow routing --------------------------------------------------
+routing:
+  model: "msf"                   # Modified Single Flow, Huggel et al. 2003 NHESS 3:647
+  stop_reach_angle_deg: 11       # tan(alpha) ~ 0.19 - debris flow stop rule
+  lateral_spread_deg: 45
+  clearwater_reach_angle_deg: 3  # friction coeff ~0.05, far longer runout
+  dem_resolution_m: 30
+  disclaimer_id: "indicative_corridor_30m_dem"
+
+# --- Stage 7: baseline vs. proxy-augmented evaluation -----------------------
+evaluation:
+  baseline:
+    name: "growth_only"
+    area_threshold_km2: 0.1      # Rounce et al. 2017, Remote Sensing 9(7):654
+    growth_flag_pct: 20          # two-date area increase that trips the screen
+  precision_at_k: [3, 5, 10]
+  # Thresholds may be tuned ONLY on these lakes. Nepal cases stay untouched.
+  calibration_lakes: ["south_lhonak", "chamoli_ronti"]
+  holdout_lakes: ["thyanbo_tsho", "pyurepu_supraglacial"]
+  rounce_2017_classes: ["very_high", "high", "moderate", "low"]
+
+# --- Stages 9-15: reporter --------------------------------------------------
+reporter:
+  numeric_reconciliation:
+    relative_tolerance: 0.02     # figures within 2% are the same claim, not a contradiction
+  critic_loop:
+    max_iterations: 3            # hard cap, Stage 11 - no silent infinite loop
+    nli_entailment_min: 0.50
+  sitrep:
+    max_words: 1500              # OCHA "under three pages"
+    sections: ["highlights", "situation_overview", "humanitarian_impact",
+               "response", "gaps_and_constraints", "funding", "contacts_and_sourcing"]
+  translation:
+    target_lang: "npi_Deva"
+    primary_metric: "chrf++"

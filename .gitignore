@@ -1,0 +1,19 @@
+# --- environments ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- generated ---
+outputs/*
+!outputs/.gitkeep
+.determinism_check/
+
+# --- large intermediates (pinned data IS committed; scratch is not) ---
+data/scratch/
+*.tif.aux.xml
+
+# --- secrets: no key is needed on the reproduce path, but guard anyway ---
+.env
+*.key
