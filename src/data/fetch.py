@@ -229,6 +229,12 @@ def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
     if extra_qa:
         reqs.append(qa_hard_request(lid))
 
+    # The wide and early annual windows overlap, so they often resolve to the
+    # same scene. Record the duplicate in the manifest but do not download it
+    # twice - roughly half the early-window requests land on the scene the wide
+    # window already chose.
+    seen_stac: dict[str, str] = {}
+
     for req in reqs:
         cands = search_scenes(cat, bbox, req)
         if not cands:
@@ -273,12 +279,27 @@ def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
                 # answer for reprocessed scenes.
                 "processing_baseline": item.properties.get("s2:processing_baseline"),
                 "boa_add_offset": _boa_offset(item),
+                # Solar geometry, needed to compute hillshade from the DEM.
+                # Terrain shadow is the dominant false-positive source for lake
+                # delineation in steep Himalayan valleys, and it cannot be
+                # modelled from the imagery alone - a shadowed slope and a lake
+                # are both dark in every band.
+                "solar_azimuth_deg": item.properties.get("s2:mean_solar_azimuth"),
+                "solar_zenith_deg": item.properties.get("s2:mean_solar_zenith"),
                 "is_post_event": req.role == "event_post",
                 "candidate_rank": rank,
                 "selection_reason": req.reason,
                 "candidates_available": len(cands),
                 "assets": {},
             }
+            if item.id in seen_stac:
+                entry["duplicate_of"] = seen_stac[item.id]
+                entry["assets"] = {}
+                record["scenes"].append(entry)
+                print(f"    {label:<18} {acq} == {seen_stac[item.id]} (same scene, not re-downloaded)")
+                continue
+            seen_stac[item.id] = label
+
             if dry_run:
                 record["scenes"].append(entry)
                 print(f"    {label:<18} {acq} tile-cc={entry['tile_cloud_cover_pct']:5.1f}%  {item.id[:28]}")

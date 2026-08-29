@@ -32,14 +32,27 @@ SceneRole = Literal["annual", "event_pre", "event_post", "qa_hard"]
 
 # Post-monsoon window. Before mid-Sep the monsoon still clouds the range;
 # after mid-Dec seasonal ice starts biasing the delineation low.
-# Measured correction. The original window ran to 15 December, and the
-# resulting Dec-2023 Thyanbo scene delineated 144,800 m2 against a published
-# ~36,827 m2 for that year - a 4x overestimate, because at 4,900 m the lake is
-# frozen and the basin is snow-covered by December, and fresh snow is a
-# textbook NDWI false positive. Ending 15 November keeps the post-monsoon
-# clarity while staying ahead of reliable freeze-up. The published Thyanbo
-# series (12 Sep, 10 Oct, 14 Oct, 9 Oct) sits entirely inside this window.
-ANNUAL_WINDOW = ((9, 15), (11, 15))
+# TWO annual windows per year, on purpose.
+#
+# The wide window is what a naive "least cloudy scene in the post-monsoon" rule
+# picks, and it is a trap: at 4,900 m the lake freezes and the basin turns
+# white well before mid-December, and fresh snow is a textbook NDWI false
+# positive. Measured: the Dec-2023 Thyanbo scene (0.0% tile cloud, so it looks
+# ideal on metadata alone) delineates 144,800 m2 against a published ~36,827 m2
+# for that year - a 4x overestimate. Cloud-free and usable are different
+# properties, and 59 of our 126 annual picks came from December.
+#
+# So we pin BOTH: the cleanest scene in the wide window, and the cleanest in an
+# early window that ends before reliable freeze-up. Stage 2 then chooses using
+# window-level snow and cloud indices computed from the pixels, which is what
+# its pass criteria call for ("rank on upper-quartile NDWI + low snow index to
+# avoid partially-frozen readings"). That turns the frozen December scenes from
+# a data-quality problem into the test case that proves the ranking works.
+#
+# The published Thyanbo series (12 Sep, 10 Oct, 14 Oct, 9 Oct) sits entirely
+# inside the early window, so our series stays comparable to it.
+ANNUAL_WINDOW = ((9, 15), (12, 15))
+ANNUAL_WINDOW_EARLY = ((9, 15), (10, 31))
 ANNUAL_YEARS = tuple(range(2017, 2026))
 
 # Sentinel-2 L2A coverage is patchy before 2018 outside Europe, so early years
@@ -106,8 +119,16 @@ def annual_requests(lake_id: str) -> list[SceneRequest]:
             lake_id=lake_id, role="annual",
             start=dt.date(year, sm, sd), end=dt.date(year, em, ed),
             max_cloud=MAX_CLOUD_ANNUAL, label=f"annual_{year}",
-            reason=("post-monsoon window: cloud-free, unfrozen, stable level; "
-                    "matches the window used by the published Thyanbo series"),
+            reason=("cleanest scene in the wide post-monsoon window; may fall in "
+                    "December, when the lake can be frozen - Stage 2 decides"),
+        ))
+        (sm, sd), (em, ed) = ANNUAL_WINDOW_EARLY
+        out.append(SceneRequest(
+            lake_id=lake_id, role="annual",
+            start=dt.date(year, sm, sd), end=dt.date(year, em, ed),
+            max_cloud=MAX_CLOUD_ANNUAL, label=f"annual_early_{year}",
+            reason=("cleanest scene before reliable freeze-up; the alternative "
+                    "Stage 2 ranks against the wide-window pick on snow index"),
         ))
     return out
 
