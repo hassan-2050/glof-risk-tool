@@ -1325,7 +1325,8 @@ def stage16_negative_control(cfg: Config) -> dict:
 
 
 @stage(17, "packaging", "Reproducibility packaging",
-       outputs=("outputs/stage17_reproducibility.json",))
+       outputs=("outputs/stage17_reproducibility.json",
+                "outputs/agent_trajectories.json"))
 def stage17_packaging(cfg: Config) -> dict:
     """Verify the reproduction claims instead of asserting them in a README.
 
@@ -1380,6 +1381,13 @@ def stage17_packaging(cfg: Config) -> dict:
         "llm_cache": cache_stats(),
     }
 
+    # Agent-trajectory logs: the Stage 17 criterion asks for the actual
+    # sequence each agent took, not just final outputs. Derived from the
+    # committed artefacts so the log cannot claim something they do not show.
+    from src.reporter.trajectory_log import build_all as build_trajectories
+    traj = build_trajectories(outputs, cfg)
+    write_json(outputs / "agent_trajectories.json", traj)
+
     docker = REPO_ROOT / "Dockerfile"
     dockerignore = REPO_ROOT / ".dockerignore"
     docker_checks = {"dockerfile_present": docker.exists(),
@@ -1396,6 +1404,14 @@ def stage17_packaging(cfg: Config) -> dict:
     problems = [k for k, v in docker_checks.items() if v is False]
     record = {
         "headline_numbers": headline,
+        "agent_trajectories": {
+            "events": traj["n_events"], "total_steps": traj["total_steps"],
+            "artefact": "outputs/agent_trajectories.json",
+            "note": ("Derived from the committed stage outputs, not narrated "
+                     "alongside them, so a step cannot claim something the "
+                     "artefacts do not show. LLM steps carry the cache key that "
+                     "resolves to the exact prompt and response."),
+        },
         "pinned_inventory": inventory,
         "docker": docker_checks,
         "offline_guard_engaged_during_run": offline_engaged(),
@@ -1410,6 +1426,8 @@ def stage17_packaging(cfg: Config) -> dict:
     if problems:
         raise RuntimeError(f"reproducibility packaging incomplete: {problems}")
     return {"headline_numbers": len(headline),
+            "trajectory_events": traj["n_events"],
+            "trajectory_steps": traj["total_steps"],
             "pinned_lakes": inventory["lakes"],
             "scene_rasters": inventory["scene_rasters_referenced"],
             "docker_ready": not problems,
