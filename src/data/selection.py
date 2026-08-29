@@ -32,7 +32,14 @@ SceneRole = Literal["annual", "event_pre", "event_post", "qa_hard"]
 
 # Post-monsoon window. Before mid-Sep the monsoon still clouds the range;
 # after mid-Dec seasonal ice starts biasing the delineation low.
-ANNUAL_WINDOW = ((9, 15), (12, 15))
+# Measured correction. The original window ran to 15 December, and the
+# resulting Dec-2023 Thyanbo scene delineated 144,800 m2 against a published
+# ~36,827 m2 for that year - a 4x overestimate, because at 4,900 m the lake is
+# frozen and the basin is snow-covered by December, and fresh snow is a
+# textbook NDWI false positive. Ending 15 November keeps the post-monsoon
+# clarity while staying ahead of reliable freeze-up. The published Thyanbo
+# series (12 Sep, 10 Oct, 14 Oct, 9 Oct) sits entirely inside this window.
+ANNUAL_WINDOW = ((9, 15), (11, 15))
 ANNUAL_YEARS = tuple(range(2017, 2026))
 
 # Sentinel-2 L2A coverage is patchy before 2018 outside Europe, so early years

@@ -90,6 +90,45 @@ def _open_catalog() -> pystac_client.Client:
     return pystac_client.Client.open(STAC_URL, modifier=pc.sign_inplace)
 
 
+# ESA introduced a bottom-of-atmosphere additive offset at processing baseline
+# 04.00. Reflectance = (DN + BOA_ADD_OFFSET) / BOA_QUANTIFICATION_VALUE.
+BOA_QUANTIFICATION = 10000.0
+BASELINE_WITH_OFFSET = 4.00
+
+
+def _boa_offset(item) -> float:
+    """Per-scene BOA additive offset, preferring the asset's own declaration.
+
+    Order of trust:
+      1. the asset's raster:bands offset, if the catalogue publishes one
+      2. s2:processing_baseline >= 04.00 -> -1000
+      3. the processing timestamp in the STAC id, as a last resort
+
+    Never inferred from the ACQUISITION date: reprocessed scenes carry the
+    offset even when acquired years before it existed. Measured on our own
+    pinned data - the 2019-10-15 acquisition was processed in 2020 and needs no
+    offset, while the 2023-08-25 acquisition was reprocessed in 2024 and does.
+    """
+    for key in ("B03", "B08", "B11"):
+        asset = item.assets.get(key)
+        bands = getattr(asset, "extra_fields", {}).get("raster:bands") if asset else None
+        if bands and isinstance(bands, list) and "offset" in bands[0]:
+            return float(bands[0]["offset"])
+
+    baseline = item.properties.get("s2:processing_baseline")
+    if baseline is not None:
+        try:
+            return -1000.0 if float(baseline) >= BASELINE_WITH_OFFSET else 0.0
+        except (TypeError, ValueError):
+            pass
+
+    # STAC id tail is the processing timestamp: ..._<YYYYMMDD>T<HHMMSS>
+    tail = item.id.rsplit("_", 1)[-1]
+    if len(tail) >= 8 and tail[:8].isdigit():
+        return -1000.0 if tail[:8] >= "20220125" else 0.0
+    return 0.0
+
+
 def search_scenes(cat, bbox, req: SceneRequest) -> list:
     """Candidate scenes for one request, cheapest-cloud first."""
     search = cat.search(
@@ -223,6 +262,17 @@ def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
                 "tile_cloud_cover_pct": round(float(item.properties["eo:cloud_cover"]), 2),
                 "platform": item.properties.get("platform"),
                 "mgrs_tile": item.properties.get("s2:mgrs_tile"),
+                # Processing baseline governs the BOA reflectance offset, and
+                # getting this wrong silently corrupts every area measurement.
+                # From baseline 04.00 (products processed after 2022-01-25) ESA
+                # adds +1000 DN, so reflectance = (DN - 1000) / 10000. It is a
+                # PROCESSING property, not an acquisition one: a 2019 scene
+                # reprocessed in 2024 carries the offset too. Recorded per
+                # scene rather than inferred downstream from the date, because
+                # inferring it from acquisition date is exactly the wrong
+                # answer for reprocessed scenes.
+                "processing_baseline": item.properties.get("s2:processing_baseline"),
+                "boa_add_offset": _boa_offset(item),
                 "is_post_event": req.role == "event_post",
                 "candidate_rank": rank,
                 "selection_reason": req.reason,
