@@ -124,10 +124,15 @@ def manifest_for(root: str | Path, patterns: Sequence[str] = ("**/*",)) -> dict:
     This is the artefact the determinism check diffs. Sorting is explicit
     because filesystem walk order is not guaranteed to match across machines.
     """
+    # Placeholders are not artefacts. .gitkeep exists on a git checkout and not
+    # in a container (where outputs/ is created by mkdir), so including it made
+    # a host-vs-container comparison report a difference that says nothing
+    # about the pipeline.
+    IGNORED = {".gitkeep", ".gitignore"}
     root = Path(root)
     seen: dict[str, str] = {}
     for pattern in patterns:
         for p in sorted(root.glob(pattern)):
-            if p.is_file():
+            if p.is_file() and p.name not in IGNORED:
                 seen[p.relative_to(root).as_posix()] = sha256_file(p)
     return {k: seen[k] for k in sorted(seen)}
