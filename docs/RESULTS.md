@@ -59,7 +59,7 @@ Ten scenarios (4 real events + 6 synthetic perturbations), five metrics:
 | hallucination rate | 0.3584 | **0.0958** | -0.2626 |
 | numeric accuracy | 0.6417 | **0.9042** | +0.2625 |
 | citation F1 | 0.0 | **0.5202** | +0.5202 |
-| word edit distance | 194.9 | 120.3 | -74.6 |
+| word edit distance | 195.3 | 120.3 | -75.0 |
 
 Contradiction-detection F1 against the hand-labelled key: **0.8571**.
 

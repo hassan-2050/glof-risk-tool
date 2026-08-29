@@ -837,11 +837,18 @@ def stage11_verification(cfg: Config) -> dict:
             by_doc.setdefault(p["doc_id"], []).append(p["text"])
         passages_by_doc[eid] = by_doc
 
+    from src.common.llm import complete
+    from src.reporter.llm_critic import llm_critique
+
     results = {}
     for key, d in drafts.items():
         eid, lang = key.rsplit("_", 1)
-        results[key] = run_loop(d, recon["events"][eid], passages_by_doc[eid],
-                                lang, cap)
+        r = run_loop(d, recon["events"][eid], passages_by_doc[eid], lang, cap)
+        # Advisory only: recorded for the Stage 12 approver, never able to
+        # unblock a release or strike a sentence.
+        if lang == "en":
+            r["llm_critic"] = llm_critique(d, cfg, complete)
+        results[key] = r
 
     # --- injection test: a fabricated fact MUST be caught -------------------
     # Stage 11's pass criterion is not "the real drafts verify" - a pipeline

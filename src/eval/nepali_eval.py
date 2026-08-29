@@ -106,10 +106,18 @@ def chrf(hypothesis: str, reference: str) -> dict:
     """chrF++ via sacreBLEU. word_order=2 is what makes it chrF++, not chrF."""
     if sacrebleu is None:
         return {"available": False, "reason": "sacrebleu not installed"}
-    score = sacrebleu.CHRF(word_order=2).corpus_score([hypothesis], [[reference]])
+    # One scorer, reused. get_signature() on a fresh instance raises
+    # "Number of references unknown, please evaluate the metric first" - the
+    # signature records the reference count, which only exists after scoring.
+    # Building a second instance for the signature crashed the whole stage,
+    # and because the crash happened before the output was written, the stale
+    # JSON on disk kept reporting the PREVIOUS run's cache misses - which sent
+    # me looking for a cache-key bug that did not exist.
+    scorer = sacrebleu.CHRF(word_order=2)
+    score = scorer.corpus_score([hypothesis], [[reference]])
     return {"available": True, "chrf2": round(score.score, 2),
             "metric": "chrF++ (char n-gram F-score, word_order=2)",
-            "signature": str(sacrebleu.CHRF(word_order=2).get_signature())}
+            "signature": str(scorer.get_signature())}
 
 
 def back_translation_check(nepali: str, english_source: str, cfg,

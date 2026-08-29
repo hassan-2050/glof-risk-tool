@@ -86,7 +86,14 @@ QUANTITY_LABEL = {
     "hydropower_mw": ("MW of generation affected", "मेगावाट उत्पादन प्रभावित"),
     "volume_m3": ("cubic metres of water released", "घन मिटर पानी निष्कासन"),
     "area_km2": ("square kilometres of lake area", "वर्ग किलोमिटर ताल क्षेत्रफल"),
-    "distance_km": ("kilometres downstream", "किलोमिटर तल्लो तटीय क्षेत्र"),
+    # Neutral label, not "kilometres downstream". The extractor cannot tell a
+    # flood runout from a lake-separation distance, and labelling every
+    # distance as downstream produced "5.76 kilometres downstream were
+    # reported" for what is actually the distance to the nearest PDGL-listed
+    # lake. Caught by the advisory LLM critic, which is exactly the class of
+    # error the rule-based critic was never going to see.
+    "distance_km": ("kilometres (distance, context-dependent)",
+                    "किलोमिटर (दूरी, प्रसंगअनुसार)"),
     "percent": ("per cent change", "प्रतिशत परिवर्तन"),
 }
 

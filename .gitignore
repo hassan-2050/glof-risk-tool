@@ -16,4 +16,7 @@ data/scratch/
 
 # --- secrets: no key is needed on the reproduce path, but guard anyway ---
 .env
+.env.*
 *.key
+*.pem
+credentials.json

@@ -23,6 +23,7 @@ import argparse
 from src.common.config import REPO_ROOT, load_config
 from src.common.io import read_json
 from src.common.llm import CACHE_DIR, available, cache_stats, complete
+from src.reporter.llm_critic import build_prompt
 
 
 def back_translation_prompts() -> list[tuple[str, str]]:
@@ -63,15 +64,10 @@ def critic_prompts() -> list[tuple[str, str]]:
     for key, d in sorted(drafts.items()):
         if not key.endswith("_en"):
             continue
-        body = "\n".join(f"## {k}\n" + "\n".join(v)
-                         for k, v in d["sections"].items())
-        out.append((
-            "adversarial_critic",
-            "You are a red-team reviewer of humanitarian situation reports. "
-            "Find every claim that is unsupported, over-confident, or missing a "
-            "hedge. Be specific and quote the sentence. If a figure is stated "
-            "as settled when sources disagree, say so. Do not rewrite the "
-            "report.\n\n" + body))
+        # Shared builder, so the recorder and the caller cannot disagree. The
+        # cache is keyed on a hash of the prompt; any divergence turns every
+        # lookup into a silent miss.
+        out.append(("adversarial_critic", build_prompt(d)))
     return out
 
 
