@@ -72,13 +72,24 @@ def water_mask(scene: Scene, cfg) -> tuple[np.ndarray, dict]:
 CLOSING_RADIUS_PX = 3
 
 
-def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarray, dict]:
+def select_lake_component(mask: np.ndarray, scene: Scene, cfg,
+                          anchor_rc: tuple[float, float] | None = None) -> tuple[np.ndarray, dict]:
     """Pick the connected component that is the lake.
 
     Fragments are rejoined before labelling, then the chosen component is
     intersected back with the original mask so that closing never invents water
     that was not observed - it only decides which observed pixels belong
     together.
+
+    `anchor_rc` is a (row, col) the lake is known to occupy, established across
+    all scenes by the caller. Without it the rule is "largest component near the
+    window centre", which is UNSTABLE when a window holds two comparable lakes:
+    on Thyanbo it selected the upper lake in 2018/2019/2022 and the lower lake
+    in 2021/2024, silently alternating between two different water bodies
+    within one area series. That is exactly the Thame geometry - ICIMOD
+    describe an upper lake at 4,900 m that breached into a lower
+    moraine-dammed lake 120 m below - so the ambiguity is real, not noise, and
+    it has to be resolved once per lake rather than independently per scene.
     """
     d = cfg.require("delineation")
     min_px = d["min_lake_pixels"]
@@ -90,7 +101,9 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarr
                                      "reason": "no water pixels survived the index tests"}
 
     res_m = float(np.sqrt(scene.pixel_area_m2))
-    cy, cx = (s / 2.0 for s in mask.shape)
+    # Distance is measured from the anchor when one is supplied, otherwise from
+    # the window centre (the pass-1 case, before the anchor is known).
+    cy, cx = anchor_rc if anchor_rc is not None else tuple(s / 2.0 for s in mask.shape)
     comps = []
     for lab, (sy, sx) in enumerate(ndimage.find_objects(labels), start=1):
         comp = labels[sy, sx] == lab
@@ -119,9 +132,12 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarr
                        f"lake is being measured."),
             "components": sorted(comps, key=lambda c: c["distance_m"])[:5]}
 
-    # Among candidates near the centroid, the largest is the lake; ponds and
-    # meltwater fringes are small.
-    chosen = max(near, key=lambda c: c["px"])
+    # With an anchor, take the CLOSEST component: the anchor already encodes
+    # which of several lakes is the subject, and preferring size there would
+    # reintroduce the flip-flop. Without one, fall back to the largest nearby
+    # component, since ponds and meltwater fringes are small.
+    chosen = (min(near, key=lambda c: c["distance_m"]) if anchor_rc is not None
+              else max(near, key=lambda c: c["px"]))
     # Intersect back with the OBSERVED mask: closing decided which pixels group
     # together, it must not add area that was never seen as water.
     selected = (labels == chosen["label"]) & mask
@@ -131,15 +147,17 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarr
         "px_selected": int(selected.sum()),
         "n_components": n,
         "n_components_near_centroid": len(near),
+        "anchored": anchor_rc is not None,
         "selected": chosen,
         "components": sorted(comps, key=lambda c: -c["px"])[:5],
     }
 
 
-def delineate(scene: Scene, cfg, dem: np.ndarray | None = None) -> dict:
+def delineate(scene: Scene, cfg, dem: np.ndarray | None = None,
+              anchor_rc: tuple[float, float] | None = None) -> dict:
     """Full delineation for one scene: area, QA, and the reasoning behind both."""
     mask, evidence = water_mask(scene, cfg)
-    lake, selection = select_lake_component(mask, scene, cfg)
+    lake, selection = select_lake_component(mask, scene, cfg, anchor_rc=anchor_rc)
     area_m2 = float(lake.sum() * scene.pixel_area_m2)
 
     qa = qa_mod.assess(scene, cfg, dem=dem, lake_mask=lake if lake.any() else None)
