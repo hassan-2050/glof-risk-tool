@@ -1,0 +1,22 @@
+{
+  "doc_id": "early_media_chamoli_glof_claim",
+  "event_id": "chamoli_2021",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "early_media_chamoli_glof_claim#p1",
+      "text": "In the first hours, much international coverage described the Chamoli disaster as a glacier burst or glacial lake outburst flood. That initial characterisation was later contradicted by the peer-reviewed analysis. It is retained here on purpose: the reporter must side with the primary scientific source over the volume of early reporting, and must surface the disagreement rather than silently adopting the more common phrasing."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "news",
+    "doi": null,
+    "licence": "characterisation only; no article text reproduced",
+    "published": "2021-02-07",
+    "publisher": "Contemporaneous international media (aggregate characterisation)",
+    "url": "https://en.wikipedia.org/wiki/2021_Uttarakhand_flood"
+  }
+}

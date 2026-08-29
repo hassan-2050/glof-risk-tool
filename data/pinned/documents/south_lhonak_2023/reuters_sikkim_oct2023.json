@@ -1,0 +1,22 @@
+{
+  "doc_id": "reuters_sikkim_oct2023",
+  "event_id": "south_lhonak_2023",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "reuters_sikkim_oct2023#p1",
+      "text": "Early wire reporting three days after the breach put the toll at at least 40 people killed with dozens still missing. Contemporaneous reporting during an ongoing search operation is expected to undercount relative to later peer-reviewed figures, and is included here precisely so the reconciliation agent must weigh recency and source type, not just pick a number."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "news",
+    "doi": null,
+    "licence": "figure only, attributed; no article text reproduced",
+    "published": "2023-10-06",
+    "publisher": "Reuters (as cited in contemporaneous coverage)",
+    "url": "https://en.wikipedia.org/wiki/2023_Sikkim_flash_floods"
+  }
+}

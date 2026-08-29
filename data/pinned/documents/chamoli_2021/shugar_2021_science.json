@@ -1,0 +1,55 @@
+{
+  "doc_id": "shugar_2021_science",
+  "event_id": "chamoli_2021",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "avalanche_volume_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "shugar_2021_science#p1",
+      "text": "Approximately 27 million cubic metres of rock and glacier ice collapsed from the steep north face of Ronti Peak."
+    },
+    {
+      "carries_figures": [],
+      "kind": "verbatim_quote",
+      "passage_id": "shugar_2021_science#p2",
+      "text": "The rock and ice avalanche rapidly transformed into an extraordinarily large and mobile debris flow."
+    },
+    {
+      "carries_figures": [
+        "boulder_size_m",
+        "scour_height_m"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "shugar_2021_science#p3",
+      "text": "It transported boulders greater than 20 metres in diameter and scoured valley walls up to 220 metres above the valley floor."
+    },
+    {
+      "carries_figures": [
+        "deaths_and_missing"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "shugar_2021_science#p4",
+      "text": "More than 200 people were killed or are missing."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "shugar_2021_science#p5",
+      "text": "The flow descended the Ronti Gad, Rishiganga and Dhauliganga valleys. No glacial lake was involved: the analysis of satellite imagery, seismic records, numerical models and eyewitness video identifies a rock and ice detachment as the sole initiating mechanism. Two hydropower projects were destroyed."
+    }
+  ],
+  "source": {
+    "authors": [
+      "Shugar et al."
+    ],
+    "doc_type": "scientific_paper",
+    "doi": "10.1126/science.abh4455",
+    "licence": "quoted with attribution",
+    "published": "2021-06-10",
+    "publisher": "Science (AAAS)",
+    "url": "https://www.science.org/doi/10.1126/science.abh4455"
+  }
+}

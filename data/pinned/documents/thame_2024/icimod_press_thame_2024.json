@@ -1,0 +1,22 @@
+{
+  "doc_id": "icimod_press_thame_2024",
+  "event_id": "thame_2024",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "icimod_press_thame_2024#p1",
+      "text": "ICIMOD's same-day release attributed the flood that swept through Thame village to an outburst from the Thyanbo glacial lake, above the settlement in the Thame valley, Solukhumbu. Early reporting focused on displacement and damage to homes, a school and a health post; no casualty figure was given in the initial release."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "press_release",
+    "doi": null,
+    "licence": "public web page, quoted with attribution",
+    "published": "2024-08-16",
+    "publisher": "ICIMOD",
+    "url": "https://www.icimod.org/press-release/glof-from-thyanbo-glacial-lake-sweeps-away-thame-village/"
+  }
+}

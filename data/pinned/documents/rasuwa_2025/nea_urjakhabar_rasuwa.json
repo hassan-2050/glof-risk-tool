@@ -1,0 +1,34 @@
+{
+  "doc_id": "nea_urjakhabar_rasuwa",
+  "event_id": "rasuwa_2025",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "hydropower_count",
+        "hydropower_mw",
+        "solar_mw"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "nea_urjakhabar_rasuwa#p1",
+      "text": "The flood damaged structures associated with 11 hydropower projects totalling 405 MW and a 25 MW solar project."
+    },
+    {
+      "carries_figures": [
+        "rasuwagadhi_mw"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "nea_urjakhabar_rasuwa#p2",
+      "text": "The 111 MW Rasuwagadhi plant and electricity substation have reportedly been completely destroyed."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "news",
+    "doi": null,
+    "licence": "figure only, attributed",
+    "published": "2025-07-10",
+    "publisher": "Nepal Electricity Authority via Urjakhabar (spokesperson Rajan Dhakal)",
+    "url": "https://sandrp.in/2025/07/24/july-2025-glof-disaster-impact-ten-heps-in-nepal/"
+  }
+}

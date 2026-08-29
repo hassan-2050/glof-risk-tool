@@ -1,0 +1,57 @@
+{
+  "doc_id": "sandrp_rasuwa_2025",
+  "event_id": "rasuwa_2025",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "hydropower_count_spread"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sandrp_rasuwa_2025#p1",
+      "text": "The figure of number of hydro projects damaged varies from 4, 5, 8 to 11 HEP projects."
+    },
+    {
+      "carries_figures": [
+        "deaths"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sandrp_rasuwa_2025#p2",
+      "text": "At least 9 human beings were killed in the disaster."
+    },
+    {
+      "carries_figures": [
+        "missing",
+        "missing_nepali",
+        "missing_chinese"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sandrp_rasuwa_2025#p3",
+      "text": "18 individuals including 12 Nepali and 6 Chinese nationals went missing."
+    },
+    {
+      "carries_figures": [
+        "capacity_halted_mw",
+        "hepcount_halted"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sandrp_rasuwa_2025#p4",
+      "text": "Shutting down of about 250 MW capacity generation from 7 HEPs."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "sandrp_rasuwa_2025#p5",
+      "text": "SANDRP lists damaged operational plants as Rasuwagadhi 111 MW, Chilime 22 MW, Trishuli 3A 60 MW, Trishuli 25.25 MW and Devighat 14 MW, plus under-construction projects Upper Trishuli 3B 37 MW, Upper Trishuli 1 216 MW and Super Trishuli 100 MW. Water level in the Lhende river rose by 3.5 metres at Timure; initial financial losses were estimated above NPR 5 billion."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "ngo_analysis",
+    "doi": null,
+    "licence": "quoted with attribution",
+    "published": "2025-07-24",
+    "publisher": "SANDRP (South Asia Network on Dams, Rivers and People)",
+    "url": "https://sandrp.in/2025/07/24/july-2025-glof-disaster-impact-ten-heps-in-nepal/"
+  }
+}

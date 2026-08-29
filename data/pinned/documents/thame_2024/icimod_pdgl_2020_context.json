@@ -1,0 +1,33 @@
+{
+  "doc_id": "icimod_pdgl_2020_context",
+  "event_id": "thame_2024",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "pdgl_total",
+        "pdgl_china",
+        "pdgl_nepal",
+        "pdgl_india"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_pdgl_2020_context#p1",
+      "text": "Of the 47 PDGLs identified, 25 are in the Tibet Autonomous Region of China, 21 in Nepal, and one in India."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "icimod_pdgl_2020_context#p2",
+      "text": "Neither Thyanbo nor any Thame-valley lake appears anywhere in this inventory. We verified this directly against the report text and against all 47 lake-ID centroids; the nearest listed lake is Lumding, 5.76 km away. This does not mean the lake was unknown to science - it means it fell outside the screening criteria."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "inventory_report",
+    "doi": "10.53055/ICIMOD.773",
+    "licence": "CC BY-NC-ND 4.0, quoted with attribution",
+    "published": "2020-09-10",
+    "publisher": "ICIMOD / UNDP",
+    "url": "https://lib.icimod.org/records/p869r-n4132"
+  }
+}

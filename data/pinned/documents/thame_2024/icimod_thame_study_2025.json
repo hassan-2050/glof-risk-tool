@@ -1,0 +1,77 @@
+{
+  "doc_id": "icimod_thame_study_2025",
+  "event_id": "thame_2024",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "icimod_thame_study_2025#p1",
+      "text": "ICIMOD's follow-up study, 'Thame Valley Glacial Lake Outburst Flood - Causes, Impacts, and Future Risks', reconstructs the 16 August 2024 event as a two-stage chain reaction rather than a single dam failure. A rock avalanche breached an upper lake, and the resulting flow fell into a lower moraine-dammed lake and breached that in turn."
+    },
+    {
+      "carries_figures": [
+        "upper_lake_volume_m3",
+        "upper_lake_elevation_m"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_thame_study_2025#p2",
+      "text": "156,000 cubic metres of water was released from the upper lake at 4,900 metres."
+    },
+    {
+      "carries_figures": [
+        "fall_height_m",
+        "lower_lake_volume_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_thame_study_2025#p3",
+      "text": "The water fell 120 metres into the lower lake, releasing a further 303,000 cubic metres."
+    },
+    {
+      "carries_figures": [
+        "total_volume_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_thame_study_2025#p4",
+      "text": "A total of 459,000 cubic metres, the equivalent of 185 Olympic-size swimming pools."
+    },
+    {
+      "carries_figures": [
+        "breach_height_m",
+        "breach_width_m"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_thame_study_2025#p5",
+      "text": "The breach left a 22-metre high, 51-metre-wide erosional hole."
+    },
+    {
+      "carries_figures": [
+        "debris_distance_km",
+        "displaced",
+        "homes_destroyed"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "icimod_thame_study_2025#p6",
+      "text": "Debris was carried 80km downstream; 135 people were displaced and 25 homes destroyed."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "icimod_thame_study_2025#p7",
+      "text": "A school, a health post, a bridge and a hydropower plant were also reported damaged."
+    }
+  ],
+  "source": {
+    "authors": [
+      "Sudan Bikash Maharjan",
+      "Tenzing Chogyal Sherpa",
+      "Arun Bhakta Shrestha"
+    ],
+    "doc_type": "institutional_study",
+    "doi": null,
+    "licence": "public web page, quoted with attribution",
+    "published": "2025-10-14",
+    "publisher": "ICIMOD",
+    "url": "https://www.icimod.org/press-release/everest-region-a-hotspot-of-cryosphere-linked-hazards-icimods-new-study-on-nepals-2024-thame-flood-confirms/"
+  }
+}

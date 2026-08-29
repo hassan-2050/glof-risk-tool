@@ -1,0 +1,52 @@
+{
+  "doc_id": "bisht_2025_thyanbo_ndwi",
+  "event_id": "thame_2024",
+  "notes": {
+    "confidence_note": "Low-visibility journal. Treated as a secondary cross-check against ICIMOD, not as a primary source. Its causal framing (climatic drivers) differs from ICIMOD's (rock avalanche) - a genuine interpretive disagreement, not a numeric one."
+  },
+  "passages": [
+    {
+      "carries_figures": [
+        "area_stable_range_m2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "bisht_2025_thyanbo_ndwi#p1",
+      "text": "From 2017 to 2023, the lake remained relatively stable, with areas ranging from 32,881 to 41,758 square metres."
+    },
+    {
+      "carries_figures": [
+        "area_pre_event_m2",
+        "volume_pre_event_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "bisht_2025_thyanbo_ndwi#p2",
+      "text": "By 30 July 2024, the lake reached its maximum extent, 43,902 square metres, and volume, 169 thousand cubic metres."
+    },
+    {
+      "carries_figures": [
+        "area_post_event_m2",
+        "area_change_pct"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "bisht_2025_thyanbo_ndwi#p3",
+      "text": "On 18 September 2024 the NDWI-derived area was 12,515.58 square metres, a change of -71.5 per cent."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "bisht_2025_thyanbo_ndwi#p4",
+      "text": "The paper attributes the 2024 expansion primarily to rising temperatures and intensified monsoon rainfall, a framing that differs from ICIMOD's rock-avalanche trigger. Both accounts agree the lake was small and had been stable for years."
+    }
+  ],
+  "source": {
+    "authors": [
+      "Bisht et al."
+    ],
+    "doc_type": "scientific_paper",
+    "doi": null,
+    "licence": "open access, quoted with attribution",
+    "published": "2025-01-01",
+    "publisher": "International Journal of Disaster Studies and Climate Resilience",
+    "url": "https://resiliencepress.org/index.php/disaster/article/view/31"
+  }
+}

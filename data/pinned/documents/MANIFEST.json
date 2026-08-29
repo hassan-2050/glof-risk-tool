@@ -1,0 +1,195 @@
+{
+  "events": {
+    "chamoli_2021": {
+      "admin": "Chamoli District, Uttarakhand",
+      "country": "India",
+      "distinct_publishers": [
+        "Contemporaneous international media (aggregate characterisation)",
+        "ICIMOD HimalDoc",
+        "Science (AAAS)"
+      ],
+      "documents": [
+        {
+          "doc_id": "shugar_2021_science",
+          "doc_type": "scientific_paper",
+          "n_passages": 5,
+          "path": "data/pinned/documents/chamoli_2021/shugar_2021_science.json",
+          "published": "2021-06-10",
+          "publisher": "Science (AAAS)"
+        },
+        {
+          "doc_id": "early_media_chamoli_glof_claim",
+          "doc_type": "news",
+          "n_passages": 1,
+          "path": "data/pinned/documents/chamoli_2021/early_media_chamoli_glof_claim.json",
+          "published": "2021-02-07",
+          "publisher": "Contemporaneous international media (aggregate characterisation)"
+        },
+        {
+          "doc_id": "icimod_chamoli_record",
+          "doc_type": "institutional_record",
+          "n_passages": 1,
+          "path": "data/pinned/documents/chamoli_2021/icimod_chamoli_record.json",
+          "published": "2021-06-11",
+          "publisher": "ICIMOD HimalDoc"
+        }
+      ],
+      "is_glof": false,
+      "n_distinct_publishers": 3,
+      "n_documents": 3,
+      "negative_control_note": "This bundle exists to test that the reporter does NOT describe this as a glacial lake outburst flood in either language. Every source here attributes it to a rock-and-ice avalanche.",
+      "title": "Chamoli rock-and-ice avalanche and debris flow, 7 February 2021 (NOT a GLOF)"
+    },
+    "rasuwa_2025": {
+      "admin": "Rasuwa and Nuwakot Districts, Bagmati Province",
+      "country": "Nepal (source in Tibet Autonomous Region, China)",
+      "distinct_publishers": [
+        "DHM and ICIMOD, via Nepali press",
+        "Institute of Mountain Hazards and Environment (Chinese Academy of Sciences), as reported",
+        "NDRRMA (National Disaster Risk Reduction and Management Authority, Nepal)",
+        "Nepal Electricity Authority via Urjakhabar (spokesperson Rajan Dhakal)",
+        "SANDRP (South Asia Network on Dams, Rivers and People)"
+      ],
+      "documents": [
+        {
+          "doc_id": "ndrrma_rasuwa_sitrep",
+          "doc_type": "government_situation_report",
+          "n_passages": 4,
+          "path": "data/pinned/documents/rasuwa_2025/ndrrma_rasuwa_sitrep.json",
+          "published": "2025-07-15",
+          "publisher": "NDRRMA (National Disaster Risk Reduction and Management Authority, Nepal)"
+        },
+        {
+          "doc_id": "nea_urjakhabar_rasuwa",
+          "doc_type": "news",
+          "n_passages": 2,
+          "path": "data/pinned/documents/rasuwa_2025/nea_urjakhabar_rasuwa.json",
+          "published": "2025-07-10",
+          "publisher": "Nepal Electricity Authority via Urjakhabar (spokesperson Rajan Dhakal)"
+        },
+        {
+          "doc_id": "sandrp_rasuwa_2025",
+          "doc_type": "ngo_analysis",
+          "n_passages": 5,
+          "path": "data/pinned/documents/rasuwa_2025/sandrp_rasuwa_2025.json",
+          "published": "2025-07-24",
+          "publisher": "SANDRP (South Asia Network on Dams, Rivers and People)"
+        },
+        {
+          "doc_id": "imhe_rasuwa_satellite",
+          "doc_type": "scientific_analysis",
+          "n_passages": 3,
+          "path": "data/pinned/documents/rasuwa_2025/imhe_rasuwa_satellite.json",
+          "published": "2025-07-20",
+          "publisher": "Institute of Mountain Hazards and Environment (Chinese Academy of Sciences), as reported"
+        },
+        {
+          "doc_id": "dhm_icimod_rasuwa_confirmation",
+          "doc_type": "government_statement",
+          "n_passages": 2,
+          "path": "data/pinned/documents/rasuwa_2025/dhm_icimod_rasuwa_confirmation.json",
+          "published": "2025-10-01",
+          "publisher": "DHM and ICIMOD, via Nepali press"
+        }
+      ],
+      "is_glof": true,
+      "n_distinct_publishers": 5,
+      "n_documents": 5,
+      "negative_control_note": null,
+      "title": "Lhende Khola / Bhote Koshi transboundary GLOF, 8 July 2025"
+    },
+    "south_lhonak_2023": {
+      "admin": "Mangan District, Sikkim",
+      "country": "India",
+      "distinct_publishers": [
+        "Landslides (Springer)",
+        "Reuters (as cited in contemporaneous coverage)",
+        "Science (AAAS)"
+      ],
+      "documents": [
+        {
+          "doc_id": "sattar_2025_science",
+          "doc_type": "scientific_paper",
+          "n_passages": 7,
+          "path": "data/pinned/documents/south_lhonak_2023/sattar_2025_science.json",
+          "published": "2025-01-01",
+          "publisher": "Science (AAAS)"
+        },
+        {
+          "doc_id": "zhang_2024_landslides",
+          "doc_type": "scientific_paper",
+          "n_passages": 3,
+          "path": "data/pinned/documents/south_lhonak_2023/zhang_2024_landslides.json",
+          "published": "2024-09-18",
+          "publisher": "Landslides (Springer)"
+        },
+        {
+          "doc_id": "reuters_sikkim_oct2023",
+          "doc_type": "news",
+          "n_passages": 1,
+          "path": "data/pinned/documents/south_lhonak_2023/reuters_sikkim_oct2023.json",
+          "published": "2023-10-06",
+          "publisher": "Reuters (as cited in contemporaneous coverage)"
+        }
+      ],
+      "is_glof": true,
+      "n_distinct_publishers": 3,
+      "n_documents": 3,
+      "negative_control_note": null,
+      "title": "South Lhonak Lake GLOF, 3-4 October 2023"
+    },
+    "thame_2024": {
+      "admin": "Solukhumbu District, Koshi Province",
+      "country": "Nepal",
+      "distinct_publishers": [
+        "ICIMOD",
+        "ICIMOD / UNDP",
+        "International Journal of Disaster Studies and Climate Resilience"
+      ],
+      "documents": [
+        {
+          "doc_id": "icimod_thame_study_2025",
+          "doc_type": "institutional_study",
+          "n_passages": 7,
+          "path": "data/pinned/documents/thame_2024/icimod_thame_study_2025.json",
+          "published": "2025-10-14",
+          "publisher": "ICIMOD"
+        },
+        {
+          "doc_id": "icimod_press_thame_2024",
+          "doc_type": "press_release",
+          "n_passages": 1,
+          "path": "data/pinned/documents/thame_2024/icimod_press_thame_2024.json",
+          "published": "2024-08-16",
+          "publisher": "ICIMOD"
+        },
+        {
+          "doc_id": "bisht_2025_thyanbo_ndwi",
+          "doc_type": "scientific_paper",
+          "n_passages": 4,
+          "path": "data/pinned/documents/thame_2024/bisht_2025_thyanbo_ndwi.json",
+          "published": "2025-01-01",
+          "publisher": "International Journal of Disaster Studies and Climate Resilience"
+        },
+        {
+          "doc_id": "icimod_pdgl_2020_context",
+          "doc_type": "inventory_report",
+          "n_passages": 2,
+          "path": "data/pinned/documents/thame_2024/icimod_pdgl_2020_context.json",
+          "published": "2020-09-10",
+          "publisher": "ICIMOD / UNDP"
+        }
+      ],
+      "is_glof": true,
+      "n_distinct_publishers": 3,
+      "n_documents": 4,
+      "negative_control_note": null,
+      "title": "Thame / Thyanbo Tsho GLOF, 16 August 2024"
+    }
+  },
+  "totals": {
+    "documents": 15,
+    "events": 4,
+    "passages": 48
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "imhe_rasuwa_satellite",
+  "event_id": "rasuwa_2025",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "lake_area_pre_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "imhe_rasuwa_satellite#p1",
+      "text": "The lake reached a maximum of 638,000 square metres on July 7."
+    },
+    {
+      "carries_figures": [
+        "lake_area_post_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "imhe_rasuwa_satellite#p2",
+      "text": "By July 8, following the rupture, the lake had shrunk to 435,000 square metres."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "imhe_rasuwa_satellite#p3",
+      "text": "Satellite analysis traced the ponds atop the Pyurepu Glacier back to first appearance on 21 December 2023, at roughly 5,100 metres elevation about 35 km north of the Nepal-China border."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "scientific_analysis",
+    "doi": null,
+    "licence": "figure only, attributed",
+    "published": "2025-07-20",
+    "publisher": "Institute of Mountain Hazards and Environment (Chinese Academy of Sciences), as reported",
+    "url": "https://sandrp.in/2025/07/24/july-2025-glof-disaster-impact-ten-heps-in-nepal/"
+  }
+}

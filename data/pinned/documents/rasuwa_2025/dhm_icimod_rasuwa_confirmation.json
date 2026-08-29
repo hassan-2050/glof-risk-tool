@@ -1,0 +1,31 @@
+{
+  "doc_id": "dhm_icimod_rasuwa_confirmation",
+  "event_id": "rasuwa_2025",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "lake_area_pre_km2",
+        "lake_area_post_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "dhm_icimod_rasuwa_confirmation#p1",
+      "text": "Prior to the flood the supraglacial lake measured around 0.75 square kilometres, reduced to roughly 0.60 square kilometres after."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "dhm_icimod_rasuwa_confirmation#p2",
+      "text": "DHM and ICIMOD confirmed a glacial lake outburst as the cause, based on Sentinel-2 imagery and open-source platforms. The glacier name is rendered both 'Pyurepu' and 'Purepu' across sources."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "government_statement",
+    "doi": null,
+    "licence": "figure only, attributed",
+    "published": "2025-10-01",
+    "publisher": "DHM and ICIMOD, via Nepali press",
+    "url": "https://english.khabarhub.com/2025/10/484718/"
+  }
+}

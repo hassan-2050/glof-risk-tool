@@ -1,0 +1,217 @@
+{
+  "_readme": [
+    "Hand-labelled numeric claims across the four event bundles. This is the",
+    "answer key for the Stage 9 contradiction-detection F1 and the Stage 14",
+    "numeric-accuracy metric.",
+    "",
+    "It has TWO halves, and both are load-bearing:",
+    "",
+    "  contradictions - figures that genuinely disagree and MUST be surfaced.",
+    "                   These give recall.",
+    "  agreements     - figures reported by several sources that AGREE and must",
+    "                   NOT be flagged. Without these there are no true",
+    "                   negatives, so precision is undefined and an agent that",
+    "                   flags everything would score a perfect recall and look",
+    "                   excellent. They are the reason this file is not just a",
+    "                   list of known disagreements.",
+    "",
+    "Every value here was checked against the cited source. Where the project",
+    "brief asserted a figure we could not confirm, it is marked unverified",
+    "rather than promoted to ground truth."
+  ],
+
+  "tolerance_note": "Two figures count as the same claim if within reporter.numeric_reconciliation.relative_tolerance (2%) of each other. Rounding differences are not contradictions.",
+
+  "contradictions": [
+    {
+      "id": "lhonak_fatalities",
+      "event_id": "south_lhonak_2023",
+      "quantity": "fatalities",
+      "kind": "cross_source",
+      "severity": "high",
+      "must_detect": true,
+      "description": "Peer-reviewed sources differ by a factor of ~3 on how many people died. Neither is obviously wrong: they may count different things (confirmed deaths vs. deaths plus presumed-dead missing) over different reporting windows. The correct behaviour is to report the range and the disagreement, never to average or pick.",
+      "values": [
+        {"value": 55, "unit": "deaths", "doc_id": "sattar_2025_science", "passage_id": "sattar_2025_science#p1", "qualifier": "plus 74 reported missing, stated separately", "source_tier": "peer_reviewed", "verified": true},
+        {"value": 178, "unit": "fatalities", "doc_id": "zhang_2024_landslides", "passage_id": "zhang_2024_landslides#p1", "source_tier": "peer_reviewed", "verified": true},
+        {"value": 40, "unit": "deaths", "doc_id": "reuters_sikkim_oct2023", "passage_id": "reuters_sikkim_oct2023#p1", "qualifier": "at least; reported 3 days after the event during an active search", "source_tier": "wire_news", "verified": true}
+      ],
+      "expected_reporting": "Sources report between 40 and 178 fatalities; Sattar et al. (Science, 2025) give 55 dead and 74 missing, while Zhang et al. (Landslides, 2024) give 178 fatalities."
+    },
+    {
+      "id": "lhonak_moraine_volume",
+      "event_id": "south_lhonak_2023",
+      "quantity": "moraine_collapse_volume_m3",
+      "kind": "cross_source",
+      "severity": "medium",
+      "must_detect": true,
+      "description": "A 14% difference in the collapsed moraine volume between the two peer-reviewed reconstructions. Above the 2% tolerance, so a genuine disagreement, but far less severe than the fatality spread.",
+      "values": [
+        {"value": 14700000, "unit": "m3", "doc_id": "sattar_2025_science", "passage_id": "sattar_2025_science#p2", "source_tier": "peer_reviewed", "verified": true},
+        {"value": 16750000, "unit": "m3", "doc_id": "zhang_2024_landslides", "passage_id": "zhang_2024_landslides#p2", "source_tier": "peer_reviewed", "verified": true}
+      ]
+    },
+    {
+      "id": "rasuwa_hydropower_count",
+      "event_id": "rasuwa_2025",
+      "quantity": "hydropower_projects_damaged",
+      "kind": "cross_source",
+      "severity": "high",
+      "must_detect": true,
+      "description": "The flagship demonstration. One source states outright that the count varies from 4 to 11 across reporting. An agent that silently picks one number here is exactly the failure mode this project argues against.",
+      "values": [
+        {"value": 11, "unit": "projects", "doc_id": "nea_urjakhabar_rasuwa", "passage_id": "nea_urjakhabar_rasuwa#p1", "qualifier": "totalling 405 MW plus a 25 MW solar project", "source_tier": "utility_spokesperson", "verified": true},
+        {"value": 8, "unit": "projects", "doc_id": "sandrp_rasuwa_2025", "passage_id": "sandrp_rasuwa_2025#p5", "qualifier": "5 operational plus 3 under construction, itemised", "source_tier": "ngo_analysis", "verified": true},
+        {"value": 7, "unit": "projects", "doc_id": "sandrp_rasuwa_2025", "passage_id": "sandrp_rasuwa_2025#p4", "qualifier": "count of HEPs whose generation was halted, ~250 MW - a different quantity being conflated in reporting", "source_tier": "ngo_analysis", "verified": true},
+        {"value": null, "unit": "projects", "doc_id": "sandrp_rasuwa_2025", "passage_id": "sandrp_rasuwa_2025#p1", "qualifier": "explicit statement that the figure varies from 4, 5, 8 to 11", "source_tier": "ngo_analysis", "verified": true}
+      ],
+      "expected_reporting": "Sources report between 4 and 11 damaged hydropower projects; the spread partly reflects different definitions (damaged vs. generation halted vs. under construction)."
+    },
+    {
+      "id": "rasuwa_casualties",
+      "event_id": "rasuwa_2025",
+      "quantity": "deaths_and_missing",
+      "kind": "cross_source",
+      "severity": "high",
+      "must_detect": true,
+      "description": "Death and missing counts differ roughly two-fold across the government report and independent analysis.",
+      "values": [
+        {"value": 19, "unit": "deaths", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p3", "source_tier": "government", "verified": true},
+        {"value": 9, "unit": "deaths", "doc_id": "sandrp_rasuwa_2025", "passage_id": "sandrp_rasuwa_2025#p2", "qualifier": "at least", "source_tier": "ngo_analysis", "verified": true},
+        {"value": 13, "unit": "missing", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p3", "source_tier": "government", "verified": true},
+        {"value": 18, "unit": "missing", "doc_id": "sandrp_rasuwa_2025", "passage_id": "sandrp_rasuwa_2025#p3", "qualifier": "12 Nepali and 6 Chinese nationals", "source_tier": "ngo_analysis", "verified": true}
+      ]
+    },
+    {
+      "id": "rasuwa_ndrrma_internal_arithmetic",
+      "event_id": "rasuwa_2025",
+      "quantity": "casualties_total",
+      "kind": "intra_document",
+      "severity": "high",
+      "must_detect": true,
+      "description": "A single document contradicts ITSELF: it states 23 human casualties, then itemises 19 deaths, 13 missing and 1 injured, which sum to 33. An agent that only compares figures across documents will miss this entirely. It is included to make sure intra-document consistency is actually being checked.",
+      "values": [
+        {"value": 23, "unit": "casualties_total", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p3", "source_tier": "government", "verified": true},
+        {"value": 33, "unit": "casualties_implied_sum", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p3", "qualifier": "19 + 13 + 1, computed not stated", "source_tier": "derived", "verified": true}
+      ]
+    },
+    {
+      "id": "rasuwa_lake_area",
+      "event_id": "rasuwa_2025",
+      "quantity": "lake_area_km2",
+      "kind": "cross_source",
+      "severity": "medium",
+      "must_detect": true,
+      "description": "Three sources give three incompatible before/after pairs for the same two days. The pre-event figures span 0.638 to 0.75 km2 (18% spread) and the post-event figures span 0.435 to 0.60 km2 (38% spread). Directly relevant to the watcher, since these are the areas our own delineation must be compared against.",
+      "values": [
+        {"value": 0.725, "unit": "km2", "phase": "pre", "date": "2025-07-07", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p1", "source_tier": "government", "verified": true},
+        {"value": 0.638, "unit": "km2", "phase": "pre", "date": "2025-07-07", "doc_id": "imhe_rasuwa_satellite", "passage_id": "imhe_rasuwa_satellite#p1", "source_tier": "scientific_institute", "verified": true},
+        {"value": 0.75, "unit": "km2", "phase": "pre", "date": "2025-07-07", "doc_id": "dhm_icimod_rasuwa_confirmation", "passage_id": "dhm_icimod_rasuwa_confirmation#p1", "qualifier": "around", "source_tier": "government", "verified": true},
+        {"value": 0.60, "unit": "km2", "phase": "post", "date": "2025-07-08", "doc_id": "ndrrma_rasuwa_sitrep", "passage_id": "ndrrma_rasuwa_sitrep#p2", "source_tier": "government", "verified": true},
+        {"value": 0.435, "unit": "km2", "phase": "post", "date": "2025-07-08", "doc_id": "imhe_rasuwa_satellite", "passage_id": "imhe_rasuwa_satellite#p2", "source_tier": "scientific_institute", "verified": true},
+        {"value": 0.60, "unit": "km2", "phase": "post", "date": "2025-07-08", "doc_id": "dhm_icimod_rasuwa_confirmation", "passage_id": "dhm_icimod_rasuwa_confirmation#p1", "qualifier": "roughly", "source_tier": "government", "verified": true}
+      ]
+    },
+    {
+      "id": "chamoli_event_type",
+      "event_id": "chamoli_2021",
+      "quantity": "event_classification",
+      "kind": "cross_source_categorical",
+      "severity": "high",
+      "must_detect": true,
+      "description": "Not a numeric contradiction but a categorical one, and the single most important thing to get right in this bundle. Early media described Chamoli as a glacier burst or GLOF; the peer-reviewed analysis identifies a rock-and-ice avalanche with no lake involved. The reporter must side with the primary source AND surface that the early characterisation was wrong.",
+      "values": [
+        {"value": "rock_and_ice_avalanche", "doc_id": "shugar_2021_science", "passage_id": "shugar_2021_science#p2", "source_tier": "peer_reviewed", "verified": true},
+        {"value": "glacial_lake_outburst_flood", "doc_id": "early_media_chamoli_glof_claim", "passage_id": "early_media_chamoli_glof_claim#p1", "source_tier": "news", "verified": true, "note": "later contradicted"}
+      ],
+      "required_output_behaviour": "Must NOT label Chamoli a GLOF in the structured hazard record or in the sitrep text, in either language."
+    },
+    {
+      "id": "thame_study_release_date",
+      "event_id": "thame_2024",
+      "quantity": "publication_date",
+      "kind": "cross_source",
+      "severity": "low",
+      "must_detect": false,
+      "description": "ICIMOD's own page dates the Thame study 14 Oct 2025; the project brief says 15 Oct 2025. A one-day discrepancy in a publication date is noise, not a finding. Included as a deliberate LOW-severity case: an agent that escalates this to the sitrep is over-flagging, and severity calibration is part of what Stage 14 measures.",
+      "values": [
+        {"value": "2025-10-14", "doc_id": "icimod_thame_study_2025", "passage_id": "icimod_thame_study_2025#p1", "source_tier": "institutional", "verified": true},
+        {"value": "2025-10-15", "doc_id": null, "passage_id": null, "source_tier": "project_brief", "verified": false, "note": "not in any bundle document; recorded for completeness"}
+      ]
+    }
+  ],
+
+  "agreements": [
+    {
+      "id": "thame_total_volume",
+      "event_id": "thame_2024",
+      "quantity": "total_volume_m3",
+      "value": 459000,
+      "description": "Total released volume. Internally consistent: 156,000 from the upper lake plus 303,000 from the lower sums exactly to the stated total. Must NOT be flagged.",
+      "supporting": ["icimod_thame_study_2025#p2", "icimod_thame_study_2025#p3", "icimod_thame_study_2025#p4"]
+    },
+    {
+      "id": "thame_displaced",
+      "event_id": "thame_2024",
+      "quantity": "displaced",
+      "value": 135,
+      "description": "Reported consistently. Must NOT be flagged.",
+      "supporting": ["icimod_thame_study_2025#p6"]
+    },
+    {
+      "id": "thame_area_stability",
+      "event_id": "thame_2024",
+      "quantity": "area_pre_event_m2",
+      "value": 43902,
+      "description": "The pre-event area, consistent with the stated 2017-2023 stable range of 32,881-41,758 m2. Central to the project's argument and must survive into the sitrep unflagged.",
+      "supporting": ["bisht_2025_thyanbo_ndwi#p2", "bisht_2025_thyanbo_ndwi#p1"]
+    },
+    {
+      "id": "lhonak_area_change",
+      "event_id": "south_lhonak_2023",
+      "quantity": "area_change_pct",
+      "value": -15.38,
+      "description": "The post-burst area drop, reported once with stated uncertainty. No competing figure exists. Must NOT be flagged.",
+      "supporting": ["sattar_2025_science#p5"]
+    },
+    {
+      "id": "lhonak_teesta_iii",
+      "event_id": "south_lhonak_2023",
+      "quantity": "hydropower_mw_destroyed",
+      "value": 1200,
+      "description": "Teesta III capacity, uncontested across sources. Must NOT be flagged - and note it coexists with the disputed project COUNT in the Rasuwa bundle, so an agent cannot simply treat all hydropower figures as suspect.",
+      "supporting": ["sattar_2025_science#p7"]
+    },
+    {
+      "id": "rasuwa_rasuwagadhi_mw",
+      "event_id": "rasuwa_2025",
+      "quantity": "rasuwagadhi_mw",
+      "value": 111,
+      "description": "The Rasuwagadhi plant capacity is 111 MW in both the NEA statement and the SANDRP itemisation. Agreement inside an otherwise heavily contested bundle: the agent must not flag it just because neighbouring figures disagree.",
+      "supporting": ["nea_urjakhabar_rasuwa#p2", "sandrp_rasuwa_2025#p5"]
+    },
+    {
+      "id": "chamoli_avalanche_volume",
+      "event_id": "chamoli_2021",
+      "quantity": "avalanche_volume_m3",
+      "value": 27000000,
+      "description": "Uncontested in the bundle. Must NOT be flagged.",
+      "supporting": ["shugar_2021_science#p1"]
+    },
+    {
+      "id": "chamoli_deaths",
+      "event_id": "chamoli_2021",
+      "quantity": "deaths_and_missing",
+      "value": 200,
+      "qualifier": "more than",
+      "description": "Reported as an open-ended 'more than 200'. An open bound is not a contradiction with a specific figure unless one falls below it. Tests that the agent handles qualifiers rather than treating every inequality as a disagreement.",
+      "supporting": ["shugar_2021_science#p4"]
+    }
+  ],
+
+  "counts": {
+    "contradictions_must_detect": 7,
+    "contradictions_low_severity_optional": 1,
+    "agreements_must_not_flag": 8
+  }
+}

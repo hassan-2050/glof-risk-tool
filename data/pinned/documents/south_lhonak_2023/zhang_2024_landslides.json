@@ -1,0 +1,41 @@
+{
+  "doc_id": "zhang_2024_landslides",
+  "event_id": "south_lhonak_2023",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "deaths",
+        "hydropower_destroyed_count"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "zhang_2024_landslides#p1",
+      "text": "The glacial lake outburst flood caused 178 fatalities and destroyed three downstream hydropower projects."
+    },
+    {
+      "carries_figures": [
+        "moraine_collapse_volume_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "zhang_2024_landslides#p2",
+      "text": "The estimated volume of the collapsed moraine material is 16.75 by 10 to the 6 cubic metres."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "zhang_2024_landslides#p3",
+      "text": "The study attributes the outburst to the collapse of a massive lateral moraine, analysed through satellite imagery and numerical modelling of the flood propagation."
+    }
+  ],
+  "source": {
+    "authors": [
+      "Zhang et al."
+    ],
+    "doc_type": "scientific_paper",
+    "doi": "10.1007/s10346-024-02358-x",
+    "licence": "quoted with attribution",
+    "published": "2024-09-18",
+    "publisher": "Landslides (Springer)",
+    "url": "https://link.springer.com/article/10.1007/s10346-024-02358-x"
+  }
+}

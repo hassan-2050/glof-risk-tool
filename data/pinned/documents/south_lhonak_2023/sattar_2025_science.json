@@ -1,0 +1,76 @@
+{
+  "doc_id": "sattar_2025_science",
+  "event_id": "south_lhonak_2023",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [
+        "deaths",
+        "missing"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p1",
+      "text": "The disaster caused 55 deaths, and 74 persons were reported missing."
+    },
+    {
+      "carries_figures": [
+        "moraine_collapse_volume_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p2",
+      "text": "Approximately 14.7 million cubic metres of frozen lateral moraine collapsed into the lake."
+    },
+    {
+      "carries_figures": [
+        "wave_height_m"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p3",
+      "text": "The collapse generated a tsunami-like impulse wave approximately 20 metres high."
+    },
+    {
+      "carries_figures": [
+        "water_drained_m3"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p4",
+      "text": "About 50 million cubic metres of water drained from the lake."
+    },
+    {
+      "carries_figures": [
+        "area_pre_km2",
+        "area_post_km2",
+        "area_change_pct"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p5",
+      "text": "Lake area dropped from 1.69 plus or minus 0.03 to 1.46 plus or minus 0.03 square kilometres, a 15.38 per cent reduction."
+    },
+    {
+      "carries_figures": [
+        "inundation_length_km",
+        "inundation_area_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "sattar_2025_science#p6",
+      "text": "Inundation extended 169 kilometres downstream over approximately 32.04 plus or minus 1.91 square kilometres."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "sattar_2025_science#p7",
+      "text": "A section of the failed moraine had been moving at more than 15 metres per year between 2016 and 2023, detectable in satellite data before the event. The 1,200 MW Teesta III hydropower project was destroyed."
+    }
+  ],
+  "source": {
+    "authors": [
+      "Sattar et al."
+    ],
+    "doc_type": "scientific_paper",
+    "doi": "10.1126/science.ads2659",
+    "licence": "quoted with attribution",
+    "published": "2025-01-01",
+    "publisher": "Science (AAAS)",
+    "url": "https://www.science.org/doi/10.1126/science.ads2659"
+  }
+}

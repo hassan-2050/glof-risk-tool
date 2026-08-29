@@ -1,0 +1,22 @@
+{
+  "doc_id": "icimod_chamoli_record",
+  "event_id": "chamoli_2021",
+  "notes": {},
+  "passages": [
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "icimod_chamoli_record#p1",
+      "text": "ICIMOD's library record catalogues the Shugar et al. analysis under rock and ice avalanche, not glacial lake outburst flood, consistent with the primary source."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "institutional_record",
+    "doi": null,
+    "licence": "catalogue record, attributed",
+    "published": "2021-06-11",
+    "publisher": "ICIMOD HimalDoc",
+    "url": "https://lib.icimod.org/record/35562"
+  }
+}

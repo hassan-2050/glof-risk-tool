@@ -1,0 +1,51 @@
+{
+  "doc_id": "ndrrma_rasuwa_sitrep",
+  "event_id": "rasuwa_2025",
+  "notes": {
+    "internal_inconsistency_note": "19 + 13 + 1 = 33, not the stated total of 23. Retained verbatim: a document that contradicts itself is a distinct failure mode from two documents contradicting each other, and the agent must catch both."
+  },
+  "passages": [
+    {
+      "carries_figures": [
+        "lake_area_pre_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "ndrrma_rasuwa_sitrep#p1",
+      "text": "Surface water collected rapidly, resulting in the formation of a supraglacial lake of area 0.725 sq. km by July 7."
+    },
+    {
+      "carries_figures": [
+        "lake_area_post_km2"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "ndrrma_rasuwa_sitrep#p2",
+      "text": "The lake had drained to 0.60 sq. km by July 8."
+    },
+    {
+      "carries_figures": [
+        "casualties_total",
+        "deaths",
+        "missing",
+        "injured"
+      ],
+      "kind": "verbatim_quote",
+      "passage_id": "ndrrma_rasuwa_sitrep#p3",
+      "text": "The report tallies 23 human casualties: 19 deaths, 13 missing and 1 injured."
+    },
+    {
+      "carries_figures": [],
+      "kind": "synthesized_summary",
+      "passage_id": "ndrrma_rasuwa_sitrep#p4",
+      "text": "The flood is attributed to an outburst from the Pyurepu Glacier on the Nepal-China border. DHM found no heavy rainfall beforehand; NDRRMA had initially reported an ice-rock landslide."
+    }
+  ],
+  "source": {
+    "authors": [],
+    "doc_type": "government_situation_report",
+    "doi": null,
+    "licence": "government situation report, quoted with attribution",
+    "published": "2025-07-15",
+    "publisher": "NDRRMA (National Disaster Risk Reduction and Management Authority, Nepal)",
+    "url": "https://www.dpnet.org.np/resource-detail/2197"
+  }
+}
