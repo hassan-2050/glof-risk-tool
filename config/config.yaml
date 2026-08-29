@@ -196,6 +196,18 @@ evaluation:
 
 # --- Stages 9-15: reporter --------------------------------------------------
 reporter:
+  cap:
+    sender: "glof-risk-tool@example.invalid"
+    sender_name: "GLOF Risk Tool (research prototype)"
+    # Frozen so CAP output is byte-identical across runs. A real deployment
+    # would stamp the actual send time; here a moving timestamp would break
+    # reproducibility for no operational benefit.
+    sent_timestamp: "2026-01-01T00:00:00+00:00"
+  approval:
+    # Named approver for the Stage 12 gate. In a deployment this comes from the
+    # person operating the checkpoint; committed here so `reproduce` can
+    # demonstrate the gate end to end without an interactive prompt.
+    default_approver: "duty-officer (simulated)"
   verification:
     # Hard cap on the critic -> verifier -> revise loop. Anything still
     # unsupported when the cap is reached BLOCKS release rather than shipping:

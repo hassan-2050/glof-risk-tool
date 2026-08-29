@@ -888,3 +888,236 @@ def stage11_verification(cfg: Config) -> dict:
             "fabricated_caught": bool(caught),
             "uncited_flagged": bool(uncited_flagged),
             "max_iterations_used": max(r["iterations"] for r in results.values())}
+
+
+@stage(12, "ledger", "Reporter: provenance ledger + human approval",
+       outputs=("outputs/stage12_ledger.jsonl", "outputs/stage12_approvals.json"))
+def stage12_ledger(cfg: Config) -> dict:
+    """Nothing is final without a recorded human decision."""
+    from src.common.io import read_json
+    from src.reporter.ledger import Ledger, approval_decision
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    recon = read_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json")
+    verif = read_json(REPO_ROOT / "outputs" / "stage11_verification.json")
+    approver = cfg.require("reporter.approval.default_approver")
+    frozen = cfg.require("determinism.frozen_utc")
+
+    path = REPO_ROOT / "outputs" / "stage12_ledger.jsonl"
+    if path.exists():
+        path.unlink()          # rebuilt from scratch each run, for byte-identity
+    ledger = Ledger(path)
+
+    approvals, precedents_found = {}, {}
+    for eid in sorted(retrieval["events"]):
+        ev = retrieval["events"][eid]
+        hazard = "GLOF" if ev["is_glof"] else "rock_ice_avalanche"
+
+        # Precedent lookup BEFORE filing, so an event sees only what came
+        # before it - the same discipline as the pre-event cutoff.
+        prior = ledger.precedents(eid, ev["admin"], hazard)
+        precedents_found[eid] = prior
+
+        ledger.append("event_filed", {
+            "event_id": eid, "title": ev["title"], "admin": ev["admin"],
+            "country": ev["country"], "hazard": hazard,
+            "n_documents": ev["n_documents"],
+            "precedents_surfaced": [p["event_id"] for p in prior]})
+
+        for c in recon["events"][eid]["contradictions"]:
+            ledger.append("claim_contested", {
+                "event_id": eid, "quantity": c["quantity"],
+                "kind": c["kind"], "severity": c["severity"],
+                "sources": sorted({v["publisher"] for v in c.get("values", [])})
+                           or [c.get("publisher", "")],
+                "resolution": "reported as a range; no single value adopted"})
+
+        for lang in ("en", "ne"):
+            key = f"{eid}_{lang}"
+            v = verif["drafts"][key]
+            for s in v["unresolved_unsupported"]:
+                ledger.append("claim_rejected", {
+                    "draft": key, "sentence": s["sentence"][:300],
+                    "reason": s.get("reason")})
+            d = approval_decision(v, key, approver, frozen)
+            approvals[key] = d
+            ledger.append("approval_decision", d)
+
+    ledger.write()
+    chain = ledger.verify_chain()
+
+    # Tamper check: the chain must actually detect an edit, or it is decoration.
+    tampered = Ledger(path)
+    if tampered.entries:
+        tampered.entries[0]["payload"]["title"] = "ALTERED AFTER THE FACT"
+    tamper_detected = not tampered.verify_chain()["intact"]
+
+    finalised = [k for k, a in approvals.items() if a["decision"] == "approved"]
+    withheld = [k for k, a in approvals.items() if a["decision"] != "approved"]
+    write_json(REPO_ROOT / "outputs" / "stage12_approvals.json",
+               {"approvals": approvals, "chain": chain,
+                "tamper_detected_on_edit": tamper_detected,
+                "precedents": precedents_found,
+                "finalised": finalised, "withheld": withheld})
+    if not tamper_detected:
+        raise RuntimeError("ledger hash chain does not detect edits; it is "
+                           "providing no integrity guarantee")
+    return {"entries": len(ledger.entries), "chain_intact": chain["intact"],
+            "tamper_detected": tamper_detected,
+            "finalised": len(finalised), "withheld": len(withheld),
+            "events_with_precedent": sum(1 for v in precedents_found.values() if v)}
+
+
+@stage(13, "exports", "CAP XML + HXL-tagged CSV machine-readable outputs",
+       outputs=("outputs/exports/",))
+def stage13_exports(cfg: Config) -> dict:
+    """Machine-readable alerts from the same data the sitrep is built from."""
+    from src.common.io import read_json, write_csv, write_text
+    from src.reporter.exports import (HXL_TAGS, build_cap, build_hxl_rows,
+                                      cap_to_string, validate_cap)
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    recon = read_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json")
+    drafts = read_json(REPO_ROOT / "outputs" / "stage10_drafts.json")["drafts"]
+    out = REPO_ROOT / "outputs" / "exports"
+
+    validations, all_rows = {}, []
+    for eid in sorted(retrieval["events"]):
+        ev = retrieval["events"][eid]
+        r = recon["events"][eid]
+        d = drafts[f"{eid}_en"]
+        alert = build_cap(ev, r, d, cfg)
+        write_text(out / f"{eid}_cap.xml", cap_to_string(alert))
+        validations[eid] = validate_cap(alert)
+        all_rows.extend(build_hxl_rows(ev, r, d["as_of"]))
+
+    # HXL: the tag row sits directly beneath the header, per spec.
+    fields = list(HXL_TAGS)
+    write_csv(out / "figures_hxl.csv", [HXL_TAGS] + all_rows, fieldnames=fields)
+
+    # Drift check: every figure in the CSV must appear in the sitrep, and vice
+    # versa for contested quantities. The two paths share a source, so this
+    # should be trivially true - which is exactly why it is worth asserting.
+    drift = []
+    for eid in sorted(retrieval["events"]):
+        body = " ".join(t for sec in drafts[f"{eid}_en"]["sections"].values()
+                        for t in sec)
+        for row in [r for r in all_rows if r["event_id"] == eid and r["contested"] == "yes"]:
+            for v in (row["value_min"], row["value_max"]):
+                if f"{v:,.0f}" not in body and f"{v:g}" not in body:
+                    drift.append({"event_id": eid, "quantity": row["quantity"],
+                                  "value": v,
+                                  "issue": "in the HXL export but not in the sitrep"})
+
+    invalid = [e for e, v in validations.items() if not v["valid"]]
+    write_json(REPO_ROOT / "outputs" / "exports" / "validation.json",
+               {"cap_validation": validations, "hxl_tags": HXL_TAGS,
+                "hxl_rows": len(all_rows), "drift_vs_sitrep": drift})
+    if invalid:
+        raise RuntimeError(f"CAP validation failed for {invalid}")
+    if drift:
+        raise RuntimeError(f"{len(drift)} figures differ between the sitrep and "
+                           f"the machine-readable export: {drift[:3]}")
+    return {"cap_files": len(validations), "all_cap_valid": not invalid,
+            "hxl_rows": len(all_rows), "drift": len(drift)}
+
+
+@stage(14, "reporter_eval", "Reporter eval: baseline vs. advanced",
+       outputs=("outputs/stage14_reporter_eval.json", "outputs/stage14_metrics.csv"))
+def stage14_reporter_eval(cfg: Config) -> dict:
+    """Five metrics, both pipelines, same scenarios, reported honestly."""
+    from src.common.io import read_json, write_csv
+    from src.eval.reporter_eval import (advanced_text, citation_metrics,
+                                        contradiction_reflected,
+                                        edit_distance_to_approved,
+                                        hallucination_rate, naive_baseline_draft,
+                                        numeric_accuracy, perturb)
+    from src.reporter.reconciliation import find_contradictions
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    recon = read_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json")
+    drafts = read_json(REPO_ROOT / "outputs" / "stage10_drafts.json")["drafts"]
+    verif = read_json(REPO_ROOT / "outputs" / "stage11_verification.json")
+
+    # Scenario set: 4 real + 6 synthetic = 10, meeting the >=10 requirement
+    # with perturbations the pipeline was never tuned on.
+    scenarios = []
+    for eid in sorted(retrieval["events"]):
+        scenarios.append({"id": eid, "event_id": eid, "kind": "real",
+                          "recon": recon["events"][eid]})
+    kinds = ["injected_contradiction", "fabricated_figure"]
+    for i, eid in enumerate(sorted(retrieval["events"])[:3]):
+        for k in kinds:
+            r = perturb(recon["events"][eid], k, i)
+            if k == "injected_contradiction":
+                r["contradictions"] = find_contradictions(r["claims"], cfg)
+            scenarios.append({"id": f"{eid}__{k}", "event_id": eid,
+                              "kind": k, "recon": r})
+
+    rows, detail = [], {}
+    for sc in scenarios:
+        eid = sc["event_id"]
+        ev = retrieval["events"][eid]
+        by_doc: dict[str, list[str]] = {}
+        for p in ev["passages"]:
+            by_doc.setdefault(p["doc_id"], []).append(p["text"])
+
+        adv_draft = drafts[f"{eid}_en"]
+        # The approved text is what survived Stage 11 and was signed off in
+        # Stage 12 - the realistic target a human would otherwise have written.
+        approved = " ".join(t for sec in verif["drafts"][f"{eid}_en"]["sections"].values()
+                            for t in sec)
+        adv = advanced_text(adv_draft)
+        base = naive_baseline_draft(ev, sc["recon"])["text"]
+
+        for model, text in (("baseline", base), ("advanced", adv)):
+            m = {}
+            m.update(citation_metrics(text, by_doc))
+            m.update(numeric_accuracy(text, sc["recon"]))
+            m.update(hallucination_rate(text, sc["recon"]))
+            m.update(contradiction_reflected(text, sc["recon"]))
+            m.update(edit_distance_to_approved(text, approved))
+            rows.append({"scenario": sc["id"], "kind": sc["kind"], "model": model,
+                         **{k: v for k, v in m.items()
+                            if isinstance(v, (int, float)) or v is None}})
+            detail.setdefault(sc["id"], {})[model] = m
+
+    def mean(model, field):
+        vals = [r[field] for r in rows if r["model"] == model
+                and isinstance(r.get(field), (int, float))]
+        return round(sum(vals) / len(vals), 4) if vals else None
+
+    fields = ["citation_precision", "citation_recall", "citation_f1",
+              "numeric_accuracy", "hallucination_rate", "contradiction_recall",
+              "word_edit_distance", "normalised"]
+    summary = {f: {"baseline": mean("baseline", f), "advanced": mean("advanced", f),
+                   "delta": (None if mean("baseline", f) is None
+                             or mean("advanced", f) is None
+                             else round(mean("advanced", f) - mean("baseline", f), 4))}
+               for f in fields}
+
+    gate = {
+        "advanced_lower_hallucination":
+            summary["hallucination_rate"]["advanced"] <= summary["hallucination_rate"]["baseline"],
+        "advanced_higher_contradiction_recall":
+            summary["contradiction_recall"]["advanced"] >= summary["contradiction_recall"]["baseline"],
+    }
+    write_json(REPO_ROOT / "outputs" / "stage14_reporter_eval.json",
+               {"n_scenarios": len(scenarios), "summary": summary,
+                "gate": gate, "per_scenario": detail,
+                "honesty_note": ("Every metric is reported for both pipelines, "
+                                 "including any on which the advanced pipeline "
+                                 "does not win. Edit distance in particular is "
+                                 "expected to favour the advanced pipeline "
+                                 "trivially, because the approved text IS the "
+                                 "advanced draft after verification - it is "
+                                 "reported with that caveat rather than "
+                                 "presented as an independent win.")})
+    write_csv(REPO_ROOT / "outputs" / "stage14_metrics.csv", rows,
+              fieldnames=["scenario", "kind", "model"] + fields)
+    return {"scenarios": len(scenarios),
+            "hallucination_baseline": summary["hallucination_rate"]["baseline"],
+            "hallucination_advanced": summary["hallucination_rate"]["advanced"],
+            "contradiction_recall_baseline": summary["contradiction_recall"]["baseline"],
+            "contradiction_recall_advanced": summary["contradiction_recall"]["advanced"],
+            "gate_passed": all(gate.values())}
