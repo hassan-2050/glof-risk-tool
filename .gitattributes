@@ -1,0 +1,14 @@
+# Force LF everywhere. Two reasons, both reproducibility:
+#   1. GNU make inside the Stage 17 container fails on CRLF recipe lines.
+#   2. A Windows checkout and a Linux checkout must hash identically, or
+#      `stage00_environment.json.input_hashes` differs between the author's
+#      machine and a judge's for no scientific reason.
+* text=auto eol=lf
+
+# Pinned raster/vector data and cached bundles are byte-exact inputs.
+*.tif   binary
+*.tiff  binary
+*.jp2   binary
+*.zip   binary
+*.gpkg  binary
+*.parquet binary
