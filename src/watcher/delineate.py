@@ -113,7 +113,13 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg,
         yy, xx = ndimage.center_of_mass(comp)
         gy, gx = yy + sy.start, xx + sx.start
         dist_m = float(np.hypot(gy - cy, gx - cx) * res_m)
+        contains = False
+        if anchor_rc is not None:
+            ar, ac = int(round(anchor_rc[0])), int(round(anchor_rc[1]))
+            if 0 <= ar < labels.shape[0] and 0 <= ac < labels.shape[1]:
+                contains = bool(labels[ar, ac] == lab)
         comps.append({"label": lab, "px": size, "distance_m": round(dist_m, 1),
+                      "contains_anchor": contains,
                       "area_m2": size * scene.pixel_area_m2})
 
     if not comps:
@@ -132,12 +138,24 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg,
                        f"lake is being measured."),
             "components": sorted(comps, key=lambda c: c["distance_m"])[:5]}
 
-    # With an anchor, take the CLOSEST component: the anchor already encodes
-    # which of several lakes is the subject, and preferring size there would
-    # reintroduce the flip-flop. Without one, fall back to the largest nearby
-    # component, since ponds and meltwater fringes are small.
-    chosen = (min(near, key=lambda c: c["distance_m"]) if anchor_rc is not None
-              else max(near, key=lambda c: c["px"]))
+    # With an anchor, prefer the component that CONTAINS it; only fall back to
+    # proximity when nothing does.
+    #
+    # Taking the nearest component outright was a bad trade. It fixed the
+    # two-lake flip-flop but broke every large lake: a pond 50 m from the
+    # anchor beats a 1.3 km2 lake whose centroid sits 200 m away, because a
+    # big lake's centroid is naturally further from any given point than a
+    # small one's. Measured cost - Imja read 0.06x its published area, Tsho
+    # Rolpa 0.11x, South Lhonak 0.33x, on EVERY scene. Containment is the
+    # right test: it says "the anchor is in this water body", which is the
+    # actual question, and it is scale-free.
+    containing = [c for c in near if c["contains_anchor"]] if anchor_rc is not None else []
+    if containing:
+        chosen = max(containing, key=lambda c: c["px"])
+    elif anchor_rc is not None:
+        chosen = min(near, key=lambda c: c["distance_m"])
+    else:
+        chosen = max(near, key=lambda c: c["px"])
     # Intersect back with the OBSERVED mask: closing decided which pixels group
     # together, it must not add area that was never seen as water.
     selected = (labels == chosen["label"]) & mask

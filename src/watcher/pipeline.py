@@ -256,11 +256,28 @@ def run_lake(lake: dict, manifest_lake: dict, cfg) -> dict:
         }
         series.append(best)
 
+    # Validation against the published value, reported per lake rather than
+    # asserted in prose. Uses the best (largest usable) measurement, since the
+    # reference is itself a best-case clear-scene value.
+    ref = lake.get("published_reference_area_m2")
+    best_area = max((r["area_m2"] for r in results
+                     if r["qa"]["verdict"] != "unusable"), default=0.0)
+    validation = None
+    if ref:
+        validation = {
+            "published_reference_area_m2": ref,
+            "published_reference_source": lake.get("published_reference_source"),
+            "best_measured_area_m2": round(best_area, 1),
+            "ratio_to_published": round(best_area / ref, 3) if ref else None,
+            "within_25pct": abs(best_area / ref - 1.0) <= 0.25 if ref else None,
+        }
+
     return {
         "lake_id": lid,
         "name": lake["name"],
         "class": lake["class"],
         "status": "ok",
+        "validation": validation,
         "anchor": anchor_meta,
         "reference_footprint": fp_meta,
         "dem_available": dem is not None,
