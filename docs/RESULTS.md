@@ -37,12 +37,12 @@ Measured against published reference areas, best usable scene per lake:
 | lake | published | measured | ratio |
 |---|---|---|---|
 | thyanbo_tsho | 43,902 m² | 44,100 m² | 1.005x |
-| south_lhonak | 1,690,000 m² | 584,300 m² | 0.346x |
+| south_lhonak | 1,660,000 m² | 584,300 m² | 0.352x |
 | pyurepu_supraglacial | 725,000 m² | 23,500 m² | 0.032x |
 | imja_tsho | 1,560,000 m² | 1,726,700 m² | 1.107x |
 | tsho_rolpa | 1,540,000 m² | 1,571,800 m² | 1.021x |
 | thulagi | 940,000 m² | 944,700 m² | 1.005x |
-| gokyo_dudh_pokhari | 430,000 m² | 625,800 m² | 1.455x |
+| gokyo_dudh_pokhari | 429,000 m² | 625,800 m² | 1.459x |
 | tilicho | 4,800,000 m² | 3,576,700 m² | 0.745x |
 
 Three lakes fail badly and the cause is diagnosed rather than tuned away - see

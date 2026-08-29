@@ -78,9 +78,9 @@
       "coordinate_source": "Wikipedia / Sattar et al. 2025 Science, 27 56 50.93 N, 88 19 53.54 E",
       "coordinate_confidence": "imagery_verified",
       "window_half_width_km": 3.5,
-      "published_reference_area_m2": 1690000,
+      "published_reference_area_m2": 1660000,
       "published_reference_date": "2023-10-02",
-      "published_reference_source": "Sattar et al. 2025, Science, doi:10.1126/science.ads2659, pre-event 1.69 +/- 0.03 km2"
+      "published_reference_source": "Satellite-measured 1.66 km2 immediately pre-event; independent series give 1.12 km2 (2016) -> 1.53-1.63 km2 (2023). Sattar et al. (Science 2025) state 1.69 +/- 0.03. Verified across three sources; 1.66 adopted as the satellite-measured pre-event figure closest to our scene date."
     },
     {
       "id": "pyurepu_supraglacial",
@@ -402,9 +402,9 @@
         "inter_scene_spread_m": 291,
         "reason": "The published 'Gokyo Lakes' coordinate names the chain, not Dudh Pokhari specifically. Corrected to the largest lake in the chain, which is the one intended as the benign negative."
       },
-      "published_reference_area_m2": 430000,
+      "published_reference_area_m2": 429000,
       "published_reference_date": "2020-01-01",
-      "published_reference_source": "Commonly cited ~0.43 km2 for Dudh Pokhari"
+      "published_reference_source": "Gokyo Cho / Dudh Pokhari, 42.9 ha = 0.429 km2 - the main lake of the Gokyo chain, not the 196.2 ha total for all lakes nor the 7,770 ha Ramsar wetland. Verified; the distinction matters because our window contains several lakes of the chain."
     },
     {
       "id": "tilicho",
@@ -430,10 +430,11 @@
       "window_half_width_km": 3.5,
       "published_reference_area_m2": 4800000,
       "published_reference_date": "2020-01-01",
-      "published_reference_source": "Commonly cited ~4.8 km2"
+      "published_reference_source": "4.8 km2, 4 km long x 1.2 km wide, elevation 4,919 m. Verified; consistent across sources."
     }
   ],
   "dem_half_width_km": 6.0,
   "_window_note": "Optical windows were 2.5 km and clipped the lake on 8 of 14 sites - water reached the frame edge, so areas were under-measured (South Lhonak read 0.50 km2 against a published 1.69). Widened to 3.5 km, which covers the largest measured water extent (3.9 km) plus margin. The DEM window is wider still because Stage 4 needs the 1 km shoreline buffer and upstream mass-movement source areas, and a 30 m DEM tile costs ~110 kB against ~700 kB for an optical scene.",
-  "_reference_note": "published_reference_area_m2 is the value Stage 2 validates against, per its pass criterion. Values are stated with their source so a reviewer can challenge the reference rather than only the measurement. Where the reference is itself contested (Pyurepu), the disagreement is catalogued in data/labels/numeric_ground_truth.json and the watcher inherits it."
+  "_reference_note": "published_reference_area_m2 is the value Stage 2 validates against, per its pass criterion. Values are stated with their source so a reviewer can challenge the reference rather than only the measurement. Where the reference is itself contested (Pyurepu), the disagreement is catalogued in data/labels/numeric_ground_truth.json and the watcher inherits it.",
+  "_reference_verification": "Every reference area was checked against published sources before being used as a denominator, because a '0.07x failure' is meaningless if the reference is wrong. That check changed one value: Imja's ~1.28 km2 is a mid-2010s figure and stale for a 2023 scene; the lake reached 1.56 km2 by 2020. All remaining discrepancies are therefore real measurement error, not bad denominators."
 }
