@@ -159,6 +159,29 @@ def search_scenes(cat, bbox, req: SceneRequest) -> list:
     return items
 
 
+def _covers(path: Path, bbox, tol_deg: float = 1e-3) -> bool:
+    """Does an already-downloaded file actually cover the requested window?
+
+    The resume-skip matches on FILENAME, and filenames do not encode the
+    bounding box. When the window was widened from 2.5 km to 3.5 km, every
+    existing file still matched by name while covering only the smaller extent
+    - so a plain existence check would have silently kept the clipped data and
+    quietly reproduced the very under-measurement the widening was meant to
+    fix. Cheap to check, and the failure it prevents is invisible.
+    """
+    try:
+        with rasterio.open(path) as src:
+            tf = Transformer.from_crs("EPSG:4326", src.crs, always_xy=True)
+            xs, ys = tf.transform([bbox[0], bbox[2]], [bbox[1], bbox[3]])
+            b = src.bounds
+            # Allow a pixel of slack; require the file to contain the request.
+            pad = max(src.res) * 2
+            return (b.left <= min(xs) + pad and b.right >= max(xs) - pad
+                    and b.bottom <= min(ys) + pad and b.top >= max(ys) - pad)
+    except Exception:  # noqa: BLE001 - unreadable file must be re-fetched
+        return False
+
+
 def clip_asset(item, asset_key: str, bbox, out_path: Path) -> dict | None:
     """Read the bbox window from one COG asset and write a small GeoTIFF."""
     asset = item.assets.get(asset_key)
@@ -192,8 +215,15 @@ def clip_asset(item, asset_key: str, bbox, out_path: Path) -> dict | None:
 
 
 def fetch_dem(cat, bbox, out_path: Path) -> dict | None:
-    """Copernicus GLO-30 window. Mosaics tiles when the box straddles two."""
-    if out_path.exists():
+    """Copernicus GLO-30 window. Mosaics tiles when the box straddles two.
+
+    Deliberately fetched over a WIDER box than the optical bands. Stage 4 needs
+    terrain the optical window does not have to cover: the 1 km shoreline
+    buffer for Steep Lakefront Area, and the upstream slopes where ice and rock
+    avalanches detach. A 30 m DEM tile costs ~110 kB against ~700 kB for an
+    optical scene, so the extra margin is close to free.
+    """
+    if out_path.exists() and _covers(out_path, bbox):
         return {"skipped": True, "sha256": sha256_file(out_path)}
     items = list(cat.search(collections=[DEM_COLLECTION], bbox=list(bbox)).items())
     if not items:
@@ -219,11 +249,19 @@ def fetch_dem(cat, bbox, out_path: Path) -> dict | None:
 
 
 def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
-               dry_run: bool, extra_qa: bool) -> dict:
+               dry_run: bool, extra_qa: bool, dem_half_km: float = 6.0) -> dict:
     lid = lake["id"]
+    # Per-lake optical window: a fixed 2.5 km box clipped the lake on 8 of 14
+    # sites, so the size now travels with the lake in the registry.
+    half_km = float(lake.get("window_half_width_km", half_km))
     bbox = bbox_for(lake, half_km)
+    dem_bbox = bbox_for(lake, dem_half_km)
     out_dir = pinned / lid
-    record: dict = {"lake_id": lid, "bbox_wgs84": list(bbox), "scenes": [], "dem": None}
+    record: dict = {"lake_id": lid, "bbox_wgs84": list(bbox),
+                    "dem_bbox_wgs84": list(dem_bbox),
+                    "window_half_width_km": half_km,
+                    "dem_half_width_km": dem_half_km,
+                    "scenes": [], "dem": None}
 
     reqs = requests_for_lake(lake, cutoffs)
     if extra_qa:
@@ -307,7 +345,7 @@ def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
 
             for key in S2_ASSETS:
                 path = out_dir / f"{label}_{acq.isoformat()}_{key}.tif"
-                if path.exists():
+                if path.exists() and _covers(path, bbox):
                     entry["assets"][key] = {"path": path.relative_to(REPO_ROOT).as_posix(),
                                             "sha256": sha256_file(path), "skipped": True}
                     continue
@@ -325,8 +363,11 @@ def fetch_lake(cat, lake: dict, cutoffs: dict, half_km: float, pinned: Path,
 
     if not dry_run:
         try:
-            record["dem"] = fetch_dem(cat, bbox, out_dir / "dem_glo30.tif")
-            print(f"    {'dem_glo30':<16} {record['dem']['shape'] if record['dem'] else 'MISSING'}")
+            record["dem"] = fetch_dem(cat, dem_bbox, out_dir / "dem_glo30.tif")
+            d = record["dem"]
+            state = ("cached" if d and d.get("skipped") else
+                     (d.get("shape") if d else "MISSING"))
+            print(f"    {'dem_glo30':<16} {state}")
         except Exception as exc:  # noqa: BLE001
             print(f"    dem_glo30 failed: {type(exc).__name__}: {exc}")
     return record
@@ -348,6 +389,7 @@ def main(argv=None) -> int:
     lakes_doc = read_json(labels / "lakes.json")
     cutoffs = read_json(labels / "cutoffs.json")
     half_km = lakes_doc["window_half_width_km"]
+    dem_half_km = lakes_doc.get("dem_half_width_km", 6.0)
 
     lakes = lakes_doc["lakes"]
     if args.lake:
@@ -363,7 +405,8 @@ def main(argv=None) -> int:
     for i, lake in enumerate(lakes, 1):
         print(f"[{i}/{len(lakes)}] {lake['id']}  ({lake['name']})")
         records.append(fetch_lake(cat, lake, cutoffs, half_km, pinned,
-                                  args.dry_run, extra_qa=lake["id"] == args.qa_lake))
+                                  args.dry_run, extra_qa=lake["id"] == args.qa_lake,
+                                  dem_half_km=dem_half_km))
 
     manifest = {
         "generated_by": "src.data.fetch",
@@ -371,6 +414,7 @@ def main(argv=None) -> int:
         "collections": {"imagery": S2_COLLECTION, "dem": DEM_COLLECTION},
         "assets_per_scene": list(S2_ASSETS),
         "window_half_width_km": half_km,
+        "dem_half_width_km": dem_half_km,
         "dry_run": args.dry_run,
         "lakes": records,
     }

@@ -62,11 +62,29 @@ def water_mask(scene: Scene, cfg) -> tuple[np.ndarray, dict]:
     return mask, evidence
 
 
+# Gap, in pixels, that morphological closing will bridge before components are
+# labelled. Measured need: Tsho Rolpa fragmented into 99 components and Imja
+# into 239, because thin lines of surface ice, wind-blown debris and floating
+# bergs cut a single lake into pieces. Taking the largest raw component then
+# reported a quarter of the true area. Closing over ~3 pixels (30 m) rejoins a
+# lake split by an ice lead without bridging the ~100 m of moraine that
+# separates genuinely distinct lakes.
+CLOSING_RADIUS_PX = 3
+
+
 def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarray, dict]:
-    """Pick the connected component that is the lake."""
+    """Pick the connected component that is the lake.
+
+    Fragments are rejoined before labelling, then the chosen component is
+    intersected back with the original mask so that closing never invents water
+    that was not observed - it only decides which observed pixels belong
+    together.
+    """
     d = cfg.require("delineation")
     min_px = d["min_lake_pixels"]
-    labels, n = ndimage.label(mask)
+    k = 2 * CLOSING_RADIUS_PX + 1
+    closed = ndimage.binary_closing(mask, structure=np.ones((k, k)))
+    labels, n = ndimage.label(closed)
     if n == 0:
         return np.zeros_like(mask), {"n_components": 0, "selected": None,
                                      "reason": "no water pixels survived the index tests"}
@@ -104,7 +122,13 @@ def select_lake_component(mask: np.ndarray, scene: Scene, cfg) -> tuple[np.ndarr
     # Among candidates near the centroid, the largest is the lake; ponds and
     # meltwater fringes are small.
     chosen = max(near, key=lambda c: c["px"])
-    return labels == chosen["label"], {
+    # Intersect back with the OBSERVED mask: closing decided which pixels group
+    # together, it must not add area that was never seen as water.
+    selected = (labels == chosen["label"]) & mask
+    return selected, {
+        "closing_radius_px": CLOSING_RADIUS_PX,
+        "px_before_closing": int(mask.sum()),
+        "px_selected": int(selected.sum()),
         "n_components": n,
         "n_components_near_centroid": len(near),
         "selected": chosen,

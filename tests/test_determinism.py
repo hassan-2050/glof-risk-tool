@@ -56,22 +56,33 @@ def test_every_threshold_lives_in_config():
     Guards the specific magic numbers a reviewer would challenge. If a stage
     hardcodes one, this fails and points at the file.
     """
+    import ast
+
     banned = {
-        "2.2": "delineation.glacier_nir_swir1_ratio",
-        "0.104": "proxies.volume_area.huggel_2002.coeff",
-        "0.1217": "proxies.volume_area.cook_quincey_2015.coeff",
-        "1.4129": "proxies.volume_area.cook_quincey_2015.exp",
+        2.2: "delineation.glacier_nir_swir1_ratio",
+        0.104: "proxies.volume_area.huggel_2002.coeff",
+        0.1217: "proxies.volume_area.cook_quincey_2015.coeff",
+        1.4129: "proxies.volume_area.cook_quincey_2015.exp",
     }
+    # Deliberately NOT banned: 1000.0 and 10000.0. Those are the ESA BOA
+    # additive offset and quantification value - fixed properties of the
+    # Sentinel-2 product format, not thresholds anyone would tune. Banning them
+    # flagged five correct uses and taught nothing.
+    # Parse rather than grep. The first version of this test matched raw text
+    # and fired on a reflectance table inside a docstring - prose that
+    # documents a threshold is exactly what we WANT, so a text match cannot
+    # tell the difference. Walking the AST sees only real numeric literals.
     offenders = []
     for path in (REPO / "src").rglob("*.py"):
-        text = path.read_text(encoding="utf-8")
-        for literal, key in banned.items():
-            # allow the literal inside a comment or docstring line
-            for i, line in enumerate(text.splitlines(), 1):
-                stripped = line.strip()
-                if literal in stripped and not stripped.startswith("#") \
-                        and "config" not in stripped and '"' not in stripped:
-                    offenders.append(f"{path.relative_to(REPO)}:{i} -> use cfg.require('{key}')")
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)) \
+                    and not isinstance(node.value, bool):
+                key = banned.get(float(node.value))
+                if key:
+                    offenders.append(
+                        f"{path.relative_to(REPO)}:{node.lineno} literal "
+                        f"{node.value} -> use cfg.require('{key}')")
     assert not offenders, "hardcoded thresholds found:\n" + "\n".join(offenders)
 
 
