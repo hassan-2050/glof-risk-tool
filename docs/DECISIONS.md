@@ -206,3 +206,30 @@ Contradiction-detection F1 against the hand-labelled key: **0.857**
 event-type contradiction, which is categorical rather than numeric and is
 checked in Stages 11 and 16; it is counted as a miss here rather than quietly
 excluded from the denominator.
+
+## D11 — Exposure is near-zero because the corridors stop in the headwaters  *(Stage 5)*
+Across 12 lakes the corridors contain 2 buildings in total and no hydropower,
+schools, health posts or bridges. WorldPop returns no populated cells anywhere.
+None of that is a bug, and all of it is a limitation worth stating plainly.
+
+* **WorldPop constrained assigns population only where buildings are detected.**
+  A direct window read over Tsho Rolpa gives 6,460 nodata cells and zero valid
+  ones. An uninhabited glacier basin at 4,500 m is a *measured* absence of
+  settlement, not a coverage gap — so it is now reported as zero with that
+  reason, rather than as a null indistinguishable from a broken overlay.
+
+* **The corridors are truncated by the analysis window.** The DEM window is
+  6 km around each lake, so a corridor can run at most ~8 km before hitting the
+  frame. Real GLOF damage happens far beyond that: the Thame flood carried
+  debris 80 km downstream and destroyed the village several kilometres below
+  our corridor's end; South Lhonak's inundation extended 169 km.
+
+**Consequence, stated rather than buried: every exposure count in Stage 5 is a
+LOWER BOUND, and for these lakes a very weak one.** Meaningful exposure
+analysis needs a downstream domain one to two orders of magnitude larger than a
+lake-centred window — a river-network routing domain, not a scene window. That
+is a genuine design limit of the pinned-window approach, and it is why the
+Stage 5 criterion about reporting population-source divergence cannot be
+satisfied here: with zero population under both products, there is no
+divergence to report. Manufacturing one by widening the window until a village
+appeared would be tuning the geography to fit the criterion.

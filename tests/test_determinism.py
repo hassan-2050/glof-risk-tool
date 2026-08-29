@@ -34,6 +34,33 @@ def test_offline_guard_blocks_sockets():
     assert socket.create_connection is det._REAL_CREATE_CONNECTION
 
 
+def test_offline_guard_does_not_break_library_imports():
+    """Regression: the guard must block CONNECTING, not socket construction.
+
+    The first implementation replaced socket.socket with a function that
+    raised. That broke every import which subclasses it - the stdlib ssl module
+    does exactly that (`class SSLSocket(socket)`), so importing pyproj (which
+    reaches ssl via urllib.request) died with "argument 'code' must be code,
+    not str" from inside ssl.py. Stage 5 could not run at all, and the error
+    pointed nowhere near the guard.
+    """
+    import importlib
+    import socket
+
+    det.engage_offline_guard()
+    try:
+        # These must all still import while the guard is engaged.
+        for mod in ("ssl", "urllib.request", "http.client", "pyproj"):
+            assert importlib.import_module(mod) is not None
+        # Constructing a socket is fine; connecting is not.
+        s = socket.socket()
+        with pytest.raises(det.NetworkAccessBlocked):
+            s.connect(("93.184.216.34", 80))
+        s.close()
+    finally:
+        det.release_offline_guard()
+
+
 def test_json_canonicalisation_is_order_independent():
     """Dict insertion order must not change output bytes."""
     a = {"z": 1, "a": {"q": 2, "b": 3}}

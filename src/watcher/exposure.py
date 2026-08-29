@@ -52,6 +52,36 @@ CRITICALITY = {
 }
 
 
+def classify(el: dict) -> str | None:
+    """Map an OSM element to one of our reportable exposure classes.
+
+    Lives HERE, on the offline side, not in the fetcher. Stage 5 imported it
+    from src.data.fetch_exposure and the offline guard killed the run: that
+    module imports requests, which imports ssl, which the guard has patched.
+    The guard was right - the reproduce path must not touch the network module
+    at all - so the shared logic moved to where both callers can reach it
+    without dragging a network stack onto the reproduce path.
+    """
+    t = el.get("tags", {})
+    if t.get("power") in ("plant", "generator") or t.get("waterway") in ("dam", "weir"):
+        return "hydropower"
+    if t.get("power") == "substation":
+        return "power_substation"
+    if t.get("amenity") in ("school", "college", "kindergarten"):
+        return "school"
+    if t.get("amenity") in ("hospital", "clinic", "doctors", "pharmacy"):
+        return "health_post"
+    if t.get("bridge") and t.get("bridge") != "no":
+        return "bridge"
+    if t.get("highway"):
+        return "road"
+    if t.get("place"):
+        return "settlement"
+    if t.get("building"):
+        return "building"
+    return None
+
+
 def elements_in_corridor(osm: dict, corridor: np.ndarray, transform, crs,
                          classify) -> dict:
     """Count OSM features whose centre falls inside the corridor."""
@@ -102,7 +132,17 @@ def worldpop_in_corridor(path, corridor: np.ndarray, transform, crs) -> dict | N
     vals = dst[corridor]
     vals = vals[np.isfinite(vals)]
     if not vals.size:
-        return None
+        # NOT a failure. WorldPop "constrained" assigns population only where
+        # buildings exist, so an uninhabited glacier basin is legitimately
+        # nodata throughout. A direct window read over Tsho Rolpa returns 6,460
+        # nodata cells and zero valid ones. Reporting this as a null would be
+        # indistinguishable from a broken overlay, so it is reported as a
+        # measured zero with its reason.
+        return {"population": 0.0, "cells": 0, "all_nodata": True,
+                "note": ("WorldPop constrained has no populated cells anywhere in "
+                         "this corridor. The product only assigns population where "
+                         "buildings are detected, so this is a measured absence of "
+                         "settlement, not a coverage gap or an overlay failure.")}
     # WorldPop cells are 100 m; the scene grid is 10 m, so a straight sum over
     # warped cells would count each person ~100 times.
     scale = (10.0 / 100.0) ** 2

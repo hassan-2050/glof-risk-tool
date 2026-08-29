@@ -35,6 +35,9 @@ import requests
 
 from src.common.config import REPO_ROOT, load_config
 from src.common.io import read_json, sha256_file, write_json
+# Shared with Stage 5, which must not import this module (it pulls in
+# requests/ssl and the offline guard rejects that on the reproduce path).
+from src.watcher.exposure import classify
 
 OVERPASS = "https://overpass-api.de/api/interpreter"
 WORLDPOP_NPL = ("https://data.worldpop.org/GIS/Population/"
@@ -60,28 +63,6 @@ OVERPASS_QUERY = """[out:json][timeout:180];
 );
 out tags center;
 """
-
-
-def classify(el: dict) -> str | None:
-    """Map an OSM element to one of our reportable exposure classes."""
-    t = el.get("tags", {})
-    if t.get("power") in ("plant", "generator") or t.get("waterway") in ("dam", "weir"):
-        return "hydropower"
-    if t.get("power") == "substation":
-        return "power_substation"
-    if t.get("amenity") in ("school", "college", "kindergarten"):
-        return "school"
-    if t.get("amenity") in ("hospital", "clinic", "doctors", "pharmacy"):
-        return "health_post"
-    if t.get("bridge") and t.get("bridge") != "no":
-        return "bridge"
-    if t.get("highway"):
-        return "road"
-    if t.get("place"):
-        return "settlement"
-    if t.get("building"):
-        return "building"
-    return None
 
 
 def query_overpass(bbox, retries: int = 3) -> dict:

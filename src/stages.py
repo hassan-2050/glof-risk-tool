@@ -713,9 +713,8 @@ def stage05_exposure(cfg: Config) -> dict:
     import numpy as _np
 
     from src.common.io import read_json, write_csv
-    from src.data.fetch_exposure import classify
     from src.watcher.delineate import select_lake_component, water_mask
-    from src.watcher.exposure import assess
+    from src.watcher.exposure import assess, classify
     from src.watcher.pipeline import find_anchor, load_dem_on_grid
     from src.watcher.routing import msf_corridor
     from src.watcher.scene import load_scene

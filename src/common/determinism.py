@@ -23,7 +23,8 @@ import sys
 from datetime import datetime, timezone
 
 _OFFLINE_ENGAGED = False
-_REAL_SOCKET = socket.socket
+_REAL_CONNECT = socket.socket.connect
+_REAL_CONNECT_EX = socket.socket.connect_ex
 _REAL_CREATE_CONNECTION = socket.create_connection
 
 
@@ -89,30 +90,46 @@ def frozen_now(iso: str) -> datetime:
 
 
 def engage_offline_guard() -> None:
-    """Hard-block outbound sockets for the rest of the process.
+    """Hard-block outbound network for the rest of the process.
 
-    This is what turns "runs offline" from a claim into a proof: if any stage
-    silently depends on a live download, reproduce crashes instead of quietly
-    succeeding on a machine that happens to have network.
+    Blocks CONNECTING, not socket construction.
+
+    The first version replaced socket.socket itself with a function that
+    raised. That broke any import that subclasses it - the standard library's
+    ssl module does exactly this (`class SSLSocket(socket)`), so importing
+    pyproj, which reaches ssl through urllib.request, died with a baffling
+    "argument 'code' must be code, not str" from deep inside ssl.py. The guard
+    was rejecting an IMPORT rather than a network call.
+
+    Patching connect/connect_ex/create_connection keeps every class hierarchy
+    intact while still making it impossible to reach the network, which is the
+    property `reproduce` actually needs to prove.
     """
     global _OFFLINE_ENGAGED
 
-    def _blocked(*args, **kwargs):
+    def _blocked_connect(self, *a, **k):
         raise NetworkAccessBlocked(
-            "Network access attempted on the reproduce path. All inputs must "
-            "come from committed files under data/pinned/. If you are adding a "
-            "download step, it belongs in `make fetch-data` (Stage 1), not here."
+            "network access attempted while the offline guard is engaged. "
+            "reproduce must run entirely from data/pinned/; if this is data "
+            "acquisition, run it from src/data/ outside the reproduce path."
         )
 
-    socket.socket = _blocked  # type: ignore[assignment]
-    socket.create_connection = _blocked  # type: ignore[assignment]
+    def _blocked_create_connection(*a, **k):
+        raise NetworkAccessBlocked(
+            "socket.create_connection attempted while the offline guard is engaged"
+        )
+
+    socket.socket.connect = _blocked_connect          # type: ignore[method-assign]
+    socket.socket.connect_ex = _blocked_connect       # type: ignore[method-assign]
+    socket.create_connection = _blocked_create_connection  # type: ignore[assignment]
     _OFFLINE_ENGAGED = True
 
 
 def release_offline_guard() -> None:
     """Restore sockets. Used only by the Stage 1 data-fetch tooling and tests."""
     global _OFFLINE_ENGAGED
-    socket.socket = _REAL_SOCKET  # type: ignore[assignment]
+    socket.socket.connect = _REAL_CONNECT        # type: ignore[method-assign]
+    socket.socket.connect_ex = _REAL_CONNECT_EX  # type: ignore[method-assign]
     socket.create_connection = _REAL_CREATE_CONNECTION  # type: ignore[assignment]
     _OFFLINE_ENGAGED = False
 
