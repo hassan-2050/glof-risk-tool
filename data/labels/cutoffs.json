@@ -1,0 +1,91 @@
+{
+  "_readme": [
+    "Hindcast discipline. Every hindcast lake has an explicit pre-event-only",
+    "cutoff; no scene acquired after a lake's cutoff may enter the screening",
+    "decision for that lake. Enforced in code by the Stage 1 fetcher (which",
+    "refuses to tag a post-cutoff scene as pre-event) and re-checked by the",
+    "Stage 7 harness before it scores anything.",
+    "",
+    "TWO kinds of date live here, and conflating them is the classic leakage bug:",
+    "  cutoff        - the last date whose data may inform the SCREENING decision",
+    "  post_event_ok - post-event scenes ARE fetched and committed, because",
+    "                  Stage 3's burst detector must see the area drop. They are",
+    "                  tagged post_event and are invisible to Stage 7.",
+    "",
+    "Non-event lakes are screened at each event's decision date so the confusion",
+    "matrix compares like with like: 'on the day we had to judge Thame, what did",
+    "each system flag?' rather than mixing epochs."
+  ],
+
+  "decision_dates": {
+    "thame_2024": {
+      "date": "2024-08-15",
+      "event": "Thyanbo Tsho / Thame GLOF, 16 Aug 2024",
+      "is_headline": true,
+      "note": "The headline confusion matrix is computed at this date. Growth-only must miss thyanbo_tsho here while the proxy-augmented model catches it."
+    },
+    "south_lhonak_2023": {
+      "date": "2023-10-02",
+      "event": "South Lhonak GLOF, 3 Oct 2023",
+      "is_headline": false
+    },
+    "rasuwa_2025": {
+      "date": "2025-07-07",
+      "event": "Pyurepu supraglacial outburst / Lhende Khola, 8 Jul 2025",
+      "is_headline": false
+    },
+    "chamoli_2021": {
+      "date": "2021-02-06",
+      "event": "Chamoli rock-and-ice avalanche, 7 Feb 2021 (NOT a GLOF)",
+      "is_headline": false
+    }
+  },
+
+  "calibration_policy": {
+    "may_tune_on": ["south_lhonak", "chamoli_ronti"],
+    "must_not_tune_on": ["thyanbo_tsho", "pyurepu_supraglacial"],
+    "rationale": "Thresholds are frozen against a growth-only-catchable positive (South Lhonak) and the negative control (Chamoli) before either Nepal case is touched. Tuning on Thame would make the headline result circular.",
+    "frozen_at_stage": 7
+  },
+
+  "per_lake": {
+    "thyanbo_tsho": {
+      "cutoff": "2024-08-15",
+      "event_date": "2024-08-16",
+      "reason": "GLOF at ~05:00 NPT on 16 Aug 2024. Last usable pre-event Sentinel-2 acquisition in the published record is 2024-07-30.",
+      "post_event_ok": true,
+      "post_event_reason": "Stage 3 burst detection needs the 2024-09-18 scene, where the published NDWI area drops 71.5% (43,902 -> 12,516 m2)."
+    },
+    "south_lhonak": {
+      "cutoff": "2023-10-02",
+      "event_date": "2023-10-03",
+      "reason": "Moraine breach around midnight 3 Oct 2023.",
+      "post_event_ok": true,
+      "post_event_reason": "Calibrates the sudden-drop detector against the documented 15.38% post-burst area loss (1.69 -> 1.46 km2)."
+    },
+    "pyurepu_supraglacial": {
+      "cutoff": "2025-07-07",
+      "event_date": "2025-07-08",
+      "reason": "Drained within a single day, 8 Jul 2025. The lake reached maximum extent on 7 Jul, so the cutoff keeps exactly one day of margin.",
+      "post_event_ok": true,
+      "post_event_reason": "The 7 Jul to 8 Jul drop is the fastest transition in the set and stress-tests the detector at daily resolution."
+    },
+    "chamoli_ronti": {
+      "cutoff": "2021-02-06",
+      "event_date": "2021-02-07",
+      "reason": "Rock-and-ice avalanche 07:30 IST, 7 Feb 2021.",
+      "post_event_ok": true,
+      "post_event_reason": "Needed to confirm the pipeline does NOT report a lake-area drop here, because there was no lake to drain."
+    },
+    "imja_tsho":         {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "tsho_rolpa":        {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "thulagi":           {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "lower_barun":       {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "chamlang_tsho":     {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "lumding_tsho":      {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "hongu_1":           {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "hongu_2":           {"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "gokyo_dudh_pokhari":{"cutoff": null, "reason": "No burst event. Screened at each decision date."},
+    "tilicho":           {"cutoff": null, "reason": "No burst event. Screened at each decision date."}
+  }
+}

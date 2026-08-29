@@ -1,0 +1,70 @@
+{
+  "claim": "Thyanbo Tsho (the lake that burst above Thame on 16 Aug 2024) is NOT on the ICIMOD/UNDP 2020 list of 47 potentially dangerous glacial lakes.",
+  "conclusion": {
+    "basis": "Zero textual occurrences of Thyanbo/Thyangbo/Thame/Thengbo in a report where the control terms Imja, Tsho Rolpa, Thulagi and Lumding all appear; and all 47 lake-ID centroids parsed, with the nearest (Lumding, 86.612E 27.779N) 5.76 km from Thyanbo and separately named in the report.",
+    "important_caveat": "NOT on the PDGL list does NOT mean unknown to science. The 2020 inventory screened lakes down to 0.003 km2 and applied dam/glacier/surroundings criteria; Thyanbo's absence reflects the screening criteria, not an absence of any prior observation. This distinction must survive into the sitrep text.",
+    "thyanbo_on_2020_pdgl_list": false
+  },
+  "evidence": {
+    "control_terms_prove_the_search_works": {
+      "imja": 13,
+      "lumding": 3,
+      "thulagi": 4,
+      "tsho rolpa": 10
+    },
+    "count_matches": true,
+    "count_stated_in_report": 47,
+    "id_encoding": "GL<lon*1000>E<lat*1000>N, per the report's own lake-ID section",
+    "search_terms_and_hit_counts": {
+      "thame": 0,
+      "thengbo": 0,
+      "thyanbo": 0,
+      "thyangbo": 0
+    },
+    "three_nearest_pdgls_to_thyanbo": [
+      {
+        "distance_km": 5.76,
+        "lat": 27.779,
+        "lon": 86.612
+      },
+      {
+        "distance_km": 12.68,
+        "lat": 27.861,
+        "lon": 86.476
+      },
+      {
+        "distance_km": 19.78,
+        "lat": 27.946,
+        "lon": 86.447
+      }
+    ],
+    "unique_pdgl_lake_ids_parsed": 47
+  },
+  "sources_checked": [
+    {
+      "contact": "Sudan Bikash Maharjan, RS Analyst - Cryosphere, ICIMOD",
+      "doi": "10.26066/RDS.1971950",
+      "licence": "CC BY 4.0",
+      "published": "2020-09-10",
+      "result": "Record describes the PDGL dataset (Landsat 2015 basis, four criteria). No mention of Thyanbo, Thyangbo or Thame.",
+      "url": "https://rds.icimod.org/Home/DataDetail?metadataId=1971950",
+      "what": "ICIMOD Regional Database System metadata record"
+    },
+    {
+      "authors": "Bajracharya, S.R.; Maharjan, S.B.; Shrestha, F.; Sherpa, T.C.; Wagle, N.; Shrestha, A.B.",
+      "doi": "10.53055/ICIMOD.773",
+      "integrity": "MATCH",
+      "md5_of_file_we_checked": "82e00325239d4db0360df40cb592d909",
+      "md5_published_by_icimod": "82e00325239d4db0360df40cb592d909",
+      "pdf": "HimalDoc_RR_IdentificationOfPotentiallyDangerousGlacialLakes2020.pdf",
+      "result": "Full-text search of the extracted 54-page text layer.",
+      "sha256_of_file_we_checked": "59619fffe3c428b498e6ed1931b5571e558b2b52aaf98d1fe2135e5e87015fed",
+      "title": "Inventory of glacial lakes and identification of potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India",
+      "url": "https://lib.icimod.org/records/p869r-n4132",
+      "what": "ICIMOD/UNDP 2020 research report (full text, 54 pp)",
+      "year": 2020
+    }
+  ],
+  "verified_on": "2026-08-29",
+  "why_it_matters": "The project's headline argument is that the standard screening pipeline had a blind spot here. Asserting that from the brief would be hearsay; this record is a direct check of the primary source, as required by the Stage 1 pass criteria."
+}
