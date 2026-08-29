@@ -225,3 +225,84 @@ def stage03_trajectory(cfg: Config) -> dict:
     detected = [r["lake_id"] for r in rows if r["burst_detected"]]
     return {"lakes": len(results), "burst_detected": detected,
             "suppressed_freeze_up": sum(r["n_suppressed_freeze_up"] for r in rows)}
+
+
+@stage(4, "proxies", "Watcher: dam-failure and mass-movement proxy engine",
+       outputs=("outputs/stage04_proxies.json", "outputs/stage04_proxies.csv"))
+def stage04_proxies(cfg: Config) -> dict:
+    """Per-lake hazard record: every proxy separately queryable and cited.
+
+    Evaluated on the last PRE-EVENT scene for hindcast lakes and the best
+    annual scene otherwise, so the record answers the question that matters:
+    what could have been known before the event, from free data.
+    """
+    from src.common.io import read_json, write_csv
+    from src.watcher.pipeline import find_anchor, load_dem_on_grid
+    from src.watcher.delineate import select_lake_component, water_mask
+    from src.watcher.proxies import compute_all
+    from src.watcher.scene import load_scene
+
+    lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    manifest = read_json(cfg.path("pinned") / "scenes_manifest.json")
+    delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
+    by_id = {l["lake_id"]: l for l in manifest["lakes"]}
+    delin_by_id = {r["lake_id"]: r for r in delin["lakes"]}
+
+    records, rows = [], []
+    for lake in lakes_doc["lakes"]:
+        ml = by_id.get(lake["id"])
+        if ml is None:
+            continue
+        scenes = {}
+        for e in ml["scenes"]:
+            if e.get("assets"):
+                sc = load_scene(lake["id"], e)
+                if sc is not None:
+                    scenes[sc.label] = sc
+        if not scenes:
+            continue
+        anchor, _ = find_anchor(scenes, cfg)
+
+        # Which scene do we judge on? For a hindcast lake, the most recent
+        # usable PRE-EVENT view - that is the evidence a screening decision
+        # would have had. Never a post-event scene: the drained lake is not
+        # what we were asked to assess.
+        dr = delin_by_id.get(lake["id"], {})
+        usable = {s["label"]: s for s in dr.get("scenes", [])
+                  if s["qa"]["verdict"] != "unusable"}
+        pre = [s for s in usable.values() if s["role"] == "event_pre"]
+        if pre:
+            chosen = max(pre, key=lambda s: (s["acquired_date"], s["area_m2"]))
+        else:
+            annual = [s for s in usable.values() if s["role"] == "annual"]
+            if not annual:
+                continue
+            chosen = max(annual, key=lambda s: s["area_m2"])
+        scene = scenes.get(chosen["label"])
+        if scene is None:
+            continue
+
+        dem = load_dem_on_grid(lake["id"], scene)
+        wm, _ = water_mask(scene, cfg)
+        lake_mask, _ = select_lake_component(wm, scene, cfg, anchor_rc=anchor)
+        rec = compute_all(lake, scene, dem, lake_mask, cfg)
+        rec["class"] = lake["class"]
+        rec["label_burst"] = lake["label_burst"]
+        rec["scene_role"] = chosen["role"]
+        records.append(rec)
+
+        row = {"lake_id": lake["id"], "class": lake["class"],
+               "label_burst": lake["label_burst"], "scene_date": rec["scene_date"],
+               "scene_role": chosen["role"], "lake_area_m2": rec["lake_area_m2"],
+               "n_fired": rec["n_fired"], "fired": "; ".join(rec["proxies_fired"])}
+        for p in rec["proxies"]:
+            row[p["proxy"]] = p["fired"]
+        rows.append(row)
+
+    write_json(REPO_ROOT / "outputs" / "stage04_proxies.json", {"lakes": records})
+    names = sorted({p["proxy"] for r in records for p in r["proxies"]})
+    write_csv(REPO_ROOT / "outputs" / "stage04_proxies.csv", rows,
+              fieldnames=["lake_id", "class", "label_burst", "scene_date", "scene_role",
+                          "lake_area_m2", "n_fired", *names, "fired"])
+    return {"lakes": len(records),
+            "mean_proxies_fired": round(sum(r["n_fired"] for r in records) / max(len(records), 1), 2)}

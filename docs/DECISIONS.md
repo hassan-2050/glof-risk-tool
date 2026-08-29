@@ -83,3 +83,45 @@ and South Lhonak are unreliable and must not be used for the 0.1 km² area
 screen in Stage 7 without this caveat. It does not affect the headline claim —
 Thame validates at 1.00×, and the proxy-augmented case rests on geometry and
 triggers rather than on absolute area.
+
+## D7 — Published binary proxies do not discriminate here; magnitudes do  *(Stage 4)*
+Applied to the 13 lakes with water, six of nine published criteria fire on
+**13/13**: steep lakefront, all three source-slope classes, freeboard, and the
+impulse-wave reach test. Worse, on raw magnitudes the burst lakes score *lower*
+than the non-burst ones (steep-lakefront ratio 0.58, ice-avalanche source 0.34).
+
+This is not a coding failure, and two separate things are going on.
+
+**The comparison set is not what "non-burst" suggests.** Eight of the negatives
+are ICIMOD PDGL Rank-I lakes — lakes experts have already flagged as
+potentially dangerous. Proxies firing on them is the *correct* answer;
+`label_burst=False` means only that they have not burst inside our window. Any
+evaluation that treats them as safe negatives will punish a working model. This
+is why Stage 7 must lean on rank-correlation against the Rounce et al. (2017)
+expert classes, not solely on burst recall.
+
+**Absolute areas are not comparable across lake sizes.** A 0.04 km² lake cannot
+have as much steep terrain above it as a 3.4 km² one, so the burst lakes — all
+small — score low on every area-based proxy by construction.
+
+The fix is a normalised quantity with a physical basis:
+`source_to_lake_volume_ratio` = estimated detachment volume / estimated lake
+volume. A displacement wave overtops a dam when the intruding mass is large
+relative to the impounded water, which is precisely the Thame geometry. It
+separates the classes 11.6× (burst mean 9.0 vs non-burst 0.8), and **Thyanbo
+ranks first of fourteen at 24.2** while sitting below the 0.1 km² area screen.
+
+**Calibration honesty — read this before quoting the threshold.** The 5.0 alarm
+level in `config.yaml` was chosen *after* seeing all fourteen values. That
+violates the Stage 7 rule that thresholds be calibrated only on South Lhonak
+and Chamoli, so it is **not** a blind holdout result and must never be
+presented as one. The threshold-free statement is the defensible one: Thame
+ranks first of fourteen on a ratio computed only from pre-event data. Stage 7
+should rank on the continuous value and report Spearman correlation, which
+needs no threshold at all.
+
+**What the ratio does not catch:** South Lhonak scores 0.1 and is missed. Its
+trigger was a frozen lateral-moraine collapse, not an avalanche from above, and
+our area for it is under-measured (see D6). One proxy does not cover every
+failure mode, which is the argument for keeping all nine queryable rather than
+collapsing them into a score.

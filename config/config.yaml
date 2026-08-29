@@ -130,6 +130,24 @@ proxies:
   impulse_wave:
     source: "Allen et al. 2019; Rounce et al. 2017, Remote Sensing 9(7):654"
     reach_angle_min_deg: 14      # Allen et al. 2019 / Rounce et al. 2017
+    # DERIVED, not published. A detachment thickness cannot be recovered from a
+    # single DSM, so source volume is estimated as area x this depth. 10 m is a
+    # mid-range rock-slope failure depth; the output tags the volume half of
+    # the criterion as derived so it can be rejected independently of the
+    # reach-angle half, which is published.
+    assumed_failure_depth_m: 10
+    # DERIVED. Fraction of the reach-satisfying steep zone assumed to release in
+    # one event. Using the whole zone gave 207e6 m3 at Thyanbo, eight times the
+    # Chamoli avalanche; real detachments are a small part of the terrain that
+    # could in principle fail. 0.05 puts the Thyanbo estimate near 10e6 m3,
+    # the right order for a valley-wall failure.
+    release_area_fraction: 0.05
+    # DERIVED. Estimated source volume divided by estimated lake volume, above
+    # which a displacement wave is considered capable of overtopping. Not a
+    # published threshold - a screening level chosen to be well clear of the
+    # PDGL population, and it must be justified in the changelog before it
+    # informs any ranking.
+    source_to_lake_volume_alarm: 5.0
     source_volume_min_m3: 100000 # 0.1e6 m3
     tier: published
   calving_onset:
