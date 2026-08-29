@@ -1,0 +1,43 @@
+{
+  "elements": [
+    {
+      "center": {
+        "lat": 27.741914,
+        "lon": 86.923158
+      },
+      "id": 884879649,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.741648,
+        "lon": 86.923347
+      },
+      "id": 884879651,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.741598,
+        "lon": 86.922863
+      },
+      "id": 884879652,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:42:35Z"
+  },
+  "version": 0.6
+}

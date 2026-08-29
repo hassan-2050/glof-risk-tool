@@ -1,0 +1,730 @@
+{
+  "elements": [
+    {
+      "id": 419103128,
+      "lat": 27.954088,
+      "lon": 86.694588,
+      "tags": {
+        "ele": "4750",
+        "name": "Gokyo",
+        "name:be": "Гокіа",
+        "name:ru": "Гокио",
+        "name:zh": "高乔",
+        "place": "hamlet",
+        "wikidata": "Q1534489",
+        "wikipedia": "en:Gokyo"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5491797412,
+      "lat": 27.940753,
+      "lon": 86.720332,
+      "tags": {
+        "alt_name": "Tangna",
+        "alt_name1": "Tagnak",
+        "ele": "4700",
+        "name": "ड्रागनाग",
+        "name:en": "Dragnag",
+        "name:ne": "ड्रागनाग",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11445668769,
+      "lat": 27.953892,
+      "lon": 86.694345,
+      "tags": {
+        "amenity": "clinic",
+        "email": "gokyoclinic2019@gmail.com",
+        "internet_access": "wlan",
+        "name:en": "Gokyo International Health Care Center",
+        "opening_hours": "24/7",
+        "phone": "+977 981-3999483;+977 18952830"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.93086,
+        "lon": 86.707888
+      },
+      "id": 59429744,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953286,
+        "lon": 86.694144
+      },
+      "id": 315445329,
+      "tags": {
+        "building": "yes",
+        "tourism": "guest_house"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953582,
+        "lon": 86.694212
+      },
+      "id": 344731662,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953448,
+        "lon": 86.694049
+      },
+      "id": 344731664,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953838,
+        "lon": 86.694059
+      },
+      "id": 344731667,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954319,
+        "lon": 86.6941
+      },
+      "id": 344731668,
+      "tags": {
+        "addr:postcode": "56000",
+        "addr:street": "Gokyo Ri",
+        "building": "yes",
+        "email": "gokyotashi@gmail.com",
+        "internet_access": "wlan",
+        "name:en": "Fitzroy Inn Gokyo 4800m.",
+        "opening_hours": "24/7",
+        "phone": "+9779860960390",
+        "tourism": "guest_house",
+        "website": "https://www.lodgesnepal.com/"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954257,
+        "lon": 86.694584
+      },
+      "id": 344731670,
+      "tags": {
+        "building": "hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953905,
+        "lon": 86.694822
+      },
+      "id": 344731671,
+      "tags": {
+        "building": "hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953961,
+        "lon": 86.694665
+      },
+      "id": 344731672,
+      "tags": {
+        "building": "hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954068,
+        "lon": 86.694429
+      },
+      "id": 344731673,
+      "tags": {
+        "addr:postcode": "56000",
+        "addr:street": "Gokyo Ri",
+        "building": "yes",
+        "email": "gokyo.tenzi@gmail.com",
+        "internet_access": "wlan",
+        "name:en": "Gokyo Namaste Lodge and Restaurant",
+        "opening_hours": "24/7",
+        "phone": "+977 981-3999483",
+        "power_supply": "yes",
+        "shower": "yes",
+        "tourism": "guest_house",
+        "website": "https://gokyonamastelodge.business.site/"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953894,
+        "lon": 86.694336
+      },
+      "id": 344731674,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954035,
+        "lon": 86.694266
+      },
+      "id": 344731675,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940632,
+        "lon": 86.719776
+      },
+      "id": 344731677,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940291,
+        "lon": 86.720201
+      },
+      "id": 344731678,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.941023,
+        "lon": 86.720878
+      },
+      "id": 344731680,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.94024,
+        "lon": 86.720347
+      },
+      "id": 344731681,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.941273,
+        "lon": 86.720684
+      },
+      "id": 344731682,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.941284,
+        "lon": 86.720891
+      },
+      "id": 344731683,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.925097,
+        "lon": 86.681886
+      },
+      "id": 344928436,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940396,
+        "lon": 86.719903
+      },
+      "id": 345516559,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954323,
+        "lon": 86.694443
+      },
+      "id": 452065600,
+      "tags": {
+        "building": "hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954096,
+        "lon": 86.6938
+      },
+      "id": 753105658,
+      "tags": {
+        "building": "yes",
+        "internet_access": "wlan",
+        "name": "Himalayan Eco Resort",
+        "tourism": "guest_house",
+        "wheelchair": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.924339,
+        "lon": 86.723702
+      },
+      "id": 968712366,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.923974,
+        "lon": 86.723983
+      },
+      "id": 968712367,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.923805,
+        "lon": 86.723712
+      },
+      "id": 968712368,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.923513,
+        "lon": 86.72422
+      },
+      "id": 968712369,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.922416,
+        "lon": 86.719228
+      },
+      "id": 968736855,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.922632,
+        "lon": 86.722623
+      },
+      "id": 1047226893,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.922733,
+        "lon": 86.722463
+      },
+      "id": 1047226894,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940648,
+        "lon": 86.719934
+      },
+      "id": 1047226919,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.94084,
+        "lon": 86.719966
+      },
+      "id": 1047226920,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940793,
+        "lon": 86.720683
+      },
+      "id": 1047226921,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940956,
+        "lon": 86.720378
+      },
+      "id": 1047226922,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.940976,
+        "lon": 86.720738
+      },
+      "id": 1047226923,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.941175,
+        "lon": 86.720663
+      },
+      "id": 1047226924,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.924816,
+        "lon": 86.723061
+      },
+      "id": 1047226925,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.924875,
+        "lon": 86.723119
+      },
+      "id": 1047226926,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.951497,
+        "lon": 86.67831
+      },
+      "id": 1123104476,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954076,
+        "lon": 86.694677
+      },
+      "id": 1123104477,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954275,
+        "lon": 86.693599
+      },
+      "id": 1123104478,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954123,
+        "lon": 86.694557
+      },
+      "id": 1123104479,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954118,
+        "lon": 86.69483
+      },
+      "id": 1123104480,
+      "tags": {
+        "building": "hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953305,
+        "lon": 86.694889
+      },
+      "id": 1123104481,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953332,
+        "lon": 86.694747
+      },
+      "id": 1123104482,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953624,
+        "lon": 86.693916
+      },
+      "id": 1123104483,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953306,
+        "lon": 86.693882
+      },
+      "id": 1123104485,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953249,
+        "lon": 86.69392
+      },
+      "id": 1123104486,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953488,
+        "lon": 86.693761
+      },
+      "id": 1123104487,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.95321,
+        "lon": 86.693819
+      },
+      "id": 1123104488,
+      "tags": {
+        "building": "yes",
+        "name": "Gokyo Lake side",
+        "name:en": "Mountain View Lodge",
+        "tourism": "guest_house"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953349,
+        "lon": 86.69368
+      },
+      "id": 1123104489,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953533,
+        "lon": 86.693795
+      },
+      "id": 1123104490,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953589,
+        "lon": 86.69375
+      },
+      "id": 1123104491,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953736,
+        "lon": 86.693651
+      },
+      "id": 1123104492,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954175,
+        "lon": 86.693673
+      },
+      "id": 1123104493,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.951167,
+        "lon": 86.675204
+      },
+      "id": 1153599577,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.954831,
+        "lon": 86.694435
+      },
+      "id": 1229444807,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953531,
+        "lon": 86.694391
+      },
+      "id": 1352016744,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.953382,
+        "lon": 86.693908
+      },
+      "id": 20260727,
+      "tags": {
+        "building": "yes",
+        "name": "Lake side",
+        "tourism": "guest_house",
+        "type": "multipolygon"
+      },
+      "type": "relation"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:43:36Z"
+  },
+  "version": 0.6
+}

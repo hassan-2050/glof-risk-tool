@@ -1,0 +1,263 @@
+{
+  "elements": [
+    {
+      "center": {
+        "lat": 27.899231,
+        "lon": 88.274909
+      },
+      "id": 1153267681,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899117,
+        "lon": 88.275005
+      },
+      "id": 1153267682,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898972,
+        "lon": 88.275126
+      },
+      "id": 1153267683,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899773,
+        "lon": 88.274842
+      },
+      "id": 1153267684,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899285,
+        "lon": 88.274691
+      },
+      "id": 1153267685,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899087,
+        "lon": 88.274674
+      },
+      "id": 1153267686,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899535,
+        "lon": 88.274449
+      },
+      "id": 1153267691,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.918965,
+        "lon": 88.360719
+      },
+      "id": 1214411701,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.918621,
+        "lon": 88.360817
+      },
+      "id": 1214411702,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.897918,
+        "lon": 88.275419
+      },
+      "id": 1214465332,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.897908,
+        "lon": 88.275389
+      },
+      "id": 1214465333,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898129,
+        "lon": 88.275175
+      },
+      "id": 1214465334,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898122,
+        "lon": 88.275324
+      },
+      "id": 1214465335,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898862,
+        "lon": 88.274874
+      },
+      "id": 1214465336,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899043,
+        "lon": 88.27471
+      },
+      "id": 1214465337,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.89899,
+        "lon": 88.274754
+      },
+      "id": 1214465338,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898946,
+        "lon": 88.274791
+      },
+      "id": 1214465339,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.898993,
+        "lon": 88.274854
+      },
+      "id": 1214465340,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899168,
+        "lon": 88.27479
+      },
+      "id": 1214465341,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899119,
+        "lon": 88.274831
+      },
+      "id": 1214465342,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899073,
+        "lon": 88.274874
+      },
+      "id": 1214465343,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899521,
+        "lon": 88.274318
+      },
+      "id": 1214465344,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899857,
+        "lon": 88.275072
+      },
+      "id": 1214465839,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T08:12:55Z"
+  },
+  "version": 0.6
+}

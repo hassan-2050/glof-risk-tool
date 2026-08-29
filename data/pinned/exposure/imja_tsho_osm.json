@@ -1,0 +1,353 @@
+{
+  "elements": [
+    {
+      "id": 704038463,
+      "lat": 27.904665,
+      "lon": 86.871366,
+      "tags": {
+        "alt_name": "Chhukhung",
+        "ele": "4730",
+        "name": "Chukhung",
+        "name:be": "Чукхунг",
+        "name:ja": "チュクン",
+        "name:ru": "Чукхунг",
+        "place": "village",
+        "wikidata": "Q5116018",
+        "wikipedia": "en:Chukhung"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.904387,
+        "lon": 86.87092
+      },
+      "id": 251433052,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904663,
+        "lon": 86.871637
+      },
+      "id": 251433053,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904848,
+        "lon": 86.871813
+      },
+      "id": 251433054,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904706,
+        "lon": 86.872082
+      },
+      "id": 251433057,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904622,
+        "lon": 86.870826
+      },
+      "id": 251433058,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904916,
+        "lon": 86.872242
+      },
+      "id": 316033127,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903688,
+        "lon": 86.872598
+      },
+      "id": 316033196,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904152,
+        "lon": 86.871412
+      },
+      "id": 967798470,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904259,
+        "lon": 86.871583
+      },
+      "id": 967798471,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905286,
+        "lon": 86.871551
+      },
+      "id": 967798474,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905153,
+        "lon": 86.871313
+      },
+      "id": 967798475,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904851,
+        "lon": 86.872357
+      },
+      "id": 967798476,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904635,
+        "lon": 86.871814
+      },
+      "id": 967798477,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904581,
+        "lon": 86.871942
+      },
+      "id": 967798479,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904512,
+        "lon": 86.871168
+      },
+      "id": 1124444858,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904406,
+        "lon": 86.87063
+      },
+      "id": 1124444859,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904295,
+        "lon": 86.870808
+      },
+      "id": 1124444860,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904178,
+        "lon": 86.871845
+      },
+      "id": 1124444861,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904154,
+        "lon": 86.87178
+      },
+      "id": 1124444862,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904973,
+        "lon": 86.871417
+      },
+      "id": 1124444863,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904916,
+        "lon": 86.872099
+      },
+      "id": 1124444864,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905156,
+        "lon": 86.872711
+      },
+      "id": 1124444865,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.902111,
+        "lon": 86.866023
+      },
+      "id": 1482937701,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903259,
+        "lon": 86.868299
+      },
+      "id": 1482937703,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904988,
+        "lon": 86.870466
+      },
+      "id": 1482937712,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trailblazed": "cairns"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905223,
+        "lon": 86.870249
+      },
+      "id": 1482937713,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trailblazed": "cairns"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904326,
+        "lon": 86.870271
+      },
+      "id": 1504403985,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904402,
+        "lon": 86.872226
+      },
+      "id": 1504403986,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:42:35Z"
+  },
+  "version": 0.6
+}

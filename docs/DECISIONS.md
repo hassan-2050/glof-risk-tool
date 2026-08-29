@@ -160,3 +160,49 @@ correctly flagged as a lower bound because it reaches the window edge).
 those valleys are genuinely gentler than 11°, while the ~3° clear-water rule
 runs for kilometres. Reporting only the debris regime would have shown three
 "no hazard" results for lakes with multi-kilometre flood reach.
+
+## D9 — "Augmented" means superset, not replacement  *(Stage 7)*
+The first version scored the advanced model on proxies ALONE and produced an
+identical recall to the baseline: 0.333 both. The two models were simply
+catching different lakes — growth-only found South Lhonak, the proxies found
+Thame. Interesting, but not the comparison the stage asks for, and discarding a
+working signal to keep the advanced model "pure" is a self-inflicted wound.
+
+Proxy-augmented now inherits every baseline flag and adds its own. This cannot
+flatter it: being a strict superset, it can only match or beat the baseline on
+recall, and every extra flag counts against its precision.
+
+| model | TP | FP | FN | recall | precision | F1 |
+|---|---|---|---|---|---|---|
+| growth-only | 1 | 1 | 2 | 0.333 | 0.500 | 0.400 |
+| proxy-augmented | 2 | 1 | 1 | **0.667** | 0.667 | **0.667** |
+
+Growth-only lists **Thame as a false negative**; proxy-augmented catches it.
+Spearman vs the Rounce et al. (2017) expert classes: **0.63** (n=8).
+
+Still missed by both: Pyurepu. Its lake formed and drained inside a single
+week, every post-event scene is cloud-obscured, and our annual series sees only
+the small pre-2025 ponds. Reported, not hidden.
+
+## D10 — Numeric extraction: proximity beats precedence  *(Stage 9)*
+Classifying a number by the FIRST matching quantity pattern is wrong whenever a
+sentence carries several quantities, which situation reports do constantly:
+
+* "11 hydropower projects totalling 405 MW" made 405 a project *count*, so the
+  reported range became "between 4 and 405 hydropower projects".
+* Zhang's "178 fatalities and destroyed three downstream hydropower projects"
+  classified the headline death toll as hydropower and dropped it out of the
+  fatality contradiction — losing the single most important disagreement in the
+  project to a list ordering.
+
+Binding each number to its NEAREST quantity keyword fixed both. A second guard
+excludes date components: "by July 7" and "by July 8" were being read as lake
+AREAS because "sq. km" sat a few words away, and the Rasuwa sitrep reported
+lake area as "between 7e-06 and 8 square kilometres". Dates are dense in
+sitreps and every one is a false figure.
+
+Contradiction-detection F1 against the hand-labelled key: **0.857**
+(precision 0.857, recall 0.857). The one remaining miss is the Chamoli
+event-type contradiction, which is categorical rather than numeric and is
+checked in Stages 11 and 16; it is counted as a miss here rather than quietly
+excluded from the denominator.

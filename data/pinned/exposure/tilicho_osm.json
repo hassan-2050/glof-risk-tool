@@ -1,0 +1,147 @@
+{
+  "elements": [
+    {
+      "id": 1345288199,
+      "lat": 28.680182,
+      "lon": 83.906921,
+      "tags": {
+        "name": "Tilicho Base Camp",
+        "name:en": "Tilicho Base Camp",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 28.680125,
+        "lon": 83.906767
+      },
+      "id": 214399598,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.741429,
+        "lon": 83.807928
+      },
+      "id": 345106484,
+      "tags": {
+        "building": "house"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.677695,
+        "lon": 83.864449
+      },
+      "id": 346967612,
+      "tags": {
+        "building": "yes",
+        "name": "Tilicho Tea Shop"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680066,
+        "lon": 83.906553
+      },
+      "id": 1088769951,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680007,
+        "lon": 83.906612
+      },
+      "id": 1088769952,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680212,
+        "lon": 83.906415
+      },
+      "id": 1088769957,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.679844,
+        "lon": 83.907816
+      },
+      "id": 1088769959,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.679831,
+        "lon": 83.907646
+      },
+      "id": 1088769960,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.68,
+        "lon": 83.90734
+      },
+      "id": 1088769962,
+      "tags": {
+        "building": "yes",
+        "name": "New Tilicho Lake Base Camp Hotel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680109,
+        "lon": 83.907085
+      },
+      "id": 1150673935,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.677307,
+        "lon": 83.863902
+      },
+      "id": 1424920776,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:43:36Z"
+  },
+  "version": 0.6
+}

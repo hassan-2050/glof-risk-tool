@@ -1,0 +1,367 @@
+{
+  "elements": [
+    {
+      "center": {
+        "lat": 27.791743,
+        "lon": 87.150363
+      },
+      "id": 537686645,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791164,
+        "lon": 87.152304
+      },
+      "id": 537686648,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.797657,
+        "lon": 87.12716
+      },
+      "id": 537686650,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.797435,
+        "lon": 87.126094
+      },
+      "id": 537686652,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.79768,
+        "lon": 87.126521
+      },
+      "id": 537686654,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.797597,
+        "lon": 87.126726
+      },
+      "id": 537686656,
+      "tags": {
+        "building": "yes",
+        "description": "Sat phone service may be available",
+        "name": "Langmale Kharka Teahouse",
+        "operator": "Ang Pemba Sherpa",
+        "tourism": "alpine_hut"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835498,
+        "lon": 87.076973
+      },
+      "id": 537728096,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791051,
+        "lon": 87.152612
+      },
+      "id": 1088857099,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.797412,
+        "lon": 87.126326
+      },
+      "id": 1088880241,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.810107,
+        "lon": 87.080748
+      },
+      "id": 1089102230,
+      "tags": {
+        "amenity": "cafe",
+        "building": "yes",
+        "description": "Tea shop sometimes open during season"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835511,
+        "lon": 87.075925
+      },
+      "id": 1089310533,
+      "tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.794621,
+        "lon": 87.134606
+      },
+      "id": 1091574377,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "tourism": "attraction"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791805,
+        "lon": 87.148967
+      },
+      "id": 1093328992,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.792377,
+        "lon": 87.145763
+      },
+      "id": 1093328994,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791678,
+        "lon": 87.151152
+      },
+      "id": 1093328996,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.793078,
+        "lon": 87.144531
+      },
+      "id": 1093328998,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.792978,
+        "lon": 87.143327
+      },
+      "id": 1093329000,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.802718,
+        "lon": 87.109163
+      },
+      "id": 1095353595,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.804565,
+        "lon": 87.085673
+      },
+      "id": 1111774108,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.836086,
+        "lon": 87.076093
+      },
+      "id": 1209039167,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835708,
+        "lon": 87.07592
+      },
+      "id": 1209039168,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835647,
+        "lon": 87.0757
+      },
+      "id": 1209039169,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835479,
+        "lon": 87.075834
+      },
+      "id": 1209039170,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835363,
+        "lon": 87.076073
+      },
+      "id": 1209039171,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835434,
+        "lon": 87.076129
+      },
+      "id": 1209039172,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835507,
+        "lon": 87.07619
+      },
+      "id": 1209039173,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.836174,
+        "lon": 87.075971
+      },
+      "id": 1209040235,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.83531,
+        "lon": 87.076406
+      },
+      "id": 1209077345,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791194,
+        "lon": 87.152393
+      },
+      "id": 1209350659,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791099,
+        "lon": 87.152383
+      },
+      "id": 1209351054,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:42:35Z"
+  },
+  "version": 0.6
+}

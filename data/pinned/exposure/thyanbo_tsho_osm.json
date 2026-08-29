@@ -1,0 +1,858 @@
+{
+  "elements": [
+    {
+      "id": 5224230327,
+      "lat": 27.825058,
+      "lon": 86.603304,
+      "tags": {
+        "alt_name": "Thengbo;Thyāṅbo",
+        "name": "Thyangbo",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.86959,
+        "lon": 86.637666
+      },
+      "id": 341561480,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.8703,
+        "lon": 86.637493
+      },
+      "id": 341561481,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.872142,
+        "lon": 86.637857
+      },
+      "id": 341561483,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.871394,
+        "lon": 86.637121
+      },
+      "id": 341561484,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.870742,
+        "lon": 86.637778
+      },
+      "id": 341561487,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.870504,
+        "lon": 86.637129
+      },
+      "id": 341561493,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.870783,
+        "lon": 86.637872
+      },
+      "id": 341561496,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.870297,
+        "lon": 86.637933
+      },
+      "id": 341561519,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.861098,
+        "lon": 86.635469
+      },
+      "id": 341595197,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.862943,
+        "lon": 86.625565
+      },
+      "id": 341595198,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865062,
+        "lon": 86.611356
+      },
+      "id": 341595199,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.866003,
+        "lon": 86.610893
+      },
+      "id": 341595200,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865139,
+        "lon": 86.61103
+      },
+      "id": 341595201,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.866066,
+        "lon": 86.610405
+      },
+      "id": 341595202,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.860776,
+        "lon": 86.635958
+      },
+      "id": 341595203,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865368,
+        "lon": 86.611804
+      },
+      "id": 341595204,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.860579,
+        "lon": 86.636302
+      },
+      "id": 341595205,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.86108,
+        "lon": 86.635193
+      },
+      "id": 341595206,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.860715,
+        "lon": 86.636088
+      },
+      "id": 341595207,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865384,
+        "lon": 86.614604
+      },
+      "id": 341595208,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.859557,
+        "lon": 86.63298
+      },
+      "id": 341595209,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.86534,
+        "lon": 86.614177
+      },
+      "id": 341595210,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865374,
+        "lon": 86.614081
+      },
+      "id": 341595211,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865423,
+        "lon": 86.611769
+      },
+      "id": 341595212,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.85265,
+        "lon": 86.634198
+      },
+      "id": 341646698,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.852737,
+        "lon": 86.63371
+      },
+      "id": 341646699,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.857979,
+        "lon": 86.638246
+      },
+      "id": 341646705,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.863804,
+        "lon": 86.623044
+      },
+      "id": 341646715,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.861495,
+        "lon": 86.633093
+      },
+      "id": 341901254,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.861531,
+        "lon": 86.633148
+      },
+      "id": 341901256,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850289,
+        "lon": 86.635604
+      },
+      "id": 341901260,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850552,
+        "lon": 86.636272
+      },
+      "id": 341901262,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850794,
+        "lon": 86.635811
+      },
+      "id": 341901264,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835552,
+        "lon": 86.574705
+      },
+      "id": 344717734,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.826478,
+        "lon": 86.574835
+      },
+      "id": 344717740,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.82625,
+        "lon": 86.571829
+      },
+      "id": 344717741,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824692,
+        "lon": 86.574683
+      },
+      "id": 344717742,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.821046,
+        "lon": 86.572341
+      },
+      "id": 344717745,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.779408,
+        "lon": 86.574822
+      },
+      "id": 344717747,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.792719,
+        "lon": 86.575721
+      },
+      "id": 344717748,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.796339,
+        "lon": 86.575812
+      },
+      "id": 344717749,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.796362,
+        "lon": 86.57587
+      },
+      "id": 344717750,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.796381,
+        "lon": 86.575919
+      },
+      "id": 344717751,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.826142,
+        "lon": 86.631361
+      },
+      "id": 344730308,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825633,
+        "lon": 86.629794
+      },
+      "id": 344730310,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.822374,
+        "lon": 86.611429
+      },
+      "id": 344730311,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.822462,
+        "lon": 86.611355
+      },
+      "id": 344730312,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.823311,
+        "lon": 86.610417
+      },
+      "id": 344730316,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824138,
+        "lon": 86.606094
+      },
+      "id": 344730317,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824272,
+        "lon": 86.606087
+      },
+      "id": 344730318,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824421,
+        "lon": 86.605373
+      },
+      "id": 344730319,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.823778,
+        "lon": 86.605176
+      },
+      "id": 344730320,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824529,
+        "lon": 86.604654
+      },
+      "id": 344730321,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825534,
+        "lon": 86.601822
+      },
+      "id": 344730325,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825219,
+        "lon": 86.602029
+      },
+      "id": 344730326,
+      "tags": {
+        "building": "house"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825126,
+        "lon": 86.601578
+      },
+      "id": 539950951,
+      "tags": {
+        "building": "yes",
+        "ele": "4320",
+        "name": "Tashi Lapcha Pass Lodge & Restaurant",
+        "name:en": "Tashi Lapcha Pass Lodge and Restaurant",
+        "phone": "9841390980",
+        "tourism": "guest_house"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.834442,
+        "lon": 86.571922
+      },
+      "id": 539950952,
+      "tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.83469,
+        "lon": 86.571932
+      },
+      "id": 539950959,
+      "tags": {
+        "amenity": "shelter",
+        "building": "yes",
+        "description": "build by: Yambu Thamichho Kydug; sponsored by: N.M.A.",
+        "shelter_type": "basic_hut"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.863498,
+        "lon": 86.62439
+      },
+      "id": 948727558,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.862135,
+        "lon": 86.616503
+      },
+      "id": 948727559,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.862402,
+        "lon": 86.617247
+      },
+      "id": 948727560,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850442,
+        "lon": 86.635475
+      },
+      "id": 948829142,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.822632,
+        "lon": 86.622954
+      },
+      "id": 948829154,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824829,
+        "lon": 86.604021
+      },
+      "id": 948829162,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825468,
+        "lon": 86.602804
+      },
+      "id": 948829181,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824424,
+        "lon": 86.605048
+      },
+      "id": 948829183,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.859955,
+        "lon": 86.631679
+      },
+      "id": 948975665,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.872636,
+        "lon": 86.63746
+      },
+      "id": 949501350,
+      "tags": {
+        "building": "ruins"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824415,
+        "lon": 86.606005
+      },
+      "id": 1124266496,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.821748,
+        "lon": 86.619399
+      },
+      "id": 1124266502,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.861237,
+        "lon": 86.634336
+      },
+      "id": 1154689488,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865126,
+        "lon": 86.615353
+      },
+      "id": 1154690894,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.826087,
+        "lon": 86.631511
+      },
+      "id": 1351770176,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.821751,
+        "lon": 86.619657
+      },
+      "id": 1351770177,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825066,
+        "lon": 86.601746
+      },
+      "id": 1528692387,
+      "tags": {
+        "amenity": "toilets",
+        "building": "yes",
+        "changing_table": "no",
+        "wheelchair": "no"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T08:12:55Z"
+  },
+  "version": 0.6
+}

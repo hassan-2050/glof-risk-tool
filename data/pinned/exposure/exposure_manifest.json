@@ -1,0 +1,225 @@
+{
+  "generated_by": "src.data.fetch_exposure",
+  "lakes": [
+    {
+      "bbox_wgs84": [
+        86.516456,
+        27.768638,
+        86.638344,
+        27.877162
+      ],
+      "class_counts": {
+        "building": 75,
+        "settlement": 1
+      },
+      "lake_id": "thyanbo_tsho",
+      "n_elements": 76,
+      "path": "data/pinned/exposure/thyanbo_tsho_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        88.270486,
+        27.893238,
+        88.392514,
+        28.001762
+      ],
+      "class_counts": {
+        "building": 23
+      },
+      "lake_id": "south_lhonak",
+      "n_elements": 23,
+      "path": "data/pinned/exposure/south_lhonak_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        85.570329,
+        28.342838,
+        85.692871,
+        28.451362
+      ],
+      "class_counts": {},
+      "lake_id": "pyurepu_supraglacial",
+      "n_elements": 0,
+      "path": "data/pinned/exposure/pyurepu_supraglacial_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        79.656969,
+        30.314908,
+        79.781911,
+        30.423432
+      ],
+      "class_counts": {},
+      "lake_id": "chamoli_ronti",
+      "n_elements": 0,
+      "path": "data/pinned/exposure/chamoli_ronti_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.864014,
+        27.843738,
+        86.985986,
+        27.952262
+      ],
+      "class_counts": {
+        "bridge": 5,
+        "building": 23,
+        "settlement": 1
+      },
+      "lake_id": "imja_tsho",
+      "n_elements": 29,
+      "path": "data/pinned/exposure/imja_tsho_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.415034,
+        27.806738,
+        86.536966,
+        27.915262
+      ],
+      "class_counts": {
+        "bridge": 3,
+        "building": 83,
+        "settlement": 1
+      },
+      "lake_id": "tsho_rolpa",
+      "n_elements": 87,
+      "path": "data/pinned/exposure/tsho_rolpa_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        84.423676,
+        28.433738,
+        84.546324,
+        28.542262
+      ],
+      "class_counts": {
+        "bridge": 5
+      },
+      "lake_id": "thulagi",
+      "n_elements": 5,
+      "path": "data/pinned/exposure/thulagi_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        87.03107,
+        27.743738,
+        87.15293,
+        27.852262
+      ],
+      "class_counts": {
+        "bridge": 10,
+        "building": 20
+      },
+      "lake_id": "lower_barun",
+      "n_elements": 30,
+      "path": "data/pinned/exposure/lower_barun_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.897094,
+        27.700738,
+        87.018906,
+        27.809262
+      ],
+      "class_counts": {
+        "building": 3
+      },
+      "lake_id": "chamlang_tsho",
+      "n_elements": 3,
+      "path": "data/pinned/exposure/chamlang_tsho_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.55108,
+        27.724738,
+        86.67292,
+        27.833262
+      ],
+      "class_counts": {
+        "bridge": 7,
+        "building": 210,
+        "school": 1,
+        "settlement": 3
+      },
+      "lake_id": "lumding_tsho",
+      "n_elements": 221,
+      "path": "data/pinned/exposure/lumding_tsho_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.867841,
+        27.795838,
+        86.989759,
+        27.904362
+      ],
+      "class_counts": {
+        "bridge": 2,
+        "building": 9
+      },
+      "lake_id": "hongu_1",
+      "n_elements": 11,
+      "path": "data/pinned/exposure/hongu_1_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.896078,
+        27.728738,
+        87.017922,
+        27.837262
+      ],
+      "class_counts": {
+        "building": 4
+      },
+      "lake_id": "hongu_2",
+      "n_elements": 4,
+      "path": "data/pinned/exposure/hongu_2_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        86.62027,
+        27.921238,
+        86.74233,
+        28.029762
+      ],
+      "class_counts": {
+        "bridge": 2,
+        "building": 56,
+        "health_post": 1,
+        "settlement": 2
+      },
+      "lake_id": "gokyo_dudh_pokhari",
+      "n_elements": 61,
+      "path": "data/pinned/exposure/gokyo_dudh_pokhari_osm.json"
+    },
+    {
+      "bbox_wgs84": [
+        83.791337,
+        28.637408,
+        83.914223,
+        28.745932
+      ],
+      "class_counts": {
+        "bridge": 1,
+        "building": 10,
+        "settlement": 1
+      },
+      "lake_id": "tilicho",
+      "n_elements": 12,
+      "path": "data/pinned/exposure/tilicho_osm.json"
+    }
+  ],
+  "osm": {
+    "attribution": "(c) OpenStreetMap contributors",
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "licence": "ODbL"
+  },
+  "worldpop": {
+    "coverage": "Nepal only",
+    "coverage_note": "India and China are 506 MB and 657 MB and the server ignores HTTP Range requests, so no gridded population is pinned for South Lhonak, Chamoli or Pyurepu. Those lakes report the OSM estimate alone, flagged.",
+    "licence": "CC BY 4.0",
+    "path": "data/pinned/exposure/worldpop_npl_2020_constrained.tif",
+    "sha256": "9050709d357ac29123d55044cd656e5a9936a2ca14a73cb8b6f635ee479bc9bc",
+    "source": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/NPL/npl_ppp_2020_constrained.tif"
+  }
+}

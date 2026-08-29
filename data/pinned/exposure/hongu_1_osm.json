@@ -1,0 +1,137 @@
+{
+  "elements": [
+    {
+      "center": {
+        "lat": 27.904387,
+        "lon": 86.87092
+      },
+      "id": 251433052,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903688,
+        "lon": 86.872598
+      },
+      "id": 316033196,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.840432,
+        "lon": 86.94983
+      },
+      "id": 345057618,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904152,
+        "lon": 86.871412
+      },
+      "id": 967798470,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904259,
+        "lon": 86.871583
+      },
+      "id": 967798471,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904406,
+        "lon": 86.87063
+      },
+      "id": 1124444859,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904295,
+        "lon": 86.870808
+      },
+      "id": 1124444860,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904178,
+        "lon": 86.871845
+      },
+      "id": 1124444861,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904154,
+        "lon": 86.87178
+      },
+      "id": 1124444862,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903259,
+        "lon": 86.868299
+      },
+      "id": 1482937703,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904326,
+        "lon": 86.870271
+      },
+      "id": 1504403985,
+      "tags": {
+        "building": "yes"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-29T10:42:35Z"
+  },
+  "version": 0.6
+}

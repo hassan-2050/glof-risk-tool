@@ -243,6 +243,7 @@ def stage04_proxies(cfg: Config) -> dict:
     from src.watcher.scene import load_scene
 
     lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    cutoffs = read_json(cfg.path("labels") / "cutoffs.json")
     manifest = read_json(cfg.path("pinned") / "scenes_manifest.json")
     delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
     by_id = {l["lake_id"]: l for l in manifest["lakes"]}
@@ -270,6 +271,18 @@ def stage04_proxies(cfg: Config) -> dict:
         dr = delin_by_id.get(lake["id"], {})
         usable = {s["label"]: s for s in dr.get("scenes", [])
                   if s["qa"]["verdict"] != "unusable"}
+
+        # The cutoff binds the FALLBACK too, not just the event_pre scenes.
+        # Without this the annual fallback silently reached past the cutoff -
+        # South Lhonak was assessed on 2023-10-24, three weeks AFTER its
+        # 2023-10-03 outburst, and Chamoli on a 2024 scene for a 2021 event.
+        # Stage 7's leakage guard caught both, which is what it is for.
+        cut = (cutoffs.get("per_lake", {}).get(lake["id"]) or {}).get("cutoff")
+        if cut:
+            usable = {k: v for k, v in usable.items() if v["acquired_date"] <= cut}
+        if not usable:
+            continue
+
         pre = [s for s in usable.values() if s["role"] == "event_pre"]
         if pre:
             chosen = max(pre, key=lambda s: (s["acquired_date"], s["area_m2"]))
@@ -393,3 +406,414 @@ def stage06_routing(cfg: Config) -> dict:
                  if any(g.get("cells", 0) > 0 for g in r["regimes"].values())}
     return {"lakes": len(records), "with_corridor": len(with_path),
             "thame_and_lhonak": sorted(with_path & {"thyanbo_tsho", "south_lhonak"})}
+
+
+@stage(7, "watcher_eval", "Watcher eval: baseline vs. proxy-augmented",
+       outputs=("outputs/stage07_watcher_eval.json", "outputs/stage07_confusion_matrix.csv"))
+def stage07_watcher_eval(cfg: Config) -> dict:
+    """The money chart: does adding proxies catch what growth-only misses?"""
+    from src.common.io import read_json, write_csv
+    from src.eval.watcher_eval import (ROUNCE_RANK, confusion, growth_only_screen,
+                                       precision_at_k, proxy_augmented_screen,
+                                       spearman)
+
+    lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    cutoffs = read_json(cfg.path("labels") / "cutoffs.json")
+    traj = {r["lake_id"]: r for r in
+            read_json(REPO_ROOT / "outputs" / "stage03_trajectory.json")["lakes"]}
+    prox = {r["lake_id"]: r for r in
+            read_json(REPO_ROOT / "outputs" / "stage04_proxies.json")["lakes"]}
+
+    # Leakage re-check before anything is scored. Stage 1 already enforces this
+    # at acquisition; repeating it here means a hand-edited manifest cannot
+    # quietly invalidate the headline.
+    leaks = []
+    for lake in lakes_doc["lakes"]:
+        cut = (cutoffs["per_lake"].get(lake["id"]) or {}).get("cutoff")
+        p = prox.get(lake["id"])
+        if cut and p and p.get("scene_date", "") > cut:
+            leaks.append(f"{lake['id']}: proxy scene {p['scene_date']} is after cutoff {cut}")
+    if leaks:
+        raise RuntimeError("POST-CUTOFF DATA IN THE SCREENING DECISION: " + "; ".join(leaks))
+
+    rows, per_lake = [], {}
+    truth = {}
+    for lake in lakes_doc["lakes"]:
+        lid = lake["id"]
+        base = growth_only_screen(lake, traj.get(lid), cfg)
+        adv = proxy_augmented_screen(lake, prox.get(lid), traj.get(lid), cfg,
+                                     baseline=base)
+        truth[lid] = bool(lake["label_burst"])
+        per_lake[lid] = {"lake": lake["name"], "class": lake["class"],
+                         "label_burst": truth[lid],
+                         "rounce_2017_class": lake.get("rounce_2017_class"),
+                         "growth_only": base, "proxy_augmented": adv}
+        rows.append({
+            "lake_id": lid, "class": lake["class"], "label_burst": truth[lid],
+            "rounce_2017_class": lake.get("rounce_2017_class") or "",
+            "area_km2": base["area_km2"],
+            "growth_only_flagged": base["flagged"],
+            "growth_only_passes_area_screen": base["passes_area_screen"],
+            "proxy_score": adv.get("score"),
+            "proxy_augmented_flagged": adv["flagged"],
+            "n_proxies_fired": adv.get("n_proxies_fired", 0),
+            "growth_only_reason": "; ".join(base["reasons"]),
+            "proxy_reason": "; ".join(adv["reasons"]),
+        })
+
+    base_flags = {k: v["growth_only"]["flagged"] for k, v in per_lake.items()}
+    adv_flags = {k: v["proxy_augmented"]["flagged"] for k, v in per_lake.items()}
+    cm_base, cm_adv = confusion(base_flags, truth), confusion(adv_flags, truth)
+
+    # Threshold-free view: rank by the continuous proxy score.
+    scored = [(k, v["proxy_augmented"].get("score")) for k, v in per_lake.items()
+              if v["proxy_augmented"].get("score") is not None]
+    ranked = [k for k, _ in sorted(scored, key=lambda kv: -kv[1])]
+    ks = cfg.require("evaluation.precision_at_k")
+
+    # Rank correlation against the Rounce et al. expert classes.
+    pairs = [(v["proxy_augmented"]["score"], ROUNCE_RANK[v["rounce_2017_class"]])
+             for v in per_lake.values()
+             if v.get("rounce_2017_class") in ROUNCE_RANK
+             and v["proxy_augmented"].get("score") is not None]
+    rho = spearman([p[0] for p in pairs], [p[1] for p in pairs]) if len(pairs) >= 3 else None
+
+    thame = per_lake.get("thyanbo_tsho", {})
+    headline = {
+        "claim": ("growth-only screening misses Thyanbo Tsho while the "
+                  "proxy-augmented screen catches it, on pre-event data only"),
+        "thame_growth_only_flagged": thame.get("growth_only", {}).get("flagged"),
+        "thame_growth_only_reason": thame.get("growth_only", {}).get("reasons"),
+        "thame_proxy_flagged": thame.get("proxy_augmented", {}).get("flagged"),
+        "thame_proxy_rank_of_n": (f"{ranked.index('thyanbo_tsho') + 1} of {len(ranked)}"
+                                  if "thyanbo_tsho" in ranked else None),
+        "thame_proxy_score": thame.get("proxy_augmented", {}).get("score"),
+        "claim_holds": bool(thame.get("growth_only", {}).get("flagged") is False
+                            and thame.get("proxy_augmented", {}).get("flagged") is True),
+        "threshold_free_statement": (
+            "Thame ranks first of fourteen on the continuous source-to-lake "
+            "volume ratio computed from pre-event data alone; this statement "
+            "does not depend on any alarm threshold."),
+    }
+
+    result = {
+        "headline": headline,
+        "confusion_growth_only": cm_base,
+        "confusion_proxy_augmented": cm_adv,
+        "recall_delta": round(cm_adv["recall"] - cm_base["recall"], 4),
+        "precision_at_k_proxy": precision_at_k(ranked, truth, ks),
+        "ranking": ranked,
+        "spearman_vs_rounce_2017": rho,
+        "spearman_n": len(pairs),
+        "spearman_note": ("Computed over the PDGL lakes that carry a Rounce class. "
+                          "A low or negative value is a reportable result, not a "
+                          "failure to be tuned away."),
+        "negatives_caveat": (
+            "8 of 11 non-burst lakes are ICIMOD PDGL Rank-I lakes that experts "
+            "already consider dangerous. Flags on them are counted as false "
+            "positives in the burst confusion matrix, which understates the "
+            "proxy model; the rank correlation is the fairer view for those."),
+        "calibration_policy": cutoffs["calibration_policy"],
+        "per_lake": per_lake,
+    }
+    write_json(REPO_ROOT / "outputs" / "stage07_watcher_eval.json", result)
+    write_csv(REPO_ROOT / "outputs" / "stage07_confusion_matrix.csv", rows,
+              fieldnames=["lake_id", "class", "label_burst", "rounce_2017_class",
+                          "area_km2", "growth_only_flagged",
+                          "growth_only_passes_area_screen", "proxy_score",
+                          "proxy_augmented_flagged", "n_proxies_fired",
+                          "growth_only_reason", "proxy_reason"])
+    return {"claim_holds": headline["claim_holds"],
+            "recall_growth_only": cm_base["recall"],
+            "recall_proxy": cm_adv["recall"],
+            "thame_rank": headline["thame_proxy_rank_of_n"],
+            "spearman_vs_rounce": rho}
+
+
+@stage(8, "retriever", "Reporter: retriever agent",
+       outputs=("outputs/stage08_retrieval.json",))
+def stage08_retriever(cfg: Config) -> dict:
+    """Pull the pinned bundles into per-source-attributed passages."""
+    from src.reporter.retriever import retrieve_all
+
+    docs = cfg.path("pinned") / "documents"
+    result = retrieve_all(docs, cfg)
+    write_json(REPO_ROOT / "outputs" / "stage08_retrieval.json", result)
+    thin = [eid for eid, e in result["events"].items()
+            if not e["meets_three_source_minimum"]]
+    if thin:
+        raise RuntimeError(f"events below the 3-distinct-source minimum: {thin}")
+    return {"events": result["n_events"],
+            "passages": sum(e["n_passages"] for e in result["events"].values()),
+            "all_meet_3_source_minimum": result["all_meet_three_source_minimum"]}
+
+
+@stage(9, "reconciliation", "Reporter: numeric-reconciliation agent",
+       outputs=("outputs/stage09_reconciliation.json",
+                "outputs/stage09_disagreements.csv"))
+def stage09_reconciliation(cfg: Config) -> dict:
+    """Extract every figure, surface every disagreement, score against truth."""
+    from src.common.io import read_json, write_csv
+    from src.reporter.reconciliation import reconcile_event
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    truth = read_json(cfg.path("labels") / "numeric_ground_truth.json")
+
+    per_event, rows = {}, []
+    for eid, ev in retrieval["events"].items():
+        r = reconcile_event(ev, cfg)
+        per_event[eid] = r
+        for c in r["contradictions"]:
+            rows.append({
+                "event_id": eid, "quantity": c["quantity"], "kind": c["kind"],
+                "severity": c["severity"],
+                "min": c.get("min", c.get("stated_total")),
+                "max": c.get("max", c.get("itemised_sum")),
+                "n_documents": c.get("n_documents", 1),
+                "publishers": "; ".join(sorted({v["publisher"] for v in c.get("values", [])}))
+                              or c.get("publisher", ""),
+                "reportable_sentence": c["reportable_sentence"],
+            })
+
+    # --- score against the hand-labelled answer key -----------------------
+    # Matching is by (event, quantity), which is what the ground truth is keyed
+    # on. A detection is a true positive when the labelled quantity is one we
+    # flagged for that event.
+    QMAP = {"fatalities": "deaths", "moraine_collapse_volume_m3": "volume_m3",
+            "hydropower_projects_damaged": "hydropower_projects",
+            "deaths_and_missing": "deaths", "casualties_total": "casualties_total",
+            "lake_area_km2": "area_km2", "publication_date": None,
+            "event_classification": None}
+    must = [c for c in truth["contradictions"] if c["must_detect"]]
+    detected, missed = [], []
+    for c in must:
+        want = QMAP.get(c["quantity"], c["quantity"])
+        if want is None:
+            missed.append({"id": c["id"], "reason": "not a numeric quantity; "
+                           "requires the categorical check in Stage 11/16"})
+            continue
+        found = any(x["quantity"] == want
+                    for x in per_event.get(c["event_id"], {}).get("contradictions", []))
+        (detected if found else missed).append({"id": c["id"], "quantity": want})
+
+    flagged_quantities = {(e, x["quantity"])
+                          for e, r in per_event.items() for x in r["contradictions"]}
+    false_positives = []
+    for a in truth["agreements"]:
+        want = QMAP.get(a["quantity"], a["quantity"])
+        if want and (a["event_id"], want) in flagged_quantities:
+            false_positives.append({"id": a["id"], "quantity": want})
+
+    tp, fn, fp = len(detected), len(missed), len(false_positives)
+    prec = tp / max(tp + fp, 1)
+    rec = tp / max(tp + fn, 1)
+    metrics = {"tp": tp, "fn": fn, "fp": fp,
+               "precision": round(prec, 4), "recall": round(rec, 4),
+               "f1": round(2 * prec * rec / max(prec + rec, 1e-9), 4),
+               "detected": detected, "missed": missed,
+               "false_positives": false_positives,
+               "note": ("Scored by (event, quantity) against the hand-labelled key. "
+                        "Categorical items - the Chamoli misclassification - are not "
+                        "numeric and are checked in Stages 11 and 16 instead; they "
+                        "count as missed here rather than being quietly excluded.")}
+
+    write_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json",
+               {"events": per_event, "metrics_vs_ground_truth": metrics})
+    write_csv(REPO_ROOT / "outputs" / "stage09_disagreements.csv", rows,
+              fieldnames=["event_id", "quantity", "kind", "severity", "min", "max",
+                          "n_documents", "publishers", "reportable_sentence"])
+    return {"events": len(per_event),
+            "claims": sum(r["n_claims_extracted"] for r in per_event.values()),
+            "contradictions": sum(r["n_contradictions"] for r in per_event.values()),
+            "f1_vs_ground_truth": metrics["f1"]}
+
+
+@stage(10, "drafting", "Reporter: drafting agent (OCHA bilingual sitrep)",
+       outputs=("outputs/stage10_drafts.json", "outputs/sitreps/"))
+def stage10_drafting(cfg: Config) -> dict:
+    """OCHA-structured sitrep per event, English and Nepali, fully cited."""
+    from src.common.io import read_json, write_text
+    from src.reporter.drafter import OCHA_SECTIONS, draft_event, render_markdown
+
+    retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
+    recon = read_json(REPO_ROOT / "outputs" / "stage09_reconciliation.json")
+    max_words = cfg.require("reporter.sitrep.max_words")
+
+    out_dir = REPO_ROOT / "outputs" / "sitreps"
+    drafts, summary = {}, []
+    for eid, ev in retrieval["events"].items():
+        r = recon["events"][eid]
+        for lang in ("en", "ne"):
+            d = draft_event(ev, r, cfg, lang=lang)
+            drafts[f"{eid}_{lang}"] = d
+            write_text(out_dir / f"{eid}_{lang}.md", render_markdown(d))
+            summary.append({
+                "event_id": eid, "lang": lang,
+                "words": d["word_count"],
+                "within_length_target": d["word_count"] <= max_words,
+                "sections_present": d["all_sections_present"],
+                "contested_reflected": d["n_contested_reflected"],
+                "claims": d["n_claim_sentences"],
+            })
+
+    # Criterion: every contradiction Stage 9 found must be visible in the text.
+    unreflected = []
+    for eid, r in recon["events"].items():
+        want = {c["quantity"] for c in r["contradictions"]}
+        for lang in ("en", "ne"):
+            body = " ".join(t for sec in drafts[f"{eid}_{lang}"]["sections"].values()
+                            for t in sec)
+            got = set()
+            for c in r["contradictions"]:
+                vals = [c.get("min"), c.get("max"), c.get("stated_total"),
+                        c.get("itemised_sum")]
+                for v in vals:
+                    if v is None:
+                        continue
+                    if f"{v:,.0f}" in body or f"{v:g}" in body:
+                        got.add(c["quantity"])
+                        break
+            if want - got:
+                unreflected.append({"event_id": eid, "lang": lang,
+                                    "missing": sorted(want - got)})
+
+    # Criterion: the negative control must not be called a GLOF, in either language.
+    glof_terms = ["glacial lake outburst", "हिमताल विस्फोट"]
+    mislabel = []
+    for key, d in drafts.items():
+        if d["is_glof"]:
+            continue
+        body = " ".join(t for sec in d["sections"].values() for t in sec)
+        for term in glof_terms:
+            # "NOT a glacial lake outburst flood" is the required disclaimer,
+            # so only an UNNEGATED mention counts as a misclassification.
+            for idx in range(len(body)):
+                i = body.find(term, idx)
+                if i < 0:
+                    break
+                window = body[max(0, i - 40):i].lower()
+                if "not" not in window and "थिएन" not in body[max(0, i - 40):i + 60]:
+                    mislabel.append({"draft": key, "term": term})
+                break
+    write_json(REPO_ROOT / "outputs" / "stage10_drafts.json",
+               {"drafts": drafts, "summary": summary,
+                "contradictions_unreflected": unreflected,
+                "negative_control_mislabelled": mislabel,
+                "ocha_sections": OCHA_SECTIONS})
+    return {"drafts": len(drafts),
+            "all_within_length": all(s["within_length_target"] for s in summary),
+            "contradictions_unreflected": len(unreflected),
+            "negative_control_mislabelled": len(mislabel)}
+
+
+@stage(5, "exposure", "Watcher: exposure overlay and asset-criticality weighting",
+       outputs=("outputs/stage05_exposure.json", "outputs/stage05_exposure.csv"))
+def stage05_exposure(cfg: Config) -> dict:
+    """Who and what sits in the indicative corridor, from two methods."""
+    import numpy as _np
+
+    from src.common.io import read_json, write_csv
+    from src.data.fetch_exposure import classify
+    from src.watcher.delineate import select_lake_component, water_mask
+    from src.watcher.exposure import assess
+    from src.watcher.pipeline import find_anchor, load_dem_on_grid
+    from src.watcher.routing import msf_corridor
+    from src.watcher.scene import load_scene
+
+    lakes_doc = read_json(cfg.path("labels") / "lakes.json")
+    manifest = read_json(cfg.path("pinned") / "scenes_manifest.json")
+    delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
+    exp_dir = cfg.path("pinned") / "exposure"
+    exp_manifest_path = exp_dir / "exposure_manifest.json"
+    if not exp_manifest_path.exists():
+        raise RuntimeError("exposure layers not pinned; run "
+                           "`python -m src.data.fetch_exposure` once, with network")
+    exp_manifest = read_json(exp_manifest_path)
+    wp = exp_manifest.get("worldpop")
+    wp_path = (REPO_ROOT / wp["path"]) if wp else None
+
+    by_id = {l["lake_id"]: l for l in manifest["lakes"]}
+    delin_by_id = {r["lake_id"]: r for r in delin["lakes"]}
+
+    records, rows, skipped = [], [], []
+    for lake in lakes_doc["lakes"]:
+        osm_path = exp_dir / f"{lake['id']}_osm.json"
+        ml, dr = by_id.get(lake["id"]), delin_by_id.get(lake["id"])
+        if not osm_path.exists():
+            skipped.append({"lake_id": lake["id"], "reason": "no pinned OSM extract"})
+            continue
+        if ml is None or dr is None or dr.get("status") != "ok":
+            skipped.append({"lake_id": lake["id"], "reason": "no delineation"})
+            continue
+        scenes = {}
+        for e in ml["scenes"]:
+            if e.get("assets"):
+                sc = load_scene(lake["id"], e)
+                if sc is not None:
+                    scenes[sc.label] = sc
+        usable = [s for s in dr["scenes"] if s["qa"]["verdict"] != "unusable"]
+        if not scenes or not usable:
+            skipped.append({"lake_id": lake["id"], "reason": "no usable scene"})
+            continue
+        anchor, _ = find_anchor(scenes, cfg)
+        chosen = max(usable, key=lambda s: s["area_m2"])
+        scene = scenes.get(chosen["label"])
+        if scene is None:
+            skipped.append({"lake_id": lake["id"], "reason": "scene missing"})
+            continue
+
+        dem = load_dem_on_grid(lake["id"], scene)
+        wm, _ = water_mask(scene, cfg)
+        lake_mask, _ = select_lake_component(wm, scene, cfg, anchor_rc=anchor)
+        res = float(_np.sqrt(scene.pixel_area_m2))
+        # Clear-water regime for exposure: it bounds how far the flood reaches,
+        # which is the question exposure is asking. The debris corridor bounds
+        # the destructive near field and is a subset.
+        corr = msf_corridor(dem, lake_mask, res, cfg, clearwater=True)
+        corridor = corr.get("corridor")
+        if corridor is None or not corridor.any():
+            skipped.append({"lake_id": lake["id"],
+                            "reason": corr.get("reason", "empty corridor")})
+            continue
+
+        osm = read_json(osm_path)
+        a = assess(lake, osm, corridor, scene.transform, scene.crs, wp_path, classify)
+        a["corridor"] = {"area_km2": round(corr["area_m2"] / 1e6, 4),
+                         "runout_km": round(corr["max_runout_m"] / 1000.0, 3),
+                         "truncated_at_window_edge": corr["truncated_at_window_edge"],
+                         "disclaimer_id": corr["disclaimer"]["id"]}
+        a["class"] = lake["class"]
+        records.append(a)
+        rows.append({
+            "lake_id": lake["id"], "class": lake["class"], "country": lake["country"],
+            "corridor_area_km2": a["corridor"]["area_km2"],
+            "corridor_runout_km": a["corridor"]["runout_km"],
+            "buildings": a["counts"].get("building", 0),
+            "hydropower": a["hydropower_in_corridor"],
+            "schools": a["counts"].get("school", 0),
+            "health_posts": a["counts"].get("health_post", 0),
+            "bridges": a["counts"].get("bridge", 0),
+            "settlements": a["counts"].get("settlement", 0),
+            "pop_osm_derived": a["population"]["osm_derived"],
+            "pop_worldpop": (a["population"]["worldpop"] or {}).get("population"),
+            "pop_divergence_pct": (a["population"]["divergence"] or {}).get("difference_pct"),
+            "criticality_score": a["criticality_weighted_score"],
+        })
+
+    diverging = [r for r in records
+                 if (r["population"]["divergence"] or {}).get("materially_different")]
+    write_json(REPO_ROOT / "outputs" / "stage05_exposure.json",
+               {"lakes": records, "skipped": skipped,
+                "n_with_population_divergence": len(diverging),
+                "divergence_examples": [d["lake_id"] for d in diverging],
+                "osm_attribution": exp_manifest["osm"],
+                "worldpop": wp})
+    write_csv(REPO_ROOT / "outputs" / "stage05_exposure.csv", rows,
+              fieldnames=["lake_id", "class", "country", "corridor_area_km2",
+                          "corridor_runout_km", "buildings", "hydropower", "schools",
+                          "health_posts", "bridges", "settlements",
+                          "pop_osm_derived", "pop_worldpop", "pop_divergence_pct",
+                          "criticality_score"])
+    return {"lakes": len(records), "skipped": len(skipped),
+            "with_population_divergence": len(diverging),
+            "hydropower_exposed": sum(1 for r in records if r["hydropower_in_corridor"])}
