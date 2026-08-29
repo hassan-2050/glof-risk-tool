@@ -1629,8 +1629,15 @@ costs credibility that is very hard to rebuild.
 """
     write_text(REPO_ROOT / "docs" / "ETHICS.md", ethics)
 
+    # The changelog is generated too, for the same reason as the rest: a
+    # hand-maintained one drifts from the run and nobody can tell which is
+    # right.
+    from src.eval.changelog import build as build_changelog
+    write_text(REPO_ROOT / "CHANGELOG_improvements.md",
+               build_changelog(outputs, cfg))
+
     record = {"docs_written": ["docs/RESULTS.md", "docs/LIMITS.md",
-                               "docs/ETHICS.md"],
+                               "docs/ETHICS.md", "CHANGELOG_improvements.md"],
               "headline_numbers_source": "outputs/stage17_reproducibility.json",
               "generated_from_run": True,
               "note": ("Results, limits and ethics are generated from the run "
