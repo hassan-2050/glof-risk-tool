@@ -122,6 +122,53 @@ flag is inherited — so its recall can never win by simply being different.
 Both comparisons run from the same committed data with the same enforced
 cutoffs, and both are one command (`make watcher-eval`, `make reporter-eval`).
 
+## How the solution uses agents, and why each choice
+
+The deliverable is agentic where agency helps and deterministic where it does
+not, and the split is the main engineering argument in the repository. Eight
+agents produce every situation report; `outputs/agent_trajectories.json`
+records **52 steps across the four events**, each naming the artefact that
+proves it.
+
+| agent | job | deterministic? |
+|---|---|---|
+| retriever | read the pinned document bundle, enforce a 3-publisher minimum | yes |
+| numeric reconciliation | extract every figure, surface disagreement | yes, rule-based |
+| drafter | write the OCHA sitrep | LLM |
+| verifier | does each stated figure appear in the span it cites? | yes, rule-based |
+| adversarial critic | attack the draft for what the verifier cannot see | rules + advisory LLM |
+| provenance ledger | bind every claim to its source, gate on a human | yes |
+| exporter | CAP XML, HXL CSV | yes |
+| memory | carry decisions across events | yes |
+
+**Five choices did the work:**
+
+1. **Numeric extraction is rule-based, not model-based.** The figures are
+   dense, well-formed and unit-bearing, so a grammar handles them exactly. An
+   LLM here would add a nondeterministic step to the one part of the pipeline
+   whose entire value is that you can check it.
+2. **Two checks that fail differently.** The verifier asks "is this number in
+   the cited span?" — rule-based, so it cannot hallucinate a verdict. The
+   critic attacks what the verifier cannot see: a contested figure stated as
+   settled, a missing hedge, the negative control described as a GLOF. One
+   pass would let each other's blind spots through.
+3. **The LLM critic is strictly advisory — it cannot clear a draft.** A model
+   allowed to approve its own output is not a check, it is a rubber stamp with
+   extra steps. Its findings only ever *add* to what the human reads.
+4. **Refusal is a first-class output.** Four sources say the Rasuwa flood hit
+   4, 5, 8 or 11 hydropower projects. A fluent summariser picks one and reads
+   beautifully. This reports the spread and says who claims what — including
+   *intra-document* contradiction, where one NDRRMA report states 23 casualties
+   and then itemises 19 + 13 + 1 = 33. Systems that only compare figures
+   between documents cannot see that one.
+5. **The trajectory log is derived from artefacts, not narrated alongside
+   them** — so it structurally cannot claim something the outputs do not show.
+
+**The evidence these choices helped** is the ablation, not an assertion: same
+ten scenarios, same hand-labelled key, single-prompt baseline versus this
+architecture — contradiction recall **0.0 → 0.95**, hallucination rate
+**0.344 → 0.091**, citation F1 **0.0 → 0.535**.
+
 ## Quick start
 
 ```bash
@@ -372,17 +419,45 @@ first thing we would build next.
 
 ## Hot take
 
-**The most dangerous number a hazard pipeline produces is a zero, because a
-zero never looks broken.** A failed Overpass query rendered as "no assets
-downstream". A nodata cell rendered as "nobody lives here". An unqueried lake
-rendered as an empty one. A corridor that stops at a window edge rendered as
-"the flood stops here". Every one of those wrong answers is *quiet* — it looks
-exactly like a safe valley, and it fails in the direction that kills people.
-Most engineering effort in this project did not go into the models; it went
-into making absence-of-data **loud**: refusing to cache empty responses,
-carrying "not measured" as a first-class value with its reason attached, and
-printing the distance to the nearest person next to every zero. AI coding
-agents make it cheap to generate pipelines that run end to end on the first
-try; the frontier skill is noticing which of the numbers flowing through them
-are silently wrong. A pipeline that says "I don't know" in the right places
-is worth more than one that always has an answer.
+**An agent's most dangerous output is a zero, because a zero never looks like
+a failure.** Every other error announces itself — a crash, a stack trace, a
+number that is obviously absurd. A zero renders as a clean, plausible,
+confident answer.
+
+The clearest instance in this build: the corridor exposure agent queried
+OpenStreetMap, and under load the endpoint returned **HTTP 200 with an empty
+element list**. Status says success. Schema validates. The agent cached it and
+reported *no assets downstream* for 126 km of populated Himalayan valley. The
+tool did not fail — it succeeded at returning nothing, and nothing is
+indistinguishable from a safe valley.
+
+The same shape appeared three more times: raster nodata summed as "nobody
+lives here"; an unqueried lake rendering identically to an empty one; a
+corridor truncated at a window edge reading as "the flood stops here". Four
+bugs, one failure mode — **a successful tool call that carries no information,
+consumed as if it carried good news.**
+
+The practical lesson for anyone building agents: **your tool contract needs
+three states, not two.** Not `ok / error`, but `ok / empty / failed` — and the
+agent must be forbidden from treating the middle one as the first. Concretely,
+what fixed it here:
+
+- **an empty result is a failure until proven otherwise** — the retry path now
+  treats a 200-with-zero-elements as a transport failure, and never caches it;
+- **absence is a typed value with a reason attached** — `not_measured`,
+  `not_queried` and `zero_with_nearest_populated_cell_at_696m` are three
+  different things, and none of them serialises as `0`;
+- **every consumer is forced to handle it** — the map, the scenario doc and the
+  triage list each render "not queried" distinctly from "none found", because
+  a renderer that collapses them re-introduces the bug downstream of the fix.
+
+This generalises past hazard data. Agents are increasingly wired to tools that
+fail softly — an API returning `[]` under rate limiting, a RAG retrieval
+finding nothing, a scraper hitting a changed selector. In every case the
+failure is silent, the output is well-formed, and the model has no way to tell
+"I checked and there is nothing" from "my instrument was broken". Coding agents
+now make it trivial to generate pipelines that run end to end on the first
+attempt. The frontier skill is no longer producing the pipeline; it is
+noticing which of the confident numbers flowing through it are quietly wrong.
+**A system that says "I don't know" in the right places is worth more than one
+that always has an answer.**
