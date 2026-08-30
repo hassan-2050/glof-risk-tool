@@ -585,7 +585,11 @@ function scaleBar(P) {
   const drawnW = Math.min(rect.width, rect.height * view[2] / view[3]);
   const unitsPerPx = view[2] / drawnW;
   const mPerPx = unitsPerPx * P.mPerUnit;
-  const nice = [100, 200, 500, 1000, 2000, 5000];
+  // Up to 100 km: the downstream layer frames corridors over 120 km, where
+  // a 5 km bar is a few pixels wide and the fallback printed "1 km" under
+  // a bar too short to read.
+  const nice = [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000,
+                100000];
   let target = nice.find(n => n / mPerPx > 60 && n / mPerPx < 190) ?? 1000;
   $("scalebar").style.width = (target / mPerPx).toFixed(0) + "px";
   $("scaletxt").textContent = target >= 1000 ? (target / 1000) + " km" : target + " m";
