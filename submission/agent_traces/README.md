@@ -13,14 +13,14 @@ hypothesis, change, measured result - is this agent's actual working loop.
 
 | | |
 |---|---|
-| conversational turns | 3,083 |
-| tool calls | 1,152 |
-| session span | 2026-08-29 04:08:10 to 2026-08-30 22:36:23 UTC |
+| conversational turns | 3,102 |
+| tool calls | 1,157 |
+| session span | 2026-08-29 04:08:10 to 2026-08-30 22:42:03 UTC |
 
 | tool | calls |
 |---|---|
-| `Bash` | 854 |
-| `Edit` | 149 |
+| `Bash` | 858 |
+| `Edit` | 150 |
 | `Write` | 59 |
 | `WebSearch` | 26 |
 | `WebFetch` | 13 |
@@ -64,6 +64,34 @@ A patch script asserts, writes nothing, and reports success on a different line.
 
 The operator supplies the competition rules, the agent audits the repo against them and proposes an order, and the human overrides that order ('lets do c first'). Later the human declines a suggested edit ('no i wont make any edits'). Human checkpoints steering the work.
 
+
+### How this session was run
+
+The operator steered in short imperatives and left the writing to the agent.
+This is a working log, not a document prepared for reading - and three habits
+in it shaped the result more than any single prompt did.
+
+**The agent proposes, the operator disposes.** Where the agent laid out an
+order of work against the deadline, the operator overrode it - *"lets do c
+first"* - putting the interactive map ahead of the documentation. That call is
+why the bug in episode 02 was caught at all: the map surfaced it, and nothing
+else in the project would have.
+
+**A claim is verified before it lands in an output.** The agent was not taken
+at its own word on arithmetic. In episode 01 it measures a distance
+independently before quoting it, and later catches its own first answer as
+27% too high because a decimated polyline was cutting corners - a number that
+had already been written into a file at that point.
+
+**The gaps were called by the operator.** *"still i dont see interactive maps
+and visualiazation happening"* is the turn that produced the map layer.
+*"why it cant what i need was to predict the flood"* is the turn that forced
+the capacity-forecast-versus-hazard-forecast distinction the tool now states
+explicitly, rather than letting a growth trend be read as a prediction.
+
+Nothing here has been rewritten for presentation. The retries, the dead ends
+and the corrections are the record; they are what the loop actually looked
+like.
 
 ## 2. The product's own agents
 
