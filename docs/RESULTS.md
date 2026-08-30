@@ -25,7 +25,9 @@ Growth-only reason: area 0.0198 km2 is below the 0.1 km2 screening threshold, so
 Threshold-free statement: Thame ranks **1 of 13** on the
 continuous source-to-lake volume ratio. This does not depend on any alarm
 threshold, which matters because that threshold was set after inspecting all
-fourteen values (see DECISIONS D7) and is therefore not a blind holdout result.
+13 values (see DECISIONS D7) and is therefore not a blind
+holdout result. The fourteenth site, Chamoli, impounds no water and so has no
+ratio to rank.
 
 Rank correlation against the Rounce et al. (2017) expert classes:
 **0.378**.
@@ -42,8 +44,8 @@ Measured against published reference areas, best usable scene per lake:
 | imja_tsho | 1,560,000 m² | 1,726,700 m² | 1.107x |
 | tsho_rolpa | 1,540,000 m² | 1,571,800 m² | 1.021x |
 | thulagi | 940,000 m² | 944,700 m² | 1.005x |
-| gokyo_dudh_pokhari | 429,000 m² | 625,800 m² | 1.459x |
-| tilicho | 4,800,000 m² | 3,576,700 m² | 0.745x |
+| gokyo_dudh_pokhari | 650,700 m² | 625,800 m² | 0.962x |
+| tilicho | 3,540,000 m² | 3,576,700 m² | 1.01x |
 
 Three lakes fail badly and the cause is diagnosed rather than tuned away - see
 DECISIONS D6. They are iceberg- and debris-choked calving lakes where any
@@ -56,10 +58,10 @@ Ten scenarios (4 real events + 6 synthetic perturbations), five metrics:
 | metric | naive single-prompt | multi-agent | delta |
 |---|---|---|---|
 | contradiction recall | 0.0 | **0.95** | +0.95 |
-| hallucination rate | 0.3584 | **0.0958** | -0.2626 |
-| numeric accuracy | 0.6417 | **0.9042** | +0.2625 |
-| citation F1 | 0.0 | **0.5202** | +0.5202 |
-| word edit distance | 195.3 | 120.3 | -75.0 |
+| hallucination rate | 0.344 | **0.0911** | -0.2529 |
+| numeric accuracy | 0.656 | **0.9089** | +0.2529 |
+| citation F1 | 0.0 | **0.5354** | +0.5354 |
+| word edit distance | 201.0 | 120.3 | -80.7 |
 
 Contradiction-detection F1 against the hand-labelled key: **0.8571**.
 

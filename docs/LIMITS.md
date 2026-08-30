@@ -13,12 +13,14 @@ inference from surface geometry, not a stability analysis.
 
 ## Quantified failure modes
 
-* **Absolute areas are unreliable for calving lakes.** Imja reads 0.07x its
-  published area, Tsho Rolpa 0.12x, South Lhonak 0.33x. The water is genuinely
-  broken into disconnected patches by icebergs and debris, and any
-  largest-connected-component rule under-measures it. Ruled out by measurement:
-  thresholds, closing radius, floating-ice inclusion, and ESA's own classifier
-  (DECISIONS D6). Absolute areas for those three must not feed an area screen.
+* **Absolute areas are still unreliable on 2 of 8 validated lakes**, against
+  published references. Under-measured: Pyurepu supraglacial lake 0.03x, South
+  Lhonak 0.35x. Under-measurement is floating ice and debris breaking the
+  water into disconnected patches, which any largest-connected-component rule
+  loses; over-measurement is the opposite failure, adjacent wet ground and
+  shadow joining the lake. Ruled out by measurement: thresholds, closing
+  radius, floating-ice inclusion, and ESA's own classifier (DECISIONS D6).
+  Absolute areas for these lakes must not feed an area screen.
 
 * **Empirical volume estimates carry 50 to >400% error.** Cook & Quincey (2015)
   report r²=0.38 for area-depth. Volume is emitted as a band with that caveat
@@ -29,16 +31,18 @@ inference from surface geometry, not a stability analysis.
   unresolved. Corridors are indicative, and the disclaimer travels as
   structured metadata rather than prose someone can crop out.
 
-* **Optical monitoring is blindest exactly when GLOFs happen.** Every
-  event-bracket scene for South Lhonak and Pyurepu is cloud-obscured; the Thame
-  pre-event window contains no scene under 80% tile cloud. Three of our four
-  events occur in or near monsoon season. This is a strong argument for
+* **Optical monitoring is blindest exactly when GLOFs happen.** Only 1 of the
+  16 pre-event scenes across our 4 events clears the cloud and snow QA gate. 3
+  of 4 events - Chamoli / Ronti Gad, South Lhonak, Thyanbo Tsho - have no
+  usable pre-event scene at all, so the last measurement before the burst
+  comes from the annual series weeks or months earlier. Three of the four
+  events fall in or near monsoon season. This is a strong argument for
   Sentinel-1 SAR fusion and a real limit on any optical-only system.
 
 * **Exposure counts are lower bounds, and weak ones.** Corridors are truncated
   by a 6 km analysis window while the Thame flood carried debris 80 km and
-  South Lhonak's inundation ran 169 km. Twelve lakes yield two buildings and no
-  population. Meaningful exposure needs a river-network domain, not a
+  South Lhonak's inundation ran 169 km. 13 lakes yield 2 buildings and no
+  population at all. Meaningful exposure needs a river-network domain, not a
   lake-centred window (DECISIONS D11).
 
 * **Published binary proxies do not discriminate on this set.** Six of nine
@@ -48,7 +52,8 @@ inference from surface geometry, not a stability analysis.
   (DECISIONS D7).
 
 * **One threshold is not a blind holdout.** The source-to-lake volume alarm
-  level was chosen after inspecting all fourteen values. The threshold-free
+  level was chosen after inspecting all 13 values - all 13, not all 14,
+  because Chamoli impounds no water and carries no ratio. The threshold-free
   rank statement is the defensible one and is what the headline uses.
 
 * **The Nepali output is template-assembled, not machine-translated.**

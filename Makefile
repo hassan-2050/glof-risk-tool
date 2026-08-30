@@ -49,6 +49,32 @@ test:  ## unit tests
 fetch-data:  ## Stage 1 ONLY. Requires network. Not part of `reproduce`.
 	$(PY) -m src.data.fetch
 
+# The three targets below are deliberately OUTSIDE `reproduce`. Each writes a
+# large or non-deterministic artefact (JPEG hillshades, a PDF timestamp) that
+# no stage reads, and folding them into the hashed set would trade a real
+# guarantee for a convenience.
+map:  ## rebuild outputs/map.html — interactive lake map, offline, no tiles
+	$(PY) tools/build_map_data.py
+	$(PY) tools/build_map_page.py
+
+check-map:  ## verify map.html against the pipeline artefacts (needs node)
+	node tools/check_map_page.mjs
+
+validate-routing:  ## compare predicted corridors with observed flood extents
+	$(PY) tools/validate_routing.py
+
+fetch-downstream:  ## Needs network. 100 km DEM per lake for long-range routing
+	$(PY) -m src.data.fetch_downstream
+
+scenarios:  ## route far, count what is downstream, write the triage list
+	$(PY) tools/run_long_routing.py
+	$(PY) tools/corridor_exposure.py
+	$(PY) tools/build_scenarios.py
+	$(PY) tools/validate_routing.py
+
+overview-pdf:  ## rebuild docs/GLOF-tool-overview.pdf (needs reportlab)
+	$(PY) tools/make_overview_pdf.py
+
 clean:  ## remove generated outputs (never touches data/pinned)
 	$(PY) -c "import shutil,pathlib; [shutil.rmtree(p,ignore_errors=True) for p in [pathlib.Path('outputs'),pathlib.Path('.determinism_check')]]; pathlib.Path('outputs').mkdir(exist_ok=True)"
 

@@ -144,3 +144,47 @@ def test_reproduce_is_byte_identical_across_two_cold_runs():
         m.pop("run_manifest.json", None)  # the manifest hashes the others
         hashes.append(m)
     assert hashes[0] == hashes[1]
+
+
+def test_tool_output_dir_is_excluded_from_the_manifest(tmp_path):
+    """A tool-built page must not enter the run manifest.
+
+    outputs/interactive/map.html is built by tools/, not by `reproduce`. When it
+    was written to outputs/ directly the manifest went from 44 artefacts to 46,
+    which breaks two things at once: the manifest stops being a pure function of
+    the run, and a container that never ran `make map` reports a spurious
+    difference against a host that did.
+    """
+    from src.common.io import TOOL_OUTPUT_DIR
+
+    (tmp_path / "stage00_thing.json").write_text("{}", encoding="utf-8")
+    tool_dir = tmp_path / TOOL_OUTPUT_DIR
+    tool_dir.mkdir()
+    (tool_dir / "map.html").write_text("<p>built by a tool</p>", encoding="utf-8")
+    (tool_dir / "map_data.json").write_text("{}", encoding="utf-8")
+
+    # The default sweep still hashes everything: the exclusion is the
+    # caller's decision, so that hashing data/pinned/ cannot lose a
+    # directory that merely shares the name.
+    assert set(manifest_for(tmp_path)) == {
+        "stage00_thing.json",
+        f"{TOOL_OUTPUT_DIR}/map.html",
+        f"{TOOL_OUTPUT_DIR}/map_data.json",
+    }
+    m = manifest_for(tmp_path, exclude_top=(TOOL_OUTPUT_DIR,))
+    assert set(m) == {"stage00_thing.json"}, m
+
+
+def test_no_reproduce_stage_writes_into_the_unhashed_tool_dir():
+    """The exclusion above is only safe while no stage writes there.
+
+    Otherwise a stage could emit an artefact that the byte-identity check never
+    sees, which is a hole in the guarantee rather than a convenience.
+    """
+    from src import stages as _impl  # noqa: F401  (import registers stages)
+    from src.common.io import TOOL_OUTPUT_DIR
+    from src.common.stages import reproduce_stages
+
+    bad = [o for st in reproduce_stages() for o in (st.outputs or ())
+           if o.replace("\\", "/").startswith(f"outputs/{TOOL_OUTPUT_DIR}/")]
+    assert bad == [], bad

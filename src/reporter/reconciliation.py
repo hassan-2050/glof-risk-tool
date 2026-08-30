@@ -48,7 +48,20 @@ QUANTITY_PATTERNS: list[tuple[str, str]] = [
     ("area_m2", r"square metres?|square meters?|\bm2\b|m²"),
     ("distance_km", r"\bkm\b downstream|kilometres? downstream|\bkm\b"),
     ("height_m", r"\bmetres? high\b|\bm high\b|\bmetre-high\b"),
-    ("elevation_m", r"\bmetres?\b|\bm\b"),
+    # A bare "metres" is not an elevation. Checked against the ICIMOD Thame
+    # study, elevation_m had swallowed a fall height ("the water fell 120
+    # metres into the lower lake") and a breach width ("a 22-metre high,
+    # 51-metre-wide erosional hole"), then reported them beside the real
+    # 4,900 m lake altitude as a contradiction spanning 51 m to 4,900 m.
+    # Nobody disagreed about anything; three different quantities had been
+    # poured into one bucket. A tool whose selling point is catching real
+    # disagreements must not manufacture fake ones.
+    ("width_m", r"\bmetres? wide\b|\bm wide\b|\bmetres?-wide\b|\bmetre-wide\b"),
+    ("drop_m", r"\bfell\b|\bfalls?\b|\bdropp?e?d?\b|\bplunged\b|\bdescend"),
+    ("elevation_m", r"\bat [\d,]+ ?metres?\b|\bat [\d,]+ ?m\b|"
+                    r"\bm\.?a\.?s\.?l\b|above sea level|\belevation\b|"
+                    r"\baltitude\b"),
+    ("length_m", r"\bmetres?\b|\bm\b"),
     ("percent", r"per cent|percent|%"),
 ]
 
@@ -62,6 +75,22 @@ DATE_CONTEXT = re.compile(
     r"November|December)\s*$|^\s*(?:st|nd|rd|th)?\s*(?:January|February|March|"
     r"April|May|June|July|August|September|October|November|December)|"
     r"^\s*[-/]\s*\d|\d\s*[-/]\s*$",
+    re.IGNORECASE)
+
+# Numbers that are ANALOGIES, not measurements. ICIMOD's Thame study renders
+# the release as "459,000 cubic metres, the equivalent of 185 Olympic-size
+# swimming pools". The 185 counts swimming pools; "cubic metres" is fourteen
+# characters away, so proximity binding claimed it as a volume and the pipeline
+# reported the release as "between 185 and 459,000 cubic metres" - a
+# contradiction between a source and its own restatement of itself.
+#
+# Comparison-to-a-familiar-object is a house style in disaster communication,
+# so this will recur. Matched on the noun that follows the number, because the
+# giveaway is the unit, not the sentence.
+ANALOGY_UNIT = re.compile(
+    r"^\s*(?:olympic|football|soccer|tennis|rugby|cricket)\b|"
+    r"^\s*(?:swimming\s+pools?|pitches|fields?|courts?|stadiums?|"
+    r"buses|elephants|jumbo\s+jets?|aircraft\s+carriers?)\b",
     re.IGNORECASE)
 
 # Four-digit years are never a quantity we care about here.
@@ -124,6 +153,9 @@ def extract_claims(passage: dict) -> list[dict]:
         before = text[max(0, m.start() - 12):m.start()]
         after = text[m.end():m.end() + 12]
         if DATE_CONTEXT.search(before) or DATE_CONTEXT.search(after):
+            continue
+        # Drop analogies: "the equivalent of 185 Olympic-size swimming pools".
+        if ANALOGY_UNIT.search(text[m.end():m.end() + 30]):
             continue
 
         # A window either side is enough: these are single-clause factual

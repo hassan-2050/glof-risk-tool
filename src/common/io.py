@@ -118,11 +118,34 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def manifest_for(root: str | Path, patterns: Sequence[str] = ("**/*",)) -> dict:
+# outputs/tools/ is where anything under tools/ writes, and the run manifest
+# skips it. Named for the source directory that fills it, not for one of its
+# contents: it was called "interactive" when it held only the map page, and
+# the next two tool artefacts were written beside outputs/ instead, leaking
+# into the manifest exactly as map.html had.
+#
+# The sweep in manifest_for is deliberately indiscriminate - it hashes whatever
+# is under outputs/, so a stage cannot quietly emit an undeclared file. That
+# property is worth keeping, but it also means an artefact built OUTSIDE
+# `reproduce` lands in a manifest documented as "a pure function of the run's
+# artefacts". outputs/map.html did exactly that: the count went 44 -> 46, and a
+# container that never ran `make map` would have reported a spurious difference
+# against a host that did. One reserved subdirectory keeps both properties, and
+# Stage 17 asserts that no reproduce stage declares an output inside it.
+TOOL_OUTPUT_DIR = "tools"
+
+
+def manifest_for(root: str | Path, patterns: Sequence[str] = ("**/*",),
+                 exclude_top: Sequence[str] = ()) -> dict:
     """sha256 of every file under `root`, keyed by POSIX-relative path.
 
     This is the artefact the determinism check diffs. Sorting is explicit
     because filesystem walk order is not guaranteed to match across machines.
+
+    `exclude_top` names top-level subdirectories of `root` to skip. It is a
+    parameter rather than a module constant because this function also hashes
+    data/pinned/, where a directory that happened to share the name would be
+    dropped silently. The caller that needs the exclusion asks for it.
     """
     # Placeholders are not artefacts. .gitkeep exists on a git checkout and not
     # in a container (where outputs/ is created by mkdir), so including it made
@@ -133,6 +156,10 @@ def manifest_for(root: str | Path, patterns: Sequence[str] = ("**/*",)) -> dict:
     seen: dict[str, str] = {}
     for pattern in patterns:
         for p in sorted(root.glob(pattern)):
-            if p.is_file() and p.name not in IGNORED:
-                seen[p.relative_to(root).as_posix()] = sha256_file(p)
+            if not p.is_file() or p.name in IGNORED:
+                continue
+            rel = p.relative_to(root).as_posix()
+            if rel.split("/")[0] in exclude_top:
+                continue
+            seen[rel] = sha256_file(p)
     return {k: seen[k] for k in sorted(seen)}

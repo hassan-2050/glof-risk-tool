@@ -42,7 +42,7 @@ def cmd_reproduce(args) -> int:
     from src import stages as _impl  # noqa: F401  (import registers stages)
     from src.common.stages import reproduce_stages
 
-    from src.common.io import manifest_for, write_json
+    from src.common.io import TOOL_OUTPUT_DIR, manifest_for, write_json
 
     out_dir = REPO_ROOT / "outputs"
     results = _run_stages(cfg, reproduce_stages(), offline=cfg.require("determinism.enforce_offline"))
@@ -56,7 +56,7 @@ def cmd_reproduce(args) -> int:
         "frozen_clock_utc": cfg.require("determinism.frozen_utc"),
         "stages_run": sorted(results),
         "stage_summaries": results,
-        "artefact_sha256": manifest_for(out_dir),
+        "artefact_sha256": manifest_for(out_dir, exclude_top=(TOOL_OUTPUT_DIR,)),
     })
     print(f"\nreproduce complete -> {manifest_path.relative_to(REPO_ROOT).as_posix()}")
     return 0

@@ -25,8 +25,14 @@ switch ($Target) {
     "clean"              { Remove-Item -Recurse -Force outputs, .determinism_check -ErrorAction SilentlyContinue; New-Item -ItemType Directory outputs | Out-Null }
     "docker-build"       { docker build -t glof-risk-tool:latest . }
     "docker-reproduce"   { docker run --rm --network none glof-risk-tool:latest make reproduce }
+    "map"                { & $py tools/build_map_data.py; if ($?) { & $py tools/build_map_page.py } }
+    "check-map"          { node tools/check_map_page.mjs }
+    "validate-routing"   { & $py tools/validate_routing.py }
+    "fetch-downstream"   { & $py -m src.data.fetch_downstream }
+    "scenarios"          { & $py tools/run_long_routing.py; if ($?) { & $py tools/corridor_exposure.py }; if ($?) { & $py tools/build_scenarios.py }; if ($?) { & $py tools/validate_routing.py } }
+    "overview-pdf"       { & $py tools/make_overview_pdf.py }
     default {
-        Write-Host "targets: setup reproduce watcher-eval reporter-eval verify-determinism list-stages test fetch-data clean docker-build docker-reproduce"
+        Write-Host "targets: setup reproduce watcher-eval reporter-eval verify-determinism list-stages test fetch-data clean docker-build docker-reproduce map check-map validate-routing overview-pdf fetch-downstream scenarios"
     }
 }
 exit $LASTEXITCODE
