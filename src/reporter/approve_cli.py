@@ -161,13 +161,15 @@ def main(argv=None) -> int:
         keys = [args.draft]
 
     if args.list:
-        print(f"{'draft':<26}{'verification':<14}{'human decision':<26}approver")
+        # 32, not 26: "approved_with_reservations" is 26 characters and ran
+        # straight into the approver name with no gap.
+        print(f"{'draft':<26}{'verification':<14}{'human decision':<32}approver")
         for k in sorted(drafts):
             v = verif["drafts"][k]
             status = "BLOCKED" if v["release_blocked"] else "passed"
             rec = recorded.get(k)
             print(f"{k:<26}{status:<14}"
-                  f"{(rec['decision'] if rec else 'not yet decided'):<26}"
+                  f"{(rec['decision'] if rec else 'not yet decided'):<32}"
                   f"{rec['approver'] if rec else '-'}")
         print(f"\nstore: {store['path']}")
         print(f"{sum(1 for k in drafts if k in recorded)}/{len(drafts)} drafts "
