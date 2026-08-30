@@ -1,0 +1,4310 @@
+{
+  "elements": [
+    {
+      "id": 274016404,
+      "lat": 27.804166,
+      "lon": 86.709796,
+      "tags": {
+        "ele": "3440",
+        "int_name": "Namche Bazaar",
+        "name": "नाम्चे बजार",
+        "name:be": "Намча Базар",
+        "name:en": "Namche Bazaar",
+        "name:fr": "Namche Bazar",
+        "name:ja": "ナムチェ バザール",
+        "name:lt": "Namče Bazaras",
+        "name:ne": "नाम्चे बजार",
+        "name:pl": "Namcze Bazar",
+        "name:ru": "Намче Базар",
+        "name:sa": "नाम्चे बजार",
+        "place": "village",
+        "wikidata": "Q376123",
+        "wikipedia": "en:Namche Bazaar"
+      },
+      "type": "node"
+    },
+    {
+      "id": 274018195,
+      "lat": 27.835809,
+      "lon": 86.764609,
+      "tags": {
+        "ele": "3867",
+        "is_in": "Nepal, Khumbu",
+        "name": "Tengboche",
+        "name:en": "Tengboche",
+        "name:ru": "Тенгбоче",
+        "place": "village",
+        "wikidata": "Q1660709",
+        "wikipedia": "en:Tengboche"
+      },
+      "type": "node"
+    },
+    {
+      "id": 303021945,
+      "lat": 27.688972,
+      "lon": 86.730672,
+      "tags": {
+        "ele": "2850",
+        "is_in": "Nepal",
+        "name": "नेपाल",
+        "name:en": "Lukla",
+        "name:ja": "ルクラ村",
+        "name:ne": "नेपाल",
+        "place": "village",
+        "wikidata": "Q389190",
+        "wikipedia": "en:Lukla"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354739766,
+      "lat": 27.714402,
+      "lon": 86.715119,
+      "tags": {
+        "is_in": "Nepal",
+        "name": "Thadokosi",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354739912,
+      "lat": 27.740133,
+      "lon": 86.712692,
+      "tags": {
+        "ele": "2610",
+        "is_in": "Nepal",
+        "name": "Phakding",
+        "place": "village",
+        "wikidata": "Q3901248",
+        "wikipedia": "en:Phakding"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354739950,
+      "lat": 27.750742,
+      "lon": 86.711588,
+      "tags": {
+        "alt_name": "Zam Fute",
+        "is_in": "Nepal",
+        "name": "Zamphuti",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354740557,
+      "lat": 27.762878,
+      "lon": 86.717786,
+      "tags": {
+        "ele": "2630",
+        "name": "Benkar",
+        "name:en": "Benkar",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354740613,
+      "lat": 27.767429,
+      "lon": 86.723177,
+      "tags": {
+        "is_in": "Nepal",
+        "name": "Chumoa",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 354740657,
+      "lat": 27.771923,
+      "lon": 86.722996,
+      "tags": {
+        "ele": "2835",
+        "is_in": "Nepal",
+        "name": "Monjo",
+        "place": "village",
+        "wikidata": "Q6900560"
+      },
+      "type": "node"
+    },
+    {
+      "id": 425189336,
+      "lat": 27.893408,
+      "lon": 86.719126,
+      "tags": {
+        "ele": "4360",
+        "name": "Luza",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 425189494,
+      "lat": 27.823305,
+      "lon": 86.705812,
+      "tags": {
+        "ele": "3840",
+        "name": "खुन्दे",
+        "name:en": "Khunde",
+        "name:ne": "खुन्दे",
+        "place": "village",
+        "wikidata": "Q1739904",
+        "wikipedia": "en:Kunde, Nepal"
+      },
+      "type": "node"
+    },
+    {
+      "id": 425189495,
+      "lat": 27.823623,
+      "lon": 86.717297,
+      "tags": {
+        "ele": "3780",
+        "name": "Khumjung",
+        "place": "village",
+        "wikidata": "Q583316",
+        "wikipedia": "en:Khumjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 428553230,
+      "lat": 27.855783,
+      "lon": 86.790169,
+      "tags": {
+        "ele": "3930",
+        "name": "Pangboche",
+        "name:ja": "パンボチェ",
+        "place": "village",
+        "wikidata": "Q7130918",
+        "wikipedia": "en:Pangboche"
+      },
+      "type": "node"
+    },
+    {
+      "id": 428553269,
+      "lat": 27.846345,
+      "lon": 86.749332,
+      "tags": {
+        "ele": "3800",
+        "name": "Phortse",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 442197755,
+      "lat": 27.718583,
+      "lon": 86.71596,
+      "tags": {
+        "name": "Nurning Ghat",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 442260679,
+      "lat": 27.77855,
+      "lon": 86.722086,
+      "tags": {
+        "name": "जोरसले",
+        "name:en": "Jorsale",
+        "name:ne": "जोरसले",
+        "place": "hamlet",
+        "wikidata": "Q581758",
+        "wikipedia": "en:Jorsale"
+      },
+      "type": "node"
+    },
+    {
+      "id": 564107620,
+      "lat": 27.866623,
+      "lon": 86.730885,
+      "tags": {
+        "ele": "4050",
+        "name": "Ḍole",
+        "name:en": "Dhole",
+        "place": "hamlet",
+        "wikidata": "Q5288910",
+        "wikipedia": "en:Dole, Nepal"
+      },
+      "type": "node"
+    },
+    {
+      "id": 564119053,
+      "lat": 27.841867,
+      "lon": 86.773517,
+      "tags": {
+        "ele": "3745",
+        "name": "Deboche",
+        "place": "village",
+        "wpt_symbol": "Lodge"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703894844,
+      "lat": 27.703815,
+      "lon": 86.717775,
+      "tags": {
+        "ele": "2660",
+        "name": "Cheplung",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703894847,
+      "lat": 27.723559,
+      "lon": 86.714232,
+      "tags": {
+        "name": "चुथावा",
+        "name:en": "Chhuthawa",
+        "name:ne": "चुथावा",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703895008,
+      "lat": 27.811865,
+      "lon": 86.710861,
+      "tags": {
+        "name": "स्याङ्बोचे",
+        "name:en": "Syangboche",
+        "name:ne": "स्याङ्बोचे",
+        "place": "village",
+        "wikidata": "Q110006345",
+        "wikipedia": "de:Syangboche"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703972336,
+      "lat": 27.815261,
+      "lon": 86.687997,
+      "tags": {
+        "name": "Samshing",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703972503,
+      "lat": 27.822391,
+      "lon": 86.678316,
+      "tags": {
+        "name": "Thamo",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703972526,
+      "lat": 27.828828,
+      "lon": 86.665518,
+      "tags": {
+        "name": "Samde",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 703972561,
+      "lat": 27.818459,
+      "lon": 86.686222,
+      "tags": {
+        "name": "Theso",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 704038308,
+      "lat": 27.823028,
+      "lon": 86.731111,
+      "tags": {
+        "ele": "3610",
+        "name": "क्याङजुमा",
+        "name:en": "Kyangjuma",
+        "name:ne": "क्याङजुमा",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 704038309,
+      "lat": 27.831269,
+      "lon": 86.740783,
+      "tags": {
+        "ele": "3455",
+        "name": "Tashinga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 704038426,
+      "lat": 27.867739,
+      "lon": 86.805394,
+      "tags": {
+        "ele": "4060",
+        "name": "Shomare",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 704038463,
+      "lat": 27.904665,
+      "lon": 86.871366,
+      "tags": {
+        "alt_name": "Chhukhung",
+        "ele": "4730",
+        "name": "Chukhung",
+        "name:be": "Чукхунг",
+        "name:ja": "チュクン",
+        "name:ru": "Чукхунг",
+        "place": "village",
+        "wikidata": "Q5116018",
+        "wikipedia": "en:Chukhung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 736963685,
+      "lat": 27.825406,
+      "lon": 86.730417,
+      "tags": {
+        "ele": "3530",
+        "name": "सनासा",
+        "name:en": "Sanasa",
+        "name:ne": "सनासा",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 736963686,
+      "lat": 27.831829,
+      "lon": 86.746426,
+      "tags": {
+        "ele": "3305",
+        "name": "Phunki Thanga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 736963687,
+      "lat": 27.845917,
+      "lon": 86.778068,
+      "tags": {
+        "ele": "3746",
+        "name": "Millingo",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1303891304,
+      "lat": 27.893386,
+      "lon": 86.819991,
+      "tags": {
+        "name": "फेरिचे",
+        "name:en": "Pheriche",
+        "name:ja": "ペリツェ",
+        "name:ne": "फेरिचे",
+        "name:ru": "Периче",
+        "name:zh": "费里切",
+        "place": "hamlet",
+        "wikidata": "Q1497128",
+        "wikipedia": "en:Pheriche"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1492311486,
+      "lat": 27.753844,
+      "lon": 86.710621,
+      "tags": {
+        "name": "Toc Toc",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1889979864,
+      "lat": 27.586371,
+      "lon": 86.744887,
+      "tags": {
+        "name": "पांगौन",
+        "name:en": "Panggom",
+        "name:ne": "पांगौन",
+        "place": "village",
+        "population": "100"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1890719594,
+      "lat": 27.569288,
+      "lon": 86.799842,
+      "tags": {
+        "name": "नाजिङ्दिङ्मा",
+        "name:en": "Najingdingma",
+        "name:ne": "नाजिङ्दिङ्मा",
+        "place": "hamlet",
+        "population": "10"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1890719848,
+      "lat": 27.573964,
+      "lon": 86.789376,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1890719850,
+      "lat": 27.583295,
+      "lon": 86.77368,
+      "tags": {
+        "name": "Sibuje / Chatuk",
+        "place": "hamlet",
+        "population": "100"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1899516188,
+      "lat": 27.803688,
+      "lon": 86.712263,
+      "tags": {
+        "amenity": "school",
+        "designation": "Primary School",
+        "int_name": "Shree Madhyamik Vidhyalaya",
+        "name": "श्री हिमालय प्राथमिक विद्यालय",
+        "name:en": "Namche Primary School",
+        "name:ne": "श्री हिमालय प्राथमिक विद्यालय",
+        "source": "Local Knowledge"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1910207684,
+      "lat": 27.54031,
+      "lon": 86.815115,
+      "tags": {
+        "name": "Kiraule",
+        "place": "hamlet",
+        "population": "100"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1919108589,
+      "lat": 27.501961,
+      "lon": 86.850624,
+      "tags": {
+        "name": "Gudel",
+        "place": "village",
+        "population": "400",
+        "wikidata": "Q3429300",
+        "wikipedia": "en:Gudel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1920650818,
+      "lat": 27.458329,
+      "lon": 86.895688,
+      "tags": {
+        "name": "Sanam",
+        "place": "village",
+        "population": "40"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1929142839,
+      "lat": 27.564603,
+      "lon": 86.813198,
+      "tags": {
+        "place": "hamlet",
+        "population": "10"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1929142855,
+      "lat": 27.493598,
+      "lon": 86.847513,
+      "tags": {
+        "name": "Tatsalung",
+        "place": "village",
+        "population": "300"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1930991950,
+      "lat": 27.597586,
+      "lon": 86.68618,
+      "tags": {
+        "alt_name": "Jubhing",
+        "ele": "1680",
+        "name": "Jubing",
+        "place": "village",
+        "population": "2300",
+        "wikidata": "Q3417025",
+        "wikipedia": "en:Jubing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1930991951,
+      "lat": 27.603453,
+      "lon": 86.704523,
+      "tags": {
+        "ele": "2035",
+        "name": "खरीखोला",
+        "name:en": "Kharikhola",
+        "name:ne": "खरीखोला",
+        "place": "village",
+        "population": "500"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2252555888,
+      "lat": 27.614002,
+      "lon": 86.714565,
+      "tags": {
+        "alt_name": "Buksa",
+        "ele": "2350",
+        "name": "Bupsa",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2252555946,
+      "lat": 27.62418,
+      "lon": 86.71809,
+      "tags": {
+        "ele": "2565",
+        "name": "Kharte",
+        "name:en": "Kare",
+        "name:tr": "Kare",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2252556071,
+      "lat": 27.671879,
+      "lon": 86.7195,
+      "tags": {
+        "ele": "2300",
+        "name": "सुर्के",
+        "name:en": "Surke",
+        "name:ne": "सुर्के",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3201178843,
+      "lat": 27.587205,
+      "lon": 86.665048,
+      "tags": {
+        "name": "छिगाउँ",
+        "name:en": "Chhigaun",
+        "name:ne": "छिगाउँ",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3203616639,
+      "lat": 27.732084,
+      "lon": 86.834175,
+      "tags": {
+        "ele": "4270",
+        "name": "थाङ्नाक",
+        "name:en": "Thangnak",
+        "name:ne": "थाङ्नाक",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3209327452,
+      "lat": 27.6964,
+      "lon": 86.719139,
+      "tags": {
+        "name": "Chaurikharka",
+        "name:ja": "チャウリカルカ村",
+        "place": "village",
+        "wikidata": "Q3413296",
+        "wikipedia": "en:Chaurikharka"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3221495327,
+      "lat": 27.89352,
+      "lon": 86.830936,
+      "tags": {
+        "ele": "4410",
+        "name": "Dingboche",
+        "name:en": "Dingboche",
+        "name:ja": "ディンボチェ",
+        "name:ru": "Дингбоче",
+        "name:zh": "丁波切",
+        "place": "hamlet",
+        "wikidata": "Q574307",
+        "wikipedia": "en:Dingboche",
+        "wpt_symbol": "Lodge"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3256190965,
+      "lat": 27.659932,
+      "lon": 86.765075,
+      "tags": {
+        "name": "Kharki Teng",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3908325399,
+      "lat": 27.498681,
+      "lon": 86.707095,
+      "tags": {
+        "name": "वाकु",
+        "name:en": "waku",
+        "name:ne": "वाकु",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4529329989,
+      "lat": 27.804504,
+      "lon": 86.710518,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "internet_access": "wlan",
+        "name:en": "Mountain Medical Institute",
+        "opening_hours": "24/7",
+        "phone": "+9779851051988"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4577539452,
+      "lat": 27.744612,
+      "lon": 86.876871,
+      "tags": {
+        "ele": "4900",
+        "name": "खरे",
+        "name:en": "Khare",
+        "name:ne": "खरे",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5858520230,
+      "lat": 27.839709,
+      "lon": 86.77041,
+      "tags": {
+        "ele": "3745",
+        "name": "Deboche",
+        "place": "village",
+        "wpt_symbol": "Lodge"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5861473755,
+      "lat": 27.851899,
+      "lon": 86.744683,
+      "tags": {
+        "name": "Phortse Tenga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5864146463,
+      "lat": 27.829608,
+      "lon": 86.738764,
+      "tags": {
+        "alt_name": "Leushyasa",
+        "name": "लवी स्यासा",
+        "name:en": "Lawi Schyasa",
+        "name:ne": "लवी स्यासा",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6135785524,
+      "lat": 27.562931,
+      "lon": 86.677049,
+      "tags": {
+        "name": "अधेरी",
+        "name:en": "Adderi",
+        "name:ne": "अधेरी",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6520531685,
+      "lat": 27.500561,
+      "lon": 86.787379,
+      "tags": {
+        "amenity": "school",
+        "name:en": "Lidhunga Primary School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121353,
+      "lat": 27.571106,
+      "lon": 86.717697,
+      "tags": {
+        "name": "Leldum",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121354,
+      "lat": 27.561315,
+      "lon": 86.714968,
+      "tags": {
+        "name": "Hil",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121355,
+      "lat": 27.548102,
+      "lon": 86.723569,
+      "tags": {
+        "name": "Lakhu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121356,
+      "lat": 27.544239,
+      "lon": 86.721383,
+      "tags": {
+        "name": "Sakarnam",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121357,
+      "lat": 27.543911,
+      "lon": 86.70602,
+      "tags": {
+        "name": "Bodu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121358,
+      "lat": 27.540193,
+      "lon": 86.703377,
+      "tags": {
+        "name": "Yasuka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121359,
+      "lat": 27.528835,
+      "lon": 86.692702,
+      "tags": {
+        "name": "Damku",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121360,
+      "lat": 27.519819,
+      "lon": 86.693463,
+      "tags": {
+        "name": "Basa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121361,
+      "lat": 27.512675,
+      "lon": 86.709546,
+      "tags": {
+        "name": "Korla",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121362,
+      "lat": 27.518525,
+      "lon": 86.714275,
+      "tags": {
+        "name": "Budhubar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121363,
+      "lat": 27.525805,
+      "lon": 86.715027,
+      "tags": {
+        "name": "Kamaldada",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121364,
+      "lat": 27.528065,
+      "lon": 86.719669,
+      "tags": {
+        "name": "Khanigau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121365,
+      "lat": 27.526944,
+      "lon": 86.722804,
+      "tags": {
+        "name": "Tamakhani",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121366,
+      "lat": 27.517723,
+      "lon": 86.719223,
+      "tags": {
+        "name": "Phapare",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121367,
+      "lat": 27.513659,
+      "lon": 86.737219,
+      "tags": {
+        "name": "Rocham",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121368,
+      "lat": 27.523354,
+      "lon": 86.74367,
+      "tags": {
+        "name": "Dihi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121369,
+      "lat": 27.533378,
+      "lon": 86.744527,
+      "tags": {
+        "name": "Hakula",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121370,
+      "lat": 27.546061,
+      "lon": 86.753056,
+      "tags": {
+        "name": "Solaban",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121371,
+      "lat": 27.539774,
+      "lon": 86.75158,
+      "tags": {
+        "name": "Taptel",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121372,
+      "lat": 27.529277,
+      "lon": 86.750796,
+      "tags": {
+        "name": "Danki",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121379,
+      "lat": 27.557023,
+      "lon": 86.765375,
+      "tags": {
+        "name": "Phurche",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121380,
+      "lat": 27.560495,
+      "lon": 86.77754,
+      "tags": {
+        "name": "Juge",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121382,
+      "lat": 27.547747,
+      "lon": 86.774706,
+      "tags": {
+        "name": "Tintale",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121383,
+      "lat": 27.534599,
+      "lon": 86.776055,
+      "tags": {
+        "name": "Menkhu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121384,
+      "lat": 27.530817,
+      "lon": 86.771772,
+      "tags": {
+        "name": "Chepel",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121385,
+      "lat": 27.522233,
+      "lon": 86.767243,
+      "tags": {
+        "name": "Malbu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121386,
+      "lat": 27.524389,
+      "lon": 86.761567,
+      "tags": {
+        "name": "Chemedu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121387,
+      "lat": 27.511545,
+      "lon": 86.762623,
+      "tags": {
+        "name": "Komdel",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121388,
+      "lat": 27.518548,
+      "lon": 86.770925,
+      "tags": {
+        "name": "Khopkharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121389,
+      "lat": 27.522908,
+      "lon": 86.775922,
+      "tags": {
+        "name": "Dhungepani",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121391,
+      "lat": 27.50719,
+      "lon": 86.791791,
+      "tags": {
+        "name": "Bakhabilam",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121392,
+      "lat": 27.516584,
+      "lon": 86.794087,
+      "tags": {
+        "name": "Lidhunga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121393,
+      "lat": 27.505896,
+      "lon": 86.797249,
+      "tags": {
+        "name": "Sotan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121394,
+      "lat": 27.505276,
+      "lon": 86.815391,
+      "tags": {
+        "name": "Chekma",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121395,
+      "lat": 27.510115,
+      "lon": 86.812156,
+      "tags": {
+        "name": "Patle",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121396,
+      "lat": 27.520584,
+      "lon": 86.809013,
+      "tags": {
+        "name": "Chakladu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121397,
+      "lat": 27.522297,
+      "lon": 86.842208,
+      "tags": {
+        "name": "Pelman",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121398,
+      "lat": 27.527719,
+      "lon": 86.845452,
+      "tags": {
+        "name": "Gijahokharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121399,
+      "lat": 27.527099,
+      "lon": 86.853215,
+      "tags": {
+        "name": "Papelun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121400,
+      "lat": 27.551192,
+      "lon": 86.85799,
+      "tags": {
+        "name": "Baklukharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121402,
+      "lat": 27.545588,
+      "lon": 86.878063,
+      "tags": {
+        "name": "Phawakharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121403,
+      "lat": 27.56055,
+      "lon": 86.880396,
+      "tags": {
+        "name": "Lamchomkharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858121404,
+      "lat": 27.568058,
+      "lon": 86.881699,
+      "tags": {
+        "name": "Muddikharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125605,
+      "lat": 27.560741,
+      "lon": 86.890319,
+      "tags": {
+        "name": "Sirumlagoth",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125606,
+      "lat": 27.551456,
+      "lon": 86.884378,
+      "tags": {
+        "name": "Chhiwalakharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125607,
+      "lat": 27.533942,
+      "lon": 86.877854,
+      "tags": {
+        "name": "Khardo",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125608,
+      "lat": 27.532685,
+      "lon": 86.872368,
+      "tags": {
+        "name": "Lokchesko",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125609,
+      "lat": 27.527109,
+      "lon": 86.868013,
+      "tags": {
+        "name": "Chheskam",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125610,
+      "lat": 27.512748,
+      "lon": 86.86876,
+      "tags": {
+        "name": "Luchcham",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125611,
+      "lat": 27.509103,
+      "lon": 86.861379,
+      "tags": {
+        "name": "Tumau",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125612,
+      "lat": 27.504584,
+      "lon": 86.882765,
+      "tags": {
+        "name": "Saddi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125613,
+      "lat": 27.521969,
+      "lon": 86.888588,
+      "tags": {
+        "name": "Bodiri",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125614,
+      "lat": 27.526817,
+      "lon": 86.89349,
+      "tags": {
+        "name": "Mamirku",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125615,
+      "lat": 27.541715,
+      "lon": 86.901108,
+      "tags": {
+        "name": "Bokswar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125616,
+      "lat": 27.549497,
+      "lon": 86.907541,
+      "tags": {
+        "name": "Miklakharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199192,
+      "lat": 27.834229,
+      "lon": 86.740527,
+      "tags": {
+        "name": "Selawa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199193,
+      "lat": 27.747418,
+      "lon": 86.709683,
+      "tags": {
+        "name": "Gumela",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199194,
+      "lat": 27.737887,
+      "lon": 86.706639,
+      "tags": {
+        "name": "Sano Gumela",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199195,
+      "lat": 27.710187,
+      "lon": 86.714877,
+      "tags": {
+        "name": "Nachipan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199196,
+      "lat": 27.706724,
+      "lon": 86.70735,
+      "tags": {
+        "name": "Syanjma",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199197,
+      "lat": 27.689712,
+      "lon": 86.700243,
+      "tags": {
+        "name": "Tate",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199198,
+      "lat": 27.679006,
+      "lon": 86.729966,
+      "tags": {
+        "name": "Bom",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199199,
+      "lat": 27.679516,
+      "lon": 86.713091,
+      "tags": {
+        "name": "Nakchun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199200,
+      "lat": 27.671679,
+      "lon": 86.715022,
+      "tags": {
+        "name": "Surke",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858199201,
+      "lat": 27.652412,
+      "lon": 86.713852,
+      "tags": {
+        "name": "Chheubas",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234612,
+      "lat": 27.618174,
+      "lon": 86.704343,
+      "tags": {
+        "name": "Bupsa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234613,
+      "lat": 27.614734,
+      "lon": 86.723246,
+      "tags": {
+        "name": "Kharte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234614,
+      "lat": 27.608069,
+      "lon": 86.720125,
+      "tags": {
+        "name": "Jaubari",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234615,
+      "lat": 27.60272,
+      "lon": 86.73013,
+      "tags": {
+        "name": "Bhalukhop",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234616,
+      "lat": 27.601462,
+      "lon": 86.719232,
+      "tags": {
+        "name": "Kharikhola",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234617,
+      "lat": 27.602228,
+      "lon": 86.707678,
+      "tags": {
+        "name": "Sikali",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234618,
+      "lat": 27.582838,
+      "lon": 86.690147,
+      "tags": {
+        "name": "Bumburi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234619,
+      "lat": 27.581125,
+      "lon": 86.6818,
+      "tags": {
+        "name": "Hatemu",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234620,
+      "lat": 27.567383,
+      "lon": 86.665581,
+      "tags": {
+        "name": "Chhaga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234621,
+      "lat": 27.558654,
+      "lon": 86.683704,
+      "tags": {
+        "name": "Thuldhunga",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234622,
+      "lat": 27.544604,
+      "lon": 86.693773,
+      "tags": {
+        "name": "Rapcha",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858234623,
+      "lat": 27.554463,
+      "lon": 86.697837,
+      "tags": {
+        "name": "Lapse",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11254886432,
+      "lat": 27.663332,
+      "lon": 86.813576,
+      "tags": {
+        "name": "कोठे",
+        "name:en": "Kothe",
+        "name:ne": "कोठे",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11708164483,
+      "lat": 27.856376,
+      "lon": 86.792109,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Um Hong Gil School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11778622314,
+      "lat": 27.857176,
+      "lon": 86.742705,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11816197545,
+      "lat": 27.803567,
+      "lon": 86.709875,
+      "tags": {
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator",
+        "religion": "prayer_wheel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11816197546,
+      "lat": 27.803656,
+      "lon": 86.70993,
+      "tags": {
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator",
+        "religion": "prayer_wheel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11816197547,
+      "lat": 27.803732,
+      "lon": 86.709975,
+      "tags": {
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator",
+        "religion": "prayer_wheel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11816197548,
+      "lat": 27.803812,
+      "lon": 86.710017,
+      "tags": {
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator",
+        "religion": "prayer_wheel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11816197549,
+      "lat": 27.803884,
+      "lon": 86.710058,
+      "tags": {
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator",
+        "religion": "prayer_wheel"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11847275665,
+      "lat": 27.902882,
+      "lon": 86.715599,
+      "tags": {
+        "alt_name": "Machermo",
+        "name": "Macchermo",
+        "place": "hamlet",
+        "wikidata": "Q3842085",
+        "wikipedia": "en:Machhermo"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977437859,
+      "lat": 27.447872,
+      "lon": 86.790506,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Chitre Community Health Unit",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977445807,
+      "lat": 27.451775,
+      "lon": 86.790217,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Deepjyoti Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977459760,
+      "lat": 27.489942,
+      "lon": 86.779075,
+      "tags": {
+        "amenity": "hospital",
+        "name": "Sotang Hospital",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977459761,
+      "lat": 27.472721,
+      "lon": 86.820854,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jana Chetana Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977463820,
+      "lat": 27.520471,
+      "lon": 86.770108,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Khockhorka Basic Health Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977490673,
+      "lat": 27.489157,
+      "lon": 86.820686,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Basic Health Care Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977490852,
+      "lat": 27.464243,
+      "lon": 86.806537,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Pathibhara Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977506201,
+      "lat": 27.471767,
+      "lon": 86.802871,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Thulu Vaccination Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977506233,
+      "lat": 27.483385,
+      "lon": 86.752696,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sotang Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977513244,
+      "lat": 27.496001,
+      "lon": 86.747191,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Pabai Health Post",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977513936,
+      "lat": 27.479292,
+      "lon": 86.75816,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Toshkham Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977517157,
+      "lat": 27.512118,
+      "lon": 86.76245,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Madan Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977517198,
+      "lat": 27.488687,
+      "lon": 86.821318,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Hunga Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977517199,
+      "lat": 27.478,
+      "lon": 86.797802,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Panchakanya Basic School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977517736,
+      "lat": 27.483418,
+      "lon": 86.7521,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Basic Health Service Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977532506,
+      "lat": 27.488186,
+      "lon": 86.771092,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sotang Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977534096,
+      "lat": 27.500476,
+      "lon": 86.787254,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Lidhunga Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977534437,
+      "lat": 27.480322,
+      "lon": 86.807154,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Janajagriti Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977538917,
+      "lat": 27.493924,
+      "lon": 86.761285,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Narkel Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977539065,
+      "lat": 27.486379,
+      "lon": 86.781364,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Basuki Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977539585,
+      "lat": 27.498301,
+      "lon": 86.779525,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Himalayan Basic School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977539762,
+      "lat": 27.490237,
+      "lon": 86.775186,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Birendra Jyoti Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977540294,
+      "lat": 27.470862,
+      "lon": 86.729072,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Pipalbot Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977540295,
+      "lat": 27.472583,
+      "lon": 86.739271,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Hulu Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977540296,
+      "lat": 27.496303,
+      "lon": 86.747176,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Basuki Basic School, Pabai",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977541005,
+      "lat": 27.489174,
+      "lon": 86.770548,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Dharma Peak EBS",
+        "operator": "private"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977541186,
+      "lat": 27.465655,
+      "lon": 86.739817,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Barbot Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12161640448,
+      "lat": 27.879702,
+      "lon": 86.814605,
+      "tags": {
+        "alt_name": "Tsuro",
+        "name": "Churo",
+        "place": "hamlet",
+        "source": "Finn Map"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12801774023,
+      "lat": 27.804177,
+      "lon": 86.711649,
+      "tags": {
+        "amenity": "hospital",
+        "name": "Um Hong Gil Namche Community Hospital"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13152168049,
+      "lat": 27.699407,
+      "lon": 86.71692,
+      "tags": {
+        "name": "खुम्बु पासाङल्हामु",
+        "name:en": "Khumbupasanglahmu",
+        "name:fa": "کومبو پاسانگ‌لامو",
+        "name:ne": "खुम्बु पासाङल्हामु",
+        "name:ur": "کھومبو پاسانگ لھامو",
+        "name:zh": "坤布帕桑拉姆",
+        "place": "town"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13152168051,
+      "lat": 27.489412,
+      "lon": 86.773545,
+      "tags": {
+        "name": "सोताङ",
+        "name:en": "Sotang",
+        "name:fa": "سوتانگ",
+        "name:ne": "सोताङ",
+        "name:ur": "سوتانگ",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13152168052,
+      "lat": 27.433718,
+      "lon": 86.666081,
+      "tags": {
+        "name": "थुलुङ दुधकोशी",
+        "name:en": "Thulung Dudhkoshi",
+        "name:fa": "تولونگ دودکوشی",
+        "name:ne": "थुलुङ दुधकोशी",
+        "name:ur": "تھولنگ دودھ کوشی",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13152168055,
+      "lat": 27.522572,
+      "lon": 86.689318,
+      "tags": {
+        "name": "माप्य दुधकोशी",
+        "name:en": "Mapya Dudhkoshi",
+        "name:fa": "ماپیه دودکوشی",
+        "name:ne": "माप्य दुधकोशी",
+        "name:ur": "ماپِیہ دودھ کوشی",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13286996201,
+      "lat": 27.892256,
+      "lon": 86.829627,
+      "tags": {
+        "amenity": "clinic",
+        "name:en": "The Mountain Medical Institute"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.776696,
+        "lon": 86.721638
+      },
+      "id": 36479497,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.790061,
+        "lon": 86.718882
+      },
+      "id": 36479498,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "disused": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name:en": "old Hillary Bridge"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850039,
+        "lon": 86.779669
+      },
+      "id": 36859189,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.714246,
+        "lon": 86.714294
+      },
+      "id": 37709982,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.832013,
+        "lon": 86.745456
+      },
+      "id": 37711631,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "wikidata": "Q115794865"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.823797,
+        "lon": 86.704724
+      },
+      "id": 45019553,
+      "tags": {
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "name": "Hillary Hospital"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.68814,
+        "lon": 86.731313
+      },
+      "id": 45331351,
+      "tags": {
+        "bridge": "yes",
+        "foot": "yes",
+        "highway": "footway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.829805,
+        "lon": 86.656992
+      },
+      "id": 56084388,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.832152,
+        "lon": 86.658388
+      },
+      "id": 56084391,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "material": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.893173,
+        "lon": 86.728583
+      },
+      "id": 56092757,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.91333,
+        "lon": 86.718513
+      },
+      "id": 56092767,
+      "tags": {
+        "bridge": "yes",
+        "foot": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.85963,
+        "lon": 86.796002
+      },
+      "id": 56096169,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.880554,
+        "lon": 86.817108
+      },
+      "id": 59430259,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.764083,
+        "lon": 86.720712
+      },
+      "id": 135972900,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.704315,
+        "lon": 86.718978
+      },
+      "id": 135972901,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.702336,
+        "lon": 86.717244
+      },
+      "id": 135972909,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.730537,
+        "lon": 86.713661
+      },
+      "id": 135972911,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.743573,
+        "lon": 86.713341
+      },
+      "id": 135972912,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.751656,
+        "lon": 86.710393
+      },
+      "id": 135972913,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.739947,
+        "lon": 86.712544
+      },
+      "id": 135972915,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.718482,
+        "lon": 86.715909
+      },
+      "id": 135972917,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.766691,
+        "lon": 86.723324
+      },
+      "id": 135972918,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.756275,
+        "lon": 86.710035
+      },
+      "id": 135972919,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.780548,
+        "lon": 86.722671
+      },
+      "id": 135972920,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.76962,
+        "lon": 86.723853
+      },
+      "id": 135972921,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.681189,
+        "lon": 86.718071
+      },
+      "id": 155531398,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.606213,
+        "lon": 86.718622
+      },
+      "id": 155531410,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.593973,
+        "lon": 86.678534
+      },
+      "id": 155531412,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.820746,
+        "lon": 86.71632
+      },
+      "id": 238183561,
+      "tags": {
+        "addr:housename": "Khumjung School",
+        "addr:postcode": "56002",
+        "addr:street": "Khumjung VDC-1",
+        "amenity": "school",
+        "name": "Khumjung Secondary School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.886916,
+        "lon": 86.818221
+      },
+      "id": 316033195,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903688,
+        "lon": 86.872598
+      },
+      "id": 316033196,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.750086,
+        "lon": 86.712258
+      },
+      "id": 319369475,
+      "tags": {
+        "amenity": "hospital",
+        "building": "yes",
+        "name": "Himalaya Sherpa Hospital"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.502861,
+        "lon": 86.850414
+      },
+      "id": 341101321,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.696495,
+        "lon": 86.720631
+      },
+      "id": 342218433,
+      "tags": {
+        "amenity": "school",
+        "name": "Chaurikharka school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.49641,
+        "lon": 86.657168
+      },
+      "id": 342672581,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.434753,
+        "lon": 86.701219
+      },
+      "id": 343537419,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.761918,
+        "lon": 86.714366
+      },
+      "id": 343852228,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905309,
+        "lon": 86.711873
+      },
+      "id": 343881569,
+      "tags": {
+        "addr:street": "Machermo",
+        "amenity": "clinic",
+        "building": "yes",
+        "ele": "4470",
+        "healthcare": "clinic",
+        "healthcare:speciality": "High_Altitude_related_sickness",
+        "name": "Machermo Rescue Post & Porter Shelter",
+        "operator": "IPPG"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.607577,
+        "lon": 86.710798
+      },
+      "id": 343981687,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.751801,
+        "lon": 86.709462
+      },
+      "id": 344369740,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.451255,
+        "lon": 86.676556
+      },
+      "id": 344369924,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.435123,
+        "lon": 86.697613
+      },
+      "id": 344369927,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.805638,
+        "lon": 86.711698
+      },
+      "id": 344631381,
+      "tags": {
+        "building": "yes",
+        "generator:method": "run-of-the-river",
+        "generator:source": "hydro",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.537749,
+        "lon": 86.848791
+      },
+      "id": 345094269,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.513231,
+        "lon": 86.839399
+      },
+      "id": 345094276,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.510683,
+        "lon": 86.840899
+      },
+      "id": 345094285,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.72426,
+        "lon": 86.711209
+      },
+      "id": 345116484,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.82661,
+        "lon": 86.664259
+      },
+      "id": 345121722,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "demanding_mountain_hiking",
+        "source": "bing",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.482514,
+        "lon": 86.855157
+      },
+      "id": 346369386,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.489692,
+        "lon": 86.669883
+      },
+      "id": 347000009,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.47124,
+        "lon": 86.722843
+      },
+      "id": 347000687,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.478188,
+        "lon": 86.728244
+      },
+      "id": 347395105,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.530228,
+        "lon": 86.708795
+      },
+      "id": 350054916,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.540626,
+        "lon": 86.892722
+      },
+      "id": 350307854,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.733751,
+        "lon": 86.710557
+      },
+      "id": 352878689,
+      "tags": {
+        "generator:method": "stream",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.45609,
+        "lon": 86.730033
+      },
+      "id": 355141380,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "horse": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.578859,
+        "lon": 86.782714
+      },
+      "id": 488912738,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Panggom-Najingdingma",
+        "sac_scale": "hiking",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.850334,
+        "lon": 86.781107
+      },
+      "id": 496938873,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.469666,
+        "lon": 86.880077
+      },
+      "id": 501320984,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.79026,
+        "lon": 86.718942
+      },
+      "id": 539969458,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "name:en": "new Hillary Bridge",
+        "start_date": "2013"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.851754,
+        "lon": 86.744045
+      },
+      "id": 552214459,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.706771,
+        "lon": 86.711544
+      },
+      "id": 594630773,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.695666,
+        "lon": 86.711983
+      },
+      "id": 594630774,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.438805,
+        "lon": 86.786802
+      },
+      "id": 617531390,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.751649,
+        "lon": 86.710722
+      },
+      "id": 642225686,
+      "tags": {
+        "building": "service",
+        "generator:source": "hydro",
+        "name": "Hydro generator",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.572585,
+        "lon": 86.674023
+      },
+      "id": 654800802,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "truss",
+        "highway": "footway",
+        "layer": "1",
+        "material": "steel",
+        "surface": "steel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.573679,
+        "lon": 86.674748
+      },
+      "id": 654800803,
+      "tags": {
+        "board_type": "steel",
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "material": "metal",
+        "surface": "steel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.682631,
+        "lon": 86.723732
+      },
+      "id": 753613268,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.484673,
+        "lon": 86.706565
+      },
+      "id": 884203250,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.488249,
+        "lon": 86.660946
+      },
+      "id": 884207018,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.488138,
+        "lon": 86.655548
+      },
+      "id": 884207019,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.542876,
+        "lon": 86.814742
+      },
+      "id": 884455234,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Nadjingdingma-Kiraule",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.616239,
+        "lon": 86.845093
+      },
+      "id": 884502369,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.519138,
+        "lon": 86.756198
+      },
+      "id": 884502440,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.691476,
+        "lon": 86.728532
+      },
+      "id": 885628138,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.485078,
+        "lon": 86.706079
+      },
+      "id": 951514141,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.902536,
+        "lon": 86.715408
+      },
+      "id": 968736863,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.867309,
+        "lon": 86.728444
+      },
+      "id": 968745407,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.867538,
+        "lon": 86.730246
+      },
+      "id": 968745409,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.856592,
+        "lon": 86.793335
+      },
+      "id": 969712989,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.661713,
+        "lon": 86.81478
+      },
+      "id": 986218317,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.475472,
+        "lon": 86.762855
+      },
+      "id": 1031986795,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.736573,
+        "lon": 86.711348
+      },
+      "id": 1050413290,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.671858,
+        "lon": 86.719879
+      },
+      "id": 1052723953,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.537319,
+        "lon": 86.813316
+      },
+      "id": 1055733402,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "name": "Kiraule-Gudel",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.704877,
+        "lon": 86.714804
+      },
+      "id": 1059045666,
+      "tags": {
+        "bridge": "suspension_bridge",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.81812,
+        "lon": 86.68684
+      },
+      "id": 1153599583,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.696206,
+        "lon": 86.725443
+      },
+      "id": 1153599585,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.831994,
+        "lon": 86.658403
+      },
+      "id": 1163826810,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.781346,
+        "lon": 86.722746
+      },
+      "id": 1267933040,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.780837,
+        "lon": 86.723156
+      },
+      "id": 1267933042,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.766097,
+        "lon": 86.723384
+      },
+      "id": 1267933045,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.856135,
+        "lon": 86.786797
+      },
+      "id": 1268084276,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.85374,
+        "lon": 86.787789
+      },
+      "id": 1268084280,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.853334,
+        "lon": 86.740562
+      },
+      "id": 1268186399,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.857039,
+        "lon": 86.735466
+      },
+      "id": 1268186401,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.856874,
+        "lon": 86.735784
+      },
+      "id": 1268186403,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.857845,
+        "lon": 86.734186
+      },
+      "id": 1268186405,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.858657,
+        "lon": 86.733143
+      },
+      "id": 1268186407,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.920261,
+        "lon": 86.710974
+      },
+      "id": 1268186423,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.916853,
+        "lon": 86.717329
+      },
+      "id": 1268186425,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.874171,
+        "lon": 86.73926
+      },
+      "id": 1268186429,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.493332,
+        "lon": 86.796099
+      },
+      "id": 1291988767,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bakhapalam Secondary School",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.528239,
+        "lon": 86.767442
+      },
+      "id": 1291992152,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Chepel Basic School",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.580967,
+        "lon": 86.782447
+      },
+      "id": 1351999120,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.470696,
+        "lon": 86.723084
+      },
+      "id": 1444132315,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "note": "not in imagery of 2021, but GPS track",
+        "ref": "NH23"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.59393,
+        "lon": 86.670966
+      },
+      "id": 1480910567,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "source": "strava"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.591923,
+        "lon": 86.660871
+      },
+      "id": 1480983985,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.589906,
+        "lon": 86.663374
+      },
+      "id": 1480983988,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.589741,
+        "lon": 86.663863
+      },
+      "id": 1480983991,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.595383,
+        "lon": 86.665443
+      },
+      "id": 1480983993,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.578105,
+        "lon": 86.782877
+      },
+      "id": 1481003998,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "source": "esri"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.573894,
+        "lon": 86.674768
+      },
+      "id": 1481004029,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.639703,
+        "lon": 86.73389
+      },
+      "id": 1481633288,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.638977,
+        "lon": 86.733437
+      },
+      "id": 1481633290,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.60776,
+        "lon": 86.71848
+      },
+      "id": 1481633317,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.602061,
+        "lon": 86.697493
+      },
+      "id": 1481633333,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent",
+        "trailblazed": "symbols"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.597317,
+        "lon": 86.685358
+      },
+      "id": 1481633342,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.736304,
+        "lon": 86.711423
+      },
+      "id": 1481644144,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "source": "strava,Bing, survey",
+        "surface": "dirt"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.807939,
+        "lon": 86.677802
+      },
+      "id": 1482374423,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "source": "survey, strava, bing",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.811825,
+        "lon": 86.696007
+      },
+      "id": 1482381148,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "strava",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.785527,
+        "lon": 86.721721
+      },
+      "id": 1482381158,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.825299,
+        "lon": 86.661728
+      },
+      "id": 1482381188,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "source": "survey, strava, bing",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.824454,
+        "lon": 86.661956
+      },
+      "id": 1482381191,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "source": "survey, strava, bing",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.859278,
+        "lon": 86.792176
+      },
+      "id": 1482937694,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.902111,
+        "lon": 86.866023
+      },
+      "id": 1482937701,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.903259,
+        "lon": 86.868299
+      },
+      "id": 1482937703,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.904988,
+        "lon": 86.870466
+      },
+      "id": 1482937712,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trailblazed": "cairns"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.905223,
+        "lon": 86.870249
+      },
+      "id": 1482937713,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trailblazed": "cairns"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.840157,
+        "lon": 86.762515
+      },
+      "id": 1482990696,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.64199,
+        "lon": 86.798867
+      },
+      "id": 1483056623,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "surface": "ground",
+        "trail_visibility": "excellent",
+        "trailblazed": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.670523,
+        "lon": 86.760034
+      },
+      "id": 1483056634,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.673244,
+        "lon": 86.754874
+      },
+      "id": 1483056636,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.675877,
+        "lon": 86.755098
+      },
+      "id": 1483056638,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.679157,
+        "lon": 86.750794
+      },
+      "id": 1483056640,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.68037,
+        "lon": 86.745376
+      },
+      "id": 1483056642,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.681922,
+        "lon": 86.742581
+      },
+      "id": 1483056644,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.684862,
+        "lon": 86.736332
+      },
+      "id": 1483056646,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.685217,
+        "lon": 86.73526
+      },
+      "id": 1483056650,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "mountain_hiking",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.662989,
+        "lon": 86.813054
+      },
+      "id": 1483068098,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.66256,
+        "lon": 86.813322
+      },
+      "id": 1483068100,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "intermediate"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.660663,
+        "lon": 86.814752
+      },
+      "id": 1483068104,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.652076,
+        "lon": 86.811139
+      },
+      "id": 1483068112,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.641649,
+        "lon": 86.821155
+      },
+      "id": 1483074535,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.615908,
+        "lon": 86.845242
+      },
+      "id": 1483082503,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.503649,
+        "lon": 86.848007
+      },
+      "id": 1483121608,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.504019,
+        "lon": 86.84766
+      },
+      "id": 1483121610,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.504702,
+        "lon": 86.84691
+      },
+      "id": 1483121612,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.505388,
+        "lon": 86.846325
+      },
+      "id": 1483121614,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.506271,
+        "lon": 86.845355
+      },
+      "id": 1483121616,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.506681,
+        "lon": 86.84507
+      },
+      "id": 1483121618,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.506745,
+        "lon": 86.84449
+      },
+      "id": 1483121621,
+      "tags": {
+        "bridge": "yes",
+        "highway": "steps",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.517518,
+        "lon": 86.844885
+      },
+      "id": 1483121633,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1",
+        "note": "road not yet on satellite yeat I walked on it in Novemer 2025",
+        "source": "survey, gps"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.511032,
+        "lon": 86.84121
+      },
+      "id": 1483121649,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.532338,
+        "lon": 86.84475
+      },
+      "id": 1483121653,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "level": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.445505,
+        "lon": 86.920784
+      },
+      "id": 1483681292,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.452463,
+        "lon": 86.91983
+      },
+      "id": 1483681295,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.460848,
+        "lon": 86.88922
+      },
+      "id": 1483681304,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.481376,
+        "lon": 86.659896
+      },
+      "id": 1493705479,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-30T19:58:50Z"
+  },
+  "version": 0.6
+}

@@ -1,0 +1,328 @@
+{
+  "collection": "cop-dem-glo-30",
+  "half_width_km": 50.0,
+  "lakes": [
+    {
+      "bbox_wgs84": [
+        86.069532,
+        27.370714,
+        87.085268,
+        28.275086
+      ],
+      "bytes": 3185763,
+      "half_width_km": 50.0,
+      "lake_id": "thyanbo_tsho",
+      "res_m": 90.0,
+      "sha256": "4dbb68664c6bb390d7d56b1fc3fd7597bcab56e5f505d0eccb67d14f489fe81c",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        87.823047,
+        27.495314,
+        88.839953,
+        28.399686
+      ],
+      "bytes": 2972658,
+      "half_width_km": 50.0,
+      "lake_id": "south_lhonak",
+      "res_m": 90.0,
+      "sha256": "3ea37047ef34c5b74ee65f4e0376725f0b73d107f2f99568abdb3b8647fb4baa",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E088_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E088_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        85.121006,
+        27.944914,
+        86.142194,
+        28.849286
+      ],
+      "bytes": 3026329,
+      "half_width_km": 50.0,
+      "lake_id": "pyurepu_supraglacial",
+      "res_m": 90.0,
+      "sha256": "2c0398b10e3659abb2e78e8bfdd3cc8be01871ce3ffb8af580db95edddf645b9",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E085_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E085_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        79.198852,
+        29.916984,
+        80.240028,
+        30.821356
+      ],
+      "bytes": 3276090,
+      "half_width_km": 50.0,
+      "lake_id": "chamoli_ronti",
+      "res_m": 90.0,
+      "sha256": "e1d4a2f884b3b3393b90b0e53d26f9269adb4567fb98518f1fef385355a0607e",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N30_00_E080_00_DEM",
+        "Copernicus_DSM_COG_10_N30_00_E079_00_DEM",
+        "Copernicus_DSM_COG_10_N29_00_E080_00_DEM",
+        "Copernicus_DSM_COG_10_N29_00_E079_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.41678,
+        27.445814,
+        87.43322,
+        28.350186
+      ],
+      "bytes": 3147328,
+      "half_width_km": 50.0,
+      "lake_id": "imja_tsho",
+      "res_m": 90.0,
+      "sha256": "94a4ff604c2850d0072f31bf4e6feef51f3cc27003c79b21bf4978e8b5cc49b6",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        85.967954,
+        27.408814,
+        86.984046,
+        28.313186
+      ],
+      "bytes": 3178735,
+      "half_width_km": 50.0,
+      "lake_id": "tsho_rolpa",
+      "res_m": 90.0,
+      "sha256": "1d45de84f4686a4287e4ec1f796a085497eccfd9ffa7c691749754622bec2e8f",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E085_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E085_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        83.973967,
+        28.035814,
+        84.996033,
+        28.940186
+      ],
+      "bytes": 3246790,
+      "half_width_km": 50.0,
+      "lake_id": "thulagi",
+      "res_m": 90.0,
+      "sha256": "ca22514c47ce8da391b716271d92a9bcbd1ff0098de31db48b721caea08ca20b",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E084_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E083_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.584248,
+        27.345814,
+        87.599752,
+        28.250186
+      ],
+      "bytes": 3199364,
+      "half_width_km": 50.0,
+      "lake_id": "lower_barun",
+      "res_m": 90.0,
+      "sha256": "11baa271eb85d48111b3175a921930863c79f302d07059ce61cad42576a994ee",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.450449,
+        27.302814,
+        87.465551,
+        28.207186
+      ],
+      "bytes": 3220570,
+      "half_width_km": 50.0,
+      "lake_id": "chamlang_tsho",
+      "res_m": 90.0,
+      "sha256": "2bc90ca0ef11f148834e6399db5c5ece85774241eff16bc131c2bbd14543f090",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.104337,
+        27.326814,
+        87.119663,
+        28.231186
+      ],
+      "bytes": 3205173,
+      "half_width_km": 50.0,
+      "lake_id": "lumding_tsho",
+      "res_m": 90.0,
+      "sha256": "51fd21180cf65712b095faa4f9135d21c880ea88ff64aff92cb636ebe824c92a",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.420805,
+        27.397914,
+        87.436795,
+        28.302286
+      ],
+      "bytes": 3169314,
+      "half_width_km": 50.0,
+      "lake_id": "hongu_1",
+      "res_m": 90.0,
+      "sha256": "c8d052faccdf1f0537bd6b490b770bf2af6a57521d0420947b54d5917a932dcf",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.449319,
+        27.330814,
+        87.464681,
+        28.235186
+      ],
+      "bytes": 3203654,
+      "half_width_km": 50.0,
+      "lake_id": "hongu_2",
+      "res_m": 90.0,
+      "sha256": "05d5a00e9daf5817557bb69522ecf3161628ea0bd3fbe10a57e20c87b4db29cc",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        86.172715,
+        27.523314,
+        87.189885,
+        28.427686
+      ],
+      "bytes": 3113017,
+      "half_width_km": 50.0,
+      "lake_id": "gokyo_dudh_pokhari",
+      "res_m": 90.0,
+      "sha256": "1cac0d98d0e3d479d98b0ff428cb9f6860ac0a6d00e2a75b5906c7edf82b3dcf",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E086_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E087_00_DEM",
+        "Copernicus_DSM_COG_10_N27_00_E086_00_DEM"
+      ]
+    },
+    {
+      "bbox_wgs84": [
+        83.340756,
+        28.239484,
+        84.364804,
+        29.143856
+      ],
+      "bytes": 3182856,
+      "half_width_km": 50.0,
+      "lake_id": "tilicho",
+      "res_m": 90.0,
+      "sha256": "dc74a876ec0a7cc3022c735b2f3fac9883a8450f6fc2f309600ba35661ed2bc3",
+      "shape": [
+        1111,
+        1111
+      ],
+      "tiles": [
+        "Copernicus_DSM_COG_10_N29_00_E084_00_DEM",
+        "Copernicus_DSM_COG_10_N29_00_E083_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E084_00_DEM",
+        "Copernicus_DSM_COG_10_N28_00_E083_00_DEM"
+      ]
+    }
+  ],
+  "note": "Wide coarse DEM for long-range routing only. The 30 m dem_glo30.tif remains the source for every near-lake terrain proxy.",
+  "resolution_m": 90.0
+}

@@ -1,0 +1,5419 @@
+{
+  "elements": [
+    {
+      "id": 293621413,
+      "lat": 28.231316,
+      "lon": 84.376144,
+      "tags": {
+        "admin_level": "8",
+        "ele": "760",
+        "is_in:country": "Nepal",
+        "is_in:district": "लमजुङ",
+        "name": "Besisahar",
+        "name:ja": "ベシサハル",
+        "name:ne": "बेसीसहर",
+        "name:zh": "貝西沙爾",
+        "place": "town",
+        "population": "15442",
+        "wikidata": "Q829880",
+        "wikipedia": "en:Besisahar"
+      },
+      "type": "node"
+    },
+    {
+      "id": 293621489,
+      "lat": 28.28098,
+      "lon": 84.357624,
+      "tags": {
+        "ele": "790",
+        "name": "Khudi",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 293642180,
+      "lat": 28.290314,
+      "lon": 84.371596,
+      "tags": {
+        "ele": "840",
+        "name": "Bhulbhule",
+        "name:en": "Bhulbhule",
+        "name:zh": "布爾布勒",
+        "place": "village",
+        "wikidata": "Q3414180",
+        "wikipedia": "en:Bhulbhule"
+      },
+      "type": "node"
+    },
+    {
+      "id": 293647006,
+      "lat": 28.343073,
+      "lon": 84.406303,
+      "tags": {
+        "ele": "1310",
+        "name": "Bahundanda",
+        "name:zh": "巴胡恩丹達",
+        "place": "village",
+        "source": "survey",
+        "wikidata": "Q3417380",
+        "wikipedia": "en:Bahundanda"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295020323,
+      "lat": 28.387266,
+      "lon": 84.402051,
+      "tags": {
+        "ele": "1160",
+        "is_in:country": "Nepal",
+        "name": "Syange",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295022597,
+      "lat": 28.468621,
+      "lon": 84.373727,
+      "tags": {
+        "ele": "1700",
+        "name": "Tal",
+        "name:zh": "塔爾",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295022614,
+      "lat": 28.413029,
+      "lon": 84.406494,
+      "tags": {
+        "ele": "1300",
+        "name": "Jagat",
+        "name:en": "Jagat",
+        "name:zh": "賈嘎特",
+        "place": "village",
+        "wikidata": "Q6122206",
+        "wikipedia": "en:Jagat"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044653,
+      "lat": 28.533495,
+      "lon": 84.339585,
+      "tags": {
+        "alt_name": "Bagarchap",
+        "ele": "2160",
+        "gns:ufi": "-1021651",
+        "is_in:country": "Nepal",
+        "name": "Bagarchhāp",
+        "name:zh": "巴格爾查普",
+        "place": "village",
+        "source": "GNS",
+        "wikidata": "Q4841450"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044655,
+      "lat": 28.518998,
+      "lon": 84.358383,
+      "tags": {
+        "ele": "1860",
+        "is_in:country": "Nepal",
+        "name": "Dharapani",
+        "name:zh": "達拉帕尼",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044680,
+      "lat": 28.506269,
+      "lon": 84.359045,
+      "tags": {
+        "ele": "1850",
+        "name": "Karte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044712,
+      "lat": 28.49931,
+      "lon": 84.361246,
+      "tags": {
+        "name": "Khorte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 847654459,
+      "lat": 28.034313,
+      "lon": 84.462268,
+      "tags": {
+        "name": "Turture",
+        "name:ne": "टर्टुरे",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852540711,
+      "lat": 28.387213,
+      "lon": 84.403598,
+      "tags": {
+        "amenity": "doctors",
+        "healthcare": "doctor"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852540919,
+      "lat": 28.281296,
+      "lon": 84.358056,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852541094,
+      "lat": 28.243533,
+      "lon": 84.378714,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852541101,
+      "lat": 28.309401,
+      "lon": 84.399658,
+      "tags": {
+        "ele": "930",
+        "name": "Nadi Bazar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852777169,
+      "lat": 28.467438,
+      "lon": 84.37361,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852891612,
+      "lat": 28.533818,
+      "lon": 84.340119,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858263912,
+      "lat": 28.446153,
+      "lon": 84.378385,
+      "tags": {
+        "ele": "1680",
+        "name": "Sattale",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858263917,
+      "lat": 28.527197,
+      "lon": 84.354135,
+      "tags": {
+        "alt_name": "Thonje",
+        "alt_name_1": "Thumshe",
+        "ele": "1900",
+        "gns:ufi": "-1022722",
+        "name": "Thoche",
+        "place": "hamlet",
+        "source": "GNS",
+        "wikidata": "Q7795973"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1046597491,
+      "lat": 28.381857,
+      "lon": 84.402919,
+      "tags": {
+        "name": "Ghermu",
+        "name:zh": "捷爾木",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1078766251,
+      "lat": 28.545185,
+      "lon": 84.381186,
+      "tags": {
+        "ele": "2260",
+        "name": "Tilche",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1298141553,
+      "lat": 28.334148,
+      "lon": 84.40359,
+      "tags": {
+        "name": "Lampata",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1686153402,
+      "lat": 28.055938,
+      "lon": 84.477558,
+      "tags": {
+        "name": "Chepe Ghat",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1742495826,
+      "lat": 28.302362,
+      "lon": 84.393737,
+      "tags": {
+        "name": "Ngadi Lamjung",
+        "place": "hamlet",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1742495827,
+      "lat": 28.176794,
+      "lon": 84.431168,
+      "tags": {
+        "name": "Udipur",
+        "place": "hamlet",
+        "source": "survey",
+        "wikidata": "Q3424883",
+        "wikipedia": "en:Udipur"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1742495828,
+      "lat": 28.217728,
+      "lon": 84.383754,
+      "tags": {
+        "name": "Ranikuwa",
+        "place": "hamlet",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1742495833,
+      "lat": 28.135998,
+      "lon": 84.433051,
+      "tags": {
+        "name": "siudibar",
+        "place": "village",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1742579527,
+      "lat": 28.372972,
+      "lon": 84.405008,
+      "tags": {
+        "place": "hamlet",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1743137935,
+      "lat": 28.517913,
+      "lon": 84.358821,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2503838503,
+      "lat": 28.237096,
+      "lon": 84.372371,
+      "tags": {
+        "name": "Manange Chautara",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2583556462,
+      "lat": 28.210382,
+      "lon": 84.366298,
+      "tags": {
+        "gns:ufi": "-1022229",
+        "name": "Gaunshahar",
+        "old_name": "Lamjung",
+        "place": "village",
+        "source": "GNS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2586917214,
+      "lat": 28.189743,
+      "lon": 84.459772,
+      "tags": {
+        "amenity": "school",
+        "name": "shree laxmi secondaray school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2774724973,
+      "lat": 28.528946,
+      "lon": 84.347445,
+      "tags": {
+        "is_in:country": "Nepal",
+        "name": "Odar",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3121926024,
+      "lat": 28.231544,
+      "lon": 84.377367,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Apson Piya Medical Hall",
+        "wheelchair": "no"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3121926148,
+      "lat": 28.226966,
+      "lon": 84.37791,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Lamjung Eye Care Centre"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3121926154,
+      "lat": 28.2311,
+      "lon": 84.377277,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Medical Hall",
+        "wheelchair": "no"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3122581509,
+      "lat": 28.230613,
+      "lon": 84.350439,
+      "tags": {
+        "name": "Bimda Besi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3122581510,
+      "lat": 28.231373,
+      "lon": 84.35851,
+      "tags": {
+        "name": "Bimda Village",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3122581511,
+      "lat": 28.226694,
+      "lon": 84.366284,
+      "tags": {
+        "name": "Duethok",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3122581518,
+      "lat": 28.243862,
+      "lon": 84.347355,
+      "tags": {
+        "name": "Puma",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123595027,
+      "lat": 28.225568,
+      "lon": 84.378747,
+      "tags": {
+        "name": "Sera Faat",
+        "name:en": "Sera Faat",
+        "name:ne": "सेराफाँट",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123595045,
+      "lat": 28.23135,
+      "lon": 84.387816,
+      "tags": {
+        "name": "Bajakhet",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123694578,
+      "lat": 28.252588,
+      "lon": 84.383406,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123694618,
+      "lat": 28.204057,
+      "lon": 84.394929,
+      "tags": {
+        "name": "Bhakunde",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123694624,
+      "lat": 28.204477,
+      "lon": 84.393575,
+      "tags": {
+        "amenity": "school",
+        "name": "Shri Manakamana English Boarding School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123694626,
+      "lat": 28.190213,
+      "lon": 84.390771,
+      "tags": {
+        "name": "Naruwal Magar Village",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743130,
+      "lat": 28.180327,
+      "lon": 84.380223,
+      "tags": {
+        "name": "Chisapaani",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743132,
+      "lat": 28.148336,
+      "lon": 84.439857,
+      "tags": {
+        "name": "Bhotewodar",
+        "place": "village",
+        "wikidata": "Q4902059",
+        "wikipedia": "en:Bhotewodar"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743144,
+      "lat": 28.128071,
+      "lon": 84.411128,
+      "tags": {
+        "alt_name": "Bartār",
+        "gns:ufi": "-1021712",
+        "name": "Sundar Bazar",
+        "place": "village",
+        "source": "GNS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743150,
+      "lat": 28.139964,
+      "lon": 84.438282,
+      "tags": {
+        "amenity": "hospital"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743223,
+      "lat": 28.112755,
+      "lon": 84.430946,
+      "tags": {
+        "name": "Paudi Bazar",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3123743252,
+      "lat": 28.197187,
+      "lon": 84.403956,
+      "tags": {
+        "name": "Gairi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478008095,
+      "lat": 28.531807,
+      "lon": 84.341194,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478032876,
+      "lat": 28.145653,
+      "lon": 84.440382,
+      "tags": {
+        "amenity": "school",
+        "name": "Shri Vakti Namuna Higher Secondary School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478222784,
+      "lat": 28.396827,
+      "lon": 84.411685,
+      "tags": {
+        "name": "Tallo Chipla",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478222785,
+      "lat": 28.398318,
+      "lon": 84.412189,
+      "tags": {
+        "name": "Tallo Chipla",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478247118,
+      "lat": 28.411658,
+      "lon": 84.415252,
+      "tags": {
+        "name": "Uppalo Chipla",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478247119,
+      "lat": 28.413715,
+      "lon": 84.415284,
+      "tags": {
+        "name": "Uppalo Chipla",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478247121,
+      "lat": 28.406156,
+      "lon": 84.40367,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478247122,
+      "lat": 28.404415,
+      "lon": 84.403289,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3479533126,
+      "lat": 28.335189,
+      "lon": 84.339059,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3479539743,
+      "lat": 28.229366,
+      "lon": 84.345271,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3479595892,
+      "lat": 28.224675,
+      "lon": 84.353012,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3479598893,
+      "lat": 28.226095,
+      "lon": 84.35799,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3480236777,
+      "lat": 28.041763,
+      "lon": 84.351342,
+      "tags": {
+        "gns:ufi": "-1022676",
+        "name": "Tanahun",
+        "place": "hamlet",
+        "source": "GNS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3480239181,
+      "lat": 28.13028,
+      "lon": 84.343391,
+      "tags": {
+        "gns:ufi": "-1022207",
+        "name": "Kunchha",
+        "place": "hamlet",
+        "source": "GNS",
+        "wikidata": "Q3419371",
+        "wikipedia": "en:Kunchha"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3480406704,
+      "lat": 28.370777,
+      "lon": 84.394988,
+      "tags": {
+        "gns:ufi": "-1022665",
+        "name": "Tāgring",
+        "place": "hamlet",
+        "source": "GNS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3480993295,
+      "lat": 28.359215,
+      "lon": 84.389625,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3484127180,
+      "lat": 28.129965,
+      "lon": 84.476326,
+      "tags": {
+        "admin_level": "8",
+        "admin_unit": "Village development committee",
+        "fixme": "true",
+        "is_in:country": "Nepal",
+        "is_in:country_code": "NP",
+        "is_in:district": "लमजुङ",
+        "mapping_project": "quakemaps",
+        "name": "Mohoriyakot",
+        "note": "these locations and village names might not be 100% accurate",
+        "place": "village",
+        "wikidata": "Q3422103",
+        "wikipedia": "en:Mohoriyakot"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3500585544,
+      "lat": 28.327625,
+      "lon": 84.375023,
+      "tags": {
+        "name": "Sikrung",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4370632694,
+      "lat": 28.34237,
+      "lon": 84.408086,
+      "tags": {
+        "amenity": "school",
+        "name:en": "Secondary School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4496257620,
+      "lat": 28.072493,
+      "lon": 84.371096,
+      "tags": {
+        "amenity": "school",
+        "name": "Mirlung Star Xaviers English School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4496257621,
+      "lat": 28.070519,
+      "lon": 84.371327,
+      "tags": {
+        "amenity": "hospital",
+        "name": "Chandrawati Medical"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4496257622,
+      "lat": 28.070034,
+      "lon": 84.36949,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shiva Pra Vi School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4496257636,
+      "lat": 28.071229,
+      "lon": 84.372601,
+      "tags": {
+        "amenity": "hospital",
+        "name": "Chandrawati Vaccination Center"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4589085910,
+      "lat": 28.276622,
+      "lon": 84.36786,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4594452992,
+      "lat": 28.512028,
+      "lon": 84.360723,
+      "tags": {
+        "name": "Nache",
+        "name:zh": "納吉",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4796074721,
+      "lat": 28.233146,
+      "lon": 84.377122,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name:en": "Lamjung Model Hospital"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4893738925,
+      "lat": 28.07998,
+      "lon": 84.473702,
+      "tags": {
+        "amenity": "hospital",
+        "name:en": "sahodar health post"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4893741521,
+      "lat": 28.062165,
+      "lon": 84.482392,
+      "tags": {
+        "addr:street": "garambesi",
+        "amenity": "school",
+        "name:en": "saraswati PS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4893741821,
+      "lat": 28.073038,
+      "lon": 84.478024,
+      "tags": {
+        "amenity": "school",
+        "name:en": "shree sharada SBS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779725,
+      "lat": 28.085725,
+      "lon": 84.468008,
+      "tags": {
+        "amenity": "school",
+        "name:en": "rainas vision school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779734,
+      "lat": 28.095063,
+      "lon": 84.488336,
+      "tags": {
+        "amenity": "school",
+        "name:en": "pragati LSS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779759,
+      "lat": 28.096705,
+      "lon": 84.463888,
+      "tags": {
+        "amenity": "hospital",
+        "name:en": "dhamilikuwa healthpost"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779824,
+      "lat": 28.093588,
+      "lon": 84.464891,
+      "tags": {
+        "amenity": "school",
+        "name:en": "shailputri SBS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779828,
+      "lat": 28.09674,
+      "lon": 84.481636,
+      "tags": {
+        "amenity": "school",
+        "name:en": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779830,
+      "lat": 28.090995,
+      "lon": 84.495413,
+      "tags": {
+        "amenity": "hospital",
+        "name:en": "ayurbrd"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779852,
+      "lat": 28.073954,
+      "lon": 84.479087,
+      "tags": {
+        "amenity": "school",
+        "name:en": "creative school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779857,
+      "lat": 28.127552,
+      "lon": 84.439311,
+      "tags": {
+        "addr:street": "majhigaun",
+        "amenity": "school",
+        "name:en": "shri krishna PS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900779859,
+      "lat": 28.114506,
+      "lon": 84.442326,
+      "tags": {
+        "amenity": "hospital"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900782236,
+      "lat": 28.100359,
+      "lon": 84.444297,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बिर भक्ति उच्च माद्यामिक बिध्यालय",
+        "name:en": "Shri Bir Bhakti Higher Secondary School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4900785824,
+      "lat": 28.116628,
+      "lon": 84.440584,
+      "tags": {
+        "amenity": "school",
+        "name:en": "rudra ma v"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4910380208,
+      "lat": 28.05421,
+      "lon": 84.488077,
+      "tags": {
+        "addr:hamlet": "Thantipokhari",
+        "amenity": "school",
+        "name": "Shree Bhawani Uccha Ma V",
+        "operator:type": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4910474810,
+      "lat": 28.041192,
+      "lon": 84.494432,
+      "tags": {
+        "addr:hamlet": "Barhapirke",
+        "amenity": "school",
+        "name": "Shree Bhrikuti Ni Ma V",
+        "operator:type": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4920489152,
+      "lat": 28.104113,
+      "lon": 84.452012,
+      "tags": {
+        "amenity": "school",
+        "name": "अमर ज्योति प्राथमिक बिध्यालय"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4920489153,
+      "lat": 28.110056,
+      "lon": 84.457519,
+      "tags": {
+        "amenity": "school",
+        "name": "सुदर्शन प्राथमिक बिध्यालय"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5173527915,
+      "lat": 28.314648,
+      "lon": 84.401889,
+      "tags": {
+        "name": "Ngadi Khola",
+        "name:zh": "納迪河",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5216223969,
+      "lat": 28.528942,
+      "lon": 84.346311,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5265201521,
+      "lat": 28.132416,
+      "lon": 84.492513,
+      "tags": {
+        "fixme": "correct the name",
+        "name": "Rainaskot",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5839896129,
+      "lat": 28.437872,
+      "lon": 84.389133,
+      "tags": {
+        "name": "Chamje",
+        "name:zh": "查姆則",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6085565288,
+      "lat": 28.106003,
+      "lon": 84.416743,
+      "tags": {
+        "name": "Riepe Village",
+        "name:en": "Riepe",
+        "note": "Riepe Village, a farming village which also has commercial homestays\n",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 7296672386,
+      "lat": 28.543015,
+      "lon": 84.379299,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 7296675286,
+      "lat": 28.526392,
+      "lon": 84.354929,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8244423914,
+      "lat": 28.131492,
+      "lon": 84.405206,
+      "tags": {
+        "amenity": "hospital",
+        "beds": "15",
+        "female": "10",
+        "male": "10",
+        "time": "24 hours",
+        "type": "Community",
+        "utility": "3 weel chairs"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8244423915,
+      "lat": 28.127914,
+      "lon": 84.407803,
+      "tags": {
+        "amenity": "school",
+        "contact:phone": "9856045519",
+        "female": "12",
+        "male": "3",
+        "name": "Sayapatri Secondary Boarding Schhol",
+        "operator": "Community",
+        "time": "10AM to 4PM",
+        "type": "Basic"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8244748468,
+      "lat": 28.141448,
+      "lon": 84.399611,
+      "tags": {
+        "amenity": "college",
+        "capacity:classrooms": "28",
+        "description:phone": "this is the number of the principial",
+        "email": "vidyajyotilamjung@gmail.com",
+        "name": "Vidya Jyoti Secondary School",
+        "opening_hours": "Mo-Su 09:00-16:00",
+        "operator": "government",
+        "personnel:count": "Male -17 & Female -17",
+        "phone": "9856045015",
+        "student:count": "Boys; 352 & Girls; 450"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8244748473,
+      "lat": 28.14303,
+      "lon": 84.399858,
+      "tags": {
+        "amenity": "hospital",
+        "beds": "2",
+        "name": "Tarku Primary Health Center",
+        "opening_hours": "Mo-Su 10:00-17:00",
+        "operator": "government",
+        "personnel:count": "Male -2 & Female -4"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8247967817,
+      "lat": 28.131338,
+      "lon": 84.409307,
+      "tags": {
+        "addr:street": "Sundarbazzar-Bhotewodar Road",
+        "amenity": "school",
+        "name:en": "Milanchowk"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8257644578,
+      "lat": 28.126106,
+      "lon": 84.409897,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8261638061,
+      "lat": 28.13773,
+      "lon": 84.433722,
+      "tags": {
+        "address": "sundar bazar , paire",
+        "amenity": "school",
+        "name": "Bhabisya nirmad high school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789678336,
+      "lat": 28.020857,
+      "lon": 84.405815,
+      "tags": {
+        "amenity": "school",
+        "name": "गङ्गा प्रा.वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789678337,
+      "lat": 28.020225,
+      "lon": 84.389938,
+      "tags": {
+        "amenity": "school",
+        "name": "Tanahun Manakama Boarding School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789678338,
+      "lat": 28.018503,
+      "lon": 84.391434,
+      "tags": {
+        "amenity": "school",
+        "name": "Ekata Sadan Secondary Boarding School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765105,
+      "lat": 28.254387,
+      "lon": 84.377319,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री रत्न प्रकाश प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765106,
+      "lat": 28.236517,
+      "lon": 84.36042,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बाल रत्न प्रा वि तल्लो साम्दि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765107,
+      "lat": 28.208468,
+      "lon": 84.40818,
+      "tags": {
+        "amenity": "school",
+        "name": "लिलाज्योती प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765108,
+      "lat": 28.240328,
+      "lon": 84.388779,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बालकल्याण प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765109,
+      "lat": 28.179748,
+      "lon": 84.380249,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री कालिका मिलन मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765110,
+      "lat": 28.207319,
+      "lon": 84.368279,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री अमर प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765112,
+      "lat": 28.189408,
+      "lon": 84.338717,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री सेवा सदन मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789765116,
+      "lat": 28.230228,
+      "lon": 84.350716,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री चन्द्र ज्योती आधारभुत विधालय"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767317,
+      "lat": 28.225237,
+      "lon": 84.354691,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री समदर्शी प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767318,
+      "lat": 28.181997,
+      "lon": 84.364494,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री चैतन्यौदय प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767319,
+      "lat": 28.209856,
+      "lon": 84.364685,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री लमजुङ मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767320,
+      "lat": 28.176096,
+      "lon": 84.430374,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनकल्याण मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767321,
+      "lat": 28.165987,
+      "lon": 84.429588,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री कर्मदा प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767322,
+      "lat": 28.164127,
+      "lon": 84.417625,
+      "tags": {
+        "amenity": "school",
+        "name": "श्रीदेविसदन प्रा बि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767323,
+      "lat": 28.240973,
+      "lon": 84.406593,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री हिमज्योती प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767324,
+      "lat": 28.234755,
+      "lon": 84.396744,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री कण्ठ प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767325,
+      "lat": 28.262768,
+      "lon": 84.398336,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री भबिष्य निर्माण प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767326,
+      "lat": 28.253702,
+      "lon": 84.414947,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री गणेश प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767327,
+      "lat": 28.177162,
+      "lon": 84.430824,
+      "tags": {
+        "amenity": "school",
+        "name": "गोल्डेन फिउचर इग्लिस बोडिङ्ग स्कुल"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767328,
+      "lat": 28.260428,
+      "lon": 84.389855,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनआशापुर्ण प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767329,
+      "lat": 28.213759,
+      "lon": 84.368263,
+      "tags": {
+        "amenity": "school",
+        "name": "हेवनहिल एकेडेमी"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767330,
+      "lat": 28.204168,
+      "lon": 84.377052,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री शिवशक्ती प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767331,
+      "lat": 28.218045,
+      "lon": 84.37858,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री येशोबर्मा मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767332,
+      "lat": 28.197765,
+      "lon": 84.442543,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनसेवा प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767334,
+      "lat": 28.212402,
+      "lon": 84.400154,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री कालिका प्राथमिक विधालय"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767335,
+      "lat": 28.243772,
+      "lon": 84.37146,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "श्री चनौटे प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767336,
+      "lat": 28.244801,
+      "lon": 84.346985,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री कन्याज्योती प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767337,
+      "lat": 28.256726,
+      "lon": 84.356996,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री चण्डेश्वरी प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767338,
+      "lat": 28.238422,
+      "lon": 84.367042,
+      "tags": {
+        "amenity": "school",
+        "name": "चन्द्र सुर्य इन्लिस बोडिङ्ग स्कुम"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767339,
+      "lat": 28.233693,
+      "lon": 84.376805,
+      "tags": {
+        "amenity": "school",
+        "name": "न्यु भिजन मन्टेश्वरी स्कुल"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767340,
+      "lat": 28.227449,
+      "lon": 84.375298,
+      "tags": {
+        "amenity": "school",
+        "name": "बुद्ध मेमोरीयल इग्लिस बोडिङ्ग स्कुल"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767341,
+      "lat": 28.187807,
+      "lon": 84.415008,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री चन्द्रोदय प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767342,
+      "lat": 28.18704,
+      "lon": 84.405411,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बालबिकास प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767343,
+      "lat": 28.192442,
+      "lon": 84.397385,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बाल बिधाश्रम प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767344,
+      "lat": 28.205921,
+      "lon": 84.418037,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री लोकराज आदर्श मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767345,
+      "lat": 28.200319,
+      "lon": 84.434448,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री युबा ज्योती प्रा .वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767346,
+      "lat": 28.202774,
+      "lon": 84.439934,
+      "tags": {
+        "amenity": "school",
+        "name": "न्यु मरिगोल्ड सेकेन्डरी बोडिङ्ग स्कुल"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767347,
+      "lat": 28.1728,
+      "lon": 84.443733,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बालबिकास मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767348,
+      "lat": 28.205749,
+      "lon": 84.437057,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनकल्याण मा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767349,
+      "lat": 28.212778,
+      "lon": 84.438194,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री शान्तीभबन प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767350,
+      "lat": 28.192644,
+      "lon": 84.425781,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनज्योती प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767351,
+      "lat": 28.222147,
+      "lon": 84.439705,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री बालरत्न प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767352,
+      "lat": 28.194866,
+      "lon": 84.418861,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री जनजगृती आ बि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767353,
+      "lat": 28.189163,
+      "lon": 84.445343,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री चिदी प्रा वि"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767354,
+      "lat": 28.234295,
+      "lon": 84.386078,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री नवीन प्रा. वि.",
+        "name:en": "Shree Nabin Primary School",
+        "name:ne": "श्री नवीन प्रा. वि."
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789767355,
+      "lat": 28.246706,
+      "lon": 84.380287,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री नारायण प्रा वि लमजुङ"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802557,
+      "lat": 28.142607,
+      "lon": 84.47184,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jalpadebi Besic school Dordi RM 1 Bharde Silbari Lmjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802558,
+      "lat": 28.140759,
+      "lon": 84.459405,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Mahadev Besic School Dordi RM 1 Silbari Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802559,
+      "lat": 28.147331,
+      "lon": 84.44561,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Karmodaya Besic School Dordi RM1 Dhoke Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802560,
+      "lat": 28.147668,
+      "lon": 84.455673,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Indrapuri Basic School Dordi RM 1 Deurali Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802561,
+      "lat": 28.147046,
+      "lon": 84.491377,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Saraswoti Milan Basic School Dordi RM 1 Bharate Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802562,
+      "lat": 28.145208,
+      "lon": 84.48246,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Nabha Parbhat Primary School Dordi RM1 Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802566,
+      "lat": 28.241228,
+      "lon": 84.457161,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Ganesh Basic School Dordi RM 6 Dhodeni Kalchebesi Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802567,
+      "lat": 28.228918,
+      "lon": 84.460396,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Siddha Basic School Dordi RM 6 Dada Gau Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802568,
+      "lat": 28.240807,
+      "lon": 84.464188,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bal Kannya Basic School Dordi RM 6 Ghalegau Lamjung :"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802569,
+      "lat": 28.167096,
+      "lon": 84.48186,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sukra Basic School Dordi RM 2 Sallabot Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802570,
+      "lat": 28.1976,
+      "lon": 84.464896,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Saraswati Mohan Basic school Dordi RM 3 Shreebhanjyang Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802571,
+      "lat": 28.209883,
+      "lon": 84.492065,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Manakamana Basic School Dordi RM 4 Mijung Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802572,
+      "lat": 28.272472,
+      "lon": 84.474152,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Birendrashila Basic School Dordi RM 8 Taap Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802573,
+      "lat": 28.209219,
+      "lon": 84.482788,
+      "tags": {
+        "amenity": "school",
+        "name": "श्री नव दुर्गा प्राथमिक बिधालय"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802577,
+      "lat": 28.254341,
+      "lon": 84.454926,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Ramjiban Basic School Dordi RM 8 Kinchowk Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802578,
+      "lat": 28.21195,
+      "lon": 84.432838,
+      "tags": {
+        "amenity": "school",
+        "name": "Jana Bikash Basic School Dordi RM 9 Chisapani Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802579,
+      "lat": 28.201134,
+      "lon": 84.487283,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shirjansil Basic School Dordi RM 4 Sadhi Khola Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802580,
+      "lat": 28.153256,
+      "lon": 84.473862,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Kopila Basic School Dordi RM 1 Bharet Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802581,
+      "lat": 28.14678,
+      "lon": 84.467163,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Suryodaya Secondary School Dordi RM 1 Bharte Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802582,
+      "lat": 28.149788,
+      "lon": 84.443061,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Ratna Aadharbhut School Dordi RM 1 Bharate Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802583,
+      "lat": 28.136278,
+      "lon": 84.457014,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Dipendra Jyoti Basic School Dordi RM 1 Bharate Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802585,
+      "lat": 28.233629,
+      "lon": 84.43959,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Himalaya Chhetrasingha Basic School Dordi 8 Duwar Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802586,
+      "lat": 28.219057,
+      "lon": 84.454605,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Dhodeni Basic School Dordi RM 6 Haringau Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802587,
+      "lat": 28.25062,
+      "lon": 84.488388,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bhagwan Basic School Dordi RM 6 Kirtipur Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802589,
+      "lat": 28.216091,
+      "lon": 84.422249,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Baraha Milan Basic School Dordi RM 9 Majhgaon Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802591,
+      "lat": 28.197376,
+      "lon": 84.454292,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sunrise Boarding School Dordi RM 4 Shera Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802592,
+      "lat": 28.214338,
+      "lon": 84.472305,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jumdanda Basic School Dordi RM 4 Basbot Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802593,
+      "lat": 28.208984,
+      "lon": 84.459175,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Chaitanyadaya Basic School Dordi RM 4 Kupling Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802595,
+      "lat": 28.25833,
+      "lon": 84.486288,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Mahendra Jyoti Basic School Dordi RM 5 Majkharka Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802597,
+      "lat": 28.162172,
+      "lon": 84.460922,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Laxmi Narayan Secodary School Dordi RM 2 Alaiche Kalika Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789802598,
+      "lat": 28.162666,
+      "lon": 84.449216,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Alainche Kedar Basic School Dordi RM 2 Archankot Lamjung"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836760,
+      "lat": 28.08549,
+      "lon": 84.468239,
+      "tags": {
+        "amenity": "school",
+        "name": "rainas vison boarding school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836761,
+      "lat": 28.073069,
+      "lon": 84.477958,
+      "tags": {
+        "amenity": "school",
+        "name": "sarada higher secoundry school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836762,
+      "lat": 28.09693,
+      "lon": 84.481789,
+      "tags": {
+        "amenity": "school",
+        "name": "birendra dip primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836763,
+      "lat": 28.134342,
+      "lon": 84.479523,
+      "tags": {
+        "amenity": "school",
+        "name": "shanti devi prathamik bidhalaye"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836765,
+      "lat": 28.062255,
+      "lon": 84.482551,
+      "tags": {
+        "amenity": "school",
+        "name": "saraswati pra bi"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836766,
+      "lat": 28.093473,
+      "lon": 84.46492,
+      "tags": {
+        "amenity": "school",
+        "name": "shailaputri model school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836768,
+      "lat": 28.127058,
+      "lon": 84.491783,
+      "tags": {
+        "amenity": "school",
+        "name": "shree birendra shanti primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836769,
+      "lat": 28.129122,
+      "lon": 84.461334,
+      "tags": {
+        "amenity": "school",
+        "name": "shree bhairab ma vi"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836770,
+      "lat": 28.11647,
+      "lon": 84.440498,
+      "tags": {
+        "amenity": "school",
+        "name": "shree rudra secondary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836772,
+      "lat": 28.081077,
+      "lon": 84.468549,
+      "tags": {
+        "amenity": "school",
+        "name": "shree Milan primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836773,
+      "lat": 28.09503,
+      "lon": 84.488373,
+      "tags": {
+        "amenity": "school",
+        "name": "shree pragati adharbhut school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836774,
+      "lat": 28.100019,
+      "lon": 84.467918,
+      "tags": {
+        "amenity": "school",
+        "name": "shree mahendra joti primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836775,
+      "lat": 28.127549,
+      "lon": 84.439442,
+      "tags": {
+        "amenity": "school",
+        "name": "shree krishna primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836776,
+      "lat": 28.132629,
+      "lon": 84.492874,
+      "tags": {
+        "amenity": "school",
+        "name": "shree janata ma vi"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836780,
+      "lat": 28.12199,
+      "lon": 84.470505,
+      "tags": {
+        "amenity": "school",
+        "name": "shree durgadevi primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836781,
+      "lat": 28.110855,
+      "lon": 84.472404,
+      "tags": {
+        "amenity": "school",
+        "name": "shree chandi primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836784,
+      "lat": 28.109058,
+      "lon": 84.494469,
+      "tags": {
+        "amenity": "school",
+        "name": "shree manakamana primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789836787,
+      "lat": 28.133968,
+      "lon": 84.447998,
+      "tags": {
+        "amenity": "school",
+        "name": "shree saptakanya primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847472,
+      "lat": 28.126175,
+      "lon": 84.409988,
+      "tags": {
+        "amenity": "school",
+        "name": "Baljyoti English secondary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847473,
+      "lat": 28.141899,
+      "lon": 84.399773,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree bidhyajyoti ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847479,
+      "lat": 28.128534,
+      "lon": 84.416328,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree adarsha bal ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847480,
+      "lat": 28.138285,
+      "lon": 84.405334,
+      "tags": {
+        "amenity": "school",
+        "name": "Shanti niketan pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847481,
+      "lat": 28.133905,
+      "lon": 84.414535,
+      "tags": {
+        "amenity": "school",
+        "name": "SHREE ADARSHA PRA B"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847482,
+      "lat": 28.158085,
+      "lon": 84.372414,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree sanskriti"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847483,
+      "lat": 28.165628,
+      "lon": 84.365753,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree sirisadan pra v"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847484,
+      "lat": 28.167616,
+      "lon": 84.356407,
+      "tags": {
+        "amenity": "school",
+        "name": "Sikshya sadan primary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847485,
+      "lat": 28.163141,
+      "lon": 84.34819,
+      "tags": {
+        "amenity": "school",
+        "name": "panini sanskrit ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847486,
+      "lat": 28.154978,
+      "lon": 84.368568,
+      "tags": {
+        "amenity": "school",
+        "name": "Gaunpharka pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847487,
+      "lat": 28.151827,
+      "lon": 84.342339,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree manakamana pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847488,
+      "lat": 28.130001,
+      "lon": 84.344322,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree shanti ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847493,
+      "lat": 28.13228,
+      "lon": 84.436134,
+      "tags": {
+        "amenity": "school",
+        "name": "Global vision english boarding school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847494,
+      "lat": 28.137656,
+      "lon": 84.433674,
+      "tags": {
+        "amenity": "school",
+        "name": "Babhisya nirman ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847495,
+      "lat": 28.135534,
+      "lon": 84.426567,
+      "tags": {
+        "amenity": "school",
+        "name": "Laliguras english boarding school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847498,
+      "lat": 28.138073,
+      "lon": 84.364182,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree kanti mandir ma v"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847499,
+      "lat": 28.132465,
+      "lon": 84.390411,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Mahadevi pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847500,
+      "lat": 28.1315,
+      "lon": 84.399223,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree manakamana pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847501,
+      "lat": 28.134991,
+      "lon": 84.384621,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree mahendra mandir secondary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847502,
+      "lat": 28.149553,
+      "lon": 84.431778,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree kalika sikshya mandir pra b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847503,
+      "lat": 28.161217,
+      "lon": 84.427879,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree bharati sadan ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847504,
+      "lat": 28.113476,
+      "lon": 84.432087,
+      "tags": {
+        "amenity": "school",
+        "name": "shree marsyandgi adharbhut bidhyalya"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847505,
+      "lat": 28.145914,
+      "lon": 84.440933,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bhakti namuna higher secondary school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847506,
+      "lat": 28.148336,
+      "lon": 84.438828,
+      "tags": {
+        "amenity": "school",
+        "name": "Bhu pu sainik abasiya ma b"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9789847507,
+      "lat": 28.159973,
+      "lon": 84.439049,
+      "tags": {
+        "amenity": "school",
+        "name": "Akala bagicha adharbhut bidhyalaya"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10269035814,
+      "lat": 28.047998,
+      "lon": 84.48452,
+      "tags": {
+        "name": "पालुङटार बजार",
+        "name:de": "Palungtar Bazar",
+        "name:en": "Palungtar Bazar",
+        "name:ne": "पालुङटार बजार",
+        "place": "town"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11323099508,
+      "lat": 28.425168,
+      "lon": 84.394367,
+      "tags": {
+        "name": "Puran Jagat",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11323102348,
+      "lat": 28.42789,
+      "lon": 84.393347,
+      "tags": {
+        "name": "Naskuche",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11840540876,
+      "lat": 28.223434,
+      "lon": 84.382591,
+      "tags": {
+        "name": "Sarki Gaun",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12882660509,
+      "lat": 28.252333,
+      "lon": 84.370598,
+      "tags": {
+        "name": "Belauti Besauni",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12886022611,
+      "lat": 28.402516,
+      "lon": 84.410019,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 28.313178,
+        "lon": 84.40161
+      },
+      "id": 26787252,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "truss",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "shoulder": "no",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.488865,
+        "lon": 84.367227
+      },
+      "id": 26926644,
+      "tags": {
+        "bridge": "yes",
+        "fixme": "position",
+        "highway": "path",
+        "layer": "1",
+        "note": "cant find the position of the bridge",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.516204,
+        "lon": 84.358782
+      },
+      "id": 26926653,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.544255,
+        "lon": 84.380812
+      },
+      "id": 90264370,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "name": "Manaslu Circuit",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.527781,
+        "lon": 84.358529
+      },
+      "id": 90264471,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.323386,
+        "lon": 84.400303
+      },
+      "id": 114647497,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "shoulder": "no",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.281497,
+        "lon": 84.354774
+      },
+      "id": 126976840,
+      "tags": {
+        "alt_name": "Jeep Road",
+        "bridge": "yes",
+        "bridge:structure": "truss",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "Besishahar - Manang Sadak",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.036066,
+        "lon": 84.462967
+      },
+      "id": 156109056,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.03811,
+        "lon": 84.455252
+      },
+      "id": 162339868,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Phaundi Bridge",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.189041,
+        "lon": 84.419726
+      },
+      "id": 162339869,
+      "tags": {
+        "name": "Middle Marshyandi Hydropower Dam",
+        "source": "survey",
+        "waterway": "dam"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.363475,
+        "lon": 84.406758
+      },
+      "id": 162350104,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.402383,
+        "lon": 84.409152
+      },
+      "id": 162350134,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.531593,
+        "lon": 84.349933
+      },
+      "id": 162413499,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "sac_scale": "mountain_hiking",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.018422,
+        "lon": 84.39519
+      },
+      "id": 216250084,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.253732,
+        "lon": 84.370751
+      },
+      "id": 274959193,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.414256,
+        "lon": 84.406954
+      },
+      "id": 276501188,
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "building:levels": "1",
+        "name:en": "Shree sarawati vidya mandir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.021094,
+        "lon": 84.405248
+      },
+      "id": 301788181,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.037631,
+        "lon": 84.371938
+      },
+      "id": 301789695,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "38A007R",
+        "ref:old": "38DR022"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.264726,
+        "lon": 84.364153
+      },
+      "id": 301794738,
+      "tags": {
+        "alt_name": "Jeep Road",
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "Besishahar - Manang Sadak",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.190295,
+        "lon": 84.415925
+      },
+      "id": 305423951,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.226676,
+        "lon": 84.379791
+      },
+      "id": 307260027,
+      "tags": {
+        "addr:city": "Besishahar",
+        "amenity": "school",
+        "building": "school",
+        "name": "Earthly Paradise English Boarding School",
+        "source:outline": "Bing aerial imagery"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.230183,
+        "lon": 84.378508
+      },
+      "id": 307260600,
+      "tags": {
+        "amenity": "school",
+        "name": "New Era English Boarding School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.236099,
+        "lon": 84.375645
+      },
+      "id": 307261747,
+      "tags": {
+        "addr:city": "Besishahar",
+        "amenity": "school",
+        "grades": "1-12",
+        "name": "श्री जन विकास उच्च मा. वि.",
+        "name:en": "Shree Jana Bikas HIgher Secondary School",
+        "name:ne": "श्री जन विकास उच्च मा. वि.",
+        "operator": "Community"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.234019,
+        "lon": 84.378799
+      },
+      "id": 307261748,
+      "tags": {
+        "addr:city": "Besishaahr",
+        "addr:street": "Satbise",
+        "amenity": "college",
+        "ele": "3",
+        "name": "श्री मर्स्याङ्दी बहुमुखि क्याम्पस",
+        "name:en": "Shree Marshyandi Multiple Campus",
+        "name:ne": "श्री मर्स्याङ्दी बहुमुखि क्याम्पस",
+        "operator": "Nepal Government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.236703,
+        "lon": 84.378154
+      },
+      "id": 307261749,
+      "tags": {
+        "amenity": "school",
+        "name": "Shri Ex-Servicemen English Boarding School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.235168,
+        "lon": 84.373064
+      },
+      "id": 307269110,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Universal School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.230086,
+        "lon": 84.375362
+      },
+      "id": 307269111,
+      "tags": {
+        "addr:city": "Besisahar Municipality",
+        "amenity": "school",
+        "name": "Land Star English Boarding School",
+        "operator": "Private"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.231287,
+        "lon": 84.375931
+      },
+      "id": 307269112,
+      "tags": {
+        "amenity": "school",
+        "grades": "0-12",
+        "name": "Shree Vidhya Bikash HIgher Secondery School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.230866,
+        "lon": 84.376693
+      },
+      "id": 307269113,
+      "tags": {
+        "amenity": "school",
+        "name": "Baal Mandir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.252797,
+        "lon": 84.384241
+      },
+      "id": 307280315,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.230893,
+        "lon": 84.383811
+      },
+      "id": 307280316,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "37DR010"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.21804,
+        "lon": 84.378659
+      },
+      "id": 307280318,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.204235,
+        "lon": 84.394036
+      },
+      "id": 307280319,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bal Kalyan Secondary School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.145581,
+        "lon": 84.440387
+      },
+      "id": 307285397,
+      "tags": {
+        "amenity": "school",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.198921,
+        "lon": 84.404954
+      },
+      "id": 307285410,
+      "tags": {
+        "amenity": "college",
+        "name": "Gairi Campus"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.310126,
+        "lon": 84.400399
+      },
+      "id": 311553286,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "shoulder": "no",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.286,
+        "lon": 84.361999
+      },
+      "id": 311553287,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "truss",
+        "highway": "unclassified",
+        "layer": "1",
+        "material": "metal",
+        "surface": "concrete",
+        "tracktype": "grade2"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.302063,
+        "lon": 84.388616
+      },
+      "id": 311553290,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "source": "survey",
+        "tracktype": "grade4"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.398666,
+        "lon": 84.407357
+      },
+      "id": 311779154,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "material": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.170419,
+        "lon": 84.352739
+      },
+      "id": 332961095,
+      "tags": {
+        "addr:city": "Chandrapata",
+        "addr:housenumber": "chandreswar V.D.C",
+        "addr:street": "Besishar to Duradanda",
+        "amenity": "school",
+        "layer": "1",
+        "name": "सर्वोदय स्कूल[sarbodaya school]"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.171135,
+        "lon": 84.350802
+      },
+      "id": 332964972,
+      "tags": {
+        "addr:city": "Chandrapata",
+        "amenity": "hospital",
+        "emergency": "hostel",
+        "name": "चंद्रेश्वर हस्पिटल",
+        "operator": "Nepal Goverment",
+        "smoking": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.237977,
+        "lon": 84.379658
+      },
+      "id": 336391376,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.111145,
+        "lon": 84.428185
+      },
+      "id": 340538631,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey",
+        "surface": "asphalt"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.131555,
+        "lon": 84.361059
+      },
+      "id": 340539213,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "ref": "37DR035",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.13028,
+        "lon": 84.359008
+      },
+      "id": 340539214,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "ref": "37DR035",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.152509,
+        "lon": 84.381707
+      },
+      "id": 340540440,
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "ref": "37DR022"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.462649,
+        "lon": 84.371272
+      },
+      "id": 340559009,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.470225,
+        "lon": 84.374328
+      },
+      "id": 340562300,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.463155,
+        "lon": 84.371528
+      },
+      "id": 340562308,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.505706,
+        "lon": 84.35854
+      },
+      "id": 340579842,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.101386,
+        "lon": 84.420665
+      },
+      "id": 340584167,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.183186,
+        "lon": 84.431296
+      },
+      "id": 340637024,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "37DR024"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.232419,
+        "lon": 84.370054
+      },
+      "id": 340641524,
+      "tags": {
+        "amenity": "school",
+        "name": "Shri Jana Bikas Higher Secondery School"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.089301,
+        "lon": 84.434625
+      },
+      "id": 340705601,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.140906,
+        "lon": 84.439965
+      },
+      "id": 340753709,
+      "tags": {
+        "power": "substation",
+        "substation": "transmission"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.335211,
+        "lon": 84.446069
+      },
+      "id": 340835127,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.337847,
+        "lon": 84.450718
+      },
+      "id": 340835129,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.375525,
+        "lon": 84.393488
+      },
+      "id": 340852886,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.385819,
+        "lon": 84.401513
+      },
+      "id": 340897746,
+      "tags": {
+        "alt_name": "Jeep Road",
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "Besishahar - Manang Sadak",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "bing",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.209602,
+        "lon": 84.398026
+      },
+      "id": 340938173,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.203218,
+        "lon": 84.40175
+      },
+      "id": 340938174,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.238319,
+        "lon": 84.452983
+      },
+      "id": 340977064,
+      "tags": {
+        "addr:city": "dhodhi rural municipality 8",
+        "amenity": "school",
+        "name": "faleni secondary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "4",
+        "number_of_students": "171",
+        "type": "Retrofitting"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.238732,
+        "lon": 84.453266
+      },
+      "id": 340977084,
+      "tags": {
+        "addr:city": "bansar 5",
+        "amenity": "school",
+        "name": "faleni secondary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "2",
+        "number_of_students": "85",
+        "operator": "government",
+        "type": "Reconstruction"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.237472,
+        "lon": 84.453782
+      },
+      "id": 340977095,
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "path": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.036295,
+        "lon": 84.43627
+      },
+      "id": 340997258,
+      "tags": {
+        "amenity": "school",
+        "building": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.1796,
+        "lon": 84.435976
+      },
+      "id": 341007636,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.077723,
+        "lon": 84.465408
+      },
+      "id": 341008196,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.250369,
+        "lon": 84.464761
+      },
+      "id": 341116595,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.26502,
+        "lon": 84.476749
+      },
+      "id": 341116599,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.192085,
+        "lon": 84.454927
+      },
+      "id": 341124869,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.246092,
+        "lon": 84.489525
+      },
+      "id": 341158883,
+      "tags": {
+        "addr:city": "dordhi rural municipality 6",
+        "amenity": "school",
+        "name": "bhagawan lower secondary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "5",
+        "number_of_students": "184",
+        "operator": "government",
+        "type": "retrofitting"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.137337,
+        "lon": 84.461403
+      },
+      "id": 341235978,
+      "tags": {
+        "bridge": "yes",
+        "fixme": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.053247,
+        "lon": 84.363923
+      },
+      "id": 341356179,
+      "tags": {
+        "addr:city": "vanu municipality 4",
+        "amenity": "school",
+        "name": "chandrawoti primary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "2",
+        "number_of_students": "76",
+        "operator": "government",
+        "type": "retrofitting"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.05324,
+        "lon": 84.36369
+      },
+      "id": 341356180,
+      "tags": {
+        "addr:city": "vanu municipality 4",
+        "amenity": "school",
+        "name": "chandrawati primary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "2",
+        "number_of_students": "76",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.200033,
+        "lon": 84.473248
+      },
+      "id": 341362240,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.180596,
+        "lon": 84.487625
+      },
+      "id": 341366937,
+      "tags": {
+        "addr:city": "dudhpokhari rural municipality 6",
+        "amenity": "school",
+        "name": "shree gauda secondary",
+        "number_of_block": "3",
+        "number_of_classrooms": "6",
+        "number_of_students": "230",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.195201,
+        "lon": 84.463517
+      },
+      "id": 341368723,
+      "tags": {
+        "addr:city": "dordhi pokhari rural municipality 3",
+        "amenity": "school",
+        "name": "saraswoti mohan lower secondary",
+        "number_of_block": "2",
+        "number_of_classrooms": "5",
+        "number_of_students": "125"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.078681,
+        "lon": 84.465785
+      },
+      "id": 341384144,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Marshyangdi Bridge"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.252379,
+        "lon": 84.468589
+      },
+      "id": 341397803,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.2525,
+        "lon": 84.468688
+      },
+      "id": 341397807,
+      "tags": {
+        "addr:city": "dhodhi rural municipality 7",
+        "amenity": "school",
+        "name": "balkalyan secondary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "2",
+        "number_of_students": "65",
+        "type": "retrofitting"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.125174,
+        "lon": 84.405296
+      },
+      "id": 341421677,
+      "tags": {
+        "bridge": "yes",
+        "highway": "pedestrian",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.261334,
+        "lon": 84.347953
+      },
+      "id": 341452644,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.257927,
+        "lon": 84.338611
+      },
+      "id": 341458360,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.189221,
+        "lon": 84.46548
+      },
+      "id": 341473363,
+      "tags": {
+        "addr:city": "dordhi rural municipality 3",
+        "amenity": "school",
+        "name": "laxmi secondary",
+        "number_of_block": "1",
+        "number_of_classrooms": "4",
+        "number_of_students": "164"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.196915,
+        "lon": 84.46015
+      },
+      "id": 341473367,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.198646,
+        "lon": 84.49245
+      },
+      "id": 341560132,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.057111,
+        "lon": 84.47722
+      },
+      "id": 341746976,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.062808,
+        "lon": 84.487125
+      },
+      "id": 341765175,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.068932,
+        "lon": 84.464086
+      },
+      "id": 341769305,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.222649,
+        "lon": 84.380096
+      },
+      "id": 341770711,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey",
+        "surface": "paved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.056333,
+        "lon": 84.480654
+      },
+      "id": 342132455,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "NH03"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.08028,
+        "lon": 84.486174
+      },
+      "id": 342180546,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.080171,
+        "lon": 84.486355
+      },
+      "id": 342180547,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.114198,
+        "lon": 84.43323
+      },
+      "id": 342636281,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.115167,
+        "lon": 84.432998
+      },
+      "id": 342636291,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lanes": "2",
+        "layer": "1",
+        "name": "Pushpalal Highway",
+        "ref": "NH03"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.052346,
+        "lon": 84.418098
+      },
+      "id": 342649243,
+      "tags": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "ref": "38DR021"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.047539,
+        "lon": 84.427452
+      },
+      "id": 342650188,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.176909,
+        "lon": 84.430779
+      },
+      "id": 342732706,
+      "tags": {
+        "amenity": "school",
+        "building": "yes"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.120755,
+        "lon": 84.413029
+      },
+      "id": 342951235,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.315354,
+        "lon": 84.400831
+      },
+      "id": 343095832,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "material": "metal",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.330103,
+        "lon": 84.398553
+      },
+      "id": 343230714,
+      "tags": {
+        "alt_name": "Jeep Road",
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "Besishahar - Manang Sadak",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.334004,
+        "lon": 84.398501
+      },
+      "id": 343271134,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.100981,
+        "lon": 84.442958
+      },
+      "id": 344069245,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "name": "Marsayngdi Bridge, Tarkughat",
+        "ref": "37DR042"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.280165,
+        "lon": 84.357352
+      },
+      "id": 344330201,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.136662,
+        "lon": 84.460073
+      },
+      "id": 344547541,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.088915,
+        "lon": 84.444297
+      },
+      "id": 345665840,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.023397,
+        "lon": 84.470176
+      },
+      "id": 345830656,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.057335,
+        "lon": 84.46838
+      },
+      "id": 345894955,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.047406,
+        "lon": 84.471132
+      },
+      "id": 345926072,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "source": "Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.148181,
+        "lon": 84.443447
+      },
+      "id": 346328393,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "ref": "37DR029"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.147749,
+        "lon": 84.443362
+      },
+      "id": 346328394,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.099238,
+        "lon": 84.442995
+      },
+      "id": 346359081,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.056956,
+        "lon": 84.467908
+      },
+      "id": 349150540,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.387493,
+        "lon": 84.402653
+      },
+      "id": 349767078,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.031317,
+        "lon": 84.488905
+      },
+      "id": 349924113,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.046377,
+        "lon": 84.439866
+      },
+      "id": 350212464,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.173158,
+        "lon": 84.45383
+      },
+      "id": 350276548,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "source": "DigitalGlobe 1 May 2015"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.183953,
+        "lon": 84.457994
+      },
+      "id": 350276549,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "source": "DigitalGlobe 1 May 2015"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.037872,
+        "lon": 84.460314
+      },
+      "id": 350422503,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.440361,
+        "lon": 84.38667
+      },
+      "id": 350563760,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.276532,
+        "lon": 84.361569
+      },
+      "id": 350878023,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.250655,
+        "lon": 84.362269
+      },
+      "id": 432325715,
+      "tags": {
+        "addr:city": "Chandisthan",
+        "addr:postcode": "06",
+        "amenity": "school",
+        "name": "Shree Ganga Milan Secondary School",
+        "smoking": "outside"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.250336,
+        "lon": 84.362782
+      },
+      "id": 435588419,
+      "tags": {
+        "amenity": "school",
+        "name": "Chhapswara Khel Maidan"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.226179,
+        "lon": 84.379055
+      },
+      "id": 488275813,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.283173,
+        "lon": 84.362821
+      },
+      "id": 489772975,
+      "tags": {
+        "building": "construction",
+        "name": "Upper Marsyangdi A Hydroelectric Station",
+        "plant:output:electricity": "50MW",
+        "plant:source": "hydro",
+        "power": "plant"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.239575,
+        "lon": 84.36983
+      },
+      "id": 489778210,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.254164,
+        "lon": 84.38611
+      },
+      "id": 496748956,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.029003,
+        "lon": 84.469085
+      },
+      "id": 499830867,
+      "tags": {
+        "addr:hamlet": "Kalamata",
+        "amenity": "school",
+        "name": "Shree Jana Jyoti Ni Ma V",
+        "operator:type": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.049139,
+        "lon": 84.477817
+      },
+      "id": 499831825,
+      "tags": {
+        "addr:hamlet": "Charkune",
+        "amenity": "school",
+        "name": "Shree Chapawati Pra V",
+        "operator:type": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.041437,
+        "lon": 84.471065
+      },
+      "id": 499831826,
+      "tags": {
+        "addr:hamlet": "Thulibeshi",
+        "amenity": "school",
+        "name": "Shree Dharmawati Pra V",
+        "operator:type": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.05057,
+        "lon": 84.48519
+      },
+      "id": 499832121,
+      "tags": {
+        "addr:hamlet": "Thantipokhari",
+        "amenity": "school",
+        "name": "Bhawani Multiple Campus",
+        "operator:type": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.198123,
+        "lon": 84.456952
+      },
+      "id": 499850035,
+      "tags": {
+        "addr:city": "dordhi rural municipality 4",
+        "amenity": "school",
+        "name": "chaitannyodaya secondary",
+        "number_of_block": "1",
+        "number_of_classrooms": "4",
+        "number_of_students": "217"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.179082,
+        "lon": 84.458107
+      },
+      "id": 499854225,
+      "tags": {
+        "addr:city": "dudhpokhari rural municipality 3",
+        "amenity": "school",
+        "name": "bhangeri primary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "2",
+        "number_of_students": "35",
+        "operator": "government",
+        "type": "reconstruction"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.178711,
+        "lon": 84.470403
+      },
+      "id": 499855682,
+      "tags": {
+        "addr:city": "dordhi rural municipality 3",
+        "amenity": "school",
+        "name": "krishna pramod primary",
+        "number_of_block": "1",
+        "number_of_classrooms": "5",
+        "number_of_students": "44"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.072163,
+        "lon": 84.353286
+      },
+      "id": 500083753,
+      "tags": {
+        "addr:city": "vanu municipality 13",
+        "amenity": "school",
+        "name": "kankali primary school",
+        "number_of_block": "1",
+        "number_of_classrooms": "7",
+        "number_of_students": "68",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.138431,
+        "lon": 84.403172
+      },
+      "id": 531241552,
+      "tags": {
+        "bridge": "yes",
+        "bridge:name": "Paudi Khola Bridge",
+        "bridge:structure": "beam",
+        "highway": "tertiary",
+        "layer": "1",
+        "length": "32m",
+        "ref": "NH03",
+        "ref:old": "37DR035",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.138058,
+        "lon": 84.442363
+      },
+      "id": 543884572,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.017686,
+        "lon": 84.456227
+      },
+      "id": 581890472,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "maxweight": "100",
+        "name": "Dumre-Besishahar",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.366474,
+        "lon": 84.415237
+      },
+      "id": 597156297,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.370401,
+        "lon": 84.471659
+      },
+      "id": 597168518,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.313754,
+        "lon": 84.432501
+      },
+      "id": 604431825,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.369168,
+        "lon": 84.403902
+      },
+      "id": 617803409,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "material": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.453594,
+        "lon": 84.369155
+      },
+      "id": 617820116,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "NH25",
+        "ref:old": "Besishahar - Manang Sadak (Jeep Road)",
+        "source": "survey",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.312147,
+        "lon": 84.400205
+      },
+      "id": 640505017,
+      "tags": {
+        "name": "Upper Marsyangdi Dam",
+        "waterway": "dam"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.471898,
+        "lon": 84.376302
+      },
+      "id": 640505029,
+      "tags": {
+        "building": "yes",
+        "generator:source": "hydro",
+        "name": "Tal Micro Hydropower",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.281192,
+        "lon": 84.355107
+      },
+      "id": 640825033,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "beam",
+        "highway": "service",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.516513,
+        "lon": 84.36172
+      },
+      "id": 751294235,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.518893,
+        "lon": 84.396355
+      },
+      "id": 752006633,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.521292,
+        "lon": 84.398928
+      },
+      "id": 752006635,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.52153,
+        "lon": 84.457371
+      },
+      "id": 752006637,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.519366,
+        "lon": 84.462701
+      },
+      "id": 752006639,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.516788,
+        "lon": 84.466037
+      },
+      "id": 752006641,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.502672,
+        "lon": 84.474712
+      },
+      "id": 752006643,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.500478,
+        "lon": 84.477863
+      },
+      "id": 752006645,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.301163,
+        "lon": 84.388836
+      },
+      "id": 808076016,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.31445,
+        "lon": 84.402774
+      },
+      "id": 808076630,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "material": "metal",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.131375,
+        "lon": 84.410584
+      },
+      "id": 886606369,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.12483,
+        "lon": 84.405957
+      },
+      "id": 886638349,
+      "tags": {
+        "bridge": "low_water_crossing",
+        "highway": "unclassified",
+        "name": "Manechauka Bridge"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.128697,
+        "lon": 84.392424
+      },
+      "id": 886880913,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.131002,
+        "lon": 84.438366
+      },
+      "id": 888543574,
+      "tags": {
+        "bridge": "aqueduct",
+        "bridge:structure": "beam",
+        "highway": "track",
+        "layer": "1",
+        "name": "paidi bridge"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.170088,
+        "lon": 84.441581
+      },
+      "id": 896479639,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.167234,
+        "lon": 84.448117
+      },
+      "id": 896518528,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.129732,
+        "lon": 84.432233
+      },
+      "id": 896569302,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "Bhanubhaktra Highway (Dumre-Besishahar)",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "source": "survey",
+        "surface": "paved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.136548,
+        "lon": 84.440931
+      },
+      "id": 896569304,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.174601,
+        "lon": 84.366214
+      },
+      "id": 897388601,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.140004,
+        "lon": 84.400843
+      },
+      "id": 897388603,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.232228,
+        "lon": 84.376177
+      },
+      "id": 1009858576,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.077336,
+        "lon": 84.491734
+      },
+      "id": 1012638320,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "ref": "36DR001"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.133353,
+        "lon": 84.424423
+      },
+      "id": 1117426013,
+      "tags": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "surface": "asphalt"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.191524,
+        "lon": 84.45514
+      },
+      "id": 1168457197,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "ref": "37DR024"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.343531,
+        "lon": 84.459923
+      },
+      "id": 1214229204,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.220032,
+        "lon": 84.372222
+      },
+      "id": 1263748297,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.15045,
+        "lon": 84.341843
+      },
+      "id": 1323734126,
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary",
+        "lanes": "2",
+        "layer": "1",
+        "name": "Pushpalal highway",
+        "ref": "NH03",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.291796,
+        "lon": 84.376161
+      },
+      "id": 1335909658,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "source": "survey",
+        "surface": "gravel"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.22598,
+        "lon": 84.450491
+      },
+      "id": 1369394008,
+      "tags": {
+        "plant:source": "hydro",
+        "power": "plant"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.250094,
+        "lon": 84.478643
+      },
+      "id": 1369394009,
+      "tags": {
+        "power": "substation"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.188636,
+        "lon": 84.420104
+      },
+      "id": 1369394443,
+      "tags": {
+        "fixme": "need to find powerhouse",
+        "name": "Middle Marsyandgi HEP",
+        "plant:output:electricity": "70MW",
+        "plant:source": "hydro",
+        "power": "plant",
+        "source": "https://en.wikipedia.org/wiki/Middle_Marsyangdi_Hydropower_Station"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.175461,
+        "lon": 84.43303
+      },
+      "id": 1369394444,
+      "tags": {
+        "power": "substation"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.251662,
+        "lon": 84.473905
+      },
+      "id": 1369683726,
+      "tags": {
+        "name": "Upper Dordi A",
+        "plant:output:electricity": "25MW",
+        "plant:source": "hydro",
+        "power": "plant",
+        "source": "https://www.libertyenergy.com.np/uploads/downloads/liberty_download_Salient-Features-Upper-Dordi-A-Tunnel-Option.pdf.pdf"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.24947,
+        "lon": 84.480486
+      },
+      "id": 1369683727,
+      "tags": {
+        "power": "substation"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.169837,
+        "lon": 84.442938
+      },
+      "id": 1369692683,
+      "tags": {
+        "power": "substation",
+        "voltage": "132000"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.291173,
+        "lon": 84.370863
+      },
+      "id": 1373663282,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1",
+        "lit": "no",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.185287,
+        "lon": 84.424451
+      },
+      "id": 1374186810,
+      "tags": {
+        "name": "Udipur 220kv",
+        "power": "substation",
+        "substation": "transmission",
+        "voltage": "220000"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.280042,
+        "lon": 84.360422
+      },
+      "id": 1391741056,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.238713,
+        "lon": 84.373547
+      },
+      "id": 1391741060,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.238705,
+        "lon": 84.373348
+      },
+      "id": 1391741062,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "name": "Campus Road",
+        "surface": "asphalt"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.406001,
+        "lon": 84.413176
+      },
+      "id": 1392027491,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.413375,
+        "lon": 84.408081
+      },
+      "id": 1392027494,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.388983,
+        "lon": 84.402713
+      },
+      "id": 1392027497,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.427967,
+        "lon": 84.396289
+      },
+      "id": 1392264634,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "survey",
+        "surface": "wood",
+        "width": "0.5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.502174,
+        "lon": 84.36113
+      },
+      "id": 1392270787,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.480597,
+        "lon": 84.370593
+      },
+      "id": 1392270793,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.538471,
+        "lon": 84.34236
+      },
+      "id": 1392326844,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.53608,
+        "lon": 84.342787
+      },
+      "id": 1392326845,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.531731,
+        "lon": 84.349822
+      },
+      "id": 1392326888,
+      "tags": {
+        "bridge": "yes",
+        "cycleway:both": "no",
+        "highway": "unclassified",
+        "layer": "1",
+        "lit": "no",
+        "maxweight:signed": "no",
+        "sidewalk": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.524814,
+        "lon": 84.355344
+      },
+      "id": 1392326890,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.196844,
+        "lon": 84.406202
+      },
+      "id": 1408714148,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "fixme": "trace me well, not yet visible on aerial imagery / strava",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.01788,
+        "lon": 84.459093
+      },
+      "id": 1408714149,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.288214,
+        "lon": 84.363206
+      },
+      "id": 1447982213,
+      "tags": {
+        "alt_name": "Jeep Road",
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "Besishahar - Manang Sadak",
+        "ref": "NH25",
+        "ref:old": "F36",
+        "smoothness": "very_bad",
+        "source": "survey",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.363374,
+        "lon": 84.406642
+      },
+      "id": 1453288285,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "tracktype": "grade5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.499795,
+        "lon": 84.360871
+      },
+      "id": 1453288289,
+      "tags": {
+        "plant:output:electricity": "yes",
+        "plant:source": "hydro",
+        "power": "plant"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.051563,
+        "lon": 84.477363
+      },
+      "id": 1467687479,
+      "tags": {
+        "power": "substation"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.07318,
+        "lon": 84.374443
+      },
+      "id": 1513322011,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-30T19:59:50Z"
+  },
+  "version": 0.6
+}

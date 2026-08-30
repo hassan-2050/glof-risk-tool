@@ -1,0 +1,2270 @@
+{
+  "elements": [
+    {
+      "id": 293620183,
+      "lat": 28.666111,
+      "lon": 84.023117,
+      "tags": {
+        "alt_name": "Manangbhot",
+        "gns:ufi": "-1022305",
+        "name": "मनाङ",
+        "name:en": "Manang",
+        "name:ja": "マナン",
+        "name:ko": "마낭",
+        "name:ne": "मनाङ",
+        "name:zh": "馬浪",
+        "place": "village",
+        "source": "GNS",
+        "wikidata": "Q735686",
+        "wikipedia": "en:Manang"
+      },
+      "type": "node"
+    },
+    {
+      "id": 293725459,
+      "lat": 28.484769,
+      "lon": 83.888662,
+      "tags": {
+        "height": "2900m",
+        "is_in": "Nepal",
+        "is_in:country": "Nepal",
+        "name": "Himalaya",
+        "name:en": "Himalaya",
+        "name:ko": "히말라야 2920m",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 293725461,
+      "lat": 28.49756,
+      "lon": 83.898334,
+      "tags": {
+        "is_in": "Nepal",
+        "name": "Deurali",
+        "name:en": "Deurali (3200)",
+        "name:ko": "데우랄리 3200m",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044641,
+      "lat": 28.548279,
+      "lon": 84.28841,
+      "tags": {
+        "ele": "2560",
+        "is_in:country": "Nepal",
+        "name": "Thanchok",
+        "name:zh": "譚丘克",
+        "place": "village",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044644,
+      "lat": 28.527109,
+      "lon": 84.304915,
+      "tags": {
+        "is_in:country": "Nepal",
+        "name": "Timang",
+        "name:zh": "提芒",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044647,
+      "lat": 28.533059,
+      "lon": 84.325024,
+      "tags": {
+        "ele": "2300",
+        "is_in:country": "Nepal",
+        "name": "Danagyu",
+        "name:zh": "當納丘",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044653,
+      "lat": 28.533495,
+      "lon": 84.339585,
+      "tags": {
+        "alt_name": "Bagarchap",
+        "ele": "2160",
+        "gns:ufi": "-1021651",
+        "is_in:country": "Nepal",
+        "name": "Bagarchhāp",
+        "name:zh": "巴格爾查普",
+        "place": "village",
+        "source": "GNS",
+        "wikidata": "Q4841450"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044655,
+      "lat": 28.518998,
+      "lon": 84.358383,
+      "tags": {
+        "ele": "1860",
+        "is_in:country": "Nepal",
+        "name": "Dharapani",
+        "name:zh": "達拉帕尼",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044680,
+      "lat": 28.506269,
+      "lon": 84.359045,
+      "tags": {
+        "ele": "1850",
+        "name": "Karte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295044712,
+      "lat": 28.49931,
+      "lon": 84.361246,
+      "tags": {
+        "name": "Khorte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295052429,
+      "lat": 28.616363,
+      "lon": 84.153034,
+      "tags": {
+        "ele": "3300",
+        "is_in": "Pisang",
+        "name": "Upper Pisang",
+        "name:zh": "上皮桑",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295052437,
+      "lat": 28.615431,
+      "lon": 84.147484,
+      "tags": {
+        "ele": "3250",
+        "name": "Lower Pisang",
+        "name:en": "Lower pisang",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295052438,
+      "lat": 28.572817,
+      "lon": 84.190354,
+      "tags": {
+        "ele": "2850",
+        "is_in:country": "Nepal",
+        "name": "Bhratang",
+        "name:zh": "布拉塘",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295052440,
+      "lat": 28.556658,
+      "lon": 84.226457,
+      "tags": {
+        "ele": "2720",
+        "is_in:country": "Nepal",
+        "name": "Thaleku",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295052442,
+      "lat": 28.550732,
+      "lon": 84.242353,
+      "tags": {
+        "capital": "5",
+        "ele": "2670",
+        "is_in:country": "Nepal",
+        "name": "Chame",
+        "name:ja": "チャーメ",
+        "name:zh": "查美",
+        "place": "village",
+        "wikidata": "Q2299059",
+        "wikipedia": "en:Chame Rural Municipality"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295053230,
+      "lat": 28.638216,
+      "lon": 84.090481,
+      "tags": {
+        "name": "Humde",
+        "name:ja": "フムデ",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295053232,
+      "lat": 28.649225,
+      "lon": 84.053474,
+      "tags": {
+        "name": "Mungii",
+        "name:zh": "芒吉",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 295053235,
+      "lat": 28.657196,
+      "lon": 84.039858,
+      "tags": {
+        "name": "Bhraga",
+        "name:en": "Braka",
+        "name:ne": "भरगा",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852873680,
+      "lat": 28.543958,
+      "lon": 84.302357,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852891586,
+      "lat": 28.55175,
+      "lon": 84.286636,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852891612,
+      "lat": 28.533818,
+      "lon": 84.340119,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 852891625,
+      "lat": 28.552257,
+      "lon": 84.241799,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854331953,
+      "lat": 28.638775,
+      "lon": 84.089336,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854331995,
+      "lat": 28.61672,
+      "lon": 84.151783,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854332075,
+      "lat": 28.641804,
+      "lon": 84.137268,
+      "tags": {
+        "name": "Ghyaru",
+        "name:zh": "嘉如",
+        "place": "hamlet",
+        "wikidata": "Q590514",
+        "wikipedia": "en:Ghyaru"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854332252,
+      "lat": 28.666558,
+      "lon": 84.023083,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854332265,
+      "lat": 28.602349,
+      "lon": 84.179422,
+      "tags": {
+        "ele": "3060",
+        "name": "Dhikur Pokhari",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854332344,
+      "lat": 28.641934,
+      "lon": 84.137456,
+      "tags": {
+        "amenity": "doctors"
+      },
+      "type": "node"
+    },
+    {
+      "id": 854367552,
+      "lat": 28.669728,
+      "lon": 83.973437,
+      "tags": {
+        "alt_name": "Kangsar",
+        "gns:ufi": "-1022164",
+        "name": "Khangsar",
+        "place": "village",
+        "source": "GNS",
+        "wikidata": "Q3418642",
+        "wikipedia": "en:Khangsar"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858011355,
+      "lat": 28.538087,
+      "lon": 84.335987,
+      "tags": {
+        "name": "Ghimlung",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858011357,
+      "lat": 28.54006,
+      "lon": 84.337596,
+      "tags": {
+        "name": "Tachai",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858011358,
+      "lat": 28.539461,
+      "lon": 84.337358,
+      "tags": {
+        "fixme": "location?",
+        "operator": "Power House",
+        "power": "substation"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858011359,
+      "lat": 28.536822,
+      "lon": 84.336514,
+      "tags": {
+        "name": "Nasku",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858011363,
+      "lat": 28.543367,
+      "lon": 84.302069,
+      "tags": {
+        "name": "Lata Marang",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 858263917,
+      "lat": 28.527197,
+      "lon": 84.354135,
+      "tags": {
+        "alt_name": "Thonje",
+        "alt_name_1": "Thumshe",
+        "ele": "1900",
+        "gns:ufi": "-1022722",
+        "name": "Thoche",
+        "place": "hamlet",
+        "source": "GNS",
+        "wikidata": "Q7795973"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1078766251,
+      "lat": 28.545185,
+      "lon": 84.381186,
+      "tags": {
+        "ele": "2260",
+        "name": "Tilche",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1332448699,
+      "lat": 28.655433,
+      "lon": 84.237295,
+      "tags": {
+        "name": "Meta",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1332461383,
+      "lat": 28.681078,
+      "lon": 84.198631,
+      "tags": {
+        "alt_name": "Nar",
+        "name": "Naar",
+        "place": "village",
+        "wikidata": "Q679263",
+        "wikipedia": "en:Nar, Nepal"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1334350029,
+      "lat": 28.543057,
+      "lon": 84.295858,
+      "tags": {
+        "name": "Kurung",
+        "name:zh": "庫隆",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1345288199,
+      "lat": 28.680182,
+      "lon": 83.906921,
+      "tags": {
+        "name": "Tilicho Base Camp",
+        "name:en": "Tilicho Base Camp",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1738844692,
+      "lat": 28.669933,
+      "lon": 83.973826,
+      "tags": {
+        "amenity": "school",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1738844703,
+      "lat": 28.676864,
+      "lon": 83.97215,
+      "tags": {
+        "ele": "4130",
+        "name": "Upper Khangsar",
+        "place": "hamlet",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1738844745,
+      "lat": 28.673902,
+      "lon": 83.973431,
+      "tags": {
+        "ele": "3950",
+        "name": "Middle Khangsar",
+        "place": "hamlet",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1743137935,
+      "lat": 28.517913,
+      "lon": 84.358821,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator",
+        "source": "survey"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1743138107,
+      "lat": 28.526418,
+      "lon": 84.311287,
+      "tags": {
+        "generator:source": "hydro",
+        "name": "Syalque Micro Hydro Project",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2320025820,
+      "lat": 28.666301,
+      "lon": 84.023609,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Manang Health Post",
+        "name:ne": "स्स्वस्थ्य चौकी"
+      },
+      "type": "node"
+    },
+    {
+      "id": 2774724973,
+      "lat": 28.528946,
+      "lon": 84.347445,
+      "tags": {
+        "is_in:country": "Nepal",
+        "name": "Odar",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3478008095,
+      "lat": 28.531807,
+      "lon": 84.341194,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3490847054,
+      "lat": 28.684526,
+      "lon": 83.998727,
+      "tags": {
+        "name": "Gunsang",
+        "name:en": "Gunsang",
+        "name:ne": "गुनसाङ",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3570260196,
+      "lat": 28.551569,
+      "lon": 84.240435,
+      "tags": {
+        "GON_PVT": "GON",
+        "addr:city": "Chame",
+        "amenity": "school",
+        "capacity": "120",
+        "education:students_female": "70",
+        "education:students_male": "50",
+        "education:teachers": "17",
+        "name": "Lok Priya HSS"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3754826418,
+      "lat": 28.669265,
+      "lon": 84.035926,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4465978102,
+      "lat": 28.680368,
+      "lon": 83.953234,
+      "tags": {
+        "ele": "4070",
+        "name": "Shri Kharka",
+        "name:en": "Shri Kharka",
+        "name:np": "श्री खड़का",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4594452992,
+      "lat": 28.512028,
+      "lon": 84.360723,
+      "tags": {
+        "name": "Nache",
+        "name:zh": "納吉",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5216223969,
+      "lat": 28.528942,
+      "lon": 84.346311,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6429956285,
+      "lat": 28.664758,
+      "lon": 84.025371,
+      "tags": {
+        "amenity": "hospital",
+        "name:en": "HIMALAYAN RESCUE ASSOCIATION"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6966299526,
+      "lat": 28.515427,
+      "lon": 83.907357,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6966299617,
+      "lat": 28.497442,
+      "lon": 83.899031,
+      "tags": {
+        "generator:source": "hydro",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6966299618,
+      "lat": 28.487377,
+      "lon": 83.890743,
+      "tags": {
+        "addr:city": "Annapurna Rural Mun 11",
+        "generator:source": "hydro",
+        "name": "Hydropower",
+        "power": "generator"
+      },
+      "type": "node"
+    },
+    {
+      "id": 7296672386,
+      "lat": 28.543015,
+      "lon": 84.379299,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 7296675286,
+      "lat": 28.526392,
+      "lon": 84.354929,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12343213301,
+      "lat": 28.648469,
+      "lon": 84.075978,
+      "tags": {
+        "amenity": "school",
+        "name:en": "Lophelling Boarding School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12725699616,
+      "lat": 28.552233,
+      "lon": 84.259278,
+      "tags": {
+        "name": "Koto",
+        "name:zh": "丘帕爾",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12842134414,
+      "lat": 28.551706,
+      "lon": 84.241274,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Lokpriya Secondaty school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13306506027,
+      "lat": 28.649015,
+      "lon": 84.101252,
+      "tags": {
+        "name": "Ngawal",
+        "name:zh": "噶瓦爾",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 28.488865,
+        "lon": 84.367227
+      },
+      "id": 26926644,
+      "tags": {
+        "bridge": "yes",
+        "fixme": "position",
+        "highway": "path",
+        "layer": "1",
+        "note": "cant find the position of the bridge",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.516204,
+        "lon": 84.358782
+      },
+      "id": 26926653,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.586718,
+        "lon": 84.187056
+      },
+      "id": 26927232,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.646443,
+        "lon": 84.054886
+      },
+      "id": 26927901,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "oneway": "no",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "shoulder": "no",
+        "source": "survey",
+        "surface": "wood"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.608258,
+        "lon": 84.160327
+      },
+      "id": 26928080,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.544255,
+        "lon": 84.380812
+      },
+      "id": 90264370,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "name": "Manaslu Circuit",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.527781,
+        "lon": 84.358529
+      },
+      "id": 90264471,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.646508,
+        "lon": 84.077354
+      },
+      "id": 119884008,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "2",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.634932,
+        "lon": 84.136043
+      },
+      "id": 161914055,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "tracktype": "grade5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.531593,
+        "lon": 84.349933
+      },
+      "id": 162413499,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "sac_scale": "mountain_hiking",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.534468,
+        "lon": 84.333558
+      },
+      "id": 162413501,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "extrapolation"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.604908,
+        "lon": 84.171701
+      },
+      "id": 162413529,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.574893,
+        "lon": 84.186739
+      },
+      "id": 162413532,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "track",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.551618,
+        "lon": 84.242482
+      },
+      "id": 162413542,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.525614,
+        "lon": 84.311586
+      },
+      "id": 162413589,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "smoothness": "intermediate",
+        "source": "survey",
+        "surface": "compacted"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.54365,
+        "lon": 84.289326
+      },
+      "id": 162413591,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "name": "Thanchowk Bridge",
+        "sac_scale": "mountain_hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680125,
+        "lon": 83.906767
+      },
+      "id": 214399598,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.681941,
+        "lon": 83.940238
+      },
+      "id": 214404971,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.670016,
+        "lon": 83.96638
+      },
+      "id": 216648566,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.662951,
+        "lon": 84.024457
+      },
+      "id": 258888625,
+      "tags": {
+        "amenity": "school",
+        "source": "Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.666847,
+        "lon": 84.022083
+      },
+      "id": 258888634,
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "source": "Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.671013,
+        "lon": 84.001874
+      },
+      "id": 258888638,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.663935,
+        "lon": 84.021405
+      },
+      "id": 258888646,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "source": "survey",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.663164,
+        "lon": 84.027961
+      },
+      "id": 258896693,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "shoulder": "no",
+        "smoothness": "good",
+        "source": "Bing",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.659191,
+        "lon": 84.036999
+      },
+      "id": 258896714,
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "name:en": "Shree Braka primary school",
+        "source": "Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.663819,
+        "lon": 84.021384
+      },
+      "id": 274951876,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "source": "survey",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.654311,
+        "lon": 84.042529
+      },
+      "id": 274951879,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.666428,
+        "lon": 84.016414
+      },
+      "id": 288780592,
+      "tags": {
+        "name": "Manang Microhydro at Marshyangdi",
+        "waterway": "dam"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.666328,
+        "lon": 84.016557
+      },
+      "id": 288780683,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Manang Suspension Bridge",
+        "source": "Bing",
+        "surface": "wood"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.665433,
+        "lon": 84.018445
+      },
+      "id": 288780921,
+      "tags": {
+        "name": "Manang Microhydro powerhouse",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.616491,
+        "lon": 84.146822
+      },
+      "id": 293454072,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "arch",
+        "highway": "unclassified",
+        "layer": "1",
+        "material": "wood",
+        "source": "GPS",
+        "surface": "wood"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.654564,
+        "lon": 84.042336
+      },
+      "id": 307109506,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.615501,
+        "lon": 84.147911
+      },
+      "id": 311785703,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "material": "metal",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.610682,
+        "lon": 84.155139
+      },
+      "id": 311785705,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "source": "GPS",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.692742,
+        "lon": 83.984029
+      },
+      "id": 336086354,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.505706,
+        "lon": 84.35854
+      },
+      "id": 340579842,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.535627,
+        "lon": 84.334466
+      },
+      "id": 340826526,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "footway",
+        "layer": "1",
+        "material": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.55224,
+        "lon": 84.240946
+      },
+      "id": 487614211,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "sac_scale": "hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.550752,
+        "lon": 84.254602
+      },
+      "id": 487615467,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.550382,
+        "lon": 84.238275
+      },
+      "id": 497637567,
+      "tags": {
+        "amenity": "hospital",
+        "building": "yes",
+        "name": "Manang District Hospital"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.587146,
+        "lon": 84.187462
+      },
+      "id": 521447392,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "shoulder": "no",
+        "smoothness": "good",
+        "source": "survey",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.645276,
+        "lon": 84.070165
+      },
+      "id": 532056634,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "source": "GPS",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.63714,
+        "lon": 84.092503
+      },
+      "id": 532056636,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "ref": "Besishahar - Manang Sadak (Jeep Road)",
+        "shoulder": "no",
+        "smoothness": "good",
+        "source": "GPS",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.615562,
+        "lon": 84.147891
+      },
+      "id": 557434958,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "arch",
+        "highway": "path",
+        "layer": "1",
+        "material": "wood",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.669018,
+        "lon": 84.229315
+      },
+      "id": 737280914,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "route to Nar",
+        "sac_scale": "alpine_hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.694283,
+        "lon": 84.24805
+      },
+      "id": 737340343,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.523098,
+        "lon": 83.908256
+      },
+      "id": 744316123,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.516513,
+        "lon": 84.36172
+      },
+      "id": 751294235,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.642271,
+        "lon": 84.090172
+      },
+      "id": 770022866,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.522133,
+        "lon": 84.306543
+      },
+      "id": 814783116,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "motor_vehicle": "no",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.660839,
+        "lon": 84.086011
+      },
+      "id": 996773424,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.556266,
+        "lon": 84.224065
+      },
+      "id": 996851438,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.664365,
+        "lon": 84.019061
+      },
+      "id": 1001305444,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "surface": "wood"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.680832,
+        "lon": 83.954383
+      },
+      "id": 1088462199,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "mtb:scale": "1",
+        "sac_scale": "hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.665264,
+        "lon": 84.020111
+      },
+      "id": 1103811719,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.693235,
+        "lon": 84.130958
+      },
+      "id": 1136814356,
+      "tags": {
+        "bridge": "yes",
+        "description": "route to Nar",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.671834,
+        "lon": 84.233398
+      },
+      "id": 1136814362,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "To Phugaon",
+        "highway": "path",
+        "horse": "yes",
+        "layer": "1",
+        "name": "Path to Phu",
+        "source": "strava.com heatmap",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.689529,
+        "lon": 84.24764
+      },
+      "id": 1136814364,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "To Phugaon",
+        "highway": "path",
+        "horse": "yes",
+        "layer": "1",
+        "name": "Path to Phu",
+        "source": "strava.com heatmap",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.592896,
+        "lon": 84.241295
+      },
+      "id": 1136814368,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "Route to Phugaon",
+        "highway": "path",
+        "incline": "up",
+        "layer": "1",
+        "name": "Trail to Nar-Phu",
+        "sac_scale": "demanding_mountain_hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.590426,
+        "lon": 84.241563
+      },
+      "id": 1136814370,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "Route to Phugaon",
+        "highway": "path",
+        "incline": "up",
+        "layer": "1",
+        "name": "Trail to Nar-Phu",
+        "sac_scale": "demanding_mountain_hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.553261,
+        "lon": 84.258621
+      },
+      "id": 1136814374,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "Route to Phugaon",
+        "highway": "path",
+        "incline": "up",
+        "layer": "1",
+        "name": "Trail to Nar-Phu",
+        "sac_scale": "demanding_mountain_hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.616491,
+        "lon": 84.148702
+      },
+      "id": 1150710695,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.670981,
+        "lon": 84.228231
+      },
+      "id": 1234839902,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.493306,
+        "lon": 83.892869
+      },
+      "id": 1237486873,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.494478,
+        "lon": 83.894312
+      },
+      "id": 1237486875,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.494958,
+        "lon": 83.894962
+      },
+      "id": 1237486877,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.502212,
+        "lon": 83.901304
+      },
+      "id": 1237486881,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.502587,
+        "lon": 83.901578
+      },
+      "id": 1237486883,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.622697,
+        "lon": 84.137133
+      },
+      "id": 1287344360,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.553849,
+        "lon": 84.260262
+      },
+      "id": 1312196703,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.586728,
+        "lon": 84.242953
+      },
+      "id": 1335927981,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.592814,
+        "lon": 84.241137
+      },
+      "id": 1335927984,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.621757,
+        "lon": 84.216639
+      },
+      "id": 1335927989,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "Route to Phugaon",
+        "highway": "path",
+        "incline": "up",
+        "layer": "1",
+        "name": "Trail to Nar-Phu",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.625802,
+        "lon": 84.219634
+      },
+      "id": 1335927991,
+      "tags": {
+        "bicycle": "no",
+        "bridge": "yes",
+        "description": "Route to Phugaon",
+        "highway": "path",
+        "incline": "up",
+        "layer": "1",
+        "name": "Trail to Nar-Phu",
+        "sac_scale": "hiking",
+        "surface": "ground",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.668942,
+        "lon": 84.229379
+      },
+      "id": 1336781176,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.639096,
+        "lon": 84.242597
+      },
+      "id": 1336802144,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.639167,
+        "lon": 84.242228
+      },
+      "id": 1336802145,
+      "tags": {
+        "bridge": "yes",
+        "description": "Pont en construction",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.502174,
+        "lon": 84.36113
+      },
+      "id": 1392270787,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.480597,
+        "lon": 84.370593
+      },
+      "id": 1392270793,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.54975,
+        "lon": 84.243807
+      },
+      "id": 1392326842,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "NH25",
+        "ref:old": "Besishahar - Manang Sadak (Jeep Road)",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.538471,
+        "lon": 84.34236
+      },
+      "id": 1392326844,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.53608,
+        "lon": 84.342787
+      },
+      "id": 1392326845,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.552374,
+        "lon": 84.268463
+      },
+      "id": 1392326848,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.551035,
+        "lon": 84.282021
+      },
+      "id": 1392326853,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.527643,
+        "lon": 84.304464
+      },
+      "id": 1392326855,
+      "tags": {
+        "bridge": "yes",
+        "cycleway:both": "no",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "ref": "NH25",
+        "ref:old": "Besishahar - Manang Sadak (Jeep Road)",
+        "smoothness": "intermediate",
+        "source": "survey",
+        "surface": "paving_stones"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.521677,
+        "lon": 84.307722
+      },
+      "id": 1392326859,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "wood"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.5273,
+        "lon": 84.318438
+      },
+      "id": 1392326862,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.527903,
+        "lon": 84.3185
+      },
+      "id": 1392326865,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "lane_markings": "no",
+        "layer": "1",
+        "ref": "NH25",
+        "ref:old": "Besishahar - Manang Sadak (Jeep Road)",
+        "smoothness": "intermediate",
+        "source": "strava.com heatmap",
+        "surface": "concrete"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.534825,
+        "lon": 84.327565
+      },
+      "id": 1392326871,
+      "tags": {
+        "access": "private",
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.531731,
+        "lon": 84.349822
+      },
+      "id": 1392326888,
+      "tags": {
+        "bridge": "yes",
+        "cycleway:both": "no",
+        "highway": "unclassified",
+        "layer": "1",
+        "lit": "no",
+        "maxweight:signed": "no",
+        "sidewalk": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.524814,
+        "lon": 84.355344
+      },
+      "id": 1392326890,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "lit": "no",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.634481,
+        "lon": 84.135721
+      },
+      "id": 1392546120,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "motor_vehicle": "yes",
+        "ref": "41DR003",
+        "sac_scale": "alpine_hiking",
+        "surface": "gravel",
+        "tracktype": "grade5",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.612917,
+        "lon": 84.151358
+      },
+      "id": 1392546125,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "hiking",
+        "smoothness": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.669375,
+        "lon": 84.004426
+      },
+      "id": 1392651656,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "ref": "41DR001",
+        "source": "survey",
+        "tracktype": "grade4"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.65363,
+        "lon": 84.100737
+      },
+      "id": 1392651671,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.648243,
+        "lon": 84.104402
+      },
+      "id": 1392651691,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "sac_scale": "alpine_hiking",
+        "trail_visibility": "excellent"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.666637,
+        "lon": 83.976772
+      },
+      "id": 1393450836,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "source": "Bing",
+        "surface": "metal"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.484503,
+        "lon": 83.888425
+      },
+      "id": 1395882810,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.580176,
+        "lon": 84.183185
+      },
+      "id": 1443165397,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "source": "survey"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.549949,
+        "lon": 84.240042
+      },
+      "id": 1450888831,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.549844,
+        "lon": 84.239776
+      },
+      "id": 1450888833,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 28.499795,
+        "lon": 84.360871
+      },
+      "id": 1453288289,
+      "tags": {
+        "plant:output:electricity": "yes",
+        "plant:source": "hydro",
+        "power": "plant"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-30T20:46:36Z"
+  },
+  "version": 0.6
+}

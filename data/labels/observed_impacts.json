@@ -1,0 +1,144 @@
+{
+  "_README": [
+    "Observed downstream flood extents, for validating ROUTING - the question",
+    "'if this lake releases, where does the water go and what does it hit'.",
+    "",
+    "Until this file existed the project validated lake AREA and never once",
+    "checked a predicted corridor against what the flood actually did. That is",
+    "the difference between validating the input and validating the output.",
+    "",
+    "Every entry is a published post-event observation, named. Distances are",
+    "along-channel from the source lake unless stated. Where sources disagree",
+    "the range is kept rather than averaged - same rule as the reporter.",
+    "",
+    "impacted_places: named settlements/assets the flood is DOCUMENTED to have hit, with along-channel distance. This is the sharpest available test of a routed corridor: not 'did it run far enough' but 'does it pass the place that was actually destroyed, at the right distance'."
+  ],
+  "events": {
+    "thyanbo_tsho": {
+      "event": "Thame valley GLOF, 16 August 2024",
+      "released_volume_m3": {
+        "values": [
+          459000,
+          770000
+        ],
+        "note": "ICIMOD gives 156,000 (upper lake) + 303,000 (lower) = 459,000. The NHESS reconstruction gives ~770,000 combined. Kept as a range.",
+        "sources": [
+          "ICIMOD Thame Valley GLOF 2024 report",
+          "Sapkota et al., NHESS 26:4131 (2026)"
+        ]
+      },
+      "debris_transport_km": 80,
+      "debris_transport_note": "Debris carried ~80 km along the Thame and Dudh Koshi rivers.",
+      "settlement_reached_km": 10,
+      "settlement_note": "Thame village is ~10 km downstream of the source lakes; the flood reached it in 22-25 minutes, implying a mean front speed of roughly 7-8 m/s.",
+      "peak_discharge_m3s": 800,
+      "impacts": "135 displaced, 25 homes destroyed, school and health post damaged, losses > US$6.18 million.",
+      "sources": [
+        "Sapkota et al., NHESS 26:4131 (2026)",
+        "ICIMOD Thame Valley GLOF 2024 report"
+      ],
+      "impacted_places": [
+        {
+          "name": "Thame",
+          "along_channel_km": 10,
+          "what_happened": "village struck 22-25 min after the outburst; homes, school and health post damaged, 135 displaced",
+          "aliases": [
+            "थामे"
+          ]
+        }
+      ]
+    },
+    "south_lhonak": {
+      "event": "South Lhonak GLOF, 4 October 2023, Sikkim",
+      "released_volume_m3": {
+        "values": [
+          50000000
+        ],
+        "note": "Order-of-magnitude figure implied by the reported lake drawdown; treat as indicative, not measured.",
+        "sources": [
+          "Scientific Reports (2026), South Lhonak sequence"
+        ]
+      },
+      "debris_transport_km": 169,
+      "debris_transport_note": "Inundation and deposition traced ~169 km down the Teesta.",
+      "critical_asset_reached_km": 60,
+      "critical_asset_note": "Chungthang dam (Teesta III, 1,200 MW) is ~60 km downstream and was destroyed.",
+      "impacts": "24+ dead, 70+ missing, 13 bridges destroyed, 1,200 residences lost, >25,000 people affected.",
+      "sources": [
+        "Science (2023), Sikkim multihazard cascade",
+        "Scientific Reports (2026)"
+      ],
+      "impacted_places": [
+        {
+          "name": "Chungthang",
+          "along_channel_km": 60,
+          "what_happened": "Teesta III dam (1,200 MW) destroyed",
+          "aliases": [
+            "चुङथाङ",
+            "Chungthang"
+          ]
+        }
+      ]
+    },
+    "pyurepu_supraglacial": {
+      "event": "Rasuwa / Lhende Khola GLOF, 8 July 2025",
+      "released_volume_m3": {
+        "values": [],
+        "note": "No published release volume found. Absent rather than guessed."
+      },
+      "critical_asset_reached_km": 36,
+      "critical_asset_note": "The supraglacial source lake sat ~36 km upstream of Rasuwagadhi, where the Friendship Bridge was destroyed and the Timure dry port severely damaged.",
+      "impacts": "9 dead, 19 missing; roads, hydropower, schools, bridges and power supply damaged; losses in the billions of rupees.",
+      "sources": [
+        "NDRRMA Rasuwa Glacial Flood Situation Report",
+        "ICIMOD / Stimson Center transboundary GLOF analysis (2025)"
+      ],
+      "impacted_places": [
+        {
+          "name": "Rasuwagadhi",
+          "along_channel_km": 36,
+          "what_happened": "Friendship Bridge to China destroyed; Timure dry port severely damaged",
+          "aliases": [
+            "रसुवागढी",
+            "Rasuwagadhi",
+            "Rasuwa Gadhi",
+            "热索"
+          ]
+        }
+      ]
+    },
+    "chamoli_ronti": {
+      "event": "Chamoli rock-ice avalanche, 7 February 2021 (NEGATIVE CONTROL - not a GLOF)",
+      "released_volume_m3": {
+        "values": [],
+        "note": "No lake. No release volume applies. Present so the validator must handle a case with no source lake rather than silently skipping it."
+      },
+      "debris_transport_km": 25,
+      "debris_transport_note": "Flow travelled ~25 km down the Ronti Gad and Rishiganga to Tapovan.",
+      "impacts": "200+ dead; Rishiganga and Tapovan hydropower projects destroyed.",
+      "sources": [
+        "Shugar et al., Science 373:300 (2021)"
+      ],
+      "impacted_places": [
+        {
+          "name": "Reni",
+          "along_channel_km": 13,
+          "what_happened": "village and Rishiganga hydropower project destroyed",
+          "aliases": [
+            "Raini",
+            "रैणी"
+          ]
+        },
+        {
+          "name": "Tapovan",
+          "along_channel_km": 25,
+          "what_happened": "Tapovan-Vishnugad project intake and tunnel overwhelmed",
+          "aliases": [
+            "Tapoban",
+            "तपोवन"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -80,7 +80,16 @@
       "window_half_width_km": 3.5,
       "published_reference_area_m2": 1660000,
       "published_reference_date": "2023-10-02",
-      "published_reference_source": "Satellite-measured 1.66 km2 immediately pre-event; independent series give 1.12 km2 (2016) -> 1.53-1.63 km2 (2023). Sattar et al. (Science 2025) state 1.69 +/- 0.03. Verified across three sources; 1.66 adopted as the satellite-measured pre-event figure closest to our scene date."
+      "published_reference_source": "Satellite-measured 1.66 km2 immediately pre-event; independent series give 1.12 km2 (2016) -> 1.53-1.63 km2 (2023). Sattar et al. (Science 2025) state 1.69 +/- 0.03. Verified across three sources; 1.66 adopted as the satellite-measured pre-event figure closest to our scene date.",
+      "observed_detachment": {
+        "debris_volume_m3": 38310000,
+        "calved_ice_volume_m3": 7000000,
+        "mechanism": "landslide from the lateral moraine into the lake, plus calving of the contact glacier; the combined loading collapsed the left lateral moraine and the resulting waves breached the terminal moraine dam",
+        "source": "Sequence of events that led to the South Lhonak lake outburst flood in Sikkim, India, Scientific Reports (2026); consistent with Science 2023 multihazard-cascade analysis of the 4 Oct 2023 Sikkim flood",
+        "why_recorded": "This is the ONLY observed source volume available for any lake in the set, so it is the only external check on the source-to-lake volume ratio - the quantity the headline rank is built on. south_lhonak is a designated calibration lake (evaluation.calibration_lakes), so using it this way does not touch the Thame or Pyurepu holdouts.",
+        "what_it_shows": "Stage 4 estimates 805,200 m3 for this lake: source area 1,610,400 m2 x a 5% release fraction x an assumed 10 m failure depth. The observed debris volume is 47.6x larger, and 2.4x larger than our own upper bound of 16,104,000 m3 for the whole zone failing. The release fraction and the assumed depth are the dominant unknowns, not the source area.",
+        "deliberately_not_retuned": "Raising the release fraction to fit this one observation would be calibrating on n=1, and it would change the alarm status of every lake in the set. Left as measured. Note the ratio scales LINEARLY with the release fraction, so the ranking - which is what the headline claim uses - is unchanged by this constant either way. That invariance is the reason the rank, not the threshold, is the reported result."
+      }
     },
     {
       "id": "pyurepu_supraglacial",
@@ -371,14 +380,14 @@
     },
     {
       "id": "gokyo_dudh_pokhari",
-      "name": "Gokyo Cho / Dudh Pokhari",
+      "name": "Thonak Cho (Gokyo chain)",
       "aliases": [
-        "Gokyo Lake",
-        "Gokyo Tsho"
+        "Thonak Tsho",
+        "Gokyo fourth lake"
       ],
       "lon": 86.6813,
       "lat": 27.9755,
-      "elevation_m": 4700,
+      "elevation_m": 4834,
       "country": "NP",
       "basin": "Dudh Koshi",
       "class": "benign_negative",
@@ -402,9 +411,15 @@
         "inter_scene_spread_m": 291,
         "reason": "The published 'Gokyo Lakes' coordinate names the chain, not Dudh Pokhari specifically. Corrected to the largest lake in the chain, which is the one intended as the benign negative."
       },
-      "published_reference_area_m2": 429000,
+      "published_reference_area_m2": 650700,
       "published_reference_date": "2020-01-01",
-      "published_reference_source": "Gokyo Cho / Dudh Pokhari, 42.9 ha = 0.429 km2 - the main lake of the Gokyo chain, not the 196.2 ha total for all lakes nor the 7,770 ha Ramsar wetland. Verified; the distinction matters because our window contains several lakes of the chain."
+      "published_reference_source": "Thonak Cho, 65.07 ha = 0.6507 km2, elevation 4,834 m, the LARGEST lake of the Gokyo chain (Gokyo Lakes, Wikipedia / Sagarmatha NP Ramsar wetland series). Not Dudh Pokhari's 42.9 ha: that is the third lake, 2.8 km south and ~130 m lower.",
+      "identity_correction": {
+        "was": "Gokyo Cho / Dudh Pokhari, reference 42.9 ha = 0.429 km2",
+        "evidence": "The coordinate_correction below moved the anchor to 'the largest lake in the chain'. The largest lake in the Gokyo chain is Thonak Cho, not Dudh Pokhari - so the name and the reference area stayed with the third lake while the measurement moved to the fourth. Settled independently of area by elevation: Stage 6 reads the lake surface at 4832 m from the DEM; Thonak Cho is 4834 m, Dudh Pokhari 4700-4750 m.",
+        "effect": "delineation ratio 1.46x -> ~0.96x. This is a LABEL fix, not an algorithm improvement: the pixels never changed.",
+        "id_unchanged_because": "the lake_id keys data/pinned/gokyo_dudh_pokhari/ and the committed scene manifest; renaming it would invalidate the pinned dataset for a cosmetic gain."
+      }
     },
     {
       "id": "tilicho",
@@ -428,9 +443,18 @@
       "coordinate_source": "Tilicho Lake, 28 41 30 N 83 51 10 E",
       "coordinate_confidence": "imagery_verified",
       "window_half_width_km": 3.5,
-      "published_reference_area_m2": 4800000,
+      "published_reference_area_m2": 3540000,
       "published_reference_date": "2020-01-01",
-      "published_reference_source": "4.8 km2, 4 km long x 1.2 km wide, elevation 4,919 m. Verified; consistent across sources."
+      "published_reference_source": "3.54 km2 - Monitoring and Preparation of Report of Lakes across the Gandaki Province (Lake and Wetland Conservation Development Authority, 2024), the figure also used in the Landsat/NDWI Gandaki lake study 1988-2018. Chosen over the widely repeated 4.8 km2 because it is the only figure traceable to a stated measurement method; see reference_dispute.",
+      "reference_dispute": {
+        "values_km2": [
+          3.54,
+          4.8
+        ],
+        "adopted": 3.54,
+        "why": "4.8 km2 is repeated across encyclopaedic and trekking sources with no method and no primary measurement behind it. 3.54 km2 comes from a provincial monitoring report and an NDWI Landsat series. Two independent classifiers here agree with the smaller value: our NDWI rule gives 3.46 km2 and ESA's own SCL water class 3.56 km2 on the same scene. The previous label asserted 4.8 km2 was 'verified; consistent across sources', which was simply false - the sources conflict.",
+        "effect": "delineation ratio 0.74x -> ~1.01x. Again a LABEL fix."
+      }
     }
   ],
   "dem_half_width_km": 6.0,

@@ -1,0 +1,4154 @@
+{
+  "elements": [
+    {
+      "id": 1927152464,
+      "lat": 27.381566,
+      "lon": 87.159513,
+      "tags": {
+        "name": "Chewabesi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1927152478,
+      "lat": 27.392688,
+      "lon": 87.141088,
+      "tags": {
+        "name": "Kattike Gath",
+        "place": "hamlet",
+        "population": "200"
+      },
+      "type": "node"
+    },
+    {
+      "id": 1927152481,
+      "lat": 27.409321,
+      "lon": 87.117178,
+      "tags": {
+        "name": "Majhuwagadhi",
+        "place": "hamlet",
+        "population": "300"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837559,
+      "lat": 27.578968,
+      "lon": 87.318365,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837560,
+      "lat": 27.592057,
+      "lon": 87.357618,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837565,
+      "lat": 27.601209,
+      "lon": 87.330821,
+      "tags": {
+        "name": "Simma",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837568,
+      "lat": 27.603197,
+      "lon": 87.363043,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837576,
+      "lat": 27.607226,
+      "lon": 87.34026,
+      "tags": {
+        "name": "Uwa",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494837582,
+      "lat": 27.661747,
+      "lon": 87.356177,
+      "tags": {
+        "name": "Gola",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838029,
+      "lat": 27.687266,
+      "lon": 87.371589,
+      "tags": {
+        "name": "Sibrun",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838299,
+      "lat": 27.611971,
+      "lon": 87.324115,
+      "tags": {
+        "name": "Sisne",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838313,
+      "lat": 27.61439,
+      "lon": 87.331148,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838318,
+      "lat": 27.618806,
+      "lon": 87.328188,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838319,
+      "lat": 27.624956,
+      "lon": 87.347038,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838348,
+      "lat": 27.650954,
+      "lon": 87.322586,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838350,
+      "lat": 27.651529,
+      "lon": 87.344873,
+      "tags": {
+        "name:en": "Mankhim",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838379,
+      "lat": 27.658449,
+      "lon": 87.367202,
+      "tags": {
+        "name": "Tunkhalin",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838380,
+      "lat": 27.659002,
+      "lon": 87.376012,
+      "tags": {
+        "name": "Talkharka",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838425,
+      "lat": 27.736693,
+      "lon": 87.337921,
+      "tags": {
+        "name": "Hatiya",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838615,
+      "lat": 27.682058,
+      "lon": 87.357106,
+      "tags": {
+        "name:en": "Syaksila",
+        "place": "village",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838697,
+      "lat": 27.694129,
+      "lon": 87.363844,
+      "tags": {
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494838708,
+      "lat": 27.707145,
+      "lon": 87.356214,
+      "tags": {
+        "name": "Sempun",
+        "place": "village",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3494839284,
+      "lat": 27.767277,
+      "lon": 87.364643,
+      "tags": {
+        "name": "Hongon",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 3527805762,
+      "lat": 27.33446,
+      "lon": 87.353239,
+      "tags": {
+        "name": "Sunkhani",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4484392174,
+      "lat": 27.436505,
+      "lon": 87.130721,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4484410596,
+      "lat": 27.401322,
+      "lon": 87.103987,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4747340317,
+      "lat": 27.759147,
+      "lon": 87.379222,
+      "tags": {
+        "name": "Gimbar",
+        "place": "hamlet",
+        "source": "bing"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4827120314,
+      "lat": 27.356714,
+      "lon": 87.135946,
+      "tags": {
+        "name": "दिङ्गला",
+        "name:en": "Dingla",
+        "name:ne": "दिङ्गला",
+        "place": "village",
+        "wikidata": "Q15214064",
+        "wikipedia": "en:Dingla"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178623,
+      "lat": 27.584844,
+      "lon": 87.277475,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178657,
+      "lat": 27.58768,
+      "lon": 87.269569,
+      "tags": {
+        "name": "सेडुवा",
+        "name:en": "Seduwa",
+        "name:ne": "सेडुवा",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178680,
+      "lat": 27.589171,
+      "lon": 87.303125,
+      "tags": {
+        "name": "Ulin",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178773,
+      "lat": 27.593599,
+      "lon": 87.298641,
+      "tags": {
+        "name": "Ala",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178839,
+      "lat": 27.596319,
+      "lon": 87.301413,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921178873,
+      "lat": 27.598375,
+      "lon": 87.255339,
+      "tags": {
+        "name": "Nabagau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 4921204811,
+      "lat": 27.579234,
+      "lon": 87.261575,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5059638815,
+      "lat": 27.462552,
+      "lon": 87.229777,
+      "tags": {
+        "name": "कुवापानी",
+        "name:en": "Kuwapani",
+        "name:ne": "कुवापानी",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5059638816,
+      "lat": 27.405795,
+      "lon": 87.193283,
+      "tags": {
+        "name": "Mane Bhanjyang",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5205981273,
+      "lat": 27.556957,
+      "lon": 87.284455,
+      "tags": {
+        "name": "Num",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5205981700,
+      "lat": 27.595602,
+      "lon": 87.198111,
+      "tags": {
+        "name": "Walung",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5206114232,
+      "lat": 27.626491,
+      "lon": 87.232385,
+      "tags": {
+        "name": "टाशिगाउँ",
+        "name:en": "Tashigaon",
+        "name:ne": "टाशिगाउँ",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5236035484,
+      "lat": 27.439852,
+      "lon": 87.165645,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5236064090,
+      "lat": 27.421179,
+      "lon": 87.151139,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 5236192855,
+      "lat": 27.583583,
+      "lon": 87.314283,
+      "tags": {
+        "name": "Hedangna Goley Chaur",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6165572186,
+      "lat": 27.392686,
+      "lon": 87.139147,
+      "tags": {
+        "amenity": "school",
+        "name:en": "Janabikash school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6301604836,
+      "lat": 27.421515,
+      "lon": 87.186397,
+      "tags": {
+        "name": "Gairi Pangma",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6468145287,
+      "lat": 27.613905,
+      "lon": 87.266732,
+      "tags": {
+        "amenity": "school",
+        "name": "Chesha School"
+      },
+      "type": "node"
+    },
+    {
+      "id": 6824365505,
+      "lat": 27.681869,
+      "lon": 87.376847,
+      "tags": {
+        "name": "Rapsa",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8235898774,
+      "lat": 27.541921,
+      "lon": 87.108575,
+      "tags": {
+        "name": "Sintup",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238319772,
+      "lat": 27.560261,
+      "lon": 87.167772,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238319773,
+      "lat": 27.563798,
+      "lon": 87.16532,
+      "tags": {
+        "name": "Maghan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238319774,
+      "lat": 27.56543,
+      "lon": 87.152827,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238479561,
+      "lat": 27.561557,
+      "lon": 87.230372,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238490318,
+      "lat": 27.561313,
+      "lon": 87.208433,
+      "tags": {
+        "name": "Chirkhan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238491015,
+      "lat": 27.583167,
+      "lon": 87.204556,
+      "tags": {
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238491016,
+      "lat": 27.57943,
+      "lon": 87.211898,
+      "tags": {
+        "name": "Mayum",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8238491017,
+      "lat": 27.572488,
+      "lon": 87.219093,
+      "tags": {
+        "name": "Yanluwa",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8245500661,
+      "lat": 27.639872,
+      "lon": 87.275055,
+      "tags": {
+        "name": "Limdumsa",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 8245500662,
+      "lat": 27.637241,
+      "lon": 87.270295,
+      "tags": {
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9689480478,
+      "lat": 27.360786,
+      "lon": 87.264274,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9689480479,
+      "lat": 27.415564,
+      "lon": 87.333186,
+      "tags": {
+        "amenity": "school"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9772748421,
+      "lat": 27.350562,
+      "lon": 87.362437,
+      "tags": {
+        "amenity": "school",
+        "name": "sewalung primary school."
+      },
+      "type": "node"
+    },
+    {
+      "id": 9947536549,
+      "lat": 27.561011,
+      "lon": 87.274823,
+      "tags": {
+        "description": "Closest trailhead for makalu base camp trek",
+        "name": "Chamla Kharka",
+        "place": "hamlet",
+        "tourism": "trailhead"
+      },
+      "type": "node"
+    },
+    {
+      "id": 9947603865,
+      "lat": 27.614059,
+      "lon": 87.266589,
+      "tags": {
+        "ele": "1930",
+        "name": "Chyakse Danda",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129031,
+      "lat": 27.332914,
+      "lon": 87.36859,
+      "tags": {
+        "name": "Tallo Koksa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129032,
+      "lat": 27.342508,
+      "lon": 87.372927,
+      "tags": {
+        "name": "Batase",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129033,
+      "lat": 27.353525,
+      "lon": 87.375825,
+      "tags": {
+        "name": "Machchhebun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129034,
+      "lat": 27.362473,
+      "lon": 87.365783,
+      "tags": {
+        "name": "Yansijun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129035,
+      "lat": 27.360268,
+      "lon": 87.360699,
+      "tags": {
+        "name": "Toribari",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129036,
+      "lat": 27.352377,
+      "lon": 87.361173,
+      "tags": {
+        "name": "Malbase",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129037,
+      "lat": 27.348677,
+      "lon": 87.355888,
+      "tags": {
+        "name": "Pokhran",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129038,
+      "lat": 27.340249,
+      "lon": 87.355523,
+      "tags": {
+        "name": "Bimire",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129039,
+      "lat": 27.332294,
+      "lon": 87.338028,
+      "tags": {
+        "name": "Kalleri",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129040,
+      "lat": 27.344276,
+      "lon": 87.337017,
+      "tags": {
+        "name": "Chunkhurun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129041,
+      "lat": 27.362947,
+      "lon": 87.347705,
+      "tags": {
+        "name": "Deurali",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129042,
+      "lat": 27.356586,
+      "lon": 87.344088,
+      "tags": {
+        "name": "Ahale",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129043,
+      "lat": 27.348787,
+      "lon": 87.310419,
+      "tags": {
+        "name": "Guphatar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129044,
+      "lat": 27.344458,
+      "lon": 87.322164,
+      "tags": {
+        "name": "Chinkhuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129045,
+      "lat": 27.358145,
+      "lon": 87.326729,
+      "tags": {
+        "name": "Sirise",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129047,
+      "lat": 27.370847,
+      "lon": 87.326073,
+      "tags": {
+        "name": "Handuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129048,
+      "lat": 27.372204,
+      "lon": 87.306145,
+      "tags": {
+        "name": "Mathillo Syabun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129049,
+      "lat": 27.369325,
+      "lon": 87.300441,
+      "tags": {
+        "name": "Dharapani",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129050,
+      "lat": 27.375275,
+      "lon": 87.2906,
+      "tags": {
+        "name": "Syabun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129051,
+      "lat": 27.359776,
+      "lon": 87.283794,
+      "tags": {
+        "name": "Sibhuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129052,
+      "lat": 27.36579,
+      "lon": 87.248348,
+      "tags": {
+        "name": "Maksuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129053,
+      "lat": 27.364122,
+      "lon": 87.256922,
+      "tags": {
+        "name": "Arubote",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129054,
+      "lat": 27.35635,
+      "lon": 87.271265,
+      "tags": {
+        "name": "Bhakare",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129055,
+      "lat": 27.361161,
+      "lon": 87.264244,
+      "tags": {
+        "name": "Kamalbote",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10856129056,
+      "lat": 27.337087,
+      "lon": 87.252266,
+      "tags": {
+        "name": "Khaptuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872578,
+      "lat": 27.509622,
+      "lon": 87.251145,
+      "tags": {
+        "name": "Hururu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872584,
+      "lat": 27.469803,
+      "lon": 87.2552,
+      "tags": {
+        "name": "Thotne",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872585,
+      "lat": 27.472172,
+      "lon": 87.252066,
+      "tags": {
+        "name": "Balaute",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872586,
+      "lat": 27.475498,
+      "lon": 87.262709,
+      "tags": {
+        "name": "Kholaghan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872587,
+      "lat": 27.480747,
+      "lon": 87.250845,
+      "tags": {
+        "name": "Kharmile",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872588,
+      "lat": 27.484036,
+      "lon": 87.258699,
+      "tags": {
+        "name": "Dadagau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872589,
+      "lat": 27.486925,
+      "lon": 87.260986,
+      "tags": {
+        "name": "Machhegau",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872590,
+      "lat": 27.493011,
+      "lon": 87.262198,
+      "tags": {
+        "name": "Pakhribas",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872591,
+      "lat": 27.495945,
+      "lon": 87.265597,
+      "tags": {
+        "name": "Dhaje",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872592,
+      "lat": 27.495973,
+      "lon": 87.284158,
+      "tags": {
+        "name": "Manmaya",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872593,
+      "lat": 27.484948,
+      "lon": 87.282735,
+      "tags": {
+        "name": "Thebe",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872594,
+      "lat": 27.480309,
+      "lon": 87.288131,
+      "tags": {
+        "name": "Bagsida",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872595,
+      "lat": 27.474222,
+      "lon": 87.268905,
+      "tags": {
+        "name": "Bansinam",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872596,
+      "lat": 27.468208,
+      "lon": 87.281388,
+      "tags": {
+        "name": "Devitar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872598,
+      "lat": 27.447889,
+      "lon": 87.262453,
+      "tags": {
+        "name": "Loktam",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872599,
+      "lat": 27.440107,
+      "lon": 87.274436,
+      "tags": {
+        "name": "Jyamire",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872600,
+      "lat": 27.425564,
+      "lon": 87.277142,
+      "tags": {
+        "name": "Bitalap Birta",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872601,
+      "lat": 27.423268,
+      "lon": 87.265351,
+      "tags": {
+        "name": "Dhupu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872602,
+      "lat": 27.412953,
+      "lon": 87.267649,
+      "tags": {
+        "name": "Nepalgau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872603,
+      "lat": 27.409418,
+      "lon": 87.263419,
+      "tags": {
+        "name": "Sunkhani",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857872604,
+      "lat": 27.401363,
+      "lon": 87.262854,
+      "tags": {
+        "name": "Tallo Dhupu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881705,
+      "lat": 27.410001,
+      "lon": 87.278764,
+      "tags": {
+        "name": "Dhupu Deurali",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881706,
+      "lat": 27.416963,
+      "lon": 87.283912,
+      "tags": {
+        "name": "Hutkhim",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881707,
+      "lat": 27.423614,
+      "lon": 87.300377,
+      "tags": {
+        "name": "Birauta",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881708,
+      "lat": 27.429415,
+      "lon": 87.299327,
+      "tags": {
+        "name": "Pikhuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881709,
+      "lat": 27.436644,
+      "lon": 87.309198,
+      "tags": {
+        "name": "Khilin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881710,
+      "lat": 27.426038,
+      "lon": 87.308624,
+      "tags": {
+        "name": "Barhabise",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881711,
+      "lat": 27.41432,
+      "lon": 87.310783,
+      "tags": {
+        "name": "Tamin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881712,
+      "lat": 27.413755,
+      "lon": 87.300232,
+      "tags": {
+        "name": "Khokran",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881713,
+      "lat": 27.410274,
+      "lon": 87.299922,
+      "tags": {
+        "name": "Sinchuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881714,
+      "lat": 27.400206,
+      "lon": 87.295967,
+      "tags": {
+        "name": "Okten",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881716,
+      "lat": 27.390715,
+      "lon": 87.304906,
+      "tags": {
+        "name": "Khahare",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881717,
+      "lat": 27.388314,
+      "lon": 87.298883,
+      "tags": {
+        "name": "Chaudandi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881718,
+      "lat": 27.384105,
+      "lon": 87.308524,
+      "tags": {
+        "name": "Chargau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881719,
+      "lat": 27.378364,
+      "lon": 87.322592,
+      "tags": {
+        "name": "Kusuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881720,
+      "lat": 27.379531,
+      "lon": 87.336662,
+      "tags": {
+        "name": "Jaunbari",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881721,
+      "lat": 27.393053,
+      "lon": 87.335121,
+      "tags": {
+        "name": "Limbugau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881722,
+      "lat": 27.399554,
+      "lon": 87.33503,
+      "tags": {
+        "name": "Deurali",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881723,
+      "lat": 27.41791,
+      "lon": 87.350639,
+      "tags": {
+        "name": "Koktasin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881724,
+      "lat": 27.42161,
+      "lon": 87.345901,
+      "tags": {
+        "name": "Saunetar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881725,
+      "lat": 27.415924,
+      "lon": 87.334092,
+      "tags": {
+        "name": "Swachi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881726,
+      "lat": 27.426977,
+      "lon": 87.326811,
+      "tags": {
+        "name": "Hensingau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881727,
+      "lat": 27.427619,
+      "lon": 87.339983,
+      "tags": {
+        "name": "Phaktana",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881736,
+      "lat": 27.433952,
+      "lon": 87.360804,
+      "tags": {
+        "name": "Sibekpa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881738,
+      "lat": 27.440189,
+      "lon": 87.333828,
+      "tags": {
+        "name": "Khewarin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881739,
+      "lat": 27.446385,
+      "lon": 87.345518,
+      "tags": {
+        "name": "Sakhuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881740,
+      "lat": 27.455689,
+      "lon": 87.348434,
+      "tags": {
+        "name": "Noklun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10857881759,
+      "lat": 27.462149,
+      "lon": 87.350038,
+      "tags": {
+        "name": "Sanem",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125628,
+      "lat": 27.537797,
+      "lon": 87.093544,
+      "tags": {
+        "name": "Saptel",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125629,
+      "lat": 27.530179,
+      "lon": 87.099731,
+      "tags": {
+        "name": "Yachamkha",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125630,
+      "lat": 27.514579,
+      "lon": 87.098875,
+      "tags": {
+        "name": "Ghyankharka",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125631,
+      "lat": 27.509805,
+      "lon": 87.103185,
+      "tags": {
+        "name": "Lakuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125632,
+      "lat": 27.501631,
+      "lon": 87.132225,
+      "tags": {
+        "name": "Dibun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125633,
+      "lat": 27.505604,
+      "lon": 87.129527,
+      "tags": {
+        "name": "Benchhun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125634,
+      "lat": 27.502078,
+      "lon": 87.113918,
+      "tags": {
+        "name": "Khnigau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125636,
+      "lat": 27.598793,
+      "lon": 87.131136,
+      "tags": {
+        "name": "Saisimma",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125637,
+      "lat": 27.585085,
+      "lon": 87.151512,
+      "tags": {
+        "name": "Dabdak",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125638,
+      "lat": 27.57163,
+      "lon": 87.261743,
+      "tags": {
+        "name": "Mulgau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125639,
+      "lat": 27.57471,
+      "lon": 87.245796,
+      "tags": {
+        "name": "Narbugau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125640,
+      "lat": 27.591385,
+      "lon": 87.232639,
+      "tags": {
+        "name": "Balakharka",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125641,
+      "lat": 27.629855,
+      "lon": 87.332142,
+      "tags": {
+        "name": "Ekuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125643,
+      "lat": 27.741213,
+      "lon": 87.373155,
+      "tags": {
+        "name": "Khukamu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125644,
+      "lat": 27.752548,
+      "lon": 87.364262,
+      "tags": {
+        "name": "Than Thumbuk",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125645,
+      "lat": 27.779288,
+      "lon": 87.377151,
+      "tags": {
+        "name": "Dangok",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125646,
+      "lat": 27.774326,
+      "lon": 87.368836,
+      "tags": {
+        "name": "Pharanma",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125649,
+      "lat": 27.7157,
+      "lon": 87.380258,
+      "tags": {
+        "name": "Namse",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125651,
+      "lat": 27.690942,
+      "lon": 87.371724,
+      "tags": {
+        "name": "Barun Bajar",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125652,
+      "lat": 27.652699,
+      "lon": 87.366654,
+      "tags": {
+        "name": "Akhtran",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125653,
+      "lat": 27.638266,
+      "lon": 87.365259,
+      "tags": {
+        "name": "Khani",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125654,
+      "lat": 27.629605,
+      "lon": 87.369847,
+      "tags": {
+        "name": "Chyanrin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125655,
+      "lat": 27.614939,
+      "lon": 87.291976,
+      "tags": {
+        "name": "Akchewa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125656,
+      "lat": 27.615805,
+      "lon": 87.272112,
+      "tags": {
+        "name": "Bungim",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125657,
+      "lat": 27.617773,
+      "lon": 87.261724,
+      "tags": {
+        "name": "Robesa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125658,
+      "lat": 27.618702,
+      "lon": 87.256731,
+      "tags": {
+        "name": "Tasigau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125659,
+      "lat": 27.601207,
+      "lon": 87.268905,
+      "tags": {
+        "name": "Subedigau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125660,
+      "lat": 27.598,
+      "lon": 87.276267,
+      "tags": {
+        "name": "Sekdem",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125661,
+      "lat": 27.604961,
+      "lon": 87.311695,
+      "tags": {
+        "name": "Bakle",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125662,
+      "lat": 27.613827,
+      "lon": 87.343796,
+      "tags": {
+        "name": "Pathibhara Dada",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125663,
+      "lat": 27.563529,
+      "lon": 87.288022,
+      "tags": {
+        "name": "Pheksinda",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125664,
+      "lat": 27.56804,
+      "lon": 87.287657,
+      "tags": {
+        "name": "Lumbangu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125665,
+      "lat": 27.553889,
+      "lon": 87.299703,
+      "tags": {
+        "name": "Chiuribas",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125666,
+      "lat": 27.567238,
+      "lon": 87.308077,
+      "tags": {
+        "name": "Gadhidada",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125667,
+      "lat": 27.562062,
+      "lon": 87.309316,
+      "tags": {
+        "name": "Chhirinte",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125668,
+      "lat": 27.566208,
+      "lon": 87.329736,
+      "tags": {
+        "name": "Pepuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125669,
+      "lat": 27.549501,
+      "lon": 87.346124,
+      "tags": {
+        "name": "Saban",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125670,
+      "lat": 27.546271,
+      "lon": 87.311786,
+      "tags": {
+        "name": "Phumran",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125671,
+      "lat": 27.535737,
+      "lon": 87.292423,
+      "tags": {
+        "name": "Khoktak",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125672,
+      "lat": 27.535291,
+      "lon": 87.273278,
+      "tags": {
+        "name": "Mudhe",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125673,
+      "lat": 27.547246,
+      "lon": 87.264713,
+      "tags": {
+        "name": "Amrah",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125674,
+      "lat": 27.554545,
+      "lon": 87.234917,
+      "tags": {
+        "name": "Walun",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125675,
+      "lat": 27.556586,
+      "lon": 87.222679,
+      "tags": {
+        "name": "Maksuwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125676,
+      "lat": 27.538444,
+      "lon": 87.212574,
+      "tags": {
+        "name": "Bastala",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125677,
+      "lat": 27.536366,
+      "lon": 87.219189,
+      "tags": {
+        "name": "Chhoyan",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125678,
+      "lat": 27.533523,
+      "lon": 87.226698,
+      "tags": {
+        "name": "Barandak",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125679,
+      "lat": 27.531751,
+      "lon": 87.19338,
+      "tags": {
+        "name": "Dhargau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125680,
+      "lat": 27.522179,
+      "lon": 87.184058,
+      "tags": {
+        "name": "Walen",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125681,
+      "lat": 27.506871,
+      "lon": 87.151287,
+      "tags": {
+        "name": "Yondep",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125682,
+      "lat": 27.500137,
+      "lon": 87.170404,
+      "tags": {
+        "name": "Yaphu Mulau",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125683,
+      "lat": 27.508675,
+      "lon": 87.202378,
+      "tags": {
+        "name": "Tomuwabesi",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125684,
+      "lat": 27.501809,
+      "lon": 87.214611,
+      "tags": {
+        "name": "Didin",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125685,
+      "lat": 27.506743,
+      "lon": 87.213048,
+      "tags": {
+        "name": "Chipduwa",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125699,
+      "lat": 27.510042,
+      "lon": 87.225987,
+      "tags": {
+        "name": "Kharsu",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 10858125700,
+      "lat": 27.517705,
+      "lon": 87.239163,
+      "tags": {
+        "name": "Phakadam",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975734765,
+      "lat": 27.366282,
+      "lon": 87.246447,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Devkota Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975737719,
+      "lat": 27.340374,
+      "lon": 87.24104,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sagarmatha Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975743463,
+      "lat": 27.356336,
+      "lon": 87.296585,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jambawati Secondary Secondary",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975744612,
+      "lat": 27.33385,
+      "lon": 87.221922,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Janakalyan Basic School, Danabari",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975757797,
+      "lat": 27.361208,
+      "lon": 87.264611,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Aitabare Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975790408,
+      "lat": 27.33884,
+      "lon": 87.280082,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Janakalyan Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11975792341,
+      "lat": 27.341639,
+      "lon": 87.295672,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Aitabare Basic School, Bijuwani Danda",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977137264,
+      "lat": 27.332379,
+      "lon": 87.352137,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Suryodaya Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977326695,
+      "lat": 27.357189,
+      "lon": 87.330644,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shiva Basic School Nangidanda",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977326696,
+      "lat": 27.340591,
+      "lon": 87.340313,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Singheshwori Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977326997,
+      "lat": 27.36234,
+      "lon": 87.362861,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Kalika Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977326998,
+      "lat": 27.402659,
+      "lon": 87.287082,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Janakalyan Basic School, Nipane",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977422990,
+      "lat": 27.338706,
+      "lon": 87.307642,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Wana Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977423467,
+      "lat": 27.366508,
+      "lon": 87.359153,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Panchakanya Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977424643,
+      "lat": 27.376414,
+      "lon": 87.326479,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shiwodaya Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977425855,
+      "lat": 27.390387,
+      "lon": 87.334209,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Setikanya Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977426743,
+      "lat": 27.331191,
+      "lon": 87.333434,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Hewa Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977426746,
+      "lat": 27.385658,
+      "lon": 87.279156,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Sabha Primary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977428445,
+      "lat": 27.382132,
+      "lon": 87.289806,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shiva Secondary School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977429542,
+      "lat": 27.341192,
+      "lon": 87.314073,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Singhadevi Basic School, Mulabari",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977429543,
+      "lat": 27.359376,
+      "lon": 87.315058,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Bindabasini Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977433943,
+      "lat": 27.337288,
+      "lon": 87.307969,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Wana Progress English Boarding School",
+        "operator:type": "private"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977433944,
+      "lat": 27.351276,
+      "lon": 87.344495,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Siddhadevi Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977434961,
+      "lat": 27.34772,
+      "lon": 87.352204,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Jaljala Health Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977435021,
+      "lat": 27.388719,
+      "lon": 87.302253,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Chaudandi Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977437548,
+      "lat": 27.373585,
+      "lon": 87.382108,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Margeshwari Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977438273,
+      "lat": 27.332356,
+      "lon": 87.309578,
+      "tags": {
+        "amenity": "school",
+        "name": "Jaljala Secondary School, Bihibare",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977443217,
+      "lat": 27.341487,
+      "lon": 87.357557,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Durgeshwari Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977443722,
+      "lat": 27.400075,
+      "lon": 87.296027,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jalpadevi Basic School, Okten",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977444398,
+      "lat": 27.370744,
+      "lon": 87.33816,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Jalkanya Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977444399,
+      "lat": 27.383407,
+      "lon": 87.307502,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Singhadevi Basic School, Karkidanda",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977453102,
+      "lat": 27.379118,
+      "lon": 87.291039,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Gyanodaya Boarding School",
+        "operator:type": "private"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977454781,
+      "lat": 27.373548,
+      "lon": 87.300858,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Nageshwori Basic School",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977456319,
+      "lat": 27.377298,
+      "lon": 87.293544,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Shiva Secondary School, Syabun",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977458466,
+      "lat": 27.381293,
+      "lon": 87.32113,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Basic Health Care Center, Salghari",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977459516,
+      "lat": 27.333189,
+      "lon": 87.221115,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Urban Health Service Center, Hokse",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977464936,
+      "lat": 27.332642,
+      "lon": 87.316198,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Basic Health Service Center, Samgaun",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977465176,
+      "lat": 27.380216,
+      "lon": 87.332842,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Urban Health Center, Sampatti",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977468057,
+      "lat": 27.337179,
+      "lon": 87.292592,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Wana Basic Health Service Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977476280,
+      "lat": 27.376662,
+      "lon": 87.294318,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Syabun Basic Health Center",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977477176,
+      "lat": 27.392033,
+      "lon": 87.299573,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Urban Health Center, Buddhachowk",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977479321,
+      "lat": 27.35782,
+      "lon": 87.326684,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Urban Health Center, Nangidanda",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 11977480866,
+      "lat": 27.361663,
+      "lon": 87.24516,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Urban Health Center, Maksuwa",
+        "operator": "government"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13136677420,
+      "lat": 27.354691,
+      "lon": 87.13765,
+      "tags": {
+        "name": "षडानन्द",
+        "name:en": "Shadananda",
+        "name:fa": "شَداناند",
+        "name:ne": "षडानन्द",
+        "name:ur": "شڈانند",
+        "place": "town"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626248,
+      "lat": 27.763852,
+      "lon": 87.363287,
+      "tags": {
+        "name": "भोटखोला",
+        "name:en": "Bhotkhola",
+        "name:fa": "بوته‌کولا",
+        "name:ne": "भोटखोला",
+        "name:ur": "بھوٹہ کھولا",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626249,
+      "lat": 27.553181,
+      "lon": 87.282948,
+      "tags": {
+        "name": "मकालु",
+        "name:en": "Makalu",
+        "name:fa": "مَکالو",
+        "name:ne": "मकालु",
+        "name:ur": "مَکالو",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626250,
+      "lat": 27.484327,
+      "lon": 87.101477,
+      "tags": {
+        "name": "सिलीचोङ",
+        "name:en": "Silichong",
+        "name:fa": "سیلیچونگ",
+        "name:ne": "सिलीचोङ",
+        "name:ur": "سلیچونگ",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626251,
+      "lat": 27.472118,
+      "lon": 87.206547,
+      "tags": {
+        "name": "चिचिला",
+        "name:en": "Chichila",
+        "name:fa": "چیچیلا",
+        "name:ne": "चिचिला",
+        "name:ur": "چچلا",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626252,
+      "lat": 27.422475,
+      "lon": 87.307864,
+      "tags": {
+        "name": "सभापोखरी",
+        "name:en": "Sabhapokhari",
+        "name:fa": "ساباپوکاری",
+        "name:ne": "सभापोखरी",
+        "name:ur": "سبھا پوکھری",
+        "place": "village"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626253,
+      "lat": 27.336814,
+      "lon": 87.30671,
+      "tags": {
+        "name": "पाँचखपन",
+        "name:en": "Panchakhapan",
+        "name:fa": "پانچ‌کَپَن",
+        "name:ne": "पाँचखपन",
+        "name:ur": "پانچ کھپن",
+        "place": "town"
+      },
+      "type": "node"
+    },
+    {
+      "id": 13151626256,
+      "lat": 27.374772,
+      "lon": 87.209142,
+      "tags": {
+        "name": "खाँदबारी",
+        "name:en": "Khandbari",
+        "name:fa": "کاندباری",
+        "name:ne": "खाँदबारी",
+        "name:ur": "کھاندباری",
+        "place": "town"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.665394,
+        "lon": 87.357911
+      },
+      "id": 342489829,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "simple-suspension",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.743015,
+        "lon": 87.334558
+      },
+      "id": 342489830,
+      "tags": {
+        "FIXME": "type of Highway",
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.660127,
+        "lon": 87.355856
+      },
+      "id": 342489831,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.64058,
+        "lon": 87.348402
+      },
+      "id": 342489832,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.693472,
+        "lon": 87.363309
+      },
+      "id": 342489833,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "NH08",
+        "ref:old": "F53",
+        "source": "bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.334369,
+        "lon": 87.204638
+      },
+      "id": 381190985,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.435715,
+        "lon": 87.130866
+      },
+      "id": 451613036,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.746339,
+        "lon": 87.369631
+      },
+      "id": 481836719,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.70677,
+        "lon": 87.370889
+      },
+      "id": 481836720,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.669527,
+        "lon": 87.362856
+      },
+      "id": 481836723,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.676424,
+        "lon": 87.36409
+      },
+      "id": 481836726,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.604873,
+        "lon": 87.352237
+      },
+      "id": 481836729,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.601117,
+        "lon": 87.346995
+      },
+      "id": 481836730,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.598579,
+        "lon": 87.345951
+      },
+      "id": 481836731,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.577721,
+        "lon": 87.328579
+      },
+      "id": 481836732,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.559173,
+        "lon": 87.313529
+      },
+      "id": 481836733,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.55457,
+        "lon": 87.300068
+      },
+      "id": 481836734,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.574201,
+        "lon": 87.298962
+      },
+      "id": 481836735,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.56426,
+        "lon": 87.272815
+      },
+      "id": 481836736,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.565065,
+        "lon": 87.253116
+      },
+      "id": 481836737,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.542721,
+        "lon": 87.230232
+      },
+      "id": 481836738,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.531573,
+        "lon": 87.230645
+      },
+      "id": 481836739,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.408925,
+        "lon": 87.129893
+      },
+      "id": 481836755,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.391598,
+        "lon": 87.133385
+      },
+      "id": 482574179,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Majhuwagadhi-Tumlingtar",
+        "sac_scale": "hiking",
+        "surface": "unpaved",
+        "trail_visibility": "good"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.750236,
+        "lon": 87.346008
+      },
+      "id": 501186950,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.768094,
+        "lon": 87.368579
+      },
+      "id": 501186951,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.605786,
+        "lon": 87.281344
+      },
+      "id": 501255905,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.485564,
+        "lon": 87.169959
+      },
+      "id": 501277403,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.513817,
+        "lon": 87.19151
+      },
+      "id": 501277404,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.483715,
+        "lon": 87.160916
+      },
+      "id": 501277405,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.449483,
+        "lon": 87.138539
+      },
+      "id": 501315153,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.474885,
+        "lon": 87.151469
+      },
+      "id": 501315154,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.417027,
+        "lon": 87.123511
+      },
+      "id": 501321006,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.515954,
+        "lon": 87.233526
+      },
+      "id": 537651077,
+      "tags": {
+        "bridge": "yes",
+        "highway": "footway",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791743,
+        "lon": 87.150363
+      },
+      "id": 537686645,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.624488,
+        "lon": 87.234995
+      },
+      "id": 537686678,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "length": "72",
+        "name": "Adheri Bridge",
+        "width": "1.06"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.758224,
+        "lon": 87.165654
+      },
+      "id": 537728095,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "level": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.428279,
+        "lon": 87.343453
+      },
+      "id": 608877890,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.466041,
+        "lon": 87.098634
+      },
+      "id": 617368846,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.464151,
+        "lon": 87.101888
+      },
+      "id": 617368848,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.461804,
+        "lon": 87.10964
+      },
+      "id": 617368849,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.452886,
+        "lon": 87.135422
+      },
+      "id": 617368852,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.516155,
+        "lon": 87.094052
+      },
+      "id": 617368862,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.525145,
+        "lon": 87.089076
+      },
+      "id": 617368864,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.52421,
+        "lon": 87.107575
+      },
+      "id": 617368866,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.450276,
+        "lon": 87.156889
+      },
+      "id": 625246332,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.453076,
+        "lon": 87.153165
+      },
+      "id": 625246336,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.406359,
+        "lon": 87.193505
+      },
+      "id": 745638332,
+      "tags": {
+        "addr:city": "Mane Bhanjyang",
+        "addr:street": "manebhangyang",
+        "amenity": "school",
+        "architect": "concert",
+        "name": "mahendra higher secondary school",
+        "operator": "mahendra school commuintee",
+        "roof:colour": "yellow",
+        "smoking": "no"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.537936,
+        "lon": 87.302831
+      },
+      "id": 775782533,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.767178,
+        "lon": 87.366465
+      },
+      "id": 802146116,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.77681,
+        "lon": 87.370485
+      },
+      "id": 802146118,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.775884,
+        "lon": 87.368084
+      },
+      "id": 802146125,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.767035,
+        "lon": 87.364617
+      },
+      "id": 802146398,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.766472,
+        "lon": 87.370377
+      },
+      "id": 802146401,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.393362,
+        "lon": 87.142422
+      },
+      "id": 808490826,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.420052,
+        "lon": 87.30286
+      },
+      "id": 868915394,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "lanes": "1",
+        "layer": "1",
+        "maxspeed": "20",
+        "name": "Khandbari-Ramche-Lebrang-Dake-Bahrabise",
+        "project:url": "https://github.com/MeghaStha/ILO-training",
+        "ref": "09DR009",
+        "source": "ILO transportation mapping",
+        "start_chainage": "0+000",
+        "surface": "earth",
+        "width": "3",
+        "width:ROW": "10",
+        "width:carriage": "4",
+        "width:shoulder": "0.5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.631229,
+        "lon": 87.224389
+      },
+      "id": 886742679,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "GPS-Track, Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.626657,
+        "lon": 87.354378
+      },
+      "id": 903389376,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.640425,
+        "lon": 87.349458
+      },
+      "id": 903389379,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "ref": "NH08",
+        "ref:old": "F53"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.623787,
+        "lon": 87.353017
+      },
+      "id": 903389389,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.770934,
+        "lon": 87.351254
+      },
+      "id": 903389391,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.333562,
+        "lon": 87.286991
+      },
+      "id": 915698573,
+      "tags": {
+        "amenity": "school",
+        "name": "Shree Saraswati Basic School, Sakhuwa",
+        "operator": "government"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.426591,
+        "lon": 87.307743
+      },
+      "id": 954867423,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.428245,
+        "lon": 87.306577
+      },
+      "id": 954867424,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.343868,
+        "lon": 87.367442
+      },
+      "id": 960802051,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.338504,
+        "lon": 87.36655
+      },
+      "id": 960808715,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.334977,
+        "lon": 87.374764
+      },
+      "id": 960808754,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.379091,
+        "lon": 87.236707
+      },
+      "id": 993834275,
+      "tags": {
+        "access_status": "fair_weather",
+        "bridge": "yes",
+        "condition": "poor",
+        "highway": "tertiary",
+        "lanes": "1",
+        "layer": "1",
+        "maxspeed": "20",
+        "name": "Khandbari-Ramche-Lebrang-Dake-Bahrabise",
+        "project:url": "https://github.com/MeghaStha/ILO-training",
+        "ref": "09DR009",
+        "source": "ILO transportation mapping",
+        "start_chainage": "0+000",
+        "surface": "earth",
+        "width": "3",
+        "width:ROW": "10",
+        "width:carriage": "4",
+        "width:shoulder": "0.5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.378459,
+        "lon": 87.237276
+      },
+      "id": 993834625,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.395764,
+        "lon": 87.223827
+      },
+      "id": 995065620,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.347641,
+        "lon": 87.192121
+      },
+      "id": 995106648,
+      "tags": {
+        "bridge": "yes",
+        "bridge:structure": "suspension",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.794621,
+        "lon": 87.134606
+      },
+      "id": 1091574377,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "tourism": "attraction"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.772082,
+        "lon": 87.154417
+      },
+      "id": 1091931955,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.775888,
+        "lon": 87.155441
+      },
+      "id": 1091931966,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.742433,
+        "lon": 87.183068
+      },
+      "id": 1092199784,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Phematang Yangle Kharka New Trail"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.745141,
+        "lon": 87.178836
+      },
+      "id": 1092199786,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "name": "Phematang Yangle Kharka New Trail"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.692463,
+        "lon": 87.205264
+      },
+      "id": 1092458591,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "GPS-Track, Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.631139,
+        "lon": 87.223651
+      },
+      "id": 1093306114,
+      "tags": {
+        "bridge": "yes",
+        "description": "Alternate trail bypassing landslide affected section off main trail",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791805,
+        "lon": 87.148967
+      },
+      "id": 1093328992,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.792377,
+        "lon": 87.145763
+      },
+      "id": 1093328994,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.791678,
+        "lon": 87.151152
+      },
+      "id": 1093328996,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.793078,
+        "lon": 87.144531
+      },
+      "id": 1093328998,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.792978,
+        "lon": 87.143327
+      },
+      "id": 1093329000,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.802718,
+        "lon": 87.109163
+      },
+      "id": 1095353595,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.78236,
+        "lon": 87.157355
+      },
+      "id": 1095370016,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.639333,
+        "lon": 87.219494
+      },
+      "id": 1099308520,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "GPS-Track, Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.591357,
+        "lon": 87.267208
+      },
+      "id": 1101011413,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "length": "45.16",
+        "name": "Sang Khola Bridge",
+        "width": "1.06"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.639811,
+        "lon": 87.219282
+      },
+      "id": 1109908276,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "GPS-Track, Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.737458,
+        "lon": 87.188038
+      },
+      "id": 1109910703,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "source": "GPS-Track, Bing"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.550995,
+        "lon": 87.249618
+      },
+      "id": 1190577428,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.522331,
+        "lon": 87.33964
+      },
+      "id": 1196331100,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.518685,
+        "lon": 87.348233
+      },
+      "id": 1196333208,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.7584,
+        "lon": 87.165916
+      },
+      "id": 1210016464,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.694381,
+        "lon": 87.356052
+      },
+      "id": 1211581069,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.536562,
+        "lon": 87.285436
+      },
+      "id": 1236281925,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.530219,
+        "lon": 87.283262
+      },
+      "id": 1236283875,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.478751,
+        "lon": 87.215653
+      },
+      "id": 1244573590,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.430322,
+        "lon": 87.291185
+      },
+      "id": 1247748413,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.438888,
+        "lon": 87.324916
+      },
+      "id": 1248252686,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.433184,
+        "lon": 87.372137
+      },
+      "id": 1248262939,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.414673,
+        "lon": 87.296008
+      },
+      "id": 1249902558,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.410954,
+        "lon": 87.289404
+      },
+      "id": 1251167300,
+      "tags": {
+        "access_status": "fair_weather",
+        "bridge": "yes",
+        "condition": "poor",
+        "highway": "tertiary",
+        "lanes": "1",
+        "layer": "1",
+        "maxspeed": "20",
+        "name": "Khandbari-Ramche-Lebrang-Dake-Bahrabise",
+        "project:url": "https://github.com/MeghaStha/ILO-training",
+        "ref": "09DR009",
+        "source": "ILO transportation mapping",
+        "start_chainage": "0+000",
+        "surface": "earth",
+        "width": "3",
+        "width:ROW": "10",
+        "width:carriage": "4",
+        "width:shoulder": "0.5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.403994,
+        "lon": 87.285433
+      },
+      "id": 1251172499,
+      "tags": {
+        "waterway": "weir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.404091,
+        "lon": 87.285189
+      },
+      "id": 1251172502,
+      "tags": {
+        "waterway": "weir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.404014,
+        "lon": 87.285237
+      },
+      "id": 1251172503,
+      "tags": {
+        "waterway": "weir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.401837,
+        "lon": 87.283165
+      },
+      "id": 1251272876,
+      "tags": {
+        "waterway": "weir"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.389146,
+        "lon": 87.273402
+      },
+      "id": 1271510640,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.385306,
+        "lon": 87.297935
+      },
+      "id": 1271959437,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.382587,
+        "lon": 87.3281
+      },
+      "id": 1272052348,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.358663,
+        "lon": 87.237926
+      },
+      "id": 1273083685,
+      "tags": {
+        "access_status": "fair_weather",
+        "bridge": "yes",
+        "condition": "POOR",
+        "highway": "tertiary",
+        "lanes": "1",
+        "layer": "1",
+        "maxspeed": "20",
+        "name": "Khadbari-Badreni-Lingling-Chainpur",
+        "project:url": "https://github.com/MeghaStha/ILO-training",
+        "ref": "09DR010",
+        "source": "ILO transportation mapping",
+        "start_chainage": "0+000",
+        "surface": "earth",
+        "width": "3.5",
+        "width:ROW": "15",
+        "width:carriage": "4.5",
+        "width:shoulder": "0.5"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.36023,
+        "lon": 87.238934
+      },
+      "id": 1273083687,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "surface": "ground"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.354582,
+        "lon": 87.240808
+      },
+      "id": 1273086144,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.465242,
+        "lon": 87.210956
+      },
+      "id": 1390125942,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.527331,
+        "lon": 87.384156
+      },
+      "id": 1391632111,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.569841,
+        "lon": 87.282298
+      },
+      "id": 1446305688,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.526837,
+        "lon": 87.235572
+      },
+      "id": 1446305708,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.540585,
+        "lon": 87.248365
+      },
+      "id": 1446305710,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.550375,
+        "lon": 87.24941
+      },
+      "id": 1446343261,
+      "tags": {
+        "bridge": "yes",
+        "highway": "track",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.479474,
+        "lon": 87.213802
+      },
+      "id": 1449278584,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-30T19:58:50Z"
+  },
+  "version": 0.6
+}

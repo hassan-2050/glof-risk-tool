@@ -1,0 +1,693 @@
+{
+  "elements": [
+    {
+      "id": 9978572311,
+      "lat": 27.901491,
+      "lon": 88.544681,
+      "tags": {
+        "alt_name": "Bamzay",
+        "name": "Bamzey",
+        "place": "hamlet"
+      },
+      "type": "node"
+    },
+    {
+      "id": 12258040622,
+      "lat": 27.892499,
+      "lon": 88.535963,
+      "tags": {
+        "alt_name": "Tanggu;Thanggu",
+        "name": "Thangu",
+        "name:en": "Thangu Valley",
+        "name:zh": "唐古",
+        "place": "village",
+        "source": "https://www.himalaya-info.org/images/Images%20Landkarten/Map%20Sikkim.jpg",
+        "wikidata": "Q60768408",
+        "wikipedia": "en:Thangu Valley"
+      },
+      "type": "node"
+    },
+    {
+      "center": {
+        "lat": 27.757028,
+        "lon": 88.538646
+      },
+      "id": 461631718,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.761342,
+        "lon": 88.529276
+      },
+      "id": 598482939,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.835264,
+        "lon": 88.548829
+      },
+      "id": 598490399,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.830359,
+        "lon": 88.550791
+      },
+      "id": 598490410,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.831866,
+        "lon": 88.549617
+      },
+      "id": 598490412,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.832396,
+        "lon": 88.549058
+      },
+      "id": 598490413,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.832001,
+        "lon": 88.550034
+      },
+      "id": 598490415,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.818977,
+        "lon": 88.551174
+      },
+      "id": 598490427,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.846991,
+        "lon": 88.549797
+      },
+      "id": 598497138,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.839496,
+        "lon": 88.5463
+      },
+      "id": 598497141,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.842144,
+        "lon": 88.549003
+      },
+      "id": 598497143,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.820268,
+        "lon": 88.549337
+      },
+      "id": 598497150,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899734,
+        "lon": 88.548643
+      },
+      "id": 598514376,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.900378,
+        "lon": 88.548523
+      },
+      "id": 598514377,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.895485,
+        "lon": 88.536854
+      },
+      "id": 598514381,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.907723,
+        "lon": 88.525898
+      },
+      "id": 598514383,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.897531,
+        "lon": 88.542602
+      },
+      "id": 598514384,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.901967,
+        "lon": 88.544054
+      },
+      "id": 598514386,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.918822,
+        "lon": 88.571033
+      },
+      "id": 598514388,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.919285,
+        "lon": 88.571643
+      },
+      "id": 598514389,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.889308,
+        "lon": 88.535119
+      },
+      "id": 598514405,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.880455,
+        "lon": 88.535971
+      },
+      "id": 598514407,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.88238,
+        "lon": 88.536738
+      },
+      "id": 598514409,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.885392,
+        "lon": 88.536552
+      },
+      "id": 598514411,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.869699,
+        "lon": 88.5443
+      },
+      "id": 598514425,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.865322,
+        "lon": 88.547512
+      },
+      "id": 598514431,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.899323,
+        "lon": 88.532432
+      },
+      "id": 599016171,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.897909,
+        "lon": 88.53229
+      },
+      "id": 599016174,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.797277,
+        "lon": 88.554592
+      },
+      "id": 1153255964,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.928075,
+        "lon": 88.430045
+      },
+      "id": 1188230917,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.923356,
+        "lon": 88.529847
+      },
+      "id": 1214346400,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.923521,
+        "lon": 88.529735
+      },
+      "id": 1214346402,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.915634,
+        "lon": 88.527964
+      },
+      "id": 1214346403,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.947191,
+        "lon": 88.442795
+      },
+      "id": 1214352113,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "source": "maxar",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.845619,
+        "lon": 88.549816
+      },
+      "id": 1214479001,
+      "tags": {
+        "building": "roof",
+        "generator:method": "photovoltaic",
+        "generator:output:electricity": "yes",
+        "generator:source": "solar",
+        "generator:type": "solar_photovoltaic_panel",
+        "power": "generator"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.851667,
+        "lon": 88.548821
+      },
+      "id": 1214485784,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.871782,
+        "lon": 88.542942
+      },
+      "id": 1214494369,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.783486,
+        "lon": 88.491756
+      },
+      "id": 1214532486,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "GPS"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.880699,
+        "lon": 88.376242
+      },
+      "id": 1214539851,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.880454,
+        "lon": 88.376565
+      },
+      "id": 1214539853,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "surface": "unpaved"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.773964,
+        "lon": 88.453434
+      },
+      "id": 1214545425,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1",
+        "sac_scale": "mountain_hiking",
+        "source": "GPS"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.909065,
+        "lon": 88.419622
+      },
+      "id": 1219723418,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1",
+        "source": "maxar"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.790295,
+        "lon": 88.549592
+      },
+      "id": 1220451308,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.787523,
+        "lon": 88.548622
+      },
+      "id": 1220451310,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.777176,
+        "lon": 88.545228
+      },
+      "id": 1220451312,
+      "tags": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "North Sikkim Highway"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.900594,
+        "lon": 88.544277
+      },
+      "id": 1220963796,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.900406,
+        "lon": 88.54429
+      },
+      "id": 1220963797,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.897092,
+        "lon": 88.538905
+      },
+      "id": 1220963806,
+      "tags": {
+        "bridge": "yes",
+        "highway": "unclassified",
+        "layer": "1"
+      },
+      "type": "way"
+    },
+    {
+      "center": {
+        "lat": 27.862686,
+        "lon": 88.347706
+      },
+      "id": 1333442744,
+      "tags": {
+        "bridge": "yes",
+        "highway": "path",
+        "layer": "1"
+      },
+      "type": "way"
+    }
+  ],
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp_osm_base": "2026-08-30T19:18:11Z"
+  },
+  "version": 0.6
+}
