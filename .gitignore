@@ -20,3 +20,8 @@ data/scratch/
 *.key
 *.pem
 credentials.json
+
+# --- agent trace export: regenerate with tools/export_agent_traces.py ---
+# The 19 MB raw transcript is a build artefact, not source. The exporter is
+# committed; its output ships in the submission archive, not in git.
+submission/agent_traces/raw/
