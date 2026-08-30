@@ -418,6 +418,7 @@ function downstreamLayer(ds, P) {
   const setts = named.filter(a => a.class === "settlement" && a.lon != null);
   const step = Math.max(1, Math.ceil(setts.length / 5));
   const labelled = new Set();
+  const labelledKm = [];      // along-channel positions already carrying a label
   const chan = dsChannel(ds);
   const places = ((ds.validation || {}).places || [])
     .filter(q => q.found_in_corridor && q.predicted_km != null);
@@ -425,6 +426,7 @@ function downstreamLayer(ds, P) {
     if (!chan) break;
     const [lon, lat] = alongPolyline(chan, q.predicted_km);
     labelled.add(q.place.toLowerCase());
+    labelledKm.push(q.predicted_km);
     parts.push(`<circle class="vplace" cx="${P.x(lon).toFixed(1)}"
         cy="${P.y(lat).toFixed(1)}" r="9"><title>${q.place}: ${q.what_happened}.
         Observed at ${q.observed_km} km; corridor puts it at ${q.predicted_km} km.</title></circle>
@@ -433,6 +435,11 @@ function downstreamLayer(ds, P) {
   }
   setts.forEach((a, i) => {
     if (i % step || labelled.has(a.name.toLowerCase())) return;
+    // Name matching is not enough: OSM tags Rasuwagadhi as रसुवागढी, so the
+    // settlement label and the validation label are different strings at the
+    // same place and drew on top of each other - illegibly, on the single
+    // most important label in the view. Skip by POSITION as well.
+    if (labelledKm.some(km => Math.abs(km - a.along_channel_km) < 1.5)) return;
     parts.push(`<text class="assetlab" x="${(P.x(a.lon) + 8).toFixed(1)}"
       y="${(P.y(a.lat) - 6).toFixed(1)}">${a.name} · ${a.along_channel_km} km</text>`);
   });
