@@ -164,6 +164,10 @@ proves it.
 5. **The trajectory log is derived from artefacts, not narrated alongside
    them** — so it structurally cannot claim something the outputs do not show.
 
+`outputs/tools/agents.html` draws this: the flow, colour-separated by whether
+a stage's output is deterministic or model-generated, with each choice called
+out where it happens. Built by `make map`, opens from disk.
+
 **The evidence these choices helped** is the ablation, not an assertion: same
 ten scenarios, same hand-labelled key, single-prompt baseline versus this
 architecture — contradiction recall **0.0 → 0.95**, hallucination rate

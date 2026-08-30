@@ -25,7 +25,7 @@ switch ($Target) {
     "clean"              { Remove-Item -Recurse -Force outputs, .determinism_check -ErrorAction SilentlyContinue; New-Item -ItemType Directory outputs | Out-Null }
     "docker-build"       { docker build -t glof-risk-tool:latest . }
     "docker-reproduce"   { docker run --rm --network none glof-risk-tool:latest make reproduce }
-    "map"                { & $py tools/build_map_data.py; if ($?) { & $py tools/build_map_page.py } }
+    "map"                { & $py tools/build_map_data.py; if ($?) { & $py tools/build_map_page.py }; if ($?) { & $py tools/build_agent_diagram.py } }
     "check-map"          { node tools/check_map_page.mjs }
     "validate-routing"   { & $py tools/validate_routing.py }
     "fetch-downstream"   { & $py -m src.data.fetch_downstream }
