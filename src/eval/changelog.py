@@ -143,7 +143,7 @@ def build(outputs, cfg) -> str:
            "Hazard without consequence is a geometry exercise.",
            "OSM assets and WorldPop over the routed corridor, with "
            "hydropower reported as its own field.",
-           f"{expo.get('lakes', 0)} lakes assessed; 2 buildings and no population "
+           f"{len(expo.get('lakes') or [])} lakes assessed; 2 buildings and no population "
            f"in total. NOT a null result to hide: WorldPop constrained assigns "
            f"population only where buildings exist, and the corridors are "
            f"truncated by a 6 km window while the Thame flood ran 80 km. Every "
@@ -299,6 +299,96 @@ def build(outputs, cfg) -> str:
            "figure can disagree with the run that produced it, because none of "
            "them is typed by hand.",
            "docs/RESULTS.md, docs/LIMITS.md, docs/ETHICS.md")
+
+    # ---- post-pipeline tools (make scenarios / make map) -------------------
+    # Outside `reproduce` on purpose - they need pinned DEMs and OSM extracts
+    # fetched once - but the same rule applies: figures are read from their
+    # artefacts at generation time, never typed.
+    tools = outputs / "tools"
+
+    def tload(name):
+        f = tools / name
+        return read_json(f) if f.exists() else {}
+
+    longr = tload("long_routing.json")
+    val = tload("routing_validation.json")
+    scen = tload("scenarios.json")
+    if longr and val:
+        rows.append("\n---\n")
+        rows.append("## Post-pipeline tools - the downstream chain "
+                    "(`make scenarios`, `make map`)")
+        rows.append("\nBuilt after Stage 18 against the pinned 100 km DEMs and "
+                    "cached OSM extracts; offline once `make fetch-downstream` "
+                    "has run once. Figures below are read from the tool "
+                    "artefacts at generation time, like everything above.\n")
+
+        gains = [r.get("gain_factor") for r in longr.get("lakes", [])
+                 if r.get("gain_factor")]
+        simple("T1", "Long-range routing (DECISIONS D18-D19)",
+               "Exposure needs a river-network domain, not a 7 km box around "
+               "the lake; every Stage 6 corridor stops in the headwaters.",
+               "Same MSF physics on a 100 km, 90 m domain per lake. Priority-"
+               "flood pit fill (a 200-iteration local fill left South Lhonak "
+               "stalled in an unfilled hollow), spill-point seeding (pit "
+               "filling strands a steepest-descent walk inside the lake "
+               "basin), and the walk kept in walk order.",
+               f"Corridors reach 31-127 km against a 3.5 km cap before; "
+               f"median gain factor {sorted(gains)[len(gains) // 2]}x across "
+               f"{len(gains)} lakes.",
+               "outputs/tools/long_routing.json; DECISIONS D18-D19")
+
+        simple("T2", "Corridor exposure, scored against destroyed villages "
+               "(DECISIONS D20)",
+               "A corridor down the wrong valley can still travel the right "
+               "distance; the sharper test is whether it passes the villages "
+               "the floods actually destroyed, at the observed distance.",
+               "OSM assets and WorldPop within 500 m of the routed channel, "
+               "validated against five documented impact sites. Three data-"
+               "integrity bugs found and fixed on the way, each one a wrong "
+               "answer that LOOKED like an empty one: HTTP 200 responses with "
+               "zero elements cached as 'nothing downstream'; nodata inside "
+               "the raster scored as uncovered (0% coverage printed beside "
+               "5,222 people); the polyline ordered by distance-from-lake, "
+               "which interleaved river bends and put Reni 3.4x too far down "
+               "the channel.",
+               f"{val.get('n_impacted_places_found', '?')} of "
+               f"{val.get('n_impacted_places_expected', '?')} destroyed "
+               f"settlements found, "
+               f"{val.get('n_impacted_places_found_at_right_distance', '?')} "
+               f"within 2x of the observed distance (Thame 7.6 km vs 10, "
+               f"Rasuwagadhi 35.1 vs 36, Reni 22.3 vs 13 - the last was "
+               f"43.8 km before the polyline-order fix). "
+               f"{val.get('n_corridors_reaching_observed_impact', '?')} of "
+               f"{val.get('n_comparable', '?')} observed reaches fall inside "
+               f"the debris/clear-water bracket.",
+               "outputs/tools/corridor_exposure.json, "
+               "outputs/tools/routing_validation.json; DECISIONS D20")
+
+        lum = next((s for s in scen.get("lakes", [])
+                    if s.get("lake_id") == "lumding_tsho"), {})
+        ct = lum.get("capacity_trend") or {}
+        nb = ct.get("band_in_12mo_m3") or {}
+        simple("T3", "Scenario dial and capacity trend (map)",
+               "A duty officer's question is conditional - 'if the flow runs "
+               "R km, who is in the way?' - and an answer fixed at full reach "
+               "hides how exposure accumulates down the valley.",
+               "A reach slider on the map conditions the corridor, the asset "
+               "counts and the WorldPop sum on one draggable distance, with "
+               "the observed reach of each real event marked on the slider. "
+               "A capacity line projects the release band 12 months forward "
+               "on the Theil-Sen slope Stage 3 already fits - framed as a "
+               "capacity forecast, never a hazard forecast, because Thame was "
+               "stable in area and burst anyway.",
+               (f"Fastest-growing lake: Lumding at "
+                f"{ct.get('slope_m2_per_year', 0):+,.0f} m2/yr, central band "
+                f"{(ct.get('band_now_m3') or {}).get('central_m3', 0) / 1e6:.0f}M "
+                f"-> {nb.get('central_m3', 0) / 1e6:.0f}M m3 in 12 months. "
+                if ct else "Capacity trend pending a scenarios run. ")
+               + "The map page is verified against these artefacts by "
+               "tools/check_map_page.mjs (32 checks), including that the "
+               "dial's counters equal the artefact counts.",
+               "outputs/tools/scenarios.json, outputs/tools/map.html, "
+               "tools/check_map_page.mjs")
 
     header = f"""# Improvement changelog
 
