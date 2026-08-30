@@ -1,0 +1,1040 @@
+<meta charset="utf-8">
+<title>GLOF Watcher — interactive map</title>
+<style>
+  :root{
+    --bg:#0e1013; --panel:#15181d; --panel2:#1b1f26; --line:#272c35;
+    --ink:#e8eaed; --ink2:#a6adba; --ink3:#6f7784;
+    --water:#3fa7ff; --water-soft:rgba(63,167,255,.22);
+    --debris:#ff6b4a; --clear:#ffd166;
+    --burst:#ff5c72; --ok:#4ade80; --warn:#fbbf24;
+    --focus:#7c5cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:13px/1.5 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  h1{font-size:15px;margin:0;font-weight:650;letter-spacing:-.01em}
+  h2{font-size:10.5px;margin:0 0 8px;font-weight:650;letter-spacing:.09em;
+     text-transform:uppercase;color:var(--ink3)}
+  a{color:var(--water)}
+
+  header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+         padding:12px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .sub{color:var(--ink3);font-size:12px}
+  .live-note{margin-left:auto;display:flex;align-items:center;gap:8px;
+             font-size:11.5px;color:var(--warn);background:rgba(251,191,36,.10);
+             border:1px solid rgba(251,191,36,.3);border-radius:999px;padding:5px 12px}
+  .live-note b{color:var(--warn);font-weight:650}
+
+  .wrap{display:grid;grid-template-columns:290px minmax(0,1fr) 250px;
+        gap:1px;background:var(--line);height:calc(100vh - 53px)}
+  /* Stacked, the map must still come first. Source order puts the lake list
+     ahead of it, which pushed the map a full screen below the fold. */
+  @media (max-width:1100px){
+    .wrap{grid-template-columns:1fr;height:auto}
+    .col.mid{order:-1;height:70vh;min-height:460px}
+    .maprow{min-height:0}
+  }
+  .col{background:var(--bg);overflow-y:auto;padding:14px}
+  .col.mid{padding:0;display:flex;flex-direction:column;overflow:hidden}
+
+  /* ---- lake list ---- */
+  .lake{display:grid;grid-template-columns:1fr auto;gap:2px 8px;width:100%;
+        text-align:left;background:var(--panel);border:1px solid var(--line);
+        border-left:3px solid transparent;border-radius:7px;color:var(--ink);
+        padding:8px 10px;margin-bottom:5px;cursor:pointer;font:inherit}
+  .lake:hover{background:var(--panel2)}
+  .lake[aria-pressed="true"]{border-left-color:var(--focus);background:var(--panel2)}
+  .lake .nm{font-weight:600;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;
+            white-space:nowrap}
+  .lake .sc{font-variant-numeric:tabular-nums;font-size:12px;color:var(--ink2)}
+  .lake .meta{grid-column:1/-1;font-size:11px;color:var(--ink3);
+              display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .tag{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+       padding:1px 5px;border-radius:4px;font-weight:650}
+  .tag.flag{background:rgba(255,92,114,.16);color:var(--burst)}
+  .tag.quiet{background:rgba(110,119,132,.16);color:var(--ink3)}
+  .tag.burst{background:rgba(255,92,114,.16);color:var(--burst)}
+  .tag.neg{background:rgba(124,92,255,.18);color:#b9a6ff}
+
+  /* ---- map ---- */
+  .maprow{position:relative;flex:1;min-height:420px;background:#07080a;overflow:hidden}
+  svg.map{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+  svg.map.drag{cursor:grabbing}
+  .lakefill{fill:var(--water-soft);stroke:var(--water);stroke-width:1.6;
+            vector-effect:non-scaling-stroke;stroke-linejoin:round}
+  .ghost{fill:none;stroke:rgba(190,225,255,.55);stroke-width:1.1;
+         vector-effect:non-scaling-stroke;stroke-dasharray:4 3}
+  .corr{stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+  .corr.debris{fill:rgba(255,107,74,.30);stroke:var(--debris)}
+  .corr.clear{fill:rgba(255,209,102,.20);stroke:var(--clear)}
+  .longcorr{fill:none;vector-effect:non-scaling-stroke;stroke-linejoin:round;
+            stroke-linecap:round}
+  .longcorr.debris{stroke:var(--debris);stroke-width:2.4}
+  .longcorr.clear{stroke:var(--clear);stroke-width:2;stroke-dasharray:7 5}
+  .asset{fill:#8fd0ff;stroke:#0b0d10;stroke-width:.5;paint-order:stroke}
+  .asset.hydropower{fill:#ffd166}
+  .asset.substation{fill:#ffb86b}
+  .asset.school{fill:#b9a6ff}
+  .asset.health{fill:#4ade80}
+  .vplace{fill:none;stroke:var(--burst);stroke-width:2;
+          vector-effect:non-scaling-stroke}
+  .assetlab{fill:#eef3f8;paint-order:stroke;stroke:#0b0d10;stroke-width:3px;
+            stroke-linejoin:round;font-weight:650}
+  .vlab{fill:#ffd7dd}
+  .reachpath{fill:none;stroke:#7ec9ff;stroke-width:3.4;vector-effect:non-scaling-stroke;
+             stroke-linejoin:round;stroke-linecap:round;
+             filter:drop-shadow(0 0 3px rgba(126,201,255,.8))}
+  .reachend{fill:#fff;stroke:#7ec9ff;stroke-width:2;vector-effect:non-scaling-stroke}
+  .dial{position:relative;margin:2px 0 4px}
+  .dial .obs{position:absolute;top:-3px;width:2px;height:10px;background:var(--burst);
+             pointer-events:none}
+  .dial .obslab{position:absolute;top:-15px;transform:translateX(-50%);font-size:9px;
+                color:var(--burst);white-space:nowrap;pointer-events:none}
+  .overlay{position:absolute;pointer-events:none;font-variant-numeric:tabular-nums}
+  .ov-tl{top:12px;left:12px;max-width:60%}
+  .ov-bl{bottom:12px;left:12px;display:flex;align-items:center;gap:8px}
+  .ov-tr{top:12px;right:12px;text-align:right}
+  .chip{display:inline-block;background:rgba(14,16,19,.82);border:1px solid var(--line);
+        border-radius:6px;padding:5px 9px;font-size:11.5px;color:var(--ink2)}
+  .chip b{color:var(--ink);font-weight:650}
+  .bigdate{font-size:24px;font-weight:680;letter-spacing:-.02em;color:#fff;
+           text-shadow:0 1px 10px rgba(0,0,0,.9);line-height:1.15}
+  .bigarea{font-size:12.5px;color:var(--ink2);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .scalebar{height:4px;background:#fff;opacity:.85;border-radius:1px}
+  .mapbtns{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:5px}
+  .mapbtns button{width:28px;height:28px;font-size:15px;line-height:1;padding:0}
+
+  /* ---- timeline ---- */
+  .timeline{border-top:1px solid var(--line);background:var(--panel);padding:11px 14px 13px}
+  .tl-head{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap}
+  .spark{width:100%;height:52px;display:block;margin-bottom:2px}
+  .spark .ln{fill:none;stroke:var(--water);stroke-width:1.6}
+  .spark .dot{fill:var(--water)}
+  .spark .dot.bad{fill:var(--ink3)}
+  .spark .cur{fill:#fff;stroke:var(--bg);stroke-width:1.5}
+  .spark .ax{stroke:var(--line);stroke-width:1}
+  .ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--ink3);
+         font-variant-numeric:tabular-nums}
+
+  button{background:var(--panel2);color:var(--ink);border:1px solid var(--line);
+         border-radius:6px;padding:5px 10px;font:inherit;font-size:12px;cursor:pointer}
+  button:hover{background:#232833;border-color:#3a4150}
+  button[aria-pressed="true"]{background:rgba(124,92,255,.20);border-color:var(--focus);
+                              color:#cfc4ff}
+  button:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+  input[type=range]{width:100%;accent-color:var(--focus);cursor:pointer}
+  .qa-bad{color:var(--warn)}
+
+  /* ---- right panel ---- */
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:4px 0;
+      border-bottom:1px solid var(--line);font-size:12px}
+  .kv:last-child{border-bottom:0}
+  .kv span:first-child{color:var(--ink3)}
+  .kv span:last-child{font-variant-numeric:tabular-nums;text-align:right}
+  .cm{display:grid;grid-template-columns:1fr auto;gap:3px 8px;font-size:12px;
+      font-variant-numeric:tabular-nums}
+  .cm .n{text-align:right;font-weight:650}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+        padding:11px 12px;margin-bottom:12px}
+  .note{font-size:11px;color:var(--ink3);line-height:1.45}
+  .note b{color:var(--ink2)}
+  .swatch{display:inline-block;width:9px;height:9px;border-radius:2px;
+          margin-right:5px;vertical-align:baseline}
+  .legend{font-size:11.5px;color:var(--ink2);line-height:1.9}
+  mark{background:rgba(124,92,255,.25);color:#d6ccff;border-radius:3px;padding:0 3px}
+</style>
+
+<header>
+  <h1>GLOF Watcher</h1>
+  <span class="sub">14 Himalayan lakes · Sentinel-2 · 2017&ndash;2025</span>
+  <span class="live-note"><b>Not a live feed.</b>
+    Pre-cached scenes. Drag the controls to move through measured history.</span>
+</header>
+
+<div class="wrap">
+  <!-- ================= LEFT ================= -->
+  <div class="col">
+    <h2>Alarm threshold</h2>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;
+                  margin-bottom:6px">
+        <span class="note">source-to-lake volume ratio</span>
+        <span id="thVal" style="font-size:18px;font-weight:680;
+              font-variant-numeric:tabular-nums"></span>
+      </div>
+      <input type="range" id="th" min="0" max="30" step="0.1">
+      <div class="ticks"><span>0</span><span>15</span><span>30</span></div>
+      <div class="note" style="margin-top:8px">
+        Drag to re-screen all fourteen lakes. The published value is
+        <b id="thDefault"></b> &mdash; chosen <em>after</em> seeing every score,
+        so it is not a blind holdout. <mark>The rank is threshold-free; the
+        flag count is not.</mark> This slider is here so you can see the
+        difference yourself.
+        <button id="thReset" style="margin-top:8px;width:100%">Reset to published value</button>
+      </div>
+    </div>
+
+    <h2>Lakes, ranked by score</h2>
+    <div id="list"></div>
+  </div>
+
+  <!-- ================= MIDDLE ================= -->
+  <div class="col mid">
+    <div class="maprow">
+      <svg class="map" id="map" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="overlay ov-tl">
+        <div class="bigdate" id="ovDate">&nbsp;</div>
+        <div class="bigarea" id="ovArea">&nbsp;</div>
+      </div>
+      <div class="mapbtns">
+        <button id="zin"  title="Zoom in">+</button>
+        <button id="zout" title="Zoom out">&minus;</button>
+        <button id="zfit" title="Reset view" style="font-size:11px">fit</button>
+      </div>
+      <div class="overlay ov-bl">
+        <div>
+          <div class="scalebar" id="scalebar"></div>
+          <div style="font-size:10.5px;color:#fff;opacity:.8;margin-top:3px"
+               id="scaletxt"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-head">
+        <button id="play">&#9654; Play</button>
+        <button id="ghost" aria-pressed="true">Previous outlines</button>
+        <button id="cDeb" aria-pressed="false">
+          <span class="swatch" style="background:var(--debris)"></span>Debris corridor</button>
+        <button id="cCle" aria-pressed="false">
+          <span class="swatch" style="background:var(--clear)"></span>Clear-water corridor</button>
+        <button id="cDown" aria-pressed="false">
+          <span class="swatch" style="background:linear-gradient(90deg,var(--debris) 50%,var(--clear) 50%)"></span>Downstream 100 km</button>
+        <span id="qaNote" class="note" style="margin-left:auto"></span>
+      </div>
+      <svg class="spark" id="spark" preserveAspectRatio="none"></svg>
+      <input type="range" id="frame" min="0" max="0" step="1" value="0">
+      <div class="ticks"><span id="tFirst"></span><span id="tLast"></span></div>
+    </div>
+  </div>
+
+  <!-- ================= RIGHT ================= -->
+  <div class="col">
+    <h2>Selected lake</h2>
+    <div class="card" id="detail"></div>
+
+    <h2>Downstream scenario</h2>
+    <div class="card" id="scen"></div>
+
+    <h2>Screening at this threshold</h2>
+    <div class="card">
+      <div class="cm" id="cm"></div>
+      <div class="note" style="margin-top:9px" id="cmNote"></div>
+    </div>
+
+    <h2>Legend</h2>
+    <div class="card legend">
+      <div><span class="swatch" style="background:var(--water)"></span>lake this date</div>
+      <div><span class="swatch" style="background:transparent;
+           border:1px dashed rgba(63,167,255,.6)"></span>earlier outlines</div>
+      <div><span class="swatch" style="background:var(--debris)"></span>debris-flow corridor</div>
+      <div><span class="swatch" style="background:var(--clear)"></span>clear-water corridor</div>
+      <div><span class="swatch" style="background:linear-gradient(90deg,var(--debris) 50%,var(--clear) 50%)"></span>downstream channel, 90&nbsp;m DEM</div>
+      <div><span class="swatch" style="background:#8fd0ff;border-radius:50%"></span>named place within 500&nbsp;m of the channel</div>
+      <div><span class="swatch" style="background:transparent;border:2px solid var(--burst);border-radius:50%"></span>documented flood impact, at its predicted distance</div>
+      <div style="margin-top:7px" class="note">
+        Relief is a hillshade of the Copernicus GLO-30 DEM. Corridors are
+        <b>indicative screening corridors from a 30&nbsp;m DEM with no
+        hydraulics &mdash; not flood maps.</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="mapdata" type="application/json">__MAP_DATA__</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("mapdata").textContent);
+const LAKES = DATA.lakes.slice();
+
+const $ = id => document.getElementById(id);
+const fmt = (v, d = 2) => v == null ? "—" : Number(v).toFixed(d);
+const areaTxt = m2 => m2 == null ? "—"
+  : m2 >= 1e5 ? (m2 / 1e6).toFixed(2) + " km²"
+              : Math.round(m2).toLocaleString() + " m²";
+
+/* Did this scene actually see THIS lake? Distinct from "the scene passes QA":
+   a cloud-free scene over a frozen lake passes QA and still yields the wrong
+   component. The pipeline settles this per year when it picks one scene for
+   the series; onLake is the same judgement applied per frame. */
+const onLake = f => f.rings.length > 0 &&
+  (f.on_anchor || (f.dist_m != null && f.dist_m < 300));
+
+let sel = LAKES[0], frameIdx = 0, threshold = DATA.alarm_threshold;
+let showGhost = true, showDeb = false, showCle = false, showDown = false,
+    reachKm = null, playing = null;
+
+/* ---------- projection: local equirectangular, good over a 7 km window ---- */
+function projector(bounds) {
+  const [w, s, e, n] = bounds;
+  const lat0 = (s + n) / 2, k = Math.cos(lat0 * Math.PI / 180);
+  return {
+    x: lon => (lon - w) * k * 10000,
+    y: lat => (n - lat) * 10000,
+    w: (e - w) * k * 10000,
+    h: (n - s) * 10000,
+    // metres per projected unit, for the scale bar
+    mPerUnit: 111320 / 10000
+  };
+}
+
+/* ---------- flag model: strict superset, exactly as Stage 7 defines it ---- */
+const byProxy = L => L.score != null && L.score >= threshold;
+const flagged = L => byProxy(L) || !!L.growth_flagged;
+// Naming the reason is not decoration. Lumding scores 0.17 against a threshold
+// of 5.0 and is still flagged, because the growth screen caught it and the
+// advanced model inherits every baseline flag. A bare "FLAGGED" next to 0.17
+// reads as a broken comparison.
+const flagWhy = L => byProxy(L) && L.growth_flagged ? "proxy + growth"
+                   : byProxy(L) ? "proxy"
+                   : L.growth_flagged ? "growth" : null;
+
+function ranked() {
+  return LAKES.filter(L => L.score != null)
+              .sort((a, b) => b.score - a.score);
+}
+
+/* ---------- downstream geometry helpers --------------------------------- */
+/* Metres between two lon/lat points on the local equirectangular frame. Same
+   formula the exposure tool uses, so a distance shown here is the distance in
+   the artefact. */
+const mBetween = (a, b, lat0) => {
+  const dx = (a[0] - b[0]) * 111320 * Math.cos(lat0 * Math.PI / 180);
+  const dy = (a[1] - b[1]) * 110574;
+  return Math.hypot(dx, dy);
+};
+/* Walk `km` down a polyline and return the lon/lat there. Used to place the
+   documented-impact rings: a missed place has no predicted_km, so a missed
+   place correctly cannot be drawn. */
+function alongPolyline(line, km) {
+  const lat0 = line[0][1];
+  let acc = 0, target = km * 1000;
+  for (let i = 1; i < line.length; i++) {
+    const seg = mBetween(line[i - 1], line[i], lat0);
+    if (acc + seg >= target && seg > 0) {
+      const f = (target - acc) / seg;
+      return [line[i - 1][0] + (line[i][0] - line[i - 1][0]) * f,
+              line[i - 1][1] + (line[i][1] - line[i - 1][1]) * f];
+    }
+    acc += seg;
+  }
+  return line[line.length - 1];
+}
+const dsChannel = ds => (ds.regimes.clearwater_flood
+                      || ds.regimes.debris_flow || {}).polyline || null;
+
+/* ================================ MAP ==================================== */
+const map = $("map");
+let view = null, base = null;
+
+function ringsToPath(rings, P) {
+  let d = "";
+  for (const poly of rings)
+    for (const ring of poly) {
+      d += "M" + ring.map(pt => P.x(pt[0]).toFixed(1) + "," + P.y(pt[1]).toFixed(1))
+                     .join("L") + "Z";
+    }
+  return d;
+}
+
+function drawMap() {
+  const P = projector(sel.bounds);
+  const f = sel.frames[frameIdx];
+  const parts = [];
+
+  const ds = sel.downstream;
+  if (showDown && ds && ds.hillshade && ds.bounds) {
+    const [w2, s2, e2, n2] = ds.bounds;
+    const x = P.x(w2), y = P.y(n2);
+    parts.push(`<image href="${ds.hillshade}" x="${x.toFixed(1)}" y="${y.toFixed(1)}"
+                 width="${(P.x(e2) - x).toFixed(1)}" height="${(P.y(s2) - y).toFixed(1)}"
+                 preserveAspectRatio="none" opacity="0.5"/>`);
+  }
+  if (sel.hillshade)
+    parts.push(`<image href="${sel.hillshade}" x="0" y="0" width="${P.w.toFixed(1)}"
+                 height="${P.h.toFixed(1)}" preserveAspectRatio="none"
+                 opacity="0.62"/>`);
+
+  if (showCle && sel.corridors.clearwater_flood)
+    parts.push(`<path class="corr clear" d="${ringsToPath(sel.corridors.clearwater_flood.rings, P)}"/>`);
+  if (showDeb && sel.corridors.debris_flow)
+    parts.push(`<path class="corr debris" d="${ringsToPath(sel.corridors.debris_flow.rings, P)}"/>`);
+
+  if (showGhost)
+    for (let i = 0; i < frameIdx; i++) {
+      const g = sel.frames[i];
+      if (!onLake(g)) continue;
+      parts.push(`<path class="ghost" d="${ringsToPath(g.rings, P)}"/>`);
+    }
+
+  if (f && f.rings.length)
+    parts.push(`<path class="lakefill" d="${ringsToPath(f.rings, P)}"/>`);
+
+  if (showDown && ds) parts.push(downstreamLayer(ds, P));
+
+  map.innerHTML = `<g id="vp">${parts.join("")}</g>`;
+  base = [0, 0, P.w, P.h];
+  if (!view) view = lakeView(P, showDeb || showCle || showDown);
+  applyView();
+  scaleBar(P);
+  if (showDown && ds) updateReach();   // needs `view` for the marker radius
+}
+
+/* The whole downstream story as one SVG group: the two routed channels, every
+   named place the exposure tool found within 500 m of the channel, and a ring
+   at the predicted distance of each documented flood impact. Dot radii and
+   label sizes live in user units so applyView can rescale them per zoom. */
+function downstreamLayer(ds, P) {
+  const line = pl => pl.map(q =>
+    P.x(q[0]).toFixed(1) + "," + P.y(q[1]).toFixed(1)).join("L");
+  const parts = [];
+  if (ds.regimes.clearwater_flood)
+    parts.push(`<path class="longcorr clear" d="M${line(ds.regimes.clearwater_flood.polyline)}"/>`);
+  if (ds.regimes.debris_flow)
+    parts.push(`<path class="longcorr debris" d="M${line(ds.regimes.debris_flow.polyline)}"/>`);
+
+  const named = ds.named || [];
+  for (const a of named) {
+    if (a.lon == null) continue;
+    parts.push(`<circle class="asset ${a.class}" data-km="${a.along_channel_km}"
+      cx="${P.x(a.lon).toFixed(1)}" cy="${P.y(a.lat).toFixed(1)}" r="4"><title>${
+      a.name} — ${a.class}, ${a.along_channel_km} km down-channel, ${
+      a.offset_m} m off it</title></circle>`);
+  }
+  // Labels: every documented impact, plus a handful of settlements spread down
+  // the channel so the map reads without hovering. All of them, and the page
+  // is unreadable at fit zoom.
+  const setts = named.filter(a => a.class === "settlement" && a.lon != null);
+  const step = Math.max(1, Math.ceil(setts.length / 5));
+  const labelled = new Set();
+  const chan = dsChannel(ds);
+  const places = ((ds.validation || {}).places || [])
+    .filter(q => q.found_in_corridor && q.predicted_km != null);
+  for (const q of places) {
+    if (!chan) break;
+    const [lon, lat] = alongPolyline(chan, q.predicted_km);
+    labelled.add(q.place.toLowerCase());
+    parts.push(`<circle class="vplace" cx="${P.x(lon).toFixed(1)}"
+        cy="${P.y(lat).toFixed(1)}" r="9"><title>${q.place}: ${q.what_happened}.
+        Observed at ${q.observed_km} km; corridor puts it at ${q.predicted_km} km.</title></circle>
+      <text class="assetlab vlab" x="${(P.x(lon) + 12).toFixed(1)}"
+        y="${(P.y(lat) - 8).toFixed(1)}">${q.place} · ${q.predicted_km} km (obs ${q.observed_km})</text>`);
+  }
+  setts.forEach((a, i) => {
+    if (i % step || labelled.has(a.name.toLowerCase())) return;
+    parts.push(`<text class="assetlab" x="${(P.x(a.lon) + 8).toFixed(1)}"
+      y="${(P.y(a.lat) - 6).toFixed(1)}">${a.name} · ${a.along_channel_km} km</text>`);
+  });
+  parts.push('<path id="reachpath" class="reachpath" d=""/>'
+           + '<circle id="reachend" class="reachend" r="0" cx="0" cy="0"/>');
+  return `<g id="dsdyn" font-size="14">${parts.join("")}</g>`;
+}
+
+/* Scenario dial: everything conditioned on "the flow runs R km". The channel
+   highlight, the dimmed dots beyond R, and the counters all read the same
+   artefact fields, so the dial can never disagree with the JSON. */
+function updateReach() {
+  const ds = sel.downstream, g = document.getElementById("dsdyn");
+  if (!ds || !g || !view) return;
+  const chan = dsChannel(ds);
+  const hi = dialMax(ds);
+  const R = reachKm == null ? hi : reachKm;
+  // channel highlight up to R
+  const rp = g.querySelector("#reachpath"), re = g.querySelector("#reachend");
+  if (chan && rp) {
+    const P = projector(sel.bounds), lat0 = chan[0][1];
+    const pts = []; let acc = 0, end = chan[chan.length - 1];
+    pts.push(chan[0]);
+    for (let i = 1; i < chan.length; i++) {
+      const seg = mBetween(chan[i - 1], chan[i], lat0);
+      if (acc + seg >= R * 1000 && seg > 0) {
+        const f = (R * 1000 - acc) / seg;
+        end = [chan[i - 1][0] + (chan[i][0] - chan[i - 1][0]) * f,
+               chan[i - 1][1] + (chan[i][1] - chan[i - 1][1]) * f];
+        pts.push(end);
+        break;
+      }
+      acc += seg; pts.push(chan[i]); end = chan[i];
+    }
+    rp.setAttribute("d", "M" + pts.map(q =>
+      P.x(q[0]).toFixed(1) + "," + P.y(q[1]).toFixed(1)).join("L"));
+    re.setAttribute("cx", P.x(end[0]).toFixed(1));
+    re.setAttribute("cy", P.y(end[1]).toFixed(1));
+    re.setAttribute("r", Math.max(3, view[2] / 150).toFixed(1));
+  }
+  g.querySelectorAll("circle.asset").forEach(c =>
+    c.style.opacity = (+c.dataset.km <= R + 0.05) ? "" : ".22");
+  // counters
+  const el = document.getElementById("reachSum");
+  if (el) {
+    const c = ds.asset_km || {};
+    const bits = [["settlement", "settlement,settlements"],
+                  ["hydropower", "hydropower,hydropower"],
+                  ["bridge", "bridge,bridges"], ["school", "school,schools"],
+                  ["health", "health post,health posts"]]
+      .map(([k, w]) => [((c[k] || []).filter(d => d <= R + 0.05)).length, w])
+      .filter(([n]) => n)
+      .map(([n, w]) => `<b>${n}</b> ${w.split(",")[n === 1 ? 0 : 1]}`);
+    let pop = null;
+    const cum = ((ds.population || {}).cum_km) || [];
+    for (const [km, v] of cum) if (km <= R) pop = v;
+    const nSett = ((c.settlement || []).filter(d => d <= R + 0.05)).length;
+    const popTxt = (ds.population || {}).available === false ? ""
+      : pop == null
+        // Settlements counted by OSM position, people by WorldPop building
+        // cells - and up some gorges every populated cell sits above the
+        // 500 m band while the settlement marker is inside it. Both are
+        // true; a bare "0 people" next to "23 settlements" reads as a bug.
+        ? (nSett ? " · no WorldPop cells in the band yet (villages sit above the channel)"
+                 : " · <b>0</b> people (within 500 m)")
+      : ` · <b>~${Math.round(pop).toLocaleString()}</b> people (within 500 m)`;
+    el.innerHTML = (bits.length ? bits.join(", ") : "nothing counted yet") + popTxt;
+    const rv = document.getElementById("reachVal");
+    if (rv) rv.textContent = R.toFixed(1);
+  }
+}
+const dialMax = ds => Math.max(...Object.values(ds.regimes).map(r => r.runout_km));
+
+/* The opening view frames the LAKE, not the 7 km window. Thame is 13,300 m² —
+   at window scale it is four pixels of blue in a sea of hillshade, and the
+   first render of this page showed exactly that. The box is taken across every
+   frame, not the current one, so scrubbing through time never makes the view
+   jump. */
+function lakeView(P, withCorridors) {
+  // Usable frames only, and only each frame's LARGEST component (rings are
+  // exported largest-first). A cloud-rejected scene's mask is scattered debris
+  // across the whole window — including those pulled the box out to 5.5 km of
+  // the 7 km window and the "zoom to the lake" did almost nothing.
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  const consider = f => {
+    if (!f.rings.length) return;
+    for (const pt of f.rings[0][0]) {
+      const x = P.x(pt[0]), y = P.y(pt[1]);
+      if (x < x0) x0 = x; if (x > x1) x1 = x;
+      if (y < y0) y0 = y; if (y > y1) y1 = y;
+    }
+  };
+  sel.frames.filter(onLake).forEach(consider);
+  if (!isFinite(x0)) sel.frames.forEach(consider);
+  if (!isFinite(x0)) return base.slice();
+
+  // A corridor is the whole point of showing a corridor. South Lhonak's
+  // clear-water route runs several kilometres down-valley and ran straight off
+  // the bottom of a view framed on the lake alone.
+  let pad = 3.2;
+  if (withCorridors) {
+    for (const [k, on] of [["debris_flow", showDeb], ["clearwater_flood", showCle]]) {
+      if (!on || !sel.corridors[k]) continue;
+      for (const poly of sel.corridors[k].rings) consider({ rings: [poly] });
+    }
+    pad = 1.25;
+  }
+  if (showDown && sel.downstream) {
+    for (const r of Object.values(sel.downstream.regimes))
+      consider({ rings: [[r.polyline]] });
+    pad = 1.12;
+  }
+
+  const MIN_UNITS = 1400 / P.mPerUnit;          // never tighter than ~1.4 km
+  const aspect = base[2] / base[3];
+  let w = Math.max((x1 - x0) * pad, MIN_UNITS);
+  let h = Math.max((y1 - y0) * pad, MIN_UNITS / aspect);
+  // Match the window's aspect so the hillshade is never distorted.
+  if (w / h < aspect) w = h * aspect; else h = w / aspect;
+  const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+  // A 100 km corridor is bigger than the 7 km window; clamping to the window
+  // would crop it to its first bend. Clamp only when the fit is inside.
+  if (w > base[2] || h > base[3]) return [cx - w / 2, cy - h / 2, w, h];
+  return [
+    Math.min(Math.max(cx - w / 2, 0), base[2] - w),
+    Math.min(Math.max(cy - h / 2, 0), base[3] - h), w, h];
+}
+
+function applyView() {
+  map.setAttribute("viewBox", view.map(v => v.toFixed(1)).join(" "));
+  // Downstream dots and labels are in user units, so they must follow the
+  // zoom or they are invisible at 100 km and cover the valley at 1 km.
+  const g = document.getElementById("dsdyn");
+  if (g) {
+    g.setAttribute("font-size", Math.max(6, view[2] / 68).toFixed(1));
+    g.querySelectorAll("circle.asset").forEach(c =>
+      c.setAttribute("r", Math.max(2, view[2] / 260).toFixed(1)));
+    g.querySelectorAll("circle.vplace").forEach(c =>
+      c.setAttribute("r", Math.max(4, view[2] / 120).toFixed(1)));
+  }
+}
+
+function scaleBar(P) {
+  const rect = map.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+  // preserveAspectRatio="meet" letterboxes the viewBox inside the element, so
+  // the content is narrower than the element whenever their aspects differ.
+  // Dividing by the element width overstated the scale bar by the width of
+  // those bars — 22% at the default window size.
+  const drawnW = Math.min(rect.width, rect.height * view[2] / view[3]);
+  const unitsPerPx = view[2] / drawnW;
+  const mPerPx = unitsPerPx * P.mPerUnit;
+  const nice = [100, 200, 500, 1000, 2000, 5000];
+  let target = nice.find(n => n / mPerPx > 60 && n / mPerPx < 190) ?? 1000;
+  $("scalebar").style.width = (target / mPerPx).toFixed(0) + "px";
+  $("scaletxt").textContent = target >= 1000 ? (target / 1000) + " km" : target + " m";
+}
+
+/* The viewBox is letterboxed inside the element by preserveAspectRatio, so
+   screen pixels map to view units only within the drawn content box. Pan and
+   zoom both need that box, not the element's. */
+function contentBox() {
+  const r = map.getBoundingClientRect();
+  const w = Math.min(r.width, r.height * view[2] / view[3]);
+  const h = Math.min(r.height, r.width * view[3] / view[2]);
+  return { left: r.left + (r.width - w) / 2, top: r.top + (r.height - h) / 2, w, h };
+}
+
+/* pan + zoom */
+let dragging = null;
+map.addEventListener("pointerdown", e => {
+  dragging = { x: e.clientX, y: e.clientY, v: view.slice() };
+  map.classList.add("drag"); map.setPointerCapture(e.pointerId);
+});
+map.addEventListener("pointermove", e => {
+  if (!dragging) return;
+  const b = contentBox();
+  view[0] = dragging.v[0] - (e.clientX - dragging.x) * dragging.v[2] / b.w;
+  view[1] = dragging.v[1] - (e.clientY - dragging.y) * dragging.v[3] / b.h;
+  applyView();
+});
+const endDrag = () => { dragging = null; map.classList.remove("drag"); };
+map.addEventListener("pointerup", endDrag);
+map.addEventListener("pointercancel", endDrag);
+map.addEventListener("wheel", e => {
+  e.preventDefault();
+  zoomAt(e.deltaY < 0 ? 0.82 : 1.22, e.clientX, e.clientY);
+}, { passive: false });
+
+function zoomAt(k, cx, cy) {
+  const b = contentBox();
+  const fx = cx == null ? 0.5 : Math.min(1, Math.max(0, (cx - b.left) / b.w));
+  const fy = cy == null ? 0.5 : Math.min(1, Math.max(0, (cy - b.top) / b.h));
+  const ax = view[0] + view[2] * fx, ay = view[1] + view[3] * fy;
+  const maxW = base[2] * (sel.downstream ? 45 : 2.5), minW = base[2] / 60;
+  const nw = Math.min(maxW, Math.max(minW, view[2] * k));
+  const nh = nw * view[3] / view[2];
+  view = [ax - nw * fx, ay - nh * fy, nw, nh];
+  applyView();
+  scaleBar(projector(sel.bounds));
+}
+$("zin").onclick = () => zoomAt(0.7);
+$("zout").onclick = () => zoomAt(1.43);
+$("zfit").onclick = () => {
+  const P = projector(sel.bounds);
+  // Toggle: frame the lake, or pull back to the whole analysis window.
+  const fit = lakeView(P, showDeb || showCle || showDown);
+  const atFit = Math.abs(view[2] - fit[2]) < 1;
+  view = atFit ? base.slice() : fit;
+  applyView(); scaleBar(P);
+};
+
+/* ============================== SPARKLINE ================================= */
+function drawSpark() {
+  const fr = sel.frames, W = 1000, H = 52, pad = 6;
+  const areas = fr.map(f => f.area_m2 || 0);
+  const max = Math.max(...areas, 1);
+  const X = i => fr.length < 2 ? W / 2 : pad + i * (W - 2 * pad) / (fr.length - 1);
+  const Y = a => H - pad - (a / max) * (H - 2 * pad);
+  // The line joins the pipeline's OWN annual series - one scene per year, the
+  // ones Stage 3 measures growth from - not every frame that happens to pass
+  // scene QA. Joining all of them drew a sawtooth through frames the pipeline
+  // had already rejected, implying a volatility the data does not show.
+  const series = fr.map((f, i) => ({ f, i })).filter(o => o.f.in_series);
+  const line = series.length > 1
+    ? `<path class="ln" d="${series.map((o, k) =>
+        (k ? "L" : "M") + X(o.i).toFixed(1) + "," + Y(o.f.area_m2).toFixed(1)).join("")}"/>`
+    : "";
+  const dots = fr.map((f, i) =>
+    `<circle class="dot${f.in_series ? "" : " bad"}" cx="${X(i).toFixed(1)}"
+      cy="${Y(f.area_m2).toFixed(1)}" r="${f.in_series ? 2.6 : 1.6}"/>`).join("");
+  const cur = `<circle class="cur" cx="${X(frameIdx).toFixed(1)}"
+    cy="${Y(fr[frameIdx].area_m2).toFixed(1)}" r="4.2"/>`;
+  $("spark").setAttribute("viewBox", `0 0 ${W} ${H}`);
+  $("spark").innerHTML =
+    `<line class="ax" x1="0" y1="${H - pad}" x2="${W}" y2="${H - pad}"/>${line}${dots}${cur}`;
+}
+
+function refitForCorridors() {
+  const P = projector(sel.bounds);
+  view = lakeView(P, showDeb || showCle || showDown);
+  applyView(); scaleBar(P);
+}
+
+/* A lake with no corridor of that regime must not offer a live button that
+   draws nothing. The 11-degree debris rule genuinely yields no corridor for
+   South Lhonak, Imja or Thulagi - their valleys are gentler than 11 degrees
+   (DECISIONS D8) - and that is a finding, so the button says so. */
+function syncCorridorButtons() {
+  for (const [id, key, label] of [["cDeb", "debris_flow", "Debris corridor"],
+                                  ["cCle", "clearwater_flood", "Clear-water corridor"]]) {
+    const b = $(id), has = !!sel.corridors[key];
+    b.disabled = !has;
+    b.style.opacity = has ? "" : ".45";
+    b.title = has ? "" :
+      "No corridor in this regime for this lake: the valley never exceeds the "
+      + "stop reach angle, so the routing terminates immediately.";
+    const sw = b.querySelector(".swatch").outerHTML;
+    b.innerHTML = sw + label + (has ? "" : " — none");
+  }
+  const bD = $("cDown"), hasD = !!sel.downstream;
+  bD.disabled = !hasD;
+  bD.style.opacity = hasD ? "" : ".45";
+  bD.title = hasD ? "Two routed channels over 100 km of the 90 m DEM, with "
+      + "every named place the exposure tool found within 500 m"
+    : DATA.downstream_available
+      ? "No long corridor: routing terminates at the lake (no outflow path in the DEM)."
+      : "Downstream layer not built - run `make scenarios`, then `make map`.";
+}
+
+/* ============================== PANELS =================================== */
+function drawList() {
+  const rows = ranked().map(L => {
+    const why = flagWhy(L);
+    return `<button class="lake" data-id="${L.lake_id}"
+        aria-pressed="${L.lake_id === sel.lake_id}">
+      <span class="nm">${L.name.replace(/ \(.*/, "")}</span>
+      <span class="sc">${L.score.toFixed(2)}</span>
+      <span class="meta">
+        <span class="tag ${why ? "flag" : "quiet"}">${why ? "flagged · " + why : "not flagged"}</span>
+        ${L.label_burst ? '<span class="tag burst">burst</span>' : ""}
+        ${L.class === "negative_control" ? '<span class="tag neg">no lake</span>' : ""}
+        ${L.validation ? fmt(L.validation.ratio_to_published) + "× published" : ""}
+      </span></button>`;
+  });
+  const noScore = LAKES.filter(L => L.score == null).map(L =>
+    `<button class="lake" data-id="${L.lake_id}"
+        aria-pressed="${L.lake_id === sel.lake_id}">
+      <span class="nm">${L.name.replace(/ \(.*/, "")}</span><span class="sc">—</span>
+      <span class="meta"><span class="tag neg">no impounded water</span></span></button>`);
+  $("list").innerHTML = rows.concat(noScore).join("");
+  $("list").querySelectorAll(".lake").forEach(b =>
+    b.onclick = () => selectLake(b.dataset.id));
+}
+
+function drawDetail() {
+  const f = sel.frames[frameIdx];
+  const v = sel.validation;
+  const rows = [
+    ["Score (source/lake volume)", sel.score == null ? "—" : sel.score.toFixed(2)],
+    ["Flagged at " + threshold.toFixed(1),
+     flagWhy(sel) ? "yes, by " + flagWhy(sel) : "no"],
+    ["Actually burst", sel.label_burst ? "yes" : "no"],
+    ["Area, this scene", areaTxt(f.area_m2)],
+    ["Area change 2017→", sel.growth_pct == null ? "—" : sel.growth_pct.toFixed(1) + " %"],
+    ["Growth screen", sel.growth_flagged ? "flagged" : "not flagged"],
+  ];
+  if (v) rows.push(["Vs published area",
+    v.ratio_to_published.toFixed(2) + "× " + (v.within_25pct ? "(within 25%)" : "(outside 25%)")]);
+  const c = sel.corridors.debris_flow;
+  if (c) rows.push(["Debris corridor runout",
+    (c.max_runout_m / 1000).toFixed(2) + " km" + (c.truncated ? " (truncated)" : "")]);
+
+  $("detail").innerHTML =
+    `<div style="font-weight:650;margin-bottom:7px">${sel.name}</div>` +
+    rows.map(([k, val]) => `<div class="kv"><span>${k}</span><span>${val}</span></div>`).join("") +
+    (sel.reasons_proxy && sel.reasons_proxy.length
+      ? `<div class="note" style="margin-top:9px">${sel.reasons_proxy[0]}</div>` : "");
+}
+
+const M3 = v => v == null ? "unknown"
+  : v >= 1e6 ? (v / 1e6).toFixed(1) + "M m³" : Math.round(v).toLocaleString() + " m³";
+
+function drawScenario() {
+  const ds = sel.downstream, el = $("scen");
+  if (!ds) {
+    el.innerHTML = `<div class="note">${DATA.downstream_available
+      ? "No routed corridor: the routing terminates at the lake. For Hongu 2          that is the finding, not a gap - there is no outflow path in the DEM."
+      : "Not built yet. Run <b>make scenarios</b> then <b>make map</b> to add          the 100 km downstream layer."}</div>`;
+    return;
+  }
+  const hi = dialMax(ds);
+  const obs = (ds.validation || {});
+  const R = reachKm == null ? hi : reachKm;
+  let dial = "";
+  if (hi > 0 && showDown) {
+    const ticks = obs.observed_km
+      ? `<span class="obs" style="left:${Math.min(100, obs.observed_km / hi * 100).toFixed(1)}%"></span>
+         <span class="obslab" style="left:${Math.min(100, obs.observed_km / hi * 100).toFixed(1)}%">observed ${obs.observed_km} km</span>`
+      : "";
+    dial = `<div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span class="note">if the flow runs</span>
+        <span style="font-size:16px;font-weight:680;font-variant-numeric:tabular-nums">
+          <span id="reachVal">${R.toFixed(1)}</span> km</span></div>
+      <div class="dial" style="margin-top:${obs.observed_km ? 16 : 2}px">${ticks}
+        <input type="range" id="reach" min="0" max="${hi}" step="0.1" value="${R}"></div>
+      <div class="note" id="reachSum" style="margin-bottom:8px"></div>`;
+  } else if (hi > 0) {
+    dial = `<div class="note" style="margin-bottom:6px">Turn on
+      <b>Downstream 100 km</b> to drag the scenario dial.</div>`;
+  }
+  const rows = [];
+  const vb = ds.volume_band_m3 || {};
+  if (vb.central != null || vb.low != null)
+    rows.push(["If it releases", `${M3(vb.central)} <span style="color:var(--ink3)">(${M3(vb.low)}–${M3(vb.high)})</span>`]);
+  const reach = ds.reach || {};
+  if (reach.bracket)
+    rows.push(["Flow reaches", `${reach.bracket[0]}–${reach.bracket[1]} km`
+      + (reach.truncated_at_domain_edge ? " <span class='qa-bad'>(leaves the domain)</span>" : "")]);
+
+  // The population semantics travel with the number. A bare zero and a bare
+  // "unavailable" are the two answers this project refuses to give.
+  const pop = ds.population || {};
+  if (pop.available && pop.zero_note)
+    rows.push(["People in corridor", `0 within 500 m<br><span style="color:var(--ink3)">${
+      Math.round(pop.population_within_2km || 0).toLocaleString()} within 2 km; nearest cell ${
+      pop.nearest_populated_cell_m} m out</span>`]);
+  else if (pop.available)
+    rows.push(["People in corridor", "~" + Math.round(pop.population).toLocaleString()
+      + (pop.coverage_fraction < 0.98
+         ? `<br><span class="qa-bad">${Math.round(pop.coverage_fraction * 100)}% of corridor in raster</span>` : "")]);
+  else if (pop.reason)
+    rows.push(["People in corridor", `<span class="qa-bad">not measured</span><br><span style="color:var(--ink3)">${pop.reason}</span>`]);
+
+  if (ds.osm_available === false)
+    rows.push(["In the way", '<span class="qa-bad">not queried - missing, not empty</span>']);
+  else if (ds.counts) {
+    const c = ds.counts;
+    const bits = [["settlement", "settlements"], ["hydropower", "hydropower"],
+                  ["bridge", "bridges"], ["school", "schools"], ["health", "health posts"]]
+      .filter(([k]) => c[k]).map(([k, w]) => `${c[k]} ${w}`);
+    if (bits.length) rows.push(["In the way", bits.join(", ")]);
+  }
+
+  const ct = ds.capacity_trend;
+  if (ct && Math.abs(ct.slope_m2_per_year) >= 1000) {
+    const nb = ct.band_in_12mo_m3 || {};
+    rows.push(["Trend, measured", `${ct.slope_m2_per_year > 0 ? "+" : ""}${
+      Math.round(ct.slope_m2_per_year).toLocaleString()} m²/yr`]);
+    rows.push(["Band in 12 mo", `${M3(nb.low_m3)}–${M3(nb.high_m3)}
+      <br><span style="color:var(--ink3)">central ${M3(nb.central_m3)}, vs ${
+      M3((ct.band_now_m3 || {}).central_m3)} at last measurement</span>`]);
+  }
+  let html = dial + rows.map(([k, v]) =>
+    `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join("");
+
+  const named = (ds.named || []).filter(a => a.class === "settlement").slice(0, 5);
+  if (named.length)
+    html += `<div class="note" style="margin-top:8px"><b>Downstream order:</b> ${
+      named.map(a => `${a.name} <span style="color:var(--ink3)">(${a.along_channel_km} km)</span>`).join(" → ")}</div>`;
+
+  const v = ds.validation;
+  if (v) {
+    const pl = (v.places || []).map(q => q.found_in_corridor
+      ? `<div>✓ <b>${q.place}</b> found at ${q.predicted_km} km <span style="color:var(--ink3)">(observed ${q.observed_km} km)</span></div>`
+      : `<div class="qa-bad">✗ ${q.place} missed <span style="color:var(--ink3)">(observed ${q.observed_km} km)</span></div>`).join("");
+    html += `<div class="note" style="margin-top:8px;border-top:1px solid var(--line);padding-top:8px">
+      <b>Scored against the event:</b> observed reach ${v.observed_km} km (${v.observed_basis});
+      ${v.inside_bracket ? "inside" : '<span class="qa-bad">outside</span>'} the bracket.${pl}</div>`;
+  }
+  if (ct && Math.abs(ct.slope_m2_per_year) >= 1000)
+    html += `<div class="note" style="margin-top:8px"><b>Capacity forecast, not
+      hazard forecast.</b> Thame was stable in area and burst anyway - the trend
+      only sets how much water is waiting when a trigger arrives.</div>`;
+  html += `<div class="note" style="margin-top:8px"><b>Position, not inundation.</b>
+    Assets are listed for lying within 500 m of a routed channel on a 90 m DEM -
+    no depth, no discharge, nothing about when.</div>`;
+  el.innerHTML = html;
+  const slider = document.getElementById("reach");
+  if (slider) slider.oninput = e => {
+    reachKm = +e.target.value;
+    updateReach(); writeHash();
+  };
+  updateReach();
+}
+
+function drawCM() {
+  // Every lake, Chamoli included. Stage 7 scores it as a true negative — it is
+  // a negative control precisely so that not flagging it counts for something —
+  // and an earlier version of this panel dropped it, so the page showed 9 true
+  // negatives where the pipeline reports 10.
+  let tp = 0, fp = 0, fn = 0, tn = 0;
+  for (const L of LAKES) {
+    const p = flagged(L), a = !!L.label_burst;
+    if (p && a) tp++; else if (p && !a) fp++; else if (!p && a) fn++; else tn++;
+  }
+  const rec = tp + fn ? tp / (tp + fn) : 0;
+  const pre = tp + fp ? tp / (tp + fp) : 0;
+  $("cm").innerHTML = [
+    ["Caught a burst (TP)", tp], ["Missed a burst (FN)", fn],
+    ["Flagged a non-burst (FP)", fp], ["Correctly quiet (TN)", tn],
+    ["Recall", rec.toFixed(3)], ["Precision", pre.toFixed(3)],
+  ].map(([k, v]) => `<span>${k}</span><span class="n">${v}</span>`).join("");
+  $("cmNote").innerHTML = Math.abs(threshold - DATA.alarm_threshold) < 0.05
+    ? "This is the published configuration."
+    : `Threshold moved from <b>${DATA.alarm_threshold}</b> to <b>${threshold.toFixed(1)}</b>. `
+      + "Eight of the eleven non-burst lakes are ICIMOD PDGL Rank-I lakes that "
+      + "experts already consider dangerous, so a &ldquo;false positive&rdquo; here "
+      + "is not necessarily wrong.";
+}
+
+function drawFrameUI() {
+  const f = sel.frames[frameIdx];
+  $("ovDate").textContent = f.date;
+  $("ovArea").textContent = areaTxt(f.area_m2)
+    + (f.in_series ? " · in the annual series" : "");
+  const bits = [];
+  bits.push(f.usable
+    ? '<span style="color:var(--ok)">scene passes QA</span>'
+    : '<span class="qa-bad">scene rejected: ' + (f.qa_reasons[0] || "QA") + "</span>");
+  if (!onLake(f))
+    bits.push('<span class="qa-bad">outline is '
+      + (f.rings.length ? Math.round(f.dist_m) + " m off the registered lake"
+                        : "empty — no water found") + "</span>");
+  else if (f.open_water_fraction != null)
+    bits.push(`<span style="color:var(--ink3)">${Math.round(f.open_water_fraction * 100)}%
+       of the reference footprint is open water</span>`);
+  $("qaNote").innerHTML = bits.join(" · ");
+  $("frame").value = frameIdx;
+  $("tFirst").textContent = sel.frames[0].date;
+  $("tLast").textContent = sel.frames[sel.frames.length - 1].date;
+}
+
+/* ============================== WIRING =================================== */
+function selectLake(id) {
+  const L = LAKES.find(x => x.lake_id === id);
+  if (!L) return;
+  // Open on the clearest look at the lake, not merely the first scene that
+  // passed QA — otherwise a lake opens on a frame whose outline is a pond a
+  // kilometre away.
+  sel = L;
+  const best = sel.frames.map((f, i) => ({ f, i })).filter(o => onLake(o.f))
+    .sort((a, b) => (b.f.open_water_fraction ?? 0) - (a.f.open_water_fraction ?? 0))[0];
+  frameIdx = best ? best.i : 0;
+  view = null;
+  $("frame").max = sel.frames.length - 1;
+  showDeb = !!sel.corridors.debris_flow && showDeb;
+  showCle = !!sel.corridors.clearwater_flood && showCle;
+  showDown = !!sel.downstream && showDown;
+  reachKm = null;                       // the dial is a per-lake question
+  $("cDeb").setAttribute("aria-pressed", showDeb);
+  $("cCle").setAttribute("aria-pressed", showCle);
+  $("cDown").setAttribute("aria-pressed", showDown);
+  renderAll();
+}
+
+function renderAll() {
+  syncCorridorButtons();
+  drawMap(); drawSpark(); drawList(); drawDetail(); drawScenario(); drawCM();
+  drawFrameUI();
+  writeHash();
+}
+
+$("frame").oninput = e => {
+  frameIdx = +e.target.value;
+  drawMap(); drawSpark(); drawDetail(); drawFrameUI(); writeHash();
+};
+$("th").oninput = e => {
+  threshold = +e.target.value;
+  $("thVal").textContent = threshold.toFixed(1);
+  drawList(); drawDetail(); drawCM(); writeHash();
+};
+$("thReset").onclick = () => {
+  threshold = DATA.alarm_threshold;
+  $("th").value = threshold; $("thVal").textContent = threshold.toFixed(1);
+  drawList(); drawDetail(); drawCM(); writeHash();
+};
+$("ghost").onclick = e => {
+  showGhost = !showGhost; e.currentTarget.setAttribute("aria-pressed", showGhost); drawMap();
+};
+$("cDeb").onclick = e => {
+  showDeb = !showDeb; e.currentTarget.setAttribute("aria-pressed", showDeb);
+  refitForCorridors(); drawMap(); writeHash();
+};
+$("cCle").onclick = e => {
+  showCle = !showCle; e.currentTarget.setAttribute("aria-pressed", showCle);
+  refitForCorridors(); drawMap(); writeHash();
+};
+$("cDown").onclick = e => {
+  showDown = !showDown; e.currentTarget.setAttribute("aria-pressed", showDown);
+  refitForCorridors(); drawMap(); writeHash();
+};
+$("play").onclick = () => {
+  if (playing) { clearInterval(playing); playing = null; $("play").innerHTML = "&#9654; Play"; return; }
+  $("play").innerHTML = "&#10073;&#10073; Pause";
+  playing = setInterval(() => {
+    frameIdx = (frameIdx + 1) % sel.frames.length;
+    drawMap(); drawSpark(); drawDetail(); drawFrameUI();
+    if (frameIdx === sel.frames.length - 1) {
+      clearInterval(playing); playing = null; $("play").innerHTML = "&#9654; Play";
+    }
+  }, 750);
+};
+addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowRight" && frameIdx < sel.frames.length - 1) {
+    frameIdx++; drawMap(); drawSpark(); drawDetail(); drawFrameUI();
+  }
+  if (e.key === "ArrowLeft" && frameIdx > 0) {
+    frameIdx--; drawMap(); drawSpark(); drawDetail(); drawFrameUI();
+  }
+});
+addEventListener("resize", () => scaleBar(projector(sel.bounds)));
+
+/* ---------- deep links -------------------------------------------------- */
+/* #lake=imja_tsho&frame=7&th=8&debris=1 — so a specific view can be cited in
+   a report or a review comment instead of described in prose. */
+function readHash() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  return {
+    lake: p.get("lake"),
+    frame: p.has("frame") ? +p.get("frame") : null,
+    th: p.has("th") ? +p.get("th") : null,
+    debris: p.get("debris") === "1",
+    clear: p.get("clear") === "1",
+    down: p.get("down") === "1",
+    reach: p.has("reach") ? +p.get("reach") : null,
+  };
+}
+let hashLocked = false;
+function writeHash() {
+  if (hashLocked) return;
+  const p = new URLSearchParams({ lake: sel.lake_id, frame: String(frameIdx) });
+  if (Math.abs(threshold - DATA.alarm_threshold) > 1e-9) p.set("th", threshold);
+  if (showDeb) p.set("debris", "1");
+  if (showCle) p.set("clear", "1");
+  if (showDown) p.set("down", "1");
+  if (reachKm != null) p.set("reach", reachKm.toFixed(1));
+  history.replaceState(null, "", "#" + p.toString());
+}
+
+$("thDefault").textContent = DATA.alarm_threshold;
+const H = readHash();
+if (H.th != null && H.th >= 0 && H.th <= 30) threshold = H.th;
+showDeb = H.debris; showCle = H.clear; showDown = H.down;
+if (H.reach != null && H.reach >= 0) reachKm = H.reach;
+$("th").value = threshold;
+$("thVal").textContent = threshold.toFixed(1);
+
+hashLocked = true;
+selectLake(LAKES.some(L => L.lake_id === H.lake) ? H.lake
+  : LAKES.some(L => L.lake_id === "thyanbo_tsho") ? "thyanbo_tsho"
+  : LAKES[0].lake_id);
+if (H.reach != null && H.reach >= 0 && sel.downstream) {
+  reachKm = Math.min(H.reach, dialMax(sel.downstream));
+  drawScenario(); updateReach();
+}
+if (H.frame != null && H.frame >= 0 && H.frame < sel.frames.length) {
+  frameIdx = H.frame;
+  view = null;
+  renderAll();
+}
+hashLocked = false;
+writeHash();
+</script>
