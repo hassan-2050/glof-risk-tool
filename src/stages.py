@@ -902,6 +902,7 @@ def stage11_verification(cfg: Config) -> dict:
 def stage12_ledger(cfg: Config) -> dict:
     """Nothing is final without a recorded human decision."""
     from src.common.io import read_json
+    from src.reporter import approval_store
     from src.reporter.ledger import Ledger, approval_decision
 
     retrieval = read_json(REPO_ROOT / "outputs" / "stage08_retrieval.json")
@@ -909,6 +910,14 @@ def stage12_ledger(cfg: Config) -> dict:
     verif = read_json(REPO_ROOT / "outputs" / "stage11_verification.json")
     approver = cfg.require("reporter.approval.default_approver")
     frozen = cfg.require("determinism.frozen_utc")
+
+    # Real human decisions, if any have been recorded via `glof approve`.
+    # They live under data/ as a committed INPUT, never under outputs/ - this
+    # stage deletes and rebuilds the ledger every run for byte-identity, so a
+    # decision written there would be destroyed by the next reproduce without
+    # any error. Read-only here: reproduce must never write to the store.
+    human = approval_store.load()
+    human_decisions = human["decisions"]
 
     path = REPO_ROOT / "outputs" / "stage12_ledger.jsonl"
     if path.exists():
@@ -947,6 +956,25 @@ def stage12_ledger(cfg: Config) -> dict:
                     "draft": key, "sentence": s["sentence"][:300],
                     "reason": s.get("reason")})
             d = approval_decision(v, key, approver, frozen)
+            rec = human_decisions.get(key)
+            if rec:
+                # A real person decided this. Their decision replaces the
+                # simulated one - including the power to REJECT a draft that
+                # passed verification, which no automated path can express.
+                d = {**d,
+                     "decision": rec["decision"],
+                     "approver": rec["approver"],
+                     "human_decision": True,
+                     "decided_at": rec.get("decided_on", "unspecified"),
+                     "reason": rec.get("reason"),
+                     "note": rec.get("note"),
+                     "record_hash": rec.get("record_hash"),
+                     "source": "data/approvals/decisions.jsonl"}
+            else:
+                d = {**d, "human_decision": False,
+                     "source": "config default_approver (SIMULATED - no human "
+                               "was asked; run `glof approve` to record a real "
+                               "decision)"}
             approvals[key] = d
             ledger.append("approval_decision", d)
 
@@ -961,8 +989,19 @@ def stage12_ledger(cfg: Config) -> dict:
 
     finalised = [k for k, a in approvals.items() if a["decision"] == "approved"]
     withheld = [k for k, a in approvals.items() if a["decision"] != "approved"]
+    by_human = [k for k, a in approvals.items() if a.get("human_decision")]
     write_json(REPO_ROOT / "outputs" / "stage12_approvals.json",
                {"approvals": approvals, "chain": chain,
+                "human_decisions": by_human,
+                "human_decision_store": {
+                    "path": "data/approvals/decisions.jsonl",
+                    "records": len(human_decisions),
+                    "malformed_lines_skipped": human["skipped_lines"],
+                    "failed_integrity_hash": human["tampered"],
+                    "note": ("Decisions recorded by `glof approve`. Read-only "
+                             "here; reproduce never writes to this store, and "
+                             "the ledger it builds is rebuilt from scratch each "
+                             "run.")},
                 "tamper_detected_on_edit": tamper_detected,
                 "precedents": precedents_found,
                 "finalised": finalised, "withheld": withheld})
@@ -971,6 +1010,7 @@ def stage12_ledger(cfg: Config) -> dict:
                            "providing no integrity guarantee")
     return {"entries": len(ledger.entries), "chain_intact": chain["intact"],
             "tamper_detected": tamper_detected,
+            "human_decisions": len(by_human), "simulated": len(approvals) - len(by_human),
             "finalised": len(finalised), "withheld": len(withheld),
             "events_with_precedent": sum(1 for v in precedents_found.values() if v)}
 
@@ -1436,7 +1476,7 @@ def stage17_packaging(cfg: Config) -> dict:
 
 @stage(18, "documentation", "Documentation, limits/ethics, final packaging",
        outputs=("outputs/stage18_documentation.json", "docs/RESULTS.md",
-                "docs/LIMITS.md", "docs/ETHICS.md"))
+                "docs/LIMITS.md", "docs/ETHICS.md", "outputs/results.html"))
 def stage18_documentation(cfg: Config) -> dict:
     """Generate the results/limits/ethics docs FROM the run.
 
@@ -1654,12 +1694,117 @@ costs credibility that is very hard to rebuild.
     write_text(REPO_ROOT / "CHANGELOG_improvements.md",
                build_changelog(outputs, cfg))
 
+    # --- static results page, same source of truth -------------------------
+    from src.reporter.results_page import render as render_page
+
+    recon14 = read_json(outputs / "stage09_reconciliation.json")
+    appr = read_json(outputs / "stage12_approvals.json")
+    verif18 = read_json(outputs / "stage11_verification.json")
+    sm = reval["summary"]
+
+    validated = [r for r in delin["lakes"] if r.get("validation")]
+    delin_rows = sorted(
+        ({"lake": r["lake_id"].replace("_", " "),
+          "ratio": r["validation"]["ratio_to_published"]}
+         for r in validated),
+        key=lambda r: -r["ratio"])
+
+    # Only the metrics that share a 0-1 scale go on the dumbbell. Edit distance
+    # lives in the table instead: putting it on the same plot would need a
+    # second axis, which invents a comparison the data does not support.
+    # The direction marker is not decoration. Hallucination rate improves by
+    # going DOWN while every other metric improves by going UP, so on a shared
+    # axis an identical leftward arrow means "better" on one row and "worse" on
+    # the next. Labelling the polarity is the honest fix; dropping the metric
+    # would hide the pipeline's best result.
+    UNIT = [("contradiction recall  (higher better)", "contradiction_recall"),
+            ("numeric accuracy  (higher better)", "numeric_accuracy"),
+            ("citation F1  (higher better)", "citation_f1"),
+            ("hallucination rate  (LOWER better)", "hallucination_rate")]
+    dumb = [{"metric": label,
+             "baseline": sm[key]["baseline"], "advanced": sm[key]["advanced"]}
+            for label, key in UNIT if sm.get(key)]
+    reporter_all = [{"metric": k.replace("_", " "), "baseline": v["baseline"],
+                     "advanced": v["advanced"], "delta": v["delta"]}
+                    for k, v in sorted(sm.items())]
+
+    contra_rows = []
+    for eid in sorted(recon14["events"]):
+        for c in recon14["events"][eid]["contradictions"]:
+            if "stated_total" in c:
+                rng = f"states {c['stated_total']:g}, itemises {c['itemised_sum']:g}"
+                src = c.get("publisher", "")
+            else:
+                lo, hi = c["min"], c["max"]
+                fmt = lambda v: f"{v:,.3g}" if v and abs(v) < 10 else f"{v:,.0f}"
+                rng = f"{fmt(lo)} to {fmt(hi)}"
+                src = "; ".join(sorted({v["publisher"].split(" (")[0]
+                                        for v in c["values"]}))
+            contra_rows.append({"event": eid, "quantity": c["quantity"],
+                                "kind": c["kind"], "severity": c["severity"],
+                                "range": rng, "sources": src})
+
+    ap_rows = []
+    for k in sorted(appr["approvals"]):
+        a_ = appr["approvals"][k]
+        ap_rows.append({"draft": k,
+                        "blocked": verif18["drafts"][k]["release_blocked"],
+                        "decision": a_["decision"],
+                        "approver": a_.get("approver") or "—",
+                        "human": bool(a_.get("human_decision"))})
+
+    page = render_page({
+        "as_of": cfg.require("determinism.frozen_utc"),
+        "headline": {
+            "thame_growth_only_flagged": h["thame_growth_only_flagged"],
+            "thame_proxy_flagged": h["thame_proxy_flagged"],
+            "thame_proxy_rank": h["thame_proxy_rank"],
+            "growth_only_reason": weval["headline"]["thame_growth_only_reason"][0],
+            "recall_growth_only": h["watcher_recall_growth_only"],
+            "recall_proxy": h["watcher_recall_proxy_augmented"],
+            "contradiction_f1": h["contradiction_f1"],
+            "hallu_base": h["reporter_hallucination_baseline"],
+            "hallu_adv": h["reporter_hallucination_advanced"],
+            "negative_control": h["negative_control_holds"],
+            "within_25": sum(1 for r in validated
+                             if r["validation"]["within_25pct"]),
+            "n_validated": len(validated),
+        },
+        "confusion": [
+            {"model": "growth-only baseline", **{k: cmb[f"n_{k}"] for k in
+                                                 ("tp", "fp", "fn", "tn")},
+             "recall": cmb["recall"], "precision": cmb["precision"],
+             "f1": cmb["f1"]},
+            {"model": "proxy-augmented", **{k: cma[f"n_{k}"] for k in
+                                            ("tp", "fp", "fn", "tn")},
+             "recall": cma["recall"], "precision": cma["precision"],
+             "f1": cma["f1"]},
+        ],
+        "spearman": h["spearman_vs_rounce_2017"],
+        "delineation": delin_rows,
+        "dumbbell": dumb,
+        "reporter_all": reporter_all,
+        "n_scenarios": reval["n_scenarios"],
+        "contradictions": contra_rows,
+        "approval": {
+            "human": len(appr.get("human_decisions", [])),
+            "simulated": len(ap_rows) - len(appr.get("human_decisions", [])),
+            "total": len(ap_rows),
+            "chain_intact": appr["chain"]["intact"],
+            "tamper_detected": appr["tamper_detected_on_edit"],
+            "rows": ap_rows,
+        },
+    })
+    write_text(outputs / "results.html", page)
+
     record = {"docs_written": ["docs/RESULTS.md", "docs/LIMITS.md",
-                               "docs/ETHICS.md", "CHANGELOG_improvements.md"],
+                               "docs/ETHICS.md", "CHANGELOG_improvements.md",
+                               "outputs/results.html"],
               "headline_numbers_source": "outputs/stage17_reproducibility.json",
               "generated_from_run": True,
               "note": ("Results, limits and ethics are generated from the run "
                        "rather than hand-written, so a documented figure cannot "
                        "drift from the pipeline that produced it.")}
     write_json(outputs / "stage18_documentation.json", record)
-    return {"docs": len(record["docs_written"]), "generated_from_run": True}
+    return {"docs": len(record["docs_written"]), "generated_from_run": True,
+            "results_page_bytes": len(page)}

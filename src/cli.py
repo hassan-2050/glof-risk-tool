@@ -153,11 +153,36 @@ def cmd_verify_determinism(args) -> int:
     return 0
 
 
+
+def cmd_approve(args) -> int:
+    """Interactive approval. Deliberately NOT reproduce-safe.
+
+    The offline guard is not engaged and the frozen clock is not imposed,
+    because this is an operator tool rather than part of the reproducible run.
+    It writes only to data/approvals/, which reproduce reads and never writes.
+    """
+    from src.reporter.approve_cli import main as approve_main
+    argv = []
+    if getattr(args, "draft", None):
+        argv += ["--draft", args.draft]
+    if getattr(args, "list", False):
+        argv += ["--list"]
+    return approve_main(argv)
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="glof", description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("reproduce").set_defaults(func=cmd_reproduce)
+    ap = sub.add_parser(
+        "approve",
+        help="INTERACTIVE human-approval checkpoint (never part of reproduce)")
+    ap.add_argument("--draft", help="decide a single draft, e.g. thame_2024_en")
+    ap.add_argument("--list", action="store_true",
+                    help="show decision status and exit")
+    ap.set_defaults(func=cmd_approve)
+
     sub.add_parser("list-stages").set_defaults(func=cmd_list_stages)
     sub.add_parser("verify-determinism").set_defaults(func=cmd_verify_determinism)
     sp = sub.add_parser("stage"); sp.add_argument("number", type=int)

@@ -163,7 +163,7 @@ frozen clock 2026-01-01T00:00:00Z.
 
 **Change.** Append-only hash-chained ledger; verification-blocked drafts are withheld from approval rather than presented.
 
-**Result.** 27 entries, chain intact True, tamper detected on edit True. 8 finalised, 0 withheld.
+**Result.** 27 entries, chain intact True, tamper detected on edit True. 7 finalised, 1 withheld.
 
 **Evidence.** outputs/stage12_ledger.jsonl
 
