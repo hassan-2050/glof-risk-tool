@@ -86,6 +86,27 @@ Contradiction-detection F1 against the hand-labelled key: **0.857**. The
 negative control holds end to end — watcher, sitrep in both languages, and the
 CAP export.
 
+## Why this is current, not historical *(written 31 Aug 2026)*
+
+Five days before this submission, a rock-ice avalanche came down
+Langtang-Lirung into the **Lhende Khola** — hundreds dead, attribution
+initially wrong in both directions. That valley is in this evaluation set:
+the **July 2025 Pyurepu GLOF ran the same river**, and our routed corridor
+down it is validated to sub-kilometre on the bridge that flood destroyed
+(35.1 km against a published 36 km). The corridor's asset list — 21
+settlements, 4 hydropower sites, ~16,000 people within 500 m of the channel —
+is a *standing* statement of what is in the way of the next event in that
+valley, not a reconstruction of the last one.
+
+Stated with equal clarity: this tool **screens lakes and would have been
+silent on last week's slope** — the initiating hazard held no lake, and the
+event is four days old as we write, so every figure about it is provisional.
+What the event leaves behind, a landslide-dammed lake in the same channel, is
+precisely the class of standing hazard this pipeline exists to watch, and it
+is the first candidate for the lake set the day post-event imagery clears the
+QA gate. The monsoon-blindness limit documented below is not weakened by that
+event; it is demonstrated by it.
+
 ## Baseline and advanced, stated plainly
 
 Every claim of improvement here is a same-cases, same-cutoffs comparison
