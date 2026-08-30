@@ -343,6 +343,34 @@ a tool.
 
 {ep_rows}
 
+### How this session was run
+
+The operator steered in short imperatives and left the writing to the agent.
+This is a working log, not a document prepared for reading - and three habits
+in it shaped the result more than any single prompt did.
+
+**The agent proposes, the operator disposes.** Where the agent laid out an
+order of work against the deadline, the operator overrode it - *"lets do c
+first"* - putting the interactive map ahead of the documentation. That call is
+why the bug in episode 02 was caught at all: the map surfaced it, and nothing
+else in the project would have.
+
+**A claim is verified before it lands in an output.** The agent was not taken
+at its own word on arithmetic. In episode 01 it measures a distance
+independently before quoting it, and later catches its own first answer as
+27% too high because a decimated polyline was cutting corners - a number that
+had already been written into a file at that point.
+
+**The gaps were called by the operator.** *"still i dont see interactive maps
+and visualiazation happening"* is the turn that produced the map layer.
+*"why it cant what i need was to predict the flood"* is the turn that forced
+the capacity-forecast-versus-hazard-forecast distinction the tool now states
+explicitly, rather than letting a growth trend be read as a prediction.
+
+Nothing here has been rewritten for presentation. The retries, the dead ends
+and the corrections are the record; they are what the loop actually looked
+like.
+
 ## 2. The product's own agents
 
 The deliverable itself is multi-agent: a retriever, a numeric reconciler, a
