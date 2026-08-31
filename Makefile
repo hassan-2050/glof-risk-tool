@@ -57,6 +57,7 @@ map:  ## rebuild outputs/map.html — interactive lake map, offline, no tiles
 	$(PY) tools/build_map_data.py
 	$(PY) tools/build_map_page.py
 	$(PY) tools/build_agent_diagram.py
+	$(PY) tools/build_changelog_page.py
 
 check-map:  ## verify map.html against the pipeline artefacts (needs node)
 	node tools/check_map_page.mjs
