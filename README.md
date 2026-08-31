@@ -1,5 +1,7 @@
 # GLOF Risk Tool for Nepal
 
+> **Judging this?** Start with **[SUBMISSION.md](SUBMISSION.md)** — the cover sheet, which maps every judging criterion to the file that answers it. Video: https://youtu.be/tPUPp4l9fEU
+
 **Research prototype — not an operational warning system.** Decision-support
 *for* DHM, NDRRMA and ICIMOD, who own the data and the mandate.
 
