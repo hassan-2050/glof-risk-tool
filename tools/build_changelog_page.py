@@ -26,46 +26,62 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.common.config import REPO_ROOT                    # noqa: E402
 from src.common.io import TOOL_OUTPUT_DIR                  # noqa: E402
+# The pipeline's own palette, imported rather than restated: results.html and
+# this page are read side by side, and a second hand-copied light theme is a
+# second thing to drift.
+from src.reporter.results_page import PALETTE              # noqa: E402
 
 SRC = REPO_ROOT / "CHANGELOG_improvements.md"
 SITE = REPO_ROOT / "outputs" / TOOL_OUTPUT_DIR
 
 FIELDS = ("Hypothesis", "Change", "Result", "Evidence")
 
-CSS = """
-:root{
-  --bg:#0e1013; --panel:#15181d; --panel2:#1b1f26; --line:#272c35;
-  --ink:#e8eaed; --ink2:#a6adba; --ink3:#6f7784;
-  --hyp:#7c5cff; --chg:#3fa7ff; --res:#4ade80; --evi:#6f7784; --tool:#fbbf24;
-}
+def _tokens() -> str:
+    """Light-first, with the same two overrides results.html uses: an explicit
+    theme choice wins in both directions, and the un-stamped default follows
+    the OS."""
+    def block(sel, p):
+        return (f"{sel}{{--surface:{p['surface']};--plane:{p['plane']};"
+                f"--ink:{p['ink']};--ink2:{p['ink2']};--muted:{p['muted']};"
+                f"--border:{p['border']};--mid:{p['mid']};"
+                f"--hyp:{p['s1']};--chg:{p['s2']};--res:{p['good']};"
+                f"--evi:{p['muted']};--tool:{p['warning']};}}")
+    L, D = PALETTE["light"], PALETTE["dark"]
+    return (block(":root", L)
+            + "@media (prefers-color-scheme: dark){"
+            + block(':root:not([data-theme="light"])', D) + "}"
+            + block(':root[data-theme="dark"]', D))
+
+
+CSS = _tokens() + """
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font:14.5px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+body{margin:0;background:var(--plane);color:var(--ink);
+  font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:26px 26px 80px}
-h1{font-size:22px;margin:0 0 6px;font-weight:680;letter-spacing:-.01em}
-.lede{color:var(--ink2);font-size:13.5px;max-width:78ch;margin-bottom:8px}
+.wrap{max-width:1000px;margin:0 auto;padding:34px 26px 80px}
+h1{font-size:30px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+.lede{color:var(--ink2);font-size:14.5px;max-width:78ch;margin:8px 0}
 .lede b{color:var(--ink)}
-.fingerprint{color:var(--ink3);font-size:12px;font-variant-numeric:tabular-nums;
-  border-top:1px solid var(--line);padding-top:10px;margin-top:14px}
+.fingerprint{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums;
+  border-top:1px solid var(--border);padding-top:12px;margin-top:18px}
 
-.sectionhead{margin:34px 0 14px;padding:12px 14px;border-radius:9px;
-  background:var(--panel2);border:1px solid var(--line);
+.sectionhead{margin:38px 0 14px;padding:14px 16px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--border);
   border-left:3px solid var(--tool)}
-.sectionhead h2{font-size:15px;margin:0 0 4px;font-weight:660}
-.sectionhead p{margin:0;color:var(--ink3);font-size:12.5px}
+.sectionhead h2{font-size:17px;margin:0 0 5px;letter-spacing:-.005em}
+.sectionhead p{margin:0;color:var(--ink2);font-size:13.5px}
 
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  padding:0;margin-bottom:12px;overflow:hidden}
-.card > .hd{padding:11px 15px;border-bottom:1px solid var(--line);
-  display:flex;align-items:baseline;gap:10px;background:var(--panel2)}
+.card{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;margin-bottom:14px;overflow:hidden}
+.card > .hd{padding:12px 18px;border-bottom:1px solid var(--border);
+  display:flex;align-items:baseline;gap:11px;background:var(--mid)}
 .card .stage{font-size:11px;font-weight:700;letter-spacing:.07em;
-  text-transform:uppercase;color:var(--ink3);white-space:nowrap}
+  text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .card.tool .stage{color:var(--tool)}
-.card .ttl{font-weight:650;font-size:14.5px}
+.card .ttl{font-weight:650;font-size:15px}
 .rows{display:flex;flex-direction:column}
-.r{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;
-  padding:10px 15px;border-bottom:1px dashed var(--line)}
+.r{display:grid;grid-template-columns:108px minmax(0,1fr);gap:16px;
+  padding:11px 18px;border-bottom:1px solid var(--border)}
 .r:last-child{border-bottom:0}
 .r .k{font-size:10.5px;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;padding-top:3px}
@@ -73,16 +89,16 @@ h1{font-size:22px;margin:0 0 6px;font-weight:680;letter-spacing:-.01em}
 .r.res .k{color:var(--res)} .r.evi .k{color:var(--evi)}
 .r .v{color:var(--ink2);min-width:0}
 .r.res .v{color:var(--ink)}
-.r .v code{background:var(--panel2);border:1px solid var(--line);
-  border-radius:4px;padding:1px 5px;font-size:12.5px}
+.r .v code{background:var(--mid);border:1px solid var(--border);
+  border-radius:4px;padding:1px 5px;font-size:13px}
 
-table{border-collapse:collapse;margin:8px 0 2px;width:100%;
+table{border-collapse:collapse;margin:9px 0 2px;width:100%;
   font-variant-numeric:tabular-nums}
-th,td{padding:6px 12px;text-align:right;border-bottom:1px solid var(--line);
-  font-size:13px}
+th,td{padding:7px 12px;text-align:right;border-bottom:1px solid var(--border);
+  font-size:13.5px}
 th:first-child,td:first-child{text-align:left}
-thead th{font-size:10px;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink3)}
+thead th{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted)}
 tbody tr:last-child td{border-bottom:0}
 strong{color:var(--ink)}
 """

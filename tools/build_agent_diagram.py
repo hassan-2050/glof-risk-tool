@@ -28,6 +28,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.common.config import REPO_ROOT                    # noqa: E402
 from src.common.io import TOOL_OUTPUT_DIR, read_json       # noqa: E402
+# The pipeline's own palette. These pages are read side by side with
+# results.html; a second hand-copied theme is a second thing to drift.
+from src.reporter.results_page import PALETTE              # noqa: E402
 
 OUT = REPO_ROOT / "outputs"
 SITE = OUT / TOOL_OUTPUT_DIR
@@ -70,60 +73,72 @@ METRICS = [("contradiction_recall", "Contradiction recall", "up"),
            ("numeric_accuracy", "Numeric accuracy", "up"),
            ("citation_f1", "Citation F1", "up")]
 
-CSS = """
-:root{
-  --bg:#0e1013; --panel:#15181d; --panel2:#1b1f26; --line:#272c35;
-  --ink:#e8eaed; --ink2:#a6adba; --ink3:#6f7784;
-  --det:#4ade80; --llm:#fbbf24; --human:#7c5cff; --mixed:#3fa7ff;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font:14px/1.55 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
-  -webkit-font-smoothing:antialiased}
-.wrap{max-width:1240px;margin:0 auto;padding:26px 26px 60px}
-h1{font-size:21px;margin:0 0 4px;font-weight:680;letter-spacing:-.01em}
-.sub{color:var(--ink3);font-size:13px;margin-bottom:22px}
-h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-   color:var(--ink3);margin:30px 0 12px;font-weight:650}
+def _tokens() -> str:
+    """Light-first, with an explicit theme choice winning in both directions
+    and the un-stamped default following the OS - same contract as
+    results.html."""
+    def block(sel, p):
+        return (f"{sel}{{--surface:{p['surface']};--plane:{p['plane']};"
+                f"--ink:{p['ink']};--ink2:{p['ink2']};--muted:{p['muted']};"
+                f"--border:{p['border']};--mid:{p['mid']};"
+                f"--det:{p['good']};--llm:{p['warning']};"
+                f"--mixed:{p['s1']};--human:{p['s2']};}}")
+    L, D = PALETTE["light"], PALETTE["dark"]
+    return (block(":root", L)
+            + "@media (prefers-color-scheme: dark){"
+            + block(':root:not([data-theme="light"])', D) + "}"
+            + block(':root[data-theme="dark"]', D))
 
-.key{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;font-size:12.5px}
-.key span{display:flex;align-items:center;gap:6px;color:var(--ink2)}
+
+CSS = _tokens() + """
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--ink);
+  font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:34px 26px 70px}
+h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em;line-height:1.25}
+.sub{color:var(--muted);font-size:13.5px;margin-bottom:24px}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+   color:var(--muted);margin:34px 0 12px;font-weight:700}
+
+.key{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px;font-size:13px}
+.key span{display:flex;align-items:center;gap:7px;color:var(--ink2)}
 .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
 
 .flow{display:flex;flex-direction:column;gap:0}
 .row{display:flex;align-items:stretch;gap:0}
-.box{flex:1;background:var(--panel);border:1px solid var(--line);
-     border-top:3px solid var(--line);border-radius:9px;padding:12px 13px;
-     display:flex;flex-direction:column;gap:5px;min-width:0}
+.box{flex:1;background:var(--surface);border:1px solid var(--border);
+     border-top:3px solid var(--border);border-radius:12px;padding:13px 15px;
+     display:flex;flex-direction:column;gap:6px;min-width:0}
 .box.det{border-top-color:var(--det)}
 .box.llm{border-top-color:var(--llm)}
 .box.mixed{border-top-color:var(--mixed)}
-.box.human{border-top-color:var(--human);background:var(--panel2)}
-.box .nm{font-weight:650;font-size:13.5px}
-.box .does{color:var(--ink2);font-size:12.5px}
-.box .note{color:var(--ink3);font-size:11.5px;line-height:1.45;
-           border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
+.box.human{border-top-color:var(--human);background:var(--mid)}
+.box .nm{font-weight:650;font-size:14.5px}
+.box .does{color:var(--ink2);font-size:13.5px}
+.box .note{color:var(--muted);font-size:12.5px;line-height:1.5;
+           border-top:1px dashed var(--border);padding-top:7px;margin-top:2px}
 .box .note b{color:var(--ink2)}
 .arrow{display:flex;align-items:center;justify-content:center;
-       color:var(--ink3);font-size:17px;padding:0 7px;flex:none}
-.pair{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}
-.pairlab{font-size:11px;color:var(--ink3);text-align:center;
-         letter-spacing:.05em;text-transform:uppercase}
+       color:var(--muted);font-size:18px;padding:0 8px;flex:none}
+.pair{flex:1;display:flex;flex-direction:column;gap:9px;min-width:0}
+.pairlab{font-size:11px;color:var(--muted);text-align:center;
+         letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 
-table{border-collapse:collapse;width:100%;background:var(--panel);
-      border:1px solid var(--line);border-radius:9px;overflow:hidden}
-th,td{padding:9px 13px;text-align:right;font-variant-numeric:tabular-nums;
-      border-bottom:1px solid var(--line);font-size:13.5px}
+table{border-collapse:collapse;width:100%;background:var(--surface);
+      border:1px solid var(--border);border-radius:12px;overflow:hidden}
+th,td{padding:10px 14px;text-align:right;font-variant-numeric:tabular-nums;
+      border-bottom:1px solid var(--border);font-size:14px}
 th:first-child,td:first-child{text-align:left}
 thead th{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
-         color:var(--ink3);font-weight:650}
+         color:var(--muted);font-weight:700}
 tbody tr:last-child td{border-bottom:0}
 .win{color:var(--det);font-weight:650}
-.base{color:var(--ink3)}
-.note-line{color:var(--ink3);font-size:12px;margin-top:10px;line-height:1.5}
-.note-line b{color:var(--ink2)}
+.base{color:var(--muted)}
+.note-line{color:var(--ink2);font-size:13px;margin-top:12px;line-height:1.55}
+.note-line b{color:var(--ink)}
 @media (max-width:1000px){
-  .row{flex-direction:column;gap:8px}
+  .row{flex-direction:column;gap:9px}
   .arrow{transform:rotate(90deg);padding:2px 0}
 }
 """
