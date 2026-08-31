@@ -111,6 +111,20 @@ is the first candidate for the lake set the day post-event imagery clears the
 QA gate. The monsoon-blindness limit documented below is not weakened by that
 event; it is demonstrated by it.
 
+## What existed before, and what was built here
+
+Everything in this repository was written during the challenge window — first
+commit 29 August 2026, last 31 August. There is no pre-existing codebase
+behind it.
+
+Used as inputs and dependencies, not built here: the public data
+(Sentinel-2 L2A, Copernicus GLO-30, WorldPop 2020 constrained, OpenStreetMap),
+the published science applied as fixed references rather than re-derived
+(Rounce et al. 2017's 0.1 km² screen, Huggel et al. 2003's reach angle, Cook &
+Quincey 2015's error bounds, Barnes et al. 2014's priority-flood fill, ICIMOD's
+PDGL rankings), the standard scientific Python stack, and a language model for
+Stages 11 and 15 whose responses are committed to a cache.
+
 ## Baseline and advanced, stated plainly
 
 Every claim of improvement here is a same-cases, same-cutoffs comparison

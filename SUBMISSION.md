@@ -25,6 +25,81 @@ Nothing needs a server or a build step. `results.html`, `map.html`,
 
 ---
 
+## What existed before the challenge, and what was built during it
+
+**Everything in this repository was written during the challenge window.**
+First commit 29 Aug 2026 09:28, last 31 Aug 2026; nothing was carried in from
+prior work, and there is no pre-existing codebase behind it.
+
+What was *not* built here, and is used as an input or a dependency:
+
+- **Public data** — Sentinel-2 L2A scenes (Copernicus), Copernicus GLO-30 DEM,
+  WorldPop 2020 constrained, OpenStreetMap (ODbL). All committed under
+  `data/pinned/` and used within their licences.
+- **Published science, used as fixed references rather than re-derived** —
+  the 0.1 km² screening threshold (Rounce et al. 2017), the reach-angle stop
+  rule (Huggel et al. 2003), volume–area error bounds (Cook & Quincey 2015),
+  the priority-flood depression fill (Barnes et al. 2014), ICIMOD PDGL
+  rankings.
+- **Standard libraries** — rasterio, numpy, scipy, shapely, pyproj, Pillow.
+- **A language model** for Stages 11 and 15, with every response committed to
+  `data/pinned/llm_cache/` so the pipeline reproduces without a key.
+
+## The primary metric
+
+Success for the intended user is **catching a lake that is about to burst,
+without being told which one to look at**. That is the recall row.
+
+| metric, same 14 lakes and same cutoffs | baseline | this solution | change |
+|---|---|---|---|
+| **burst recall** (primary) | 0.000 | **0.333** | +0.333 |
+| precision | 0.000 | 0.500 | +0.500 |
+| F1 | 0.000 | **0.400** | +0.400 |
+| Thame rank, threshold-free | never assessed | **1 of 13** | — |
+| cost per full run | $0 | **$0** | — |
+| wall-clock per full run | — | **4 m 52 s** | — |
+
+And for the reporting task, 10 scenarios against a single-prompt baseline:
+
+| metric | baseline | this solution | change |
+|---|---|---|---|
+| **contradiction recall** (primary) | 0.000 | **0.950** | +0.950 |
+| hallucination rate | 0.344 | **0.091** | −0.253 |
+| numeric accuracy | 0.656 | **0.909** | +0.253 |
+| citation F1 | 0.000 | **0.535** | +0.535 |
+
+**Not measured, and not claimed:** human time per task. Comparing against a
+human analyst would need a timed human baseline, which was not run — so no
+time-saving figure is asserted anywhere in this submission.
+
+## The challenging case, and what it revealed
+
+**South Lhonak** is the case that fails, and it is the most informative one
+here.
+
+It burst on 3 October 2023 and destroyed Chungthang 60 km downstream. The
+screen does not catch it, and the corridor does not reach the town: routing
+stops at 31 km. The diagnosis is not a tuning problem — **its moraine is
+unbreached in the DEM**, so there is no topographic path out of the basin for
+a flow router to follow. A 30 m DEM acquired before the breach cannot contain
+the channel the flood actually cut.
+
+What it revealed, and what changed because of it: reach-angle routing on a
+pre-event DEM is bounded by the terrain it was given, and no amount of
+parameter adjustment fixes a missing outlet. It is reported as a miss rather
+than tuned away, and it is why the runout figures are published as a
+**bracket** between two regimes instead of a prediction. South Lhonak is also
+one of only two lakes the calibration policy permits tuning on
+(`data/labels/cutoffs.json`), which makes leaving it failing a deliberate
+choice rather than an oversight.
+
+A second hard case runs the other way: **Chamoli** is a negative control the
+system must *refuse*. It finds 300 m² of scattered meltwater, fires zero
+proxies, and declines to call it a lake burst — in English, in Nepali, and in
+the machine-readable CAP export.
+
+---
+
 ## Where each judging criterion is answered
 
 ### Problem & user value — 15%
