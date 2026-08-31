@@ -10,6 +10,11 @@ on any laptop, with no API key.
 **Not an operational warning system.** Decision support *for* Nepal's DHM,
 NDRRMA and ICIMOD, who own the data and the mandate.
 
+| | |
+|---|---|
+| **Video (5 min)** | https://youtu.be/tPUPp4l9fEU |
+| **Repository** | https://github.com/hassan-2050/glof-risk-tool |
+
 ---
 
 ## Start here
