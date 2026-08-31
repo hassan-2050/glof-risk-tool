@@ -194,13 +194,17 @@ def stage03_trajectory(cfg: Config) -> dict:
     lakes_doc = read_json(cfg.path("labels") / "lakes.json")
     delin = read_json(REPO_ROOT / "outputs" / "stage02_delineation.json")
     by_id = {r["lake_id"]: r for r in delin["lakes"]}
+    # The screening baseline may only see pre-event data; the cutoff travels
+    # into the trajectory so a second, pre-cutoff trend can be built for it.
+    cutoffs = read_json(cfg.path("labels") / "cutoffs.json").get("per_lake", {})
 
     results, rows = [], []
     for lake in lakes_doc["lakes"]:
         lr = by_id.get(lake["id"])
         if lr is None or lr.get("status") != "ok":
             continue
-        a = analyse(lake, lr, cfg)
+        a = analyse(lake, lr, cfg,
+                    cutoff=(cutoffs.get(lake["id"]) or {}).get("cutoff"))
         results.append(a)
         t = a["trend"]
         rows.append({

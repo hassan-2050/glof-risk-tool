@@ -72,8 +72,10 @@ ignores anything under **0.1 km²**.
 
 *Open `outputs/tools/map.html`. Drag the timeline 2017 → 2024.*
 
-Thame, August 2024. The outline barely moves. **0.0198 km²** on our last usable
-pre-event scene — a fifth of the threshold — and shrinking, −48%. That lake
+Thame, August 2024. The outline barely moves. **0.0384 km²** on our last usable
+pre-event scene — a third of the threshold. And that is the *only* pre-event
+scene clearing the cloud gate, so the two-date growth test has nothing to
+compare it against. That lake
 emptied in 22 minutes, displaced 135 people, and carried debris 80 km.
 
 Growth-and-size screening did not rank it low. It **never assessed it**. The
@@ -175,7 +177,7 @@ when we don't.*
 | 1 | news map of Langtang / Rasuwa | 579 dead, ~400 missing, **not a GLOF** |
 | 2 | `outputs/sitreps/chamoli_2021_en.md` | 300 m² water, 0 proxies, refused |
 | 3 | map, select Pyurepu | July 2025 GLOF vs Aug 2026 not-GLOF, same river |
-| 4 | `map.html`, drag 2017→2024, then threshold | 0.0198 km²; rank **1 of 13** |
+| 4 | `map.html`, drag 2017→2024, then threshold | 0.0384 km²; rank **1 of 13** |
 | 5 | `docs/DECISIONS.md` D14–D17 | 4/8 → 6/8; 48× |
 | 6 | `docs/LIMITS.md` | 1 of 16 usable pre-event scenes; 16 km |
 | 7 | approval CLI; `verify-determinism` | 44 artefacts byte-identical |

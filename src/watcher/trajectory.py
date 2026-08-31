@@ -98,6 +98,19 @@ def trend_features(points: list[dict], cfg) -> dict:
     if n < min_n:
         base["note"] = (f"only {n} usable annual observations (need {min_n}); "
                         "no trend reported rather than a trend from too few points")
+        # A TREND needs several points; an AREA SCREEN needs one. Withholding
+        # the last measured area here handed Stage 7 a zero, which reads as
+        # "no lake" rather than "one observation". Thame has exactly one
+        # usable pre-event annual scene - the other six are cloud-rejected -
+        # and that single measurement is what a growth-only pipeline would
+        # actually screen on. The slope-derived fields stay absent, so nothing
+        # can compute growth from too few points.
+        if n >= 1:
+            base.update({
+                "first_date": usable[0]["date"], "last_date": usable[-1]["date"],
+                "first_area_m2": usable[0]["area_m2"],
+                "last_area_m2": usable[-1]["area_m2"],
+            })
         return base
 
     dates = [_date(p["date"]) for p in usable]
@@ -242,10 +255,30 @@ def detect_drops(points: list[dict], cfg) -> list[dict]:
     return events
 
 
-def analyse(lake: dict, lake_result: dict, cfg) -> dict:
+def analyse(lake: dict, lake_result: dict, cfg, cutoff: str | None = None) -> dict:
     points = usable_points(lake_result, cfg)
     trend = trend_features(points, cfg)
     drops = detect_drops(points, cfg)
+
+    # A SECOND trend, over pre-cutoff observations only.
+    #
+    # Burst detection legitimately needs post-event scenes - Thame's drop is
+    # only visible in the 2024-09-18 acquisition - so `trend` runs over the
+    # whole series and must keep doing so. But a SCREENING decision may not see
+    # them, and Stage 7's growth baseline was reading `trend.last_area_m2`:
+    # for Thame that was the 2025-10-25 area, fourteen months after the lake
+    # burst, and the two-date growth was measured straight across the event.
+    # The conclusion did not change - 0.0161 km2 pre-cutoff is below the
+    # 0.1 km2 screen exactly as 0.0198 was - but the baseline was being handed
+    # hindsight, which is the one thing this comparison must not do.
+    pre_trend = None
+    if cutoff:
+        pre = [q for q in points if q["date"] <= cutoff]
+        pre_trend = trend_features(pre, cfg)
+        pre_trend["cutoff"] = cutoff
+        pre_trend["note"] = ("computed over observations up to the lake's "
+                             "pre-event cutoff; this is what the screening "
+                             "baseline is scored on")
     flagged = [d for d in drops if d["flagged"]]
     return {
         "lake_id": lake["id"],
@@ -253,6 +286,9 @@ def analyse(lake: dict, lake_result: dict, cfg) -> dict:
         "class": lake["class"],
         "label_burst": lake["label_burst"],
         "trend": trend,
+        # Absent for a lake with no cutoff, where `trend` is already
+        # pre-event by construction: there is no event to be after.
+        "pre_cutoff_trend": pre_trend,
         "drops_detected": flagged,
         "drops_unconfirmed": [d for d in drops
                               if d["status"] == "unconfirmed_no_follow_up"],

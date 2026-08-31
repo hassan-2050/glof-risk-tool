@@ -42,7 +42,14 @@ def growth_only_screen(lake: dict, traj: dict | None, cfg) -> dict:
     area_t_km2 = cfg.require("evaluation.baseline.area_threshold_km2")
     growth_t = cfg.require("evaluation.baseline.growth_flag_pct")
 
-    t = (traj or {}).get("trend", {})
+    # Pre-cutoff trend where the lake has a cutoff, full trend otherwise (a
+    # lake with no event has nothing to be after). Reading `trend` here handed
+    # the baseline post-event scenes - Thame's area came from 2025-10-25,
+    # fourteen months after it burst - which is precisely the hindsight this
+    # comparison exists to avoid. The verdict is unchanged; the discipline is
+    # no longer only claimed.
+    t = ((traj or {}).get("pre_cutoff_trend")
+         or (traj or {}).get("trend", {}))
     area_m2 = t.get("last_area_m2")
     area_km2 = (area_m2 / 1e6) if area_m2 else 0.0
     growth_pct = t.get("naive_two_date_change_pct")

@@ -11,8 +11,10 @@ Area-growth screening — the industry-standard first filter for glacial-lake
 outburst flood (GLOF) hazard — fails in two documented, opposite ways:
 
 - **False negative.** Thyanbo Tsho above Thame burst on 16 Aug 2024. On our last
-  pre-event scene it measured 0.0198 km², *below* the 0.1 km² screening
-  threshold of Rounce et al. (2017), and it was stable in area from 2017–2023.
+  usable pre-event scene it measured 0.0384 km², *below* the 0.1 km² screening
+  threshold of Rounce et al. (2017) — and that is the *only* usable pre-event
+  observation the QA gate admits, so a growth screen cannot even compute a
+  growth rate for it.
   It was triggered by a rock/ice avalanche. A two-date growth screen would have
   missed it entirely.
   **Read this qualification with it:** the event was a *cascade* of two lakes,
@@ -63,8 +65,10 @@ over 1962–2023. The result is a statement about an eight-year baseline, not
 about area-growth screening for all time. See DECISIONS D13.
 
 Thame appears in the growth-only **false negatives** and the proxy-augmented
-**true positives**. Its area on the last pre-event scene is 0.0198 km² — below
-the 0.1 km² Rounce screen, so a growth-only pipeline never assesses it at all.
+**true positives**. Its area on the last *usable* pre-event scene is
+0.0384 km² — below the 0.1 km² Rounce screen, so a growth-only pipeline never
+assesses it at all. That single scene is also the only pre-event observation
+clearing QA, so the two-date growth test has nothing to compare.
 
 Threshold-free version of the same claim: **Thame ranks 1 of 13** on the
 continuous source-to-lake volume ratio. This matters because that alarm

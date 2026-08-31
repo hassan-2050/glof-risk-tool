@@ -20,7 +20,7 @@ it, using only pre-16-Aug-2024 data.
 Thame appears in the growth-only **false negatives** (yes)
 and the proxy-augmented **true positives** (yes).
 
-Growth-only reason: area 0.0198 km2 is below the 0.1 km2 screening threshold, so the lake is never assessed
+Growth-only reason: area 0.0384 km2 is below the 0.1 km2 screening threshold, so the lake is never assessed
 
 Threshold-free statement: Thame ranks **1 of 13** on the
 continuous source-to-lake volume ratio. This does not depend on any alarm
