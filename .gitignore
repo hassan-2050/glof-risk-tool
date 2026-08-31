@@ -26,3 +26,6 @@ credentials.json
 # committed; its output ships in the submission archive, not in git.
 submission/agent_traces/raw/
 submission/agent_traces/TRANSCRIPT.md
+
+# the video ships in the archive, not in git
+submission/*.mp4

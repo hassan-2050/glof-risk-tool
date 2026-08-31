@@ -6,37 +6,38 @@ should not be confused.
 ## 1. The coding agent that built the repository
 
 **Claude Code** (Anthropic), driven by one operator across
-2026-08-29 to 2026-08-30. It wrote and revised the pipeline, ran
+2026-08-29 to 2026-08-31. It wrote and revised the pipeline, ran
 it, read the artefacts, and chose the next change from what those artefacts
 said. The iteration loop recorded in `CHANGELOG_improvements.md` -
 hypothesis, change, measured result - is this agent's actual working loop.
 
 | | |
 |---|---|
-| conversational turns | 3,146 |
-| tool calls | 1,170 |
-| session span | 2026-08-29 04:08:10 to 2026-08-30 22:59:33 UTC |
+| conversational turns | 3,619 |
+| tool calls | 1,295 |
+| session span | 2026-08-29 04:08:10 to 2026-08-31 15:19:04 UTC |
 
 | tool | calls |
 |---|---|
-| `Bash` | 871 |
-| `Edit` | 150 |
-| `Write` | 59 |
+| `Bash` | 960 |
+| `Edit` | 154 |
+| `Write` | 62 |
 | `WebSearch` | 26 |
+| `mcp__Claude_Browser__browser_batch` | 17 |
+| `mcp__Claude_Browser__javascript_tool` | 14 |
 | `WebFetch` | 13 |
-| `Read` | 12 |
-| `mcp__Claude_Browser__browser_batch` | 12 |
+| `Read` | 13 |
+| `mcp__Claude_Browser__navigate` | 8 |
 | `ToolSearch` | 6 |
-| `mcp__Claude_Browser__javascript_tool` | 6 |
+| `mcp__Claude_Browser__computer` | 5 |
+| `mcp__Claude_Browser__resize_window` | 5 |
 | `TaskStop` | 4 |
 | `Skill` | 2 |
 | `mcp__claude-in-chrome__tabs_context_mcp` | 2 |
-| `mcp__Claude_Browser__navigate` | 2 |
 | `Workflow` | 1 |
 | `PowerShell` | 1 |
 | `Artifact` | 1 |
 | `mcp__Claude_Browser__preview_start` | 1 |
-| `mcp__Claude_Browser__computer` | 1 |
 
 **[TRANSCRIPT.md](TRANSCRIPT.md)** is every turn in order.
 **[raw/session.jsonl](raw/session.jsonl)** is the complete unabridged record,
